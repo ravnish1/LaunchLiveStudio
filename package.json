@@ -1,5 +1,6 @@
 {
-  "name": "my-project",
+  "name": "launchlive-studio",
+  "description": "Launch Live Studio — Full-Service Digital Agency",
   "version": "0.1.0",
   "private": true,
   "scripts": {

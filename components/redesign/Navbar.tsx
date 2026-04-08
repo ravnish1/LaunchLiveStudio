@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 
@@ -18,10 +19,10 @@ export const Navbar = () => {
   }, [])
 
   const navLinks = [
-    { name: 'Brands', href: '#' },
-    { name: 'Creators', href: '#' },
-    { name: 'About Us', href: '#' },
-    { name: 'Contact Us', href: '#' },
+    { name: 'Work', href: '/work' },
+    { name: 'Services', href: '/services' },
+    { name: 'Testimonials', href: '/testimonials' },
+    { name: 'Resources', href: '/resources' },
   ]
 
   return (
@@ -45,9 +46,16 @@ export const Navbar = () => {
         >
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="group">
+            <Link href="/" className="group flex items-center gap-3">
+              <Image
+                src="/logo.png"
+                alt="Launch Live Studio"
+                width={36}
+                height={36}
+                className="rounded-md"
+              />
               <span className="text-2xl font-serif font-bold tracking-tight text-foreground group-hover:text-accent transition-colors">
-                CURIOUS MEDIA<span className="text-accent group-hover:text-foreground">.</span>
+                launchlive.studio
               </span>
             </Link>
 
@@ -67,9 +75,9 @@ export const Navbar = () => {
 
             {/* CTA */}
             <div className="flex items-center gap-4">
-              <button className="hidden md:block px-6 py-2 bg-accent text-white text-sm font-semibold rounded-full hover:scale-105 active:scale-95 transition-all shadow-md shadow-accent/20">
-                Let's Talk
-              </button>
+              <Link href="/book-a-call" className="hidden md:block px-6 py-2 bg-accent text-white text-sm font-semibold rounded-full hover:scale-105 active:scale-95 transition-all shadow-md shadow-accent/20">
+                Book a Call
+              </Link>
 
               {/* Mobile Toggle */}
               <button
@@ -102,9 +110,9 @@ export const Navbar = () => {
                 {link.name}
               </Link>
             ))}
-            <button className="mt-4 px-10 py-4 bg-accent text-white font-bold rounded-full shadow-xl shadow-accent/20">
-              Let's Talk
-            </button>
+            <Link href="/book-a-call" onClick={() => setIsMobileMenuOpen(false)} className="mt-4 px-10 py-4 bg-accent text-white font-bold rounded-full shadow-xl shadow-accent/20">
+              Book a Call
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>

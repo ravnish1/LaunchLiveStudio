@@ -6,14 +6,19 @@ import { Quote } from 'lucide-react'
 
 const testimonials = [
   {
-    quote: "Curious completely transformed our brand vision and brought it to life with a cinematic digital experience.",
-    author: "Elena Vasquez",
-    company: "Founder, Zenith",
+    quote: "Launch Live built our entire platform in 5 weeks. I genuinely didn't think it was possible.",
+    author: "Arjun M.",
+    company: "Founder, TerraFlow",
   },
   {
-    quote: "The motion design quality is unparalleled. They don't just build sites; they build digital masterpieces.",
-    author: "Marcus Thorne",
-    company: "CEO, Stellar Media",
+    quote: "They turned our brand from forgettable to unforgettable. The results spoke for themselves in week one.",
+    author: "Sophie K.",
+    company: "CMO, Nova Roast",
+  },
+  {
+    quote: "The AI automation system they built saves us 20+ hours every single week. Worth every rupee.",
+    author: "Dev R.",
+    company: "CEO, Vaultly",
   },
 ]
 
@@ -23,7 +28,11 @@ export const Testimonials = () => {
   return (
     <section className="py-40 px-6 bg-background relative overflow-hidden">
       <div className="max-w-[1280px] mx-auto text-center relative z-10">
-        <Quote size={80} className="mx-auto mb-12 text-accent opacity-20" />
+        <div className="mb-12">
+           <span className="text-sm font-medium tracking-widest text-accent uppercase block mb-4">WHAT CLIENTS SAY</span>
+           <h2 className="text-4xl md:text-5xl font-serif">Don't take our word for it.</h2>
+        </div>
+        <Quote size={60} className="mx-auto mb-8 text-accent opacity-20" />
         
         <AnimatePresence mode="wait">
           <motion.div
@@ -34,7 +43,7 @@ export const Testimonials = () => {
             transition={{ duration: 0.6 }}
             className="max-w-4xl mx-auto"
           >
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif italic mb-12 leading-tight">
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-serif italic mb-8 leading-relaxed text-foreground/90">
               "{testimonials[index].quote}"
             </h2>
             <div className="space-y-1">

@@ -5,10 +5,10 @@ import { motion } from 'framer-motion'
 import { ScrambleHeading } from './ScrambleHeading'
 
 const steps = [
-  { title: 'Discovery', desc: 'Deep dive into your brand mission, goals, and audience behavior.' },
-  { title: 'Strategy', desc: 'Crafting a unique narrative and visual language for your projects.' },
-  { title: 'Design', desc: 'Meticulous UI/UX and motion design that commands attention.' },
-  { title: 'Launch', desc: 'Deploying high-performance experiences with global impact.' },
+  { title: 'DISCOVER', desc: 'We get deep into your world — your goals, users, competitors, and constraints. No assumptions. Just clarity.' },
+  { title: 'DESIGN', desc: 'We prototype fast and show, not tell. Every pixel earns its place. You see real progress from week one.' },
+  { title: 'BUILD', desc: 'Clean, fast code. No bloat. Your site will score 95+ on Lighthouse and load in under 2 seconds on any device.' },
+  { title: 'LAUNCH & GROW', desc: 'Going live is just the beginning. We stay on to optimize, scale, and evolve with your business.' },
 ]
 
 export const Process = () => {
@@ -16,8 +16,9 @@ export const Process = () => {
     <section className="py-32 px-6">
       <div className="max-w-[1280px] mx-auto">
         <div className="mb-20">
-          <ScrambleHeading text="Roadmap" as="span" className="text-sm font-medium tracking-widest text-accent uppercase" staggerMs={30} scrambleFrames={4} />
-          <ScrambleHeading text="How we work" as="h2" className="text-5xl md:text-8xl font-serif mt-4" staggerMs={50} />
+          <ScrambleHeading text="HOW WE WORK" as="span" className="text-sm font-medium tracking-widest text-accent uppercase" staggerMs={30} scrambleFrames={4} />
+          <ScrambleHeading text="From idea" as="h2" className="text-5xl md:text-8xl font-serif mt-4" staggerMs={50} />
+          <ScrambleHeading text="to live." as="h2" className="text-5xl md:text-8xl font-serif" staggerMs={50} />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 relative">

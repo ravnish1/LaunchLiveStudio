@@ -3,20 +3,35 @@ import { Inter, Playfair_Display } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin'],
   variable: '--font-sans',
 })
 
-const playfair = Playfair_Display({ 
+const playfair = Playfair_Display({
   subsets: ['latin'],
   variable: '--font-serif',
 })
 
 export const metadata: Metadata = {
-  title: 'CURIOUS | Premium Content Agency',
-  description: 'We build digital products, experiences, and futures. A world-class agency for creators and brands.',
-  keywords: 'agency, design, development, creators, motion design, premium branding',
+  title: "launchlive.studio",
+  description: "Launch Live Studio is a full-service digital agency building websites, AI systems, branding, and automation for startups and growing businesses.",
+  openGraph: {
+    title: "launchlive.studio",
+    description: "Launch Live Studio is a full-service digital agency building websites, AI systems, branding, and automation for startups and growing businesses.",
+    url: "https://launchlive.studio",
+    siteName: "Launch Live Studio",
+    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "launchlive.studio",
+    description: "Launch Live Studio is a full-service digital agency building websites, AI systems, branding, and automation for startups and growing businesses.",
+    creator: "@launchlivestudio",
+    images: ["/og-image.png"],
+  },
 }
 
 export const viewport: Viewport = {

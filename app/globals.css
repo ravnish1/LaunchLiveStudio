@@ -3,15 +3,22 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #faf8f6; /* Warm Off-White */
-  --foreground: #1a1a1a; /* Deep Charcoal */
-  --surface: #f2f0ed; /* Surface Background */
-  --surface-accent: #e8e4df; /* Surface Accent Background */
-  --accent: #ff5c00; /* Vibrant Agency Coral/Orange */
-  --accent-secondary: #2d3142; /* Premium Slate Accent */
+  --background: #faf8f6;
+  /* Warm Off-White */
+  --foreground: #1a1a1a;
+  /* Deep Charcoal */
+  --surface: #f2f0ed;
+  /* Surface Background */
+  --surface-accent: #e8e4df;
+  /* Surface Accent Background */
+  --accent: #ff5c00;
+  /* Vibrant Agency Coral/Orange */
+  --accent-secondary: #2d3142;
+  /* Premium Slate Accent */
   --text-muted: #6b7280;
-  --border: rgba(0, 0, 0, 0.08); /* Subtle Dark Border */
-  
+  --border: rgba(0, 0, 0, 0.08);
+  /* Subtle Dark Border */
+
   --font-serif: "Playfair Display", serif;
   --font-sans: "Inter", sans-serif;
 }
@@ -25,7 +32,7 @@
   --color-accent-secondary: var(--accent-secondary);
   --color-text-muted: var(--text-muted);
   --color-border-subtle: var(--border);
-  
+
   --font-serif: var(--font-serif);
   --font-sans: var(--font-sans);
 }
@@ -34,9 +41,10 @@
   * {
     @apply border-border-subtle;
   }
-  
+
   html {
-    scroll-behavior: initial; /* Managed by Lenis */
+    scroll-behavior: initial;
+    /* Managed by Lenis */
   }
 
   body {
@@ -44,7 +52,12 @@
     overflow-x: hidden;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-serif;
   }
 }
@@ -53,7 +66,7 @@
   .glass {
     @apply backdrop-blur-[20px] bg-background/60 border border-border-subtle;
   }
-  
+
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-foreground via-foreground to-accent;
   }
@@ -82,8 +95,13 @@
 
   /* Marquee animation */
   @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
   }
 
   .animate-marquee {
@@ -96,7 +114,8 @@
 }
 
 /* Lenis Recommended CSS */
-html.lenis, html.lenis body {
+html.lenis,
+html.lenis body {
   height: auto;
 }
 
@@ -153,16 +172,24 @@ html.lenis, html.lenis body {
 }
 
 @keyframes scrollDrop {
-  0%   { transform: translateY(-100%); }
-  50%  { transform: translateY(0%); }
-  100% { transform: translateY(100%); }
+  0% {
+    transform: translateY(-100%);
+  }
+
+  50% {
+    transform: translateY(0%);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
 }
 
 /* ── Hero Video ── */
 .hero-video-wrapper {
   position: relative;
   width: 100%;
-  max-width: 560px;
+  max-width: 450px;
   aspect-ratio: 9 / 11;
   border-radius: 24px;
   overflow: hidden;
@@ -174,11 +201,9 @@ html.lenis, html.lenis body {
 .hero-video-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(232, 83, 29, 0.08) 0%,
-    transparent 60%
-  );
+  background: linear-gradient(135deg,
+      rgba(232, 83, 29, 0.08) 0%,
+      transparent 60%);
   border-radius: 24px;
   pointer-events: none;
 }
@@ -195,8 +220,15 @@ html.lenis, html.lenis body {
 }
 
 @keyframes floatDot {
-  0%, 100% { transform: translateY(0px) scale(1); }
-  50%      { transform: translateY(-10px) scale(1.1); }
+
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+
+  50% {
+    transform: translateY(-10px) scale(1.1);
+  }
 }
 
 /* Responsive Mobile — Hero Video */
