@@ -27,7 +27,7 @@ export const CTABanner = () => {
               We take on a limited number of projects each month.<br /> Reach out — we respond within 24 hours.
             </p>
             <div className="flex flex-col md:flex-row justify-center items-center gap-4">
-              <Link href="/get-started" className="px-8 py-4 bg-white text-accent text-lg font-bold rounded-full hover:scale-105 active:scale-95 transition-all shadow-xl shadow-black/20">
+              <Link href="/book-a-call" className="px-8 py-4 bg-white text-accent text-lg font-bold rounded-full hover:scale-105 active:scale-95 transition-all shadow-xl shadow-black/20">
                 Start a Project &rarr;
               </Link>
               <a href="mailto:hello@launchlive.studio" className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white text-lg font-bold rounded-full transition-all border border-white/10">
