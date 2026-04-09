@@ -94,6 +94,7 @@ git clone <repository-url>
 cd launch-live-studio
 
 # Install dependencies (using pnpm recommended)
+npm install
 pnpm install
 
 # Start development server
