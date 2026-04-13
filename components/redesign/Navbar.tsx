@@ -42,9 +42,9 @@ export const Navbar = () => {
             <Image
               src="/logo.png"
               alt="Launch Live Studio"
-              width={38}
-              height={38}
-              className="rounded-lg shadow-sm border border-foreground/10 group-hover:scale-105 transition-transform duration-500"
+              width={40}
+              height={40}
+              className="group-hover:scale-110 transition-transform duration-500"
             />
             <span className="text-xl md:text-2xl font-serif font-bold tracking-tight text-foreground group-hover:text-accent transition-colors">
               launchlive.studio
