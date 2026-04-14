@@ -4,7 +4,7 @@ import React from 'react'
 import { Navbar } from '@/components/redesign/Navbar'
 import { CTABanner } from '@/components/redesign/CTABanner'
 import { Footer } from '@/components/redesign/Footer'
-import { Features } from '@/components/redesign/Features'
+import { ServicesShowcase } from '@/components/redesign/ServicesShowcase'
 import { ScrambleHeading } from '@/components/redesign/ScrambleHeading'
 import dynamic from 'next/dynamic'
 
@@ -25,7 +25,7 @@ export default function ServicesPage() {
         <Navbar />
 
         <main>
-          <Features />
+          <ServicesShowcase />
         </main>
 
         <CTABanner />

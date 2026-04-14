@@ -32,9 +32,9 @@ export const Navbar = () => {
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className={`pointer-events-auto flex items-center justify-between w-full max-w-[1100px] transition-all duration-500 ease-out rounded-full ${isScrolled
-            ? 'bg-background/60 backdrop-blur-2xl backdrop-saturate-150 border border-foreground/10 shadow-[0_8px_32px_rgba(0,0,0,0.08)] py-3 px-5 md:px-6'
-            : 'bg-background/20 backdrop-blur-lg backdrop-saturate-150 border border-foreground/5 shadow-sm py-4 px-5 md:px-8'
+          className={`pointer-events-auto flex items-center justify-between w-full max-w-[1100px] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] rounded-full py-4 px-5 md:px-8 origin-top ${isScrolled
+            ? 'bg-background/20 backdrop-blur-[40px] backdrop-saturate-[2.5] border border-foreground/10 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.18)] shadow-[inset_0_1px_2px_rgba(255,255,255,0.4),inset_0_-1px_1px_rgba(0,0,0,0.05)] ring-1 ring-white/10 md:scale-[0.98] translate-y-1'
+            : 'bg-background/10 backdrop-blur-lg backdrop-saturate-150 border border-foreground/5 shadow-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] scale-100 translate-y-0'
             }`}
         >
           {/* Logo */}

@@ -15,7 +15,7 @@ export const Hero = () => {
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center px-6 pt-20 overflow-hidden noise-bg">
+    <section className="relative min-h-screen flex items-center px-6 pt-32 pb-12 overflow-hidden noise-bg">
       {/* Ambient Background */}
       <div className="absolute inset-0 z-[-1]">
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[120px] animate-pulse" />

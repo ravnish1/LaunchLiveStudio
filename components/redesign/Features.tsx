@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import { Zap, Target, Palette, Box } from 'lucide-react'
 import { ScrambleHeading } from './ScrambleHeading'
 
-const features = [
+export const features = [
   {
     title: 'Website Development',
     description: 'Custom-built, conversion-optimised websites that load fast, rank high, and look exceptional.',

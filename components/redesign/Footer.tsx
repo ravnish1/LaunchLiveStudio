@@ -91,8 +91,8 @@ export const Footer = () => {
             © 2026 LAUNCH LIVE STUDIO. ALL RIGHTS RESERVED.
           </p>
           <div className="flex gap-8 text-xs text-text-muted tracking-widest uppercase">
-            <Link href="#" className="hover:text-accent">Privacy Policy</Link>
-            <Link href="#" className="hover:text-accent">Terms of Service</Link>
+            <Link href="/privacy" className="hover:text-accent">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-accent">Terms of Service</Link>
           </div>
         </div>
       </div>
