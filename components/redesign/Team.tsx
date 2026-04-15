@@ -32,14 +32,55 @@ const featuredWork = [
     image: 'https://images.unsplash.com/photo-1541167760496-1628856ab772?w=400&h=500&fit=crop',
     result: '$0 → $120k Revenue in 90 Days',
     slug: 'nova-roast'
-  },
+  }
 ]
 
-export const Team = () => {
+const ProjectRow = ({ member, i }: { member: any, i: number }) => {
+  const isEven = i % 2 === 0;
+
+  return (
+    <motion.div 
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className={`py-12 md:py-24 border-b border-border/20 last:border-0 flex flex-col gap-10 md:gap-16 lg:gap-24 items-center ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}
+    >
+      {/* Image Block */}
+      <div className="w-full md:w-1/2 relative aspect-[4/3] lg:aspect-[16/10] rounded-3xl overflow-hidden shadow-2xl border border-border-subtle group">
+         <img src={member.image} alt={member.name} className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-1000 ease-out" />
+         <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-colors duration-500 pointer-events-none" />
+      </div>
+
+      {/* Text Content Block */}
+      <div className="w-full md:w-1/2 flex flex-col justify-center">
+         <div className="flex items-center gap-4 mb-6">
+           <div className="h-px bg-accent w-8" />
+           <span className="text-xs md:text-sm font-bold tracking-[0.2em] text-accent uppercase">{member.category}</span>
+         </div>
+         
+         <h3 className="text-4xl lg:text-7xl font-serif text-foreground mb-6 leading-none">{member.name}</h3>
+         <p className="text-2xl md:text-3xl font-bold text-foreground mb-6 leading-tight">{member.tagline}</p>
+         <p className="text-text-muted text-lg md:text-xl leading-relaxed mb-10 max-w-xl">{member.desc}</p>
+         
+         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+           <div className="bg-surface-accent border border-border-subtle text-foreground font-bold px-6 py-3 rounded-full text-sm">
+             <span className="text-text-muted mr-2">Result:</span> {member.result}
+           </div>
+           <Link href={`/work/${member.slug}`} className="text-sm font-bold uppercase tracking-widest text-foreground hover:text-accent transition-all flex items-center gap-2 group/btn">
+             View Case Study <span className="text-accent group-hover/btn:translate-x-2 transition-transform duration-300">→</span>
+           </Link>
+         </div>
+      </div>
+    </motion.div>
+  )
+}
+
+export const Team = ({ titleContainerClassName = '' }: { titleContainerClassName?: string }) => {
   return (
     <section className="py-12 md:py-16 px-6 bg-surface noise-bg">
       <div className="max-w-[1280px] mx-auto">
-        <div className="mb-12 text-center md:text-left flex flex-col md:flex-row justify-between items-center md:items-end gap-6">
+        <div className={`mb-12 text-center md:text-left flex flex-col md:flex-row justify-between items-center md:items-end gap-6 ${titleContainerClassName}`}>
           <div>
 
             <ScrambleHeading text="Projects we're" as="h2" className="text-5xl md:text-7xl font-serif mt-4" staggerMs={50} />
@@ -51,36 +92,9 @@ export const Team = () => {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="flex flex-col mt-8 md:mt-16">
           {featuredWork.map((member, i) => (
-            <motion.div
-              key={member.name}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="group cursor-pointer flex flex-col h-full"
-            >
-              <div className="relative aspect-[16/9] lg:aspect-[4/3] overflow-hidden rounded-2xl mb-4 shadow-sm group-hover:shadow-xl transition-all duration-500">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-full object-cover transition-all duration-700 grayscale group-hover:grayscale-0 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-accent font-bold px-3 py-1 rounded-full text-xs">
-                  {member.result}
-                </div>
-              </div>
-              <p className="text-accent tracking-widest uppercase text-xs mb-1 font-bold">{member.category}</p>
-              <h3 className="text-xl md:text-2xl font-serif group-hover:text-accent transition-colors mb-1">{member.name}</h3>
-              <p className="font-semibold text-foreground mb-1 text-sm">{member.tagline}</p>
-              <p className="text-text-muted text-sm flex-grow mb-4 line-clamp-3">{member.desc}</p>
-
-              <Link href={`/work/${member.slug}`} className="text-sm font-bold uppercase tracking-widest text-foreground/80 hover:text-accent flex items-center gap-2 group-hover:gap-4 transition-all mt-auto">
-                View Case Study <span className="text-accent underline underline-offset-4 decoration-accent/30 group-hover:decoration-accent transition-all">→</span>
-              </Link>
-            </motion.div>
+             <ProjectRow key={member.name} member={member} i={i} />
           ))}
         </div>
       </div>

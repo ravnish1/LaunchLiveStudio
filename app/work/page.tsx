@@ -23,9 +23,8 @@ export default function WorkPage() {
       <div className="relative min-h-screen bg-background text-foreground cursor-none">
         <CustomCursor />
         <Navbar />
-
-        <main>
-          <Team />
+        <main className="pt-0">
+          <Team titleContainerClassName="pt-8 md:pt-10" />
         </main>
 
         <CTABanner />

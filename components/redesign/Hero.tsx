@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { ScrambleText } from './ScrambleText'
+import { HeroVisual } from './HeroVisual'
 
 export const Hero = () => {
   const [scrollY, setScrollY] = useState(0)
@@ -51,20 +52,9 @@ export const Hero = () => {
             </h1>
           </motion.div>
 
-          {/* Mobile Video — shows below headline on small screens */}
-          <div className="block lg:hidden w-full">
-            <div className="hero-video-wrapper">
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                src="https://assets.mixkit.co/videos/1222/1222-720.mp4"
-                className="w-full h-full object-cover rounded-2xl"
-              />
-              <div className="hero-video-overlay" />
-              <div className="accent-dot" />
-            </div>
+          {/* Mobile Visualization — shows below headline on small screens */}
+          <div className="block lg:hidden w-full mt-4">
+             <HeroVisual />
           </div>
 
           <motion.div
@@ -89,20 +79,9 @@ export const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Right Column — Video (Desktop only) */}
-        <div className="hidden lg:flex items-center justify-center pl-10">
-          <div className="hero-video-wrapper">
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              src="https://assets.mixkit.co/videos/1222/1222-720.mp4"
-              className="w-full h-full object-cover rounded-3xl"
-            />
-            <div className="hero-video-overlay" />
-            <div className="accent-dot" />
-          </div>
+        {/* Right Column — Visualization (Desktop only) */}
+        <div className="hidden lg:flex items-center justify-center pl-10 w-full h-full">
+           <HeroVisual />
         </div>
       </div>
 
