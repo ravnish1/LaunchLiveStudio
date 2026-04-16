@@ -45,15 +45,15 @@ export const Footer = () => {
               We Build. We Brand. We Launch.
             </p>
             <div className="flex flex-wrap items-center gap-6 text-text-muted mt-2">
-              <Link href="#" className="hover:text-accent transition-transform hover:-translate-y-1" aria-label="Twitter/X">
+              <a href="https://x.com/launchlivestdio" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-transform hover:-translate-y-1" aria-label="Twitter/X">
                 <Twitter className="w-5 h-5" />
-              </Link>
-              <Link href="#" className="hover:text-accent transition-transform hover:-translate-y-1" aria-label="LinkedIn">
+              </a>
+              <a href="https://www.linkedin.com/company/launch-live-studio/about/" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-transform hover:-translate-y-1" aria-label="LinkedIn">
                 <Linkedin className="w-5 h-5" />
-              </Link>
-              <Link href="#" className="hover:text-accent transition-transform hover:-translate-y-1" aria-label="Instagram">
+              </a>
+              <a href="https://www.instagram.com/launchlive.studio/" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-transform hover:-translate-y-1" aria-label="Instagram">
                 <Instagram className="w-5 h-5" />
-              </Link>
+              </a>
             </div>
           </div>
 

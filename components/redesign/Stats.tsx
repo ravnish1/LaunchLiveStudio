@@ -47,8 +47,8 @@ export const Stats = () => {
           </div>
 
           <p className="text-xl text-text-muted leading-relaxed mb-6 max-w-lg">
-            We started Launch Live Studio to fix what most agencies get wrong — slow delivery, over-promising, and unclear communication.
-            <br className="hidden md:block"/><br className="hidden md:block"/>
+            We started Launch Live Studio to fix what most agencies get wrong - slow delivery, over-promising, and unclear communication.
+            <br className="hidden md:block" /><br className="hidden md:block" />
             We move fast, build right, and stay transparent.
           </p>
           <h3 className="text-2xl font-serif italic text-foreground leading-snug">
@@ -58,7 +58,7 @@ export const Stats = () => {
 
         <div className="flex flex-col justify-center border-l-0 lg:border-l border-foreground/10 pl-0 lg:pl-12 mt-12 lg:mt-0">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            <Counter value={12} suffix="+" label="Products Launched" />
+            <Counter value={6} suffix="+" label="Products Launched" />
             <Counter value={3} suffix="" label="Client Countries" />
             <Counter value={100} suffix="%" label="On-Time Delivery Rate" />
           </div>

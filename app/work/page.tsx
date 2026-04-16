@@ -4,7 +4,7 @@ import React from 'react'
 import { Navbar } from '@/components/redesign/Navbar'
 import { CTABanner } from '@/components/redesign/CTABanner'
 import { Footer } from '@/components/redesign/Footer'
-import { Team } from '@/components/redesign/Team'
+import { OurWork } from '@/components/redesign/OurWork'
 import { ScrambleHeading } from '@/components/redesign/ScrambleHeading'
 import dynamic from 'next/dynamic'
 
@@ -24,7 +24,7 @@ export default function WorkPage() {
         <CustomCursor />
         <Navbar />
         <main className="pt-0">
-          <Team titleContainerClassName="pt-8 md:pt-10" />
+          <OurWork titleContainerClassName="pt-8 md:pt-10" />
         </main>
 
         <CTABanner />
