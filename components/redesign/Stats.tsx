@@ -42,8 +42,8 @@ export const Stats = () => {
         <div>
           <ScrambleHeading text="WE ARE" as="span" className="text-sm font-medium tracking-widest text-accent uppercase" staggerMs={30} scrambleFrames={4} />
           <div className="mt-4 mb-8 space-y-1">
-            <ScrambleHeading text="A lean team of builders," as="h2" className="text-4xl md:text-5xl lg:text-[3.5rem] font-serif leading-[1.1] tracking-tight" staggerMs={50} />
-            <ScrambleHeading text="designers, and AI engineers." as="h2" className="text-4xl md:text-5xl lg:text-[3.5rem] font-serif underline decoration-accent underline-offset-8 decoration-1 leading-[1.1] tracking-tight" staggerMs={50} />
+            <ScrambleHeading text="A lean team of builders," as="h2" className="text-[5.8vw] sm:text-4xl md:text-5xl lg:text-[3.5rem] font-serif leading-[1.1] tracking-tight whitespace-nowrap" staggerMs={50} />
+            <ScrambleHeading text="designers, and AI engineers." as="h2" className="text-[5.8vw] sm:text-4xl md:text-5xl lg:text-[3.5rem] font-serif underline decoration-accent underline-offset-8 decoration-1 leading-[1.1] tracking-tight whitespace-nowrap" staggerMs={50} />
           </div>
 
           <p className="text-xl text-text-muted leading-relaxed mb-6 max-w-lg">
