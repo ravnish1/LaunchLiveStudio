@@ -3,9 +3,10 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { ScrambleHeading } from './ScrambleHeading'
-import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 export const CTABanner = () => {
+  const router = useRouter();
   return (
     <section className="py-20 px-6 overflow-hidden">
       <div className="max-w-[1280px] mx-auto w-full">
@@ -27,9 +28,9 @@ export const CTABanner = () => {
               We take on a limited number of projects each month.<br className="hidden md:block" /> Reach out — we respond within 24 hours.
             </p>
             <div className="flex flex-col md:flex-row justify-center items-center gap-4 w-full">
-              <Link href="/book-a-call" className="w-full md:w-auto px-8 py-4 bg-white text-accent text-lg font-bold rounded-full hover:scale-105 active:scale-95 transition-all shadow-xl shadow-black/20 text-center">
+              <button onClick={() => router.push('/book-a-call')} className="w-full md:w-auto px-8 py-4 bg-white text-accent text-lg font-bold rounded-full hover:scale-105 active:scale-95 transition-all shadow-xl shadow-black/20 text-center">
                 Start a Project &rarr;
-              </Link>
+              </button>
               <a href="mailto:hello@launchlive.studio" className="w-full md:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 text-white text-lg font-bold rounded-full transition-all border border-white/10 text-center break-all">
                 hello@launchlive.studio
               </a>
