@@ -69,7 +69,7 @@ export const Hero = () => {
               cut through the noise and lead.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 w-full">
-              <Link href="/get-started" className="w-full sm:w-auto px-8 py-4 bg-accent text-white font-bold rounded-full hover:scale-105 active:scale-95 transition-all shadow-lg shadow-accent/20 text-center inline-block">
+              <Link href="/services" className="w-full sm:w-auto px-8 py-4 bg-accent text-white font-bold rounded-full hover:scale-105 active:scale-95 transition-all shadow-lg shadow-accent/20 text-center inline-block">
                 Start a Project &rarr;
               </Link>
               <Link href="/work" className="w-full sm:w-auto px-8 py-4 border border-foreground/10 hover:border-foreground/30 text-foreground font-bold rounded-full transition-all text-center inline-block">
