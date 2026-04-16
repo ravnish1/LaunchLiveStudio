@@ -12,9 +12,9 @@ export const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
       gestureOrientation: 'vertical',
       smoothWheel: true,
       wheelMultiplier: 1.1, // Slightly increased for more "airiness"
-      touchMultiplier: 2.5, // Increased for mobile fluidity
+      touchMultiplier: 1.6, // Reduced from 2.5 for more natural mobile feel
       infinite: false,
-      lerp: 0.1, // Added explicit lerp for snappier tracking
+      lerp: 0.08, // Slightly softer lerp for smoother tracking
     })
 
     function raf(time: number) {

@@ -58,8 +58,7 @@
 
   section {
     position: relative;
-    /* Prevent jitter on 120Hz monitors */
-    will-change: transform, opacity;
+    /* Optimized for modern mobile browsers */
     backface-visibility: hidden;
     transform: translateZ(0);
   }
@@ -76,7 +75,7 @@
 
 @layer utilities {
   .glass {
-    @apply backdrop-blur-[20px] bg-background/60 border border-border-subtle;
+    @apply backdrop-blur-[12px] md:backdrop-blur-[20px] bg-background/60 border border-border-subtle;
   }
 
   .text-gradient {
