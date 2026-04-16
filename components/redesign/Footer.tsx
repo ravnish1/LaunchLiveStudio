@@ -81,7 +81,6 @@ export const Footer = () => {
               <li><a href="mailto:hello@launchlive.studio" className="hover:text-accent transition-colors">hello@launchlive.studio</a></li>
               <li><Link href="/book-a-call" className="hover:text-accent transition-colors underline underline-offset-4">Schedule a call &rarr;</Link></li>
               <li>Gurugram, India 🇮🇳</li>
-              <li>Working globally.</li>
             </ul>
           </div>
         </div>

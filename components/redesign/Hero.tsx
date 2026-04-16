@@ -54,7 +54,7 @@ export const Hero = () => {
 
           {/* Mobile Visualization — shows below headline on small screens */}
           <div className="block lg:hidden w-full mt-4">
-             <HeroVisual />
+            <HeroVisual />
           </div>
 
           <motion.div
@@ -81,7 +81,7 @@ export const Hero = () => {
 
         {/* Right Column — Visualization (Desktop only) */}
         <div className="hidden lg:flex items-center justify-center pl-10 w-full h-full">
-           <HeroVisual />
+          <HeroVisual />
         </div>
       </div>
 

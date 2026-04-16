@@ -38,18 +38,19 @@ export default function Home() {
       gsap.fromTo(
         section.children,
         {
-          y: 40,
+          y: 20, // Reduced from 40 for more subtle movement
           opacity: 0
         },
         {
           y: 0,
           opacity: 1,
-          duration: 0.8,
-          stagger: 0.15,
-          ease: 'power3.out',
+          duration: 1, // Increased duration for smoother fade
+          stagger: 0.1,
+          ease: 'power2.out', // Slightly smoother ease
+          force3D: true, // GPU acceleration
           scrollTrigger: {
             trigger: section,
-            start: 'top 85%',
+            start: 'top 90%',
             toggleActions: 'play none none none',
           },
         }

@@ -50,6 +50,18 @@
   body {
     @apply bg-background text-foreground antialiased font-sans selection:bg-accent selection:text-background;
     overflow-x: hidden;
+    /* GPU Acceleration Hints */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  section {
+    position: relative;
+    /* Prevent jitter on 120Hz monitors */
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    transform: translateZ(0);
   }
 
   h1,
