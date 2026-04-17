@@ -60,7 +60,7 @@ export const CustomCursor = () => {
       }}
       animate={{
         scale: isHovered ? 4 : 1,
-        opacity: isVisible ? 0.8 : 0,
+        opacity: isVisible ? 0.55 : 0,
       }}
       transition={{ type: 'spring', stiffness: 250, damping: 20 }}
     />

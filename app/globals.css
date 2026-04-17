@@ -40,6 +40,7 @@
 @layer base {
   * {
     @apply border-border-subtle;
+    cursor: none !important;
   }
 
   html {
