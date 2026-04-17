@@ -51,6 +51,17 @@
   body {
     @apply bg-background text-foreground antialiased font-sans selection:bg-accent selection:text-background;
     overflow-x: hidden;
+    /* GPU Acceleration Hints */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  section {
+    position: relative;
+    /* Optimized for modern mobile browsers */
+    backface-visibility: hidden;
+    transform: translateZ(0);
   }
 
   h1,
@@ -65,7 +76,7 @@
 
 @layer utilities {
   .glass {
-    @apply backdrop-blur-[20px] bg-background/60 border border-border-subtle;
+    @apply backdrop-blur-[12px] md:backdrop-blur-[20px] bg-background/60 border border-border-subtle;
   }
 
   .text-gradient {
