@@ -68,7 +68,7 @@ export const HeroVisual = () => {
   }, [])
 
   return (
-    <div className="relative w-full max-w-[450px] aspect-[9/11] lg:aspect-[4/5] rounded-3xl overflow-hidden glass border-border shadow-[0_32px_80px_rgba(0,0,0,0.14)] flex flex-col mx-auto lg:mr-0 z-20 hover:scale-[1.02] transition-transform duration-500">
+    <div className="relative   w-full max-w-[450px] aspect-[9/11] lg:aspect-[4/5] rounded-3xl overflow-hidden border-border shadow-[0_32px_80px_rgba(0,0,0,0.14)] flex flex-col mx-auto lg:mr-0 z-20 scale-[1.02] sm:scale-[1] transition-transform duration-500">
 
       <AnimatePresence mode="popLayout">
         {phase !== 'showcase' && (
@@ -82,7 +82,7 @@ export const HeroVisual = () => {
           >
             {/* Background Glow */}
             <div className="absolute inset-0 z-[-1] overflow-hidden pointer-events-none">
-              <div className="absolute top-[-10%] right-[-10%] w-64 h-64 bg-accent/10 rounded-full blur-[80px]" />
+              <div className="absolute top-[-10%] right-[-10%] w-64 h-64 rounded-full blur-[80px]" />
               <div className="absolute bottom-[-10%] left-[-10%] w-64 h-64 bg-foreground/5 rounded-full blur-[80px]" />
             </div>
 

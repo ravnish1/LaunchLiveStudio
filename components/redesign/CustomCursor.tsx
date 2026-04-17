@@ -66,11 +66,8 @@ export const CustomCursor = memo(() => {
         scale: isHovered ? 4 : 1,
       }}
       animate={{
-        opacity: isVisible ? 0.9 : 0,
-      }}
-      transition={{ 
-        scale: { type: 'spring', stiffness: 300, damping: 20 },
-        opacity: { duration: 0.2 }
+        scale: isHovered ? 4 : 1,
+        opacity: isVisible ? 0.55 : 0,
       }}
     />
   )

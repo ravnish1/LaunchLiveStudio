@@ -24,7 +24,7 @@ export const Hero = () => {
       </div>
 
       {/* 2-Column Grid Layout */}
-      <div className="max-w-[1280px] w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 z-10 items-center">
+      <div className="max-w-[1300px] w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 z-10 items-center">
 
         {/* Left Column — Text Content */}
         <div className="flex flex-col items-start gap-8">
@@ -52,11 +52,6 @@ export const Hero = () => {
             </h1>
           </motion.div>
 
-          {/* Mobile Visualization — shows below headline on small screens */}
-          <div className="block lg:hidden w-full mt-4">
-            <HeroVisual />
-          </div>
-
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -80,8 +75,8 @@ export const Hero = () => {
         </div>
 
         {/* Right Column — Visualization (Desktop only) */}
-        <div className="hidden lg:flex items-center justify-center pl-10 w-full h-full">
-          <HeroVisual />
+        <div className="flex items-center justify-center sm:w-full border-2 min-[518px]:border-none border-black sm:h-full">
+           <HeroVisual />
         </div>
       </div>
 
