@@ -134,10 +134,9 @@ export default function BookACallPage() {
                 <div className="absolute inset-0 bg-accent/5 pointer-events-none" />
                 <div className="relative z-10 w-full h-full min-h-[650px]">
                   <iframe
-                    src="https://calendly.com/launchlivestudio/30min?hide_gdpr_banner=1&hide_navigation=1"
+                    src="https://calendly.com/launchlivestudio/30min?hide_gdpr_banner=1&hide_navigation=1&primary_color=ff5c00&background_color=f2f0ed&text_color=1a1a1a"
                     width="100%"
                     height="100%"
-                    frameBorder="0"
                     className="absolute inset-0"
                   />
                 </div>

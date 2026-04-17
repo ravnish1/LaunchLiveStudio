@@ -43,6 +43,14 @@
     cursor: none !important;
   }
 
+  input, textarea, select {
+    cursor: text !important;
+  }
+
+  iframe {
+    cursor: auto !important;
+  }
+
   html {
     scroll-behavior: initial;
     /* Managed by Lenis */
@@ -249,5 +257,32 @@ html.lenis body {
     aspect-ratio: 16 / 9;
     border-radius: 16px;
     max-width: 100%;
+  }
+}
+
+/* ── Premium Scrollbars ── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Hid the scrolling path completely */
+}
+
+::-webkit-scrollbar-thumb {
+  /* Decreased size and 50% transparent opacity */
+  background: color-mix(in srgb, var(--foreground) 30%, transparent); 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--accent) 80%, transparent);
+}
+
+@supports selector(::-webkit-scrollbar) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--foreground) 30%, transparent) transparent;
   }
 }
