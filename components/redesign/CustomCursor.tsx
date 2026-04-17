@@ -11,8 +11,9 @@ export const CustomCursor = () => {
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
 
-  const springX = useSpring(mouseX, { stiffness: 500, damping: 50 })
-  const springY = useSpring(mouseY, { stiffness: 500, damping: 50 })
+  const springConfig = { stiffness: 150, damping: 25, mass: 0.5 }
+  const springX = useSpring(mouseX, springConfig)
+  const springY = useSpring(mouseY, springConfig)
 
   useEffect(() => {
     setMounted(true)
@@ -62,7 +63,7 @@ export const CustomCursor = () => {
         scale: isHovered ? 4 : 1,
         opacity: isVisible ? 0.55 : 0,
       }}
-      transition={{ type: 'spring', stiffness: 250, damping: 20 }}
+      transition={{ type: 'tween', duration: 0.25, ease: 'easeOut' }}
     />
   )
 }
