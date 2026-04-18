@@ -68,7 +68,7 @@ export const HeroVisual = () => {
   }, [])
 
   return (
-    <div className="relative   w-full max-w-[450px] aspect-[9/11] lg:aspect-[4/5] rounded-3xl overflow-hidden border-border shadow-[0_32px_80px_rgba(0,0,0,0.14)] flex flex-col mx-auto lg:mr-0 z-20 scale-[1.02] sm:scale-[1] transition-transform duration-500">
+    <div className="relative w-full max-w-[450px] aspect-[9/11] min-h-[460px] lg:aspect-[4/5] lg:min-h-0 rounded-3xl overflow-hidden border-border shadow-[0_32px_80px_rgba(0,0,0,0.14)] flex flex-col mx-auto lg:mr-0 z-20 scale-[1.02] sm:scale-[1] transition-transform duration-500">
 
       <AnimatePresence mode="popLayout">
         {phase !== 'showcase' && (
@@ -81,7 +81,7 @@ export const HeroVisual = () => {
             className="absolute inset-0 p-6 flex flex-col w-full h-full z-10"
           >
             {/* Background Glow */}
-            <div className="absolute inset-0 z-[-1] overflow-hidden pointer-events-none">
+            <div className="absolute inset-0 z-[-1] overflow-hidden">
               <div className="absolute top-[-10%] right-[-10%] w-64 h-64 rounded-full blur-[80px]" />
               <div className="absolute bottom-[-10%] left-[-10%] w-64 h-64 bg-foreground/5 rounded-full blur-[80px]" />
             </div>
@@ -133,7 +133,7 @@ export const HeroVisual = () => {
 
             {/* Footer Sync Area */}
             <div className="mt-6 h-16 w-full bg-background/40 rounded-2xl border border-border/50 flex flex-col justify-center px-6 relative overflow-hidden backdrop-blur-md shrink-0">
-              <motion.div animate={{ rotate: 360 }} transition={{ duration: 20, repeat: Infinity, ease: "linear" }} className="absolute -left-16 w-32 h-32 border border-accent/10 rounded-full pointer-events-none" />
+              <motion.div animate={{ rotate: 360 }} transition={{ duration: 20, repeat: Infinity, ease: "linear" }} className="absolute -left-16 w-32 h-32 border border-accent/10 rounded-full" />
 
               <div className="flex items-center justify-between z-10 w-full">
                 <span className="text-[10px] font-bold tracking-widest uppercase text-text-muted">Status: {phase}</span>
@@ -159,7 +159,7 @@ export const HeroVisual = () => {
             animate={{ opacity: 1, filter: 'blur(0px)', scale: 1, rotateX: 0 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute inset-0 flex flex-col p-6 w-full h-full glass bg-background/60 z-30 transform-gpu"
+            className="absolute inset-0 flex flex-col p-6 w-full justify-between h-full  glass  z-30 transform-gpu"
           >
             {/* Showcase Header */}
             <div className="flex justify-between items-center mb-6 shrink-0">
@@ -177,12 +177,15 @@ export const HeroVisual = () => {
               </div>
             </div>
 
-            <div className="flex gap-2 mb-4 shrink-0 overflow-hidden">
+            <div className="flex gap-2 mb-4 shrink-0 overflow-x-scroll scrollbar-hide-custom px-4">
               <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }} className="bg-accent/10 border border-accent/20 px-3 py-1 rounded-full text-accent text-[10px] uppercase font-bold tracking-widest whitespace-nowrap">
                 Web Platform Built
               </motion.div>
               <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 }} className="bg-accent/10 border border-accent/20 px-3 py-1 rounded-full text-accent text-[10px] uppercase font-bold tracking-widest whitespace-nowrap">
                 AI Engine Online
+              </motion.div>
+              <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 }} className="bg-accent/10 border border-accent/20 px-3 py-1 rounded-full text-accent text-[10px] uppercase font-bold tracking-widest whitespace-nowrap">
+                META Ads Live
               </motion.div>
             </div>
 
@@ -190,12 +193,12 @@ export const HeroVisual = () => {
             <div className="grid grid-cols-2 gap-4 mb-4 shrink-0">
               <motion.div
                 initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.5 }}
-                className="bg-surface/80 border border-border/80 p-4 rounded-2xl shadow-sm backdrop-blur-sm flex flex-col justify-center"
+                className="bg-surface/80 p-4 rounded-2xl shadow-sm backdrop-blur-sm flex flex-col justify-center"
               >
                 <p className="text-text-muted text-[9px] uppercase font-bold tracking-widest mb-1">Client Rating</p>
                 <div className="flex gap-1 text-yellow-500 mt-1">
                   {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
                   ))}
                 </div>
               </motion.div>
@@ -210,56 +213,57 @@ export const HeroVisual = () => {
 
             {/* Main Visual Area - Client Satisfaction Chat */}
             <motion.div
-              initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.7 }}
-              className="flex-1 bg-surface/80 border border-border/80 rounded-2xl relative overflow-hidden flex flex-col justify-end p-4 backdrop-blur-sm gap-3 pb-6"
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.7 }}
+              className="flex-1 p-2 bg-black/10 rounded-2xl relative max-h-46 overflow-y-auto scrollbar-hide-custom  flex flex-col backdrop-blur-sm"
             >
               {/* Agency Message */}
-              <motion.div 
-                initial={{ opacity: 0, x: -20 }} 
-                animate={{ opacity: 1, x: 0 }} 
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1, type: "spring" }}
-                className="self-start max-w-[88%] bg-accent/10 border border-accent/20 rounded-2xl rounded-tl-sm p-3 shadow-sm"
+                className=" self-start max-w-[88%] bg-accent/10 border border-accent/20 rounded-2xl rounded-tl-sm p-3 shadow-sm"
               >
-                 <p className="text-[10px] font-bold text-accent mb-1 flex items-center gap-1.5 uppercase tracking-wide">
-                   <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" /> Launch Live Studio
-                 </p>
-                 <p className="text-xs text-foreground/90 leading-relaxed font-medium">
-                   Deployment complete! Your custom high-performance Web & AI platform is now live across all environments. 🚀
-                 </p>
+                <p className="text-[2vh] sm:text-[1.28vh] md:text-[1.5vh] lg:text-[1.8vh] font-bold text-accent mb-1 flex items-center gap-1.5 uppercase tracking-wide">
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" /> Launch Live Studio
+                </p>
+                <p className="text-xs text-foreground/90 leading-relaxed font-semibold">
+                  Deployment complete! Your custom high-performance <b>Web & AI platform</b> is now live across all environments. 🚀
+                </p>
               </motion.div>
 
               {/* Client Message */}
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.8, y: 15 }} 
-                animate={{ opacity: 1, scale: 1, y: 0 }} 
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 2.2, type: "spring", stiffness: 200, damping: 20 }}
                 className="self-end max-w-[85%] bg-foreground text-background rounded-2xl rounded-tr-sm p-3.5 shadow-md mt-2 relative"
               >
-                 <p className="text-[10px] font-bold text-background/60 mb-1 uppercase tracking-wider">
-                   Happy Client
-                 </p>
-                 <p className="text-sm font-semibold leading-relaxed">
-                   This is incredible. The design is absolutely stunning and the automations are flawless! Beyond our expectations! 🎉💯
-                 </p>
-                 {/* Floating heart reaction */}
-                 <motion.div 
-                   initial={{ scale: 0, opacity: 0 }}
-                   animate={{ scale: 1, opacity: 1 }}
-                   transition={{ delay: 3, type: "spring", bounce: 0.5 }}
-                   className="absolute -bottom-2 -left-3 bg-background text-foreground text-xs rounded-full p-1 shadow-md border border-border flex items-center justify-center w-6 h-6"
-                 >
-                   ❤️
-                 </motion.div>
+                <p className="text-[10px] font-bold text-background/60 mb-1 uppercase tracking-wider">
+                  Happy Client
+                </p>
+                <p className="text-[2vh] sm:text-[1.28vh] md:text-[1.5vh] lg:text-[1.8vh] font-semibold leading-relaxed">
+                  This is incredible. The design is absolutely stunning and the automations are flawless! Beyond our expectations! 🎉💯
+                </p>
+                {/* Floating heart reaction */}
+                <motion.div
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ delay: 3, type: "spring", bounce: 0.5 }}
+                  className="absolute -bottom-2 -left-3 bg-background text-foreground text-xs rounded-full p-1 shadow-md border border-border flex items-center justify-center w-6 h-6"
+                >
+                  ❤️
+                </motion.div>
               </motion.div>
             </motion.div>
 
             {/* Footer Button */}
             <motion.div
               initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.8 }}
-              className="mt-4 w-full h-12 shrink-0 bg-foreground text-background rounded-xl flex items-center justify-center cursor-pointer shadow-lg hover:shadow-xl transition-shadow"
-              whileHover={{ scale: 1.02 }}
+              className="mt-4 w-full h-12 shrink-0 bg-foreground text-background rounded-xl flex items-center justify-center shadow-lg transition-all duration-300"
             >
-              <span className="font-bold text-xs tracking-[0.2em] uppercase">Project Successfully Launched</span>
+              <span className="font-bold text-[1.8vh] md:text-[1.5vh] lg:text-[1.8vh] tracking-[0.1rem] text-nowrap uppercase">Project Successfully Launched</span>
             </motion.div>
           </motion.div>
         )}
