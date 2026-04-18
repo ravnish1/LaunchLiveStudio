@@ -105,6 +105,15 @@
     mask-image: radial-gradient(circle at center, black, transparent);
   }
 
+  /* Custom Scrollbar Hiding */
+  .scrollbar-hide-custom::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide-custom {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
   /* Marquee animation */
   @keyframes marquee {
     from {

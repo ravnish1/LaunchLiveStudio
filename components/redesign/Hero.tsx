@@ -16,11 +16,11 @@ export const Hero = () => {
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center px-6 pt-32 pb-12 overflow-hidden noise-bg">
+    <section className="relative min-h-[100dvh] flex flex-col justify-center px-6 pt-32 pb-24 noise-bg">
       {/* Ambient Background */}
-      <div className="absolute inset-0 z-[-1]">
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[120px] animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-foreground/5 rounded-full blur-[100px]" />
+      <div className="absolute inset-0 z-[-1] overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 -left-[10%] md:left-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-accent/10 rounded-full blur-[120px] animate-pulse" />
+        <div className="absolute bottom-1/4 -right-[10%] md:right-1/4 w-[250px] md:w-[400px] h-[250px] md:h-[400px] bg-foreground/5 rounded-full blur-[100px]" />
       </div>
 
       {/* 2-Column Grid Layout */}
@@ -75,8 +75,8 @@ export const Hero = () => {
         </div>
 
         {/* Right Column — Visualization (Desktop only) */}
-        <div className="flex items-center justify-center sm:w-full border-2 min-[518px]:border-none border-black sm:h-full">
-           <HeroVisual />
+        <div className="flex items-center justify-center sm:w-full border-2 min-[418px]:border-none border-black sm:h-full">
+          <HeroVisual />
         </div>
       </div>
 

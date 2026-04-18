@@ -68,7 +68,7 @@ export const HeroVisual = () => {
   }, [])
 
   return (
-    <div className="relative   w-full max-w-[450px] aspect-[9/11] lg:aspect-[4/5] rounded-3xl overflow-hidden border-border shadow-[0_32px_80px_rgba(0,0,0,0.14)] flex flex-col mx-auto lg:mr-0 z-20 scale-[1.02] sm:scale-[1] transition-transform duration-500">
+    <div className="relative w-full max-w-[450px] aspect-[9/11] min-h-[460px] lg:aspect-[4/5] lg:min-h-0 rounded-3xl overflow-hidden border-border shadow-[0_32px_80px_rgba(0,0,0,0.14)] flex flex-col mx-auto lg:mr-0 z-20 scale-[1.02] sm:scale-[1] transition-transform duration-500">
 
       <AnimatePresence mode="popLayout">
         {phase !== 'showcase' && (
@@ -81,7 +81,7 @@ export const HeroVisual = () => {
             className="absolute inset-0 p-6 flex flex-col w-full h-full z-10"
           >
             {/* Background Glow */}
-            <div className="absolute inset-0 z-[-1] overflow-hidden pointer-events-none">
+            <div className="absolute inset-0 z-[-1] overflow-hidden">
               <div className="absolute top-[-10%] right-[-10%] w-64 h-64 rounded-full blur-[80px]" />
               <div className="absolute bottom-[-10%] left-[-10%] w-64 h-64 bg-foreground/5 rounded-full blur-[80px]" />
             </div>
@@ -133,7 +133,7 @@ export const HeroVisual = () => {
 
             {/* Footer Sync Area */}
             <div className="mt-6 h-16 w-full bg-background/40 rounded-2xl border border-border/50 flex flex-col justify-center px-6 relative overflow-hidden backdrop-blur-md shrink-0">
-              <motion.div animate={{ rotate: 360 }} transition={{ duration: 20, repeat: Infinity, ease: "linear" }} className="absolute -left-16 w-32 h-32 border border-accent/10 rounded-full pointer-events-none" />
+              <motion.div animate={{ rotate: 360 }} transition={{ duration: 20, repeat: Infinity, ease: "linear" }} className="absolute -left-16 w-32 h-32 border border-accent/10 rounded-full" />
 
               <div className="flex items-center justify-between z-10 w-full">
                 <span className="text-[10px] font-bold tracking-widest uppercase text-text-muted">Status: {phase}</span>
@@ -184,6 +184,9 @@ export const HeroVisual = () => {
               <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 }} className="bg-accent/10 border border-accent/20 px-2.5 py-1 rounded-full text-accent text-[8px] md:text-[10px] uppercase font-bold tracking-widest whitespace-nowrap">
                 AI Engine Online
               </motion.div>
+              <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 }} className="bg-accent/10 border border-accent/20 px-3 py-1 rounded-full text-accent text-[10px] uppercase font-bold tracking-widest whitespace-nowrap">
+                META Ads Live
+              </motion.div>
             </div>
 
             {/* Metric Cards */}
@@ -214,9 +217,9 @@ export const HeroVisual = () => {
               className="flex-1 bg-surface/80 border border-border/80 rounded-xl md:rounded-2xl relative overflow-hidden flex flex-col justify-end p-3 md:p-4 backdrop-blur-sm gap-2 md:gap-3 pb-4 md:pb-6"
             >
               {/* Agency Message */}
-              <motion.div 
-                initial={{ opacity: 0, x: -20 }} 
-                animate={{ opacity: 1, x: 0 }} 
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1, type: "spring" }}
                 className="self-start max-w-[90%] md:max-w-[88%] bg-accent/10 border border-accent/20 rounded-xl md:rounded-2xl rounded-tl-sm p-2.5 md:p-3 shadow-sm"
               >
@@ -229,9 +232,9 @@ export const HeroVisual = () => {
               </motion.div>
 
               {/* Client Message */}
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.8, y: 15 }} 
-                animate={{ opacity: 1, scale: 1, y: 0 }} 
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 2.2, type: "spring", stiffness: 200, damping: 20 }}
                 className="self-end max-w-[88%] md:max-w-[85%] bg-foreground text-background rounded-xl md:rounded-2xl rounded-tr-sm p-3 md:p-3.5 shadow-md mt-1 relative"
               >
