@@ -6,6 +6,11 @@ import { Quote } from 'lucide-react'
 
 const testimonials = [
   {
+    quote: "The Launch Live Studio team is elite. They delivered our entire custom storefront for Raptile Studio a week before the deadline. The design is incredible and the process was seamless.",
+    author: "Divyansh Prajapati",
+    company: "Founder, Raptile Studio",
+  },
+  {
     quote: "Launch Live built our entire platform in 5 weeks. I genuinely didn't think it was possible.",
     author: "Arjun M.",
     company: "Founder, TerraFlow",
@@ -20,6 +25,7 @@ const testimonials = [
     author: "Dev R.",
     company: "CEO, Vaultly",
   },
+
 ]
 
 export const Testimonials = () => {
@@ -29,11 +35,11 @@ export const Testimonials = () => {
     <section className="py-40 px-6 bg-background relative overflow-hidden">
       <div className="max-w-[1280px] mx-auto text-center relative z-10">
         <div className="mb-12">
-           <span className="text-sm font-medium tracking-widest text-accent uppercase block mb-4">WHAT CLIENTS SAY</span>
-           <h2 className="text-4xl md:text-5xl font-serif">Don't take our word for it.</h2>
+          <span className="text-sm font-medium tracking-widest text-accent uppercase block mb-4">WHAT CLIENTS SAY</span>
+          <h2 className="text-4xl md:text-5xl font-serif">Don't take our word for it.</h2>
         </div>
         <Quote size={60} className="mx-auto mb-8 text-accent opacity-20" />
-        
+
         <AnimatePresence mode="wait">
           <motion.div
             key={index}
@@ -58,14 +64,13 @@ export const Testimonials = () => {
             <button
               key={i}
               onClick={() => setIndex(i)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                i === index ? 'bg-accent w-10' : 'bg-foreground/10'
-              }`}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${i === index ? 'bg-accent w-10' : 'bg-foreground/10'
+                }`}
             />
           ))}
         </div>
       </div>
-      
+
       {/* Decorative gradient */}
       <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px]" />
     </section>

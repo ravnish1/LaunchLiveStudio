@@ -1,9 +1,9 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
-import { motion, useMotionValue, useSpring } from 'framer-motion'
+import React, { useEffect, useState, memo } from 'react'
+import { motion, useMotionValue, useSpring, AnimatePresence } from 'framer-motion'
 
-export const CustomCursor = () => {
+export const CustomCursor = memo(() => {
   const [mounted, setMounted] = useState(false)
   const [isHovered, setIsHovered] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
@@ -11,8 +11,10 @@ export const CustomCursor = () => {
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
 
-  const springX = useSpring(mouseX, { stiffness: 500, damping: 50 })
-  const springY = useSpring(mouseY, { stiffness: 500, damping: 50 })
+  // Snappier, more responsive springs
+  const springConfig = { stiffness: 800, damping: 40, mass: 0.5 }
+  const springX = useSpring(mouseX, springConfig)
+  const springY = useSpring(mouseY, springConfig)
 
   useEffect(() => {
     setMounted(true)
@@ -23,27 +25,31 @@ export const CustomCursor = () => {
       if (!isVisible) setIsVisible(true)
     }
 
-    const handleHoverStart = (e: MouseEvent) => {
+    const handleInteraction = (e: MouseEvent) => {
       const target = e.target as HTMLElement
-      if (
+      const isInteractable = !!(
         target.tagName === 'A' ||
         target.tagName === 'BUTTON' ||
         target.closest('button') ||
         target.closest('a') ||
-        target.classList.contains('cursor-pointer')
-      ) {
-        setIsHovered(true)
-      } else {
-        setIsHovered(false)
-      }
+        target.closest('[role="button"]') ||
+        target.classList.contains('cursor-pointer') ||
+        target.closest('.group') // Often used for cards
+      )
+      
+      // Only update state if it changed to prevent unnecessary re-renders
+      setIsHovered(prev => {
+        if (prev !== isInteractable) return isInteractable
+        return prev
+      })
     }
 
-    window.addEventListener('mousemove', moveMouse)
-    window.addEventListener('mouseover', handleHoverStart)
+    window.addEventListener('mousemove', moveMouse, { passive: true })
+    window.addEventListener('mouseover', handleInteraction)
 
     return () => {
       window.removeEventListener('mousemove', moveMouse)
-      window.removeEventListener('mouseover', handleHoverStart)
+      window.removeEventListener('mouseover', handleInteraction)
     }
   }, [mouseX, mouseY, isVisible])
 
@@ -51,18 +57,20 @@ export const CustomCursor = () => {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 w-6 h-6 bg-accent rounded-full pointer-events-none z-[9999] hidden md:block"
+      className="fixed top-0 left-0 w-5 h-5 bg-accent rounded-full pointer-events-none z-[9999] hidden md:block shadow-[0_0_15px_rgba(255,92,0,0.3)]"
       style={{
         x: springX,
         y: springY,
         translateX: '-50%',
         translateY: '-50%',
+        scale: isHovered ? 4 : 1,
       }}
       animate={{
         scale: isHovered ? 4 : 1,
         opacity: isVisible ? 0.55 : 0,
       }}
-      transition={{ type: 'spring', stiffness: 250, damping: 20 }}
     />
   )
-}
+})
+
+CustomCursor.displayName = 'CustomCursor'

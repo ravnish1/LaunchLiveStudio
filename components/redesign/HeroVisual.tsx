@@ -159,29 +159,29 @@ export const HeroVisual = () => {
             animate={{ opacity: 1, filter: 'blur(0px)', scale: 1, rotateX: 0 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute inset-0 flex flex-col p-6 w-full justify-between h-full  glass  z-30 transform-gpu"
+            className="absolute inset-0 flex flex-col p-4 md:p-6 w-full h-full glass bg-background/60 z-30 transform-gpu"
           >
             {/* Showcase Header */}
-            <div className="flex justify-between items-center mb-6 shrink-0">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-foreground flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.1)]">
-                  <svg className="w-4 h-4 text-background" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="flex justify-between items-center mb-4 md:mb-6 shrink-0">
+              <div className="flex items-center gap-2 md:gap-3">
+                <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-foreground flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+                  <svg className="w-3 h-3 md:w-4 md:h-4 text-background" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <span className="font-bold text-foreground tracking-wide text-sm">Client Request Delivered</span>
+                <span className="font-bold text-foreground tracking-wide text-[11px] md:text-sm">Client Request Delivered</span>
               </div>
-              <div className="flex gap-2">
-                <span className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)] animate-pulse" />
-                <span className="w-2 h-2 rounded-full bg-border" />
+              <div className="flex gap-1.5 md:gap-2">
+                <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)] animate-pulse" />
+                <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-border" />
               </div>
             </div>
 
-            <div className="flex gap-2 mb-4 shrink-0 overflow-x-scroll scrollbar-hide-custom px-4">
-              <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }} className="bg-accent/10 border border-accent/20 px-3 py-1 rounded-full text-accent text-[10px] uppercase font-bold tracking-widest whitespace-nowrap">
+            <div className="flex gap-2 mb-3 md:mb-4 shrink-0 overflow-hidden">
+              <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }} className="bg-accent/10 border border-accent/20 px-2.5 py-1 rounded-full text-accent text-[8px] md:text-[10px] uppercase font-bold tracking-widest whitespace-nowrap">
                 Web Platform Built
               </motion.div>
-              <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 }} className="bg-accent/10 border border-accent/20 px-3 py-1 rounded-full text-accent text-[10px] uppercase font-bold tracking-widest whitespace-nowrap">
+              <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 }} className="bg-accent/10 border border-accent/20 px-2.5 py-1 rounded-full text-accent text-[8px] md:text-[10px] uppercase font-bold tracking-widest whitespace-nowrap">
                 AI Engine Online
               </motion.div>
               <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 }} className="bg-accent/10 border border-accent/20 px-3 py-1 rounded-full text-accent text-[10px] uppercase font-bold tracking-widest whitespace-nowrap">
@@ -190,47 +190,45 @@ export const HeroVisual = () => {
             </div>
 
             {/* Metric Cards */}
-            <div className="grid grid-cols-2 gap-4 mb-4 shrink-0">
+            <div className="grid grid-cols-2 gap-3 md:gap-4 mb-3 md:mb-4 shrink-0">
               <motion.div
                 initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.5 }}
-                className="bg-surface/80 p-4 rounded-2xl shadow-sm backdrop-blur-sm flex flex-col justify-center"
+                className="bg-surface/80 border border-border/80 p-3 md:p-4 rounded-xl md:rounded-2xl shadow-sm backdrop-blur-sm flex flex-col justify-center"
               >
-                <p className="text-text-muted text-[9px] uppercase font-bold tracking-widest mb-1">Client Rating</p>
-                <div className="flex gap-1 text-yellow-500 mt-1">
+                <p className="text-text-muted text-[8px] md:text-[9px] uppercase font-bold tracking-widest mb-1">Client Rating</p>
+                <div className="flex gap-1 text-yellow-500 mt-0.5">
                   {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                    <svg key={i} className="w-3 h-3 md:w-5 md:h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                   ))}
                 </div>
               </motion.div>
               <motion.div
                 initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.6 }}
-                className="bg-surface/80 border border-border/80 p-4 rounded-2xl shadow-sm backdrop-blur-sm flex flex-col justify-center"
+                className="bg-surface/80 border border-border/80 p-3 md:p-4 rounded-xl md:rounded-2xl shadow-sm backdrop-blur-sm flex flex-col justify-center"
               >
-                <p className="text-text-muted text-[9px] uppercase font-bold tracking-widest mb-1">ROI Delivered</p>
-                <p className="text-2xl font-serif text-accent">+342%</p>
+                <p className="text-text-muted text-[8px] md:text-[9px] uppercase font-bold tracking-widest mb-1">ROI Delivered</p>
+                <p className="text-lg md:text-2xl font-serif text-accent">+342%</p>
               </motion.div>
             </div>
 
             {/* Main Visual Area - Client Satisfaction Chat */}
             <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.7 }}
-              className="flex-1 p-2 bg-black/10 rounded-2xl relative max-h-46 overflow-y-auto scrollbar-hide-custom  flex flex-col backdrop-blur-sm"
+              initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.7 }}
+              className="flex-1 bg-surface/80 border border-border/80 rounded-xl md:rounded-2xl relative overflow-hidden flex flex-col justify-end p-3 md:p-4 backdrop-blur-sm gap-2 md:gap-3 pb-4 md:pb-6"
             >
               {/* Agency Message */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1, type: "spring" }}
-                className=" self-start max-w-[88%] bg-accent/10 border border-accent/20 rounded-2xl rounded-tl-sm p-3 shadow-sm"
+                className="self-start max-w-[90%] md:max-w-[88%] bg-accent/10 border border-accent/20 rounded-xl md:rounded-2xl rounded-tl-sm p-2.5 md:p-3 shadow-sm"
               >
-                <p className="text-[2vh] sm:text-[1.28vh] md:text-[1.5vh] lg:text-[1.8vh] font-bold text-accent mb-1 flex items-center gap-1.5 uppercase tracking-wide">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" /> Launch Live Studio
-                </p>
-                <p className="text-xs text-foreground/90 leading-relaxed font-semibold">
-                  Deployment complete! Your custom high-performance <b>Web & AI platform</b> is now live across all environments. 🚀
-                </p>
+                 <p className="text-[8px] md:text-[10px] font-bold text-accent mb-0.5 md:mb-1 flex items-center gap-1 uppercase tracking-wide">
+                   <span className="w-1 md:w-1.5 h-1 md:h-1.5 rounded-full bg-accent animate-pulse" /> Launch Live Studio
+                 </p>
+                 <p className="text-[10px] md:text-xs text-foreground/90 leading-relaxed font-medium">
+                   Deployment complete! Your custom high-performance Web & AI platform is now live. 🚀
+                 </p>
               </motion.div>
 
               {/* Client Message */}
@@ -238,32 +236,33 @@ export const HeroVisual = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 2.2, type: "spring", stiffness: 200, damping: 20 }}
-                className="self-end max-w-[85%] bg-foreground text-background rounded-2xl rounded-tr-sm p-3.5 shadow-md mt-2 relative"
+                className="self-end max-w-[88%] md:max-w-[85%] bg-foreground text-background rounded-xl md:rounded-2xl rounded-tr-sm p-3 md:p-3.5 shadow-md mt-1 relative"
               >
-                <p className="text-[10px] font-bold text-background/60 mb-1 uppercase tracking-wider">
-                  Happy Client
-                </p>
-                <p className="text-[2vh] sm:text-[1.28vh] md:text-[1.5vh] lg:text-[1.8vh] font-semibold leading-relaxed">
-                  This is incredible. The design is absolutely stunning and the automations are flawless! Beyond our expectations! 🎉💯
-                </p>
-                {/* Floating heart reaction */}
-                <motion.div
-                  initial={{ scale: 0, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ delay: 3, type: "spring", bounce: 0.5 }}
-                  className="absolute -bottom-2 -left-3 bg-background text-foreground text-xs rounded-full p-1 shadow-md border border-border flex items-center justify-center w-6 h-6"
-                >
-                  ❤️
-                </motion.div>
+                 <p className="text-[8px] md:text-[10px] font-bold text-background/60 mb-0.5 md:mb-1 uppercase tracking-wider">
+                   Happy Client
+                 </p>
+                 <p className="text-[11px] md:text-sm font-semibold leading-relaxed">
+                   This is incredible. Beyond our expectations! 🎉💯
+                 </p>
+                 {/* Floating heart reaction */}
+                 <motion.div 
+                   initial={{ scale: 0, opacity: 0 }}
+                   animate={{ scale: 1, opacity: 1 }}
+                   transition={{ delay: 3, type: "spring", bounce: 0.5 }}
+                   className="absolute -bottom-1.5 md:-bottom-2 -left-2 md:-left-3 bg-background text-foreground text-[10px] md:text-xs rounded-full p-0.5 md:p-1 shadow-md border border-border flex items-center justify-center w-5 h-5 md:w-6 md:h-6"
+                 >
+                   ❤️
+                 </motion.div>
               </motion.div>
             </motion.div>
 
             {/* Footer Button */}
             <motion.div
               initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.8 }}
-              className="mt-4 w-full h-12 shrink-0 bg-foreground text-background rounded-xl flex items-center justify-center shadow-lg transition-all duration-300"
+              className="mt-3 md:mt-4 w-full h-10 md:h-12 shrink-0 bg-foreground text-background rounded-xl flex items-center justify-center cursor-pointer shadow-lg hover:shadow-xl transition-shadow px-4"
+              whileHover={{ scale: 1.02 }}
             >
-              <span className="font-bold text-[1.8vh] md:text-[1.5vh] lg:text-[1.8vh] tracking-[0.1rem] text-nowrap uppercase">Project Successfully Launched</span>
+              <span className="font-bold text-[9px] md:text-xs tracking-[0.2em] uppercase text-center">Project Successfully Launched</span>
             </motion.div>
           </motion.div>
         )}
