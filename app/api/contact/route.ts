@@ -41,13 +41,13 @@ export async function POST(req: Request) {
       from: process.env.SMTP_USER || '"Launch Live Studio" <noreply@launchlive.studio>',
       to: 'launchlivestudio@gmail.com',
       subject: `New Project Inquiry from ${name}`,
-      text: `Name: ${name}\nEmail: ${email}\n\nProject Details:\n${details}`,
+      text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${details}`,
       html: `
         <div style="font-family: sans-serif; max-w: 600px; margin: 0 auto; color: #333;">
           <h2 style="color: #000;">New Project Inquiry</h2>
           <p><strong>Name:</strong> ${name}</p>
           <p><strong>Email:</strong> ${email}</p>
-          <h3 style="margin-top: 20px;">Project Details:</h3>
+          <h3 style="margin-top: 20px;">Message:</h3>
           <p style="white-space: pre-wrap; background: #f9f9f9; padding: 15px; border-radius: 8px;">${details}</p>
         </div>
       `,

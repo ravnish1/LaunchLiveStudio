@@ -68,7 +68,7 @@ export const HeroVisual = () => {
   }, [])
 
   return (
-    <div className="relative w-full max-w-[450px] aspect-[9/11] min-h-[460px] lg:aspect-[4/5] lg:min-h-0 rounded-3xl overflow-hidden border-border shadow-[0_32px_80px_rgba(0,0,0,0.14)] flex flex-col mx-auto lg:mr-0 z-20 scale-[1.02] sm:scale-[1] transition-transform duration-500">
+    <div className="relative w-full max-w-[450px] aspect-[9/11] min-h-[460px] lg:aspect-[4/5] lg:min-h-0 rounded-3xl overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,0.14)] flex flex-col mx-auto lg:mr-0 z-20 scale-[1.02] sm:scale-[1] transition-transform duration-500">
 
       <AnimatePresence mode="popLayout">
         {phase !== 'showcase' && (
