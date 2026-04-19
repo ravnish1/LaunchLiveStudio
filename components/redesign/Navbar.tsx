@@ -22,7 +22,7 @@ export const Navbar = () => {
     { name: 'Work', href: '/work' },
     { name: 'Services', href: '/services' },
     { name: 'Testimonials', href: '/testimonials' },
-    { name: 'Resources', href: '/resources' },
+    { name: 'Blogs', href: '/blogs' },
   ]
 
   return (

@@ -9,9 +9,9 @@ import { ExternalLink } from 'lucide-react'
 const featuredWork = [
   {
     name: 'Raptile Studio',
-    category: 'E-commerce / Streetwear',
+    category: 'Shopify / Streetwear',
     tagline: 'Redefining the edge of urban fashion.',
-    desc: 'A high-performance, custom-built e-commerce experience for a premium streetwear brand, featuring liquid animations and lightning-fast checkout.',
+    desc: 'A high-performance, custom Shopify e-commerce experience for a premium streetwear brand, featuring liquid animations and lightning-fast checkout.',
     image: '/projects/raptile-studio.png',
     result: 'Delivered 1 Week Early',
     slug: 'raptile-studio',
@@ -124,7 +124,7 @@ export const OurWork = ({ titleContainerClassName = '' }: { titleContainerClassN
 
             <ScrambleHeading text="Projects we're" as="h2" className="text-5xl md:text-7xl font-serif mt-4" staggerMs={50} />
             <ScrambleHeading text="proud of." as="h2" className="text-5xl md:text-7xl font-serif underline decoration-accent underline-offset-8 decoration-1" staggerMs={50} />
-            <p className="mt-6 text-text-muted text-lg max-w-md">Real results. Measurable outcomes. Work that speaks for itself.</p>
+            <p className="mt-6 text-text-muted text-xl md:text-2xl font-serif italic max-w-md">Real results. Measurable outcomes. Work that speaks for itself.</p>
           </div>
           <Link href="/work" className="w-full md:w-auto px-8 py-4 border border-foreground/10 hover:border-foreground/30 text-foreground font-bold rounded-full transition-all text-center whitespace-nowrap">
             View All Work &rarr;

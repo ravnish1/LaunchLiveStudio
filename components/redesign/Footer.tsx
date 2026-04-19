@@ -10,7 +10,7 @@ export const Footer = () => {
     { name: 'Work', href: '/work', icon: Layout },
     { name: 'Services', href: '/services', icon: Layers },
     { name: 'Testimonials', href: '/testimonials', icon: MessageSquare },
-    { name: 'Resources', href: '/resources', icon: BookOpen },
+    { name: 'Blogs', href: '/blogs', icon: BookOpen },
     { name: 'Book a Call', href: '/book-a-call', icon: Video },
   ]
 

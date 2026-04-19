@@ -6,7 +6,7 @@ import { Quote } from 'lucide-react'
 
 const testimonials = [
   {
-    quote: "The Launch Live Studio team is elite. They delivered our entire custom storefront for Raptile Studio a week before the deadline. The design is incredible and the process was seamless.",
+    quote: "The Launch Live Studio team is elite. They delivered our entire custom Shopify storefront for Raptile Studio a week before the deadline. The design is incredible and the process was seamless.",
     author: "Divyansh Prajapati",
     company: "Founder, Raptile Studio",
   },

@@ -57,7 +57,7 @@ export const Features = () => {
           <ScrambleHeading text="Eight services." as="h2" className="text-5xl md:text-7xl font-serif leading-tight mt-4" staggerMs={50} />
           <ScrambleHeading text="Everything you need" as="h2" className="text-5xl md:text-7xl font-serif leading-tight" staggerMs={50} />
           <ScrambleHeading text="to win online." as="h2" className="text-5xl md:text-7xl font-serif leading-tight" staggerMs={50} />
-          <p className="max-w-xl text-lg text-text-muted mt-6">
+          <p className="max-w-xl text-xl md:text-2xl font-serif italic text-text-muted mt-6">
             One focused team. Every layer of your digital presence covered.
           </p>
         </div>

@@ -58,7 +58,7 @@ export const Hero = () => {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-md w-full"
           >
-            <p className="text-lg md:text-xl text-text-muted leading-relaxed">
+            <p className="text-xl md:text-2xl font-serif text-text-muted leading-relaxed">
               Launch Live Studio is a full service digital agency crafting
               high performance websites, AI systems, and brands that
               cut through the noise and lead.
@@ -75,7 +75,7 @@ export const Hero = () => {
         </div>
 
         {/* Right Column — Visualization (Desktop only) */}
-        <div className="flex items-center justify-center sm:w-full border-2 min-[418px]:border-none border-black sm:h-full">
+        <div className="flex items-center justify-center sm:w-full sm:h-full">
           <HeroVisual />
         </div>
       </div>
