@@ -50,9 +50,9 @@ export const Hero = () => {
             className="max-w-md w-full"
           >
             <p className="text-xl md:text-2xl font-serif text-text-muted leading-relaxed">
-              Launch Live Studio is a full service digital agency crafting
-              high performance websites, AI systems, and brands that
-              cut through the noise and lead.
+              Launch Live Studio is a full service digital partner
+              helping businesses scale through high performance websites,
+              AI powered systems, automation, and growth focused design.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 w-full">
               <Link href="/book-a-call" className="w-full sm:w-auto px-8 py-4 bg-accent text-white font-bold rounded-full hover:scale-105 active:scale-95 transition-all shadow-lg shadow-accent/20 text-center inline-block">

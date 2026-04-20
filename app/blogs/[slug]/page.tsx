@@ -28,8 +28,8 @@ export default function BlogPostPage() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background text-foreground p-6 text-center">
         <div>
-           <h1 className="text-4xl font-serif mb-4">Post not found.</h1>
-           <button onClick={() => router.push('/blogs')} className="text-accent hover:underline">Back to Blogs</button>
+          <h1 className="text-4xl font-serif mb-4">Post not found.</h1>
+          <button onClick={() => router.push('/blogs')} className="text-accent hover:underline">Back to Blogs</button>
         </div>
       </div>
     )
@@ -43,7 +43,7 @@ export default function BlogPostPage() {
 
         <main className="pt-40 pb-32">
           <div className="max-w-[1280px] mx-auto px-6">
-            
+
             {/* Back Button */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -52,7 +52,7 @@ export default function BlogPostPage() {
               className="mb-12"
             >
               <Link href="/blogs" className="group inline-flex items-center gap-2 text-text-muted hover:text-accent transition-colors font-bold uppercase tracking-widest text-xs">
-                <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" /> Back to Insights
+                <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" /> Browse All Posts
               </Link>
             </motion.div>
 
@@ -90,13 +90,13 @@ export default function BlogPostPage() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="w-full aspect-video bg-surface rounded-[2.5rem] overflow-hidden mb-16 border border-border-subtle group relative"
               >
-                <img 
-                  src={post.image} 
-                  alt={post.title} 
+                <img
+                  src={post.image}
+                  alt={post.title}
                   className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent p-12 flex items-end">
-                   {/* Optional caption or overlay detail */}
+                  {/* Optional caption or overlay detail */}
                 </div>
               </motion.div>
 
@@ -153,19 +153,19 @@ export default function BlogPostPage() {
               {/* OTHER BLOGS SECTION */}
               <div className="mt-32">
                 <div className="flex justify-between items-end mb-12">
-                   <div>
-                      <span className="text-xs font-bold tracking-[0.2em] text-accent uppercase block mb-3">CONTINUE READING</span>
-                      <h3 className="text-4xl font-serif">More Insights.</h3>
-                   </div>
-                   <Link href="/blogs" className="text-sm font-bold uppercase tracking-widest text-text-muted hover:text-accent transition-colors pb-1 border-b border-border-subtle hover:border-accent">
-                      View all &rarr;
-                   </Link>
+                  <div>
+                    <span className="text-xs font-bold tracking-[0.2em] text-accent uppercase block mb-3">CONTINUE READING</span>
+                    <h3 className="text-4xl font-serif">More Insights.</h3>
+                  </div>
+                  <Link href="/blogs" className="text-sm font-bold uppercase tracking-widest text-text-muted hover:text-accent transition-colors pb-1 border-b border-border-subtle hover:border-accent">
+                    View all &rarr;
+                  </Link>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {BLOG_POSTS.filter(p => p.slug !== post.slug).slice(0, 2).map((otherPost) => (
-                    <Link 
-                      key={otherPost.slug} 
+                    <Link
+                      key={otherPost.slug}
                       href={`/blogs/${otherPost.slug}`}
                       className="group p-8 bg-surface border border-border-subtle rounded-3xl hover:border-accent transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-accent/5"
                     >

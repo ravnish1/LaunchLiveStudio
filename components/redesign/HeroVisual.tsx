@@ -8,17 +8,17 @@ export const HeroVisual = () => {
   const [typedText, setTypedText] = useState('')
   const [buildLogs, setBuildLogs] = useState<string[]>([])
 
-  const COMMAND = "Client: Build a premium Web Platform & AI System for my brand."
+  const COMMAND = "Client: Build a high-converting website that makes my brand look premium and drives more leads."
 
   const LOGS = [
-    "Establishing secure client connection... [OK]",
-    "Analyzing brand requirements & strategy...",
-    "Deploying scalable AI architecture...",
-    "Designing pixel-perfect Web Platform...",
-    "Integrating smart automations...",
-    "Optimizing performance to 100/100...",
-    "CLIENT PROJECT SUCCESSFUL in 0.8s 🚀",
-    "Delivering masterpiece..."
+    "Understanding business goals & target audience...",
+    "Crafting UX strategy for higher conversions...",
+    "Designing a premium, trust-building interface...",
+    "Developing fast, scalable web architecture...",
+    "Optimizing performance & SEO...",
+    "Integrating analytics & lead funnels...",
+    "Website ready to convert 🚀",
+    "Deploying and going live..."
   ]
 
   useEffect(() => {
@@ -169,7 +169,7 @@ export const HeroVisual = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <span className="font-bold text-foreground tracking-wide text-[11px] md:text-sm">Client Request Delivered</span>
+                <span className="font-bold text-foreground tracking-wide text-[11px] md:text-sm">Client Goal Achieved</span>
               </div>
               <div className="flex gap-1.5 md:gap-2">
                 <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)] animate-pulse" />
@@ -179,14 +179,12 @@ export const HeroVisual = () => {
 
             <div className="flex gap-2 mb-3 md:mb-4 shrink-0 overflow-hidden">
               <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }} className="bg-accent/10 border border-accent/20 px-2.5 py-1 rounded-full text-accent text-[8px] md:text-[10px] uppercase font-bold tracking-widest whitespace-nowrap">
-                Web Platform Built
+                Website Deployed
               </motion.div>
               <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 }} className="bg-accent/10 border border-accent/20 px-2.5 py-1 rounded-full text-accent text-[8px] md:text-[10px] uppercase font-bold tracking-widest whitespace-nowrap">
-                AI Engine Online
+                AI Workflow Integrated
               </motion.div>
-              <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 }} className="bg-accent/10 border border-accent/20 px-3 py-1 rounded-full text-accent text-[10px] uppercase font-bold tracking-widest whitespace-nowrap">
-                META Ads Live
-              </motion.div>
+
             </div>
 
             {/* Metric Cards */}
@@ -195,10 +193,10 @@ export const HeroVisual = () => {
                 initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.5 }}
                 className="bg-surface/80 border border-border/80 p-3 md:p-4 rounded-xl md:rounded-2xl shadow-sm backdrop-blur-sm flex flex-col justify-center"
               >
-                <p className="text-text-muted text-[8px] md:text-[9px] uppercase font-bold tracking-widest mb-1">Client Rating</p>
+                <p className="text-text-muted text-[8px] md:text-[9px] uppercase font-bold tracking-widest mb-1">Client Satisfaction</p>
                 <div className="flex gap-1 text-yellow-500 mt-0.5">
                   {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-3 h-3 md:w-5 md:h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg key={i} className="w-3 h-3 md:w-5 md:h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
                   ))}
                 </div>
               </motion.div>
@@ -206,8 +204,8 @@ export const HeroVisual = () => {
                 initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.6 }}
                 className="bg-surface/80 border border-border/80 p-3 md:p-4 rounded-xl md:rounded-2xl shadow-sm backdrop-blur-sm flex flex-col justify-center"
               >
-                <p className="text-text-muted text-[8px] md:text-[9px] uppercase font-bold tracking-widest mb-1">ROI Delivered</p>
-                <p className="text-lg md:text-2xl font-serif text-accent">+342%</p>
+                <p className="text-text-muted text-[8px] md:text-[9px] uppercase font-bold tracking-widest mb-1">Growth Engine</p>
+                <p className="text-lg md:text-2xl font-serif text-accent">Active</p>
               </motion.div>
             </div>
 
@@ -223,12 +221,12 @@ export const HeroVisual = () => {
                 transition={{ delay: 1, type: "spring" }}
                 className="self-start max-w-[90%] md:max-w-[88%] bg-accent/10 border border-accent/20 rounded-xl md:rounded-2xl rounded-tl-sm p-2.5 md:p-3 shadow-sm"
               >
-                 <p className="text-[8px] md:text-[10px] font-bold text-accent mb-0.5 md:mb-1 flex items-center gap-1 uppercase tracking-wide">
-                   <span className="w-1 md:w-1.5 h-1 md:h-1.5 rounded-full bg-accent animate-pulse" /> Launch Live Studio
-                 </p>
-                 <p className="text-[10px] md:text-xs text-foreground/90 leading-relaxed font-medium">
-                   Deployment complete! Your custom high-performance Web & AI platform is now live. 🚀
-                 </p>
+                <p className="text-[8px] md:text-[10px] font-bold text-accent mb-0.5 md:mb-1 flex items-center gap-1 uppercase tracking-wide">
+                  <span className="w-1 md:w-1.5 h-1 md:h-1.5 rounded-full bg-accent animate-pulse" /> Launch Live Studio
+                </p>
+                <p className="text-[10px] md:text-xs text-foreground/90 leading-relaxed font-medium">
+                  Deployment complete! Your custom high-performance Web & AI platform is now live. 🚀
+                </p>
               </motion.div>
 
               {/* Client Message */}
@@ -238,21 +236,21 @@ export const HeroVisual = () => {
                 transition={{ delay: 2.2, type: "spring", stiffness: 200, damping: 20 }}
                 className="self-end max-w-[88%] md:max-w-[85%] bg-foreground text-background rounded-xl md:rounded-2xl rounded-tr-sm p-3 md:p-3.5 shadow-md mt-1 relative"
               >
-                 <p className="text-[8px] md:text-[10px] font-bold text-background/60 mb-0.5 md:mb-1 uppercase tracking-wider">
-                   Happy Client
-                 </p>
-                 <p className="text-[11px] md:text-sm font-semibold leading-relaxed">
-                   This is incredible. Beyond our expectations! 🎉💯
-                 </p>
-                 {/* Floating heart reaction */}
-                 <motion.div 
-                   initial={{ scale: 0, opacity: 0 }}
-                   animate={{ scale: 1, opacity: 1 }}
-                   transition={{ delay: 3, type: "spring", bounce: 0.5 }}
-                   className="absolute -bottom-1.5 md:-bottom-2 -left-2 md:-left-3 bg-background text-foreground text-[10px] md:text-xs rounded-full p-0.5 md:p-1 shadow-md border border-border flex items-center justify-center w-5 h-5 md:w-6 md:h-6"
-                 >
-                   ❤️
-                 </motion.div>
+                <p className="text-[8px] md:text-[10px] font-bold text-background/60 mb-0.5 md:mb-1 uppercase tracking-wider">
+                  Happy Client
+                </p>
+                <p className="text-[11px] md:text-sm font-semibold leading-relaxed">
+                  We are already getting more leads. The site looks premium and delivers exactly the results we needed. 🎉💯
+                </p>
+                {/* Floating heart reaction */}
+                <motion.div
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ delay: 3, type: "spring", bounce: 0.5 }}
+                  className="absolute -bottom-1.5 md:-bottom-2 -left-2 md:-left-3 bg-background text-foreground text-[10px] md:text-xs rounded-full p-0.5 md:p-1 shadow-md border border-border flex items-center justify-center w-5 h-5 md:w-6 md:h-6"
+                >
+                  ❤️
+                </motion.div>
               </motion.div>
             </motion.div>
 
