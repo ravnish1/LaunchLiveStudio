@@ -34,15 +34,6 @@ export const Hero = () => {
             transition={{ duration: 0.3 }}
             className="w-full"
           >
-            <ScrambleText
-              text="◎ DIGITAL AGENCY · EST. 2025"
-              as="span"
-              className="text-sm font-medium tracking-[0.2em] uppercase text-accent mb-4 block"
-              trigger={true}
-              staggerMs={30}
-              scrambleFrames={4}
-              frameDurationMs={40}
-            />
             <h1 className="text-[12vw] md:text-[7vw] lg:text-[4.5vw] font-serif leading-[1.15] tracking-[-0.03em] overflow-visible">
               <ScrambleText text="We Build What" as="span" trigger={true} staggerMs={60} scrambleFrames={6} frameDurationMs={50} />
               <br />

@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Resources',
+  title: 'Blogs',
   description: 'Insights, guides, and tools to accelerate your digital growth.',
 }
 
