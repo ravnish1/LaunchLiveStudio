@@ -65,6 +65,8 @@
     /* Optimized for modern mobile browsers */
     backface-visibility: hidden;
     transform: translateZ(0);
+    content-visibility: auto;
+    contain-intrinsic-size: 0 500px;
   }
 
   h1,

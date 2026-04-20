@@ -4,6 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { ScrambleHeading } from './ScrambleHeading'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ExternalLink } from 'lucide-react'
 
 const featuredWork = [
@@ -67,12 +68,24 @@ const ProjectRow = ({ member, i }: { member: any, i: number }) => {
           rel="noopener noreferrer"
           className="w-full md:w-1/2 relative aspect-[4/3] lg:aspect-[16/10] rounded-3xl overflow-hidden shadow-2xl border border-border-subtle group cursor-pointer"
         >
-          <img src={member.image} alt={member.name} className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-1000 ease-out" />
+          <Image 
+            src={member.image} 
+            alt={member.name} 
+            fill
+            className="object-cover transform scale-100 group-hover:scale-105 transition-transform duration-1000 ease-out" 
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
           <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-colors duration-500 pointer-events-none" />
         </a>
       ) : (
         <div className="w-full md:w-1/2 relative aspect-[4/3] lg:aspect-[16/10] rounded-3xl overflow-hidden shadow-2xl border border-border-subtle group">
-          <img src={member.image} alt={member.name} className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-1000 ease-out" />
+          <Image 
+            src={member.image} 
+            alt={member.name} 
+            fill
+            className="object-cover transform scale-100 group-hover:scale-105 transition-transform duration-1000 ease-out" 
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
           <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-colors duration-500 pointer-events-none" />
         </div>
       )}

@@ -31,7 +31,7 @@ export const HeroVisual = () => {
       setPhase('boot')
       setTypedText('')
       setBuildLogs([])
-      await new Promise(r => setTimeout(r, 1000))
+      await new Promise(r => setTimeout(r, 100))
       if (!isActive) return;
 
       // Phase 2: Typing
@@ -39,10 +39,10 @@ export const HeroVisual = () => {
       for (let i = 0; i <= COMMAND.length; i++) {
         if (!isActive) return;
         setTypedText(COMMAND.slice(0, i))
-        await new Promise(r => setTimeout(r, Math.random() * 60 + 40)) // Human-like typing
+        await new Promise(r => setTimeout(r, Math.random() * 30 + 20)) // Human-like typing
       }
 
-      await new Promise(r => setTimeout(r, 500))
+      await new Promise(r => setTimeout(r, 300))
       if (!isActive) return;
 
       // Phase 3: Building
@@ -50,10 +50,10 @@ export const HeroVisual = () => {
       for (let i = 0; i < LOGS.length; i++) {
         if (!isActive) return;
         setBuildLogs(prev => [...prev, LOGS[i]])
-        await new Promise(r => setTimeout(r, i === LOGS.length - 2 ? 800 : 250)) // Pause before SUCCESS
+        await new Promise(r => setTimeout(r, i === LOGS.length - 2 ? 600 : 150)) // Pause before SUCCESS
       }
 
-      await new Promise(r => setTimeout(r, 800))
+      await new Promise(r => setTimeout(r, 600))
       if (!isActive) return;
 
       // Phase 4: Showcase
