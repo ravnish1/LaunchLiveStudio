@@ -36,7 +36,7 @@ export const CustomCursor = memo(() => {
         target.classList.contains('cursor-pointer') ||
         target.closest('.group') // Often used for cards
       )
-      
+
       // Only update state if it changed to prevent unnecessary re-renders
       setIsHovered(prev => {
         if (prev !== isInteractable) return isInteractable
@@ -63,10 +63,10 @@ export const CustomCursor = memo(() => {
         y: springY,
         translateX: '-50%',
         translateY: '-50%',
-        scale: isHovered ? 4 : 1,
+        scale: isHovered ? 2 : 1,
       }}
       animate={{
-        scale: isHovered ? 4 : 1,
+        scale: isHovered ? 2 : 1,
         opacity: isVisible ? 0.55 : 0,
       }}
     />
