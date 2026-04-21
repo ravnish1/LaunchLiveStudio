@@ -32,7 +32,7 @@ export const Testimonials = () => {
   const [index, setIndex] = useState(0)
 
   return (
-    <section className="py-40 px-6 bg-background relative overflow-hidden">
+    <section className="py-24 md:py-40 px-6 bg-background relative overflow-hidden">
       <div className="max-w-[1280px] mx-auto text-center relative z-10">
         <div className="mb-12">
           <span className="text-sm font-medium tracking-widest text-accent uppercase block mb-4">WHAT CLIENTS SAY</span>

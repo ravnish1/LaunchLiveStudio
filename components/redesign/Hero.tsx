@@ -16,7 +16,7 @@ export const Hero = () => {
   }, [])
 
   return (
-    <section className="relative min-h-[100dvh] flex flex-col justify-center px-6 pt-32 pb-24 noise-bg">
+    <section className="relative min-h-[100dvh] flex flex-col items-center px-6 pt-32 md:pt-32 pb-20 md:pb-28 noise-bg">
       {/* Ambient Background */}
       <div className="absolute inset-0 z-[-1] overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 -left-[10%] md:left-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-accent/10 rounded-full blur-[120px] animate-pulse" />
@@ -24,15 +24,15 @@ export const Hero = () => {
       </div>
 
       {/* 2-Column Grid Layout */}
-      <div className="max-w-[1300px] w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 z-10 items-center">
+      <div className="max-w-[1300px] w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-12 lg:gap-20 z-10 items-center">
 
-        {/* Left Column — Text Content */}
-        <div className="flex flex-col items-start gap-8">
+        {/* Column — Text Content (Appears second on mobile) */}
+        <div className="flex flex-col items-start gap-8 order-2 md:order-1">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3 }}
-            className="w-full"
+            className="w-full text-center md:text-left"
           >
             <h1 className="text-[12vw] md:text-[7vw] lg:text-[4.5vw] font-serif leading-[1.15] tracking-[-0.03em] overflow-visible">
               <ScrambleText text="We Build What" as="span" trigger={true} staggerMs={60} scrambleFrames={6} frameDurationMs={50} />
@@ -47,7 +47,7 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="max-w-md w-full"
+            className="max-w-md w-full mx-auto md:mx-0 text-center md:text-left"
           >
             <p className="text-xl md:text-2xl font-serif text-text-muted leading-relaxed">
               Launch Live Studio is a full service digital partner
@@ -65,8 +65,8 @@ export const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Right Column — Visualization (Desktop only) */}
-        <div className="flex items-center justify-center sm:w-full sm:h-full">
+        {/* Column — Visualization (Appears first on mobile) */}
+        <div className="flex items-center justify-center w-full min-h-[70vh] md:min-h-0 order-1 md:order-2 mb-12 md:mb-0">
           <HeroVisual />
         </div>
       </div>
@@ -84,7 +84,7 @@ export const Hero = () => {
           <div className="scroll-line-inner" />
         </div>
       </motion.div>
-    </section>
+    </section >
   )
 }
 

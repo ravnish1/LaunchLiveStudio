@@ -14,10 +14,9 @@ export const HeroVisual = () => {
     "Understanding business goals & target audience...",
     "Crafting UX strategy for higher conversions...",
     "Designing a premium, trust-building interface...",
-    "Developing fast, scalable web architecture...",
+    "Developing scalable web architecture...",
     "Optimizing performance & SEO...",
-    "Integrating analytics & lead funnels...",
-    "Website ready to convert 🚀",
+    "Website ready to launch 🚀",
     "Deploying and going live..."
   ]
 
@@ -95,8 +94,8 @@ export const HeroVisual = () => {
             </div>
 
             {/* Body - Terminal output */}
-            <div className="flex-1 font-mono text-[13px] md:text-sm leading-relaxed text-foreground flex flex-col gap-3">
-              <div className="flex items-start text-accent/90 font-medium">
+            <div className="flex-1 font-mono text-[13px] md:text-sm leading-relaxed text-foreground flex flex-col gap-3 overflow-hidden">
+              <div className="flex items-start text-accent/90 font-medium shrink-0">
                 <span className="mr-3">~</span>
                 <span className="opacity-90 relative">
                   {typedText}
@@ -110,25 +109,27 @@ export const HeroVisual = () => {
                 </span>
               </div>
 
-              {buildLogs.map((log, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  className={`flex items-start ${log.includes('SUCCESSFUL') ? 'text-green-500 font-bold' : 'opacity-80'}`}
-                >
-                  <span className="text-accent/50 mr-3">{'>'}</span>
-                  <span>{log}</span>
-                </motion.div>
-              ))}
+              <div className="flex-1 overflow-y-auto custom-scrollbar flex flex-col gap-2 pr-2">
+                {buildLogs.map((log, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    className={`flex items-start ${log.includes('SUCCESSFUL') ? 'text-green-500 font-bold' : 'opacity-80'}`}
+                  >
+                    <span className="text-accent/50 mr-3">{'>'}</span>
+                    <span className="leading-tight">{log}</span>
+                  </motion.div>
+                ))}
 
-              {phase === 'building' && (
-                <motion.div
-                  animate={{ opacity: [0, 1, 0] }}
-                  transition={{ repeat: Infinity, duration: 1 }}
-                  className="w-2 h-4 bg-accent mt-2 ml-6"
-                />
-              )}
+                {phase === 'building' && (
+                  <motion.div
+                    animate={{ opacity: [0, 1, 0] }}
+                    transition={{ repeat: Infinity, duration: 1 }}
+                    className="w-2 h-4 bg-accent mt-2 ml-6 shrink-0"
+                  />
+                )}
+              </div>
             </div>
 
             {/* Footer Sync Area */}
