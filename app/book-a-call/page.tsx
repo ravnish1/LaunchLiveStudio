@@ -1,11 +1,12 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Navbar } from '@/components/redesign/Navbar'
 import { CTABanner } from '@/components/redesign/CTABanner'
 import { Footer } from '@/components/redesign/Footer'
 import { ScrambleHeading } from '@/components/redesign/ScrambleHeading'
 import dynamic from 'next/dynamic'
+import Cal, { getCalApi } from '@calcom/embed-react'
 
 const SmoothScroll = dynamic(
   () => import('@/components/redesign/SmoothScroll').then(m => ({ default: m.SmoothScroll })),
@@ -19,6 +20,13 @@ const CustomCursor = dynamic(
 export default function BookACallPage() {
   const [formData, setFormData] = useState({ name: '', email: '', details: '' })
   const [status, setStatus] = useState({ type: '', message: '' })
+
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: '15min' })
+      cal('ui', { theme: 'light', hideEventTypeDetails: false, layout: 'month_view' })
+    })()
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -39,7 +47,7 @@ export default function BookACallPage() {
         setStatus({ type: 'error', message: errorData.error || 'Failed to send inquiry. Please try again.' })
       }
     } catch (err) {
-      setStatus({ type: 'error', message: 'An error occurred. Please try again or use Calendly.' })
+      setStatus({ type: 'error', message: 'An error occurred. Please try again or book directly.' })
     }
   }
 
@@ -65,49 +73,48 @@ export default function BookACallPage() {
                 <form className="space-y-5" onSubmit={handleSubmit}>
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-widest text-text-muted mb-2">Name</label>
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       required
                       value={formData.name}
-                      onChange={(e) => setFormData({...formData, name: e.target.value})}
-                      className="w-full bg-background border border-foreground/10 rounded-xl px-4 py-3 placeholder-foreground/30 focus:outline-none focus:border-accent transition-colors" 
-                      placeholder="Jane Doe" 
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className="w-full bg-background border border-foreground/10 rounded-xl px-4 py-3 placeholder-foreground/30 focus:outline-none focus:border-accent transition-colors"
+                      placeholder="Jane Doe"
                     />
                   </div>
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-widest text-text-muted mb-2">Email</label>
-                    <input 
-                      type="email" 
+                    <input
+                      type="email"
                       required
                       value={formData.email}
-                      onChange={(e) => setFormData({...formData, email: e.target.value})}
-                      className="w-full bg-background border border-foreground/10 rounded-xl px-4 py-3 placeholder-foreground/30 focus:outline-none focus:border-accent transition-colors" 
-                      placeholder="jane@example.com" 
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="w-full bg-background border border-foreground/10 rounded-xl px-4 py-3 placeholder-foreground/30 focus:outline-none focus:border-accent transition-colors"
+                      placeholder="jane@example.com"
                     />
                   </div>
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-widest text-text-muted mb-2">Project Details</label>
-                    <textarea 
-                      rows={4} 
+                    <textarea
+                      rows={4}
                       required
                       value={formData.details}
-                      onChange={(e) => setFormData({...formData, details: e.target.value})}
-                      className="w-full bg-background border border-foreground/10 rounded-xl px-4 py-3 placeholder-foreground/30 focus:outline-none focus:border-accent transition-colors resize-none" 
-                      placeholder="Tell us what you're building..." 
+                      onChange={(e) => setFormData({ ...formData, details: e.target.value })}
+                      className="w-full bg-background border border-foreground/10 rounded-xl px-4 py-3 placeholder-foreground/30 focus:outline-none focus:border-accent transition-colors resize-none"
+                      placeholder="Tell us what you're building..."
                     />
                   </div>
-                  
+
                   {status.message && (
-                    <div className={`p-3 rounded-lg text-sm font-medium ${
-                      status.type === 'error' ? 'bg-red-500/10 text-red-500' : 
-                      status.type === 'success' ? 'bg-green-500/10 text-green-500' : 
-                      'bg-accent/10 text-accent'
-                    }`}>
+                    <div className={`p-3 rounded-lg text-sm font-medium ${status.type === 'error' ? 'bg-red-500/10 text-red-500' :
+                      status.type === 'success' ? 'bg-green-500/10 text-green-500' :
+                        'bg-accent/10 text-accent'
+                      }`}>
                       {status.message}
                     </div>
                   )}
 
-                  <button 
+                  <button
                     disabled={status.type === 'loading'}
                     className="w-full mt-2 py-4 bg-foreground text-background font-bold text-lg rounded-xl hover:bg-accent hover:text-white transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-md disabled:opacity-70 disabled:hover:scale-100"
                   >
@@ -129,16 +136,15 @@ export default function BookACallPage() {
                 <div className="h-px w-full lg:w-px lg:h-24 bg-foreground/20 block" />
               </div>
 
-              {/* Right Column: Calendly Embed */}
+              {/* Right Column: Cal.com Embed */}
               <div className="w-full lg:w-[42%] max-w-[480px] border border-foreground/10 rounded-3xl bg-surface flex flex-col items-center justify-start shadow-xl shadow-black/5 flex-shrink-0 relative overflow-hidden h-[650px] md:h-[700px]">
                 <div className="absolute inset-0 bg-accent/5 pointer-events-none" />
                 <div className="relative z-10 w-full h-full min-h-[650px]">
-                  <iframe
-                    src="https://calendly.com/launchlivestudio/30min?hide_gdpr_banner=1&hide_navigation=1"
-                    width="100%"
-                    height="100%"
-                    frameBorder="0"
-                    className="absolute inset-0"
+                  <Cal
+                    namespace="15min"
+                    calLink="launch-live-studio-vxwljz/15min"
+                    style={{ width: '100%', height: '100%', overflow: 'wrap' }}
+                    config={{ layout: 'month_view', useSlotsViewOnSmallScreen: 'true', theme: 'light' }}
                   />
                 </div>
               </div>
