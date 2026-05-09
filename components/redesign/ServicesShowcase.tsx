@@ -4,7 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { features } from './Features'
 import { ScrambleHeading } from './ScrambleHeading'
-import { ArrowUpRight, CheckCircle2, TrendingUp, Zap } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 
 export const ServicesShowcase = () => {
   return (
@@ -12,26 +12,26 @@ export const ServicesShowcase = () => {
       <div className="max-w-[1200px] mx-auto">
         {/* Hero Section */}
         <div className="flex flex-col gap-4 mb-16">
-          <ScrambleHeading 
-            text="SERVICES & EXPERTISE" 
-            as="span" 
-            className="text-xs md:text-sm font-bold tracking-[0.2em] text-accent uppercase" 
-            staggerMs={20} 
-            scrambleFrames={3} 
+          <ScrambleHeading
+            text="SERVICES & EXPERTISE"
+            as="span"
+            className="text-xs md:text-sm font-bold tracking-[0.2em] text-accent uppercase"
+            staggerMs={20}
+            scrambleFrames={3}
           />
-          <ScrambleHeading 
-            text="We build digital systems" 
-            as="h2" 
-            className="text-5xl md:text-7xl font-serif leading-[1.1] tracking-tight" 
-            staggerMs={40} 
+          <ScrambleHeading
+            text="We build digital systems"
+            as="h2"
+            className="text-5xl md:text-7xl font-serif leading-[1.1] tracking-tight"
+            staggerMs={40}
           />
-          <ScrambleHeading 
-            text="that drive actual revenue." 
-            as="h2" 
-            className="text-5xl md:text-7xl font-serif italic text-accent leading-[1.1] tracking-tight mb-4" 
-            staggerMs={40} 
+          <ScrambleHeading
+            text="that drive actual revenue."
+            as="h2"
+            className="text-5xl md:text-7xl font-serif italic text-accent leading-[1.1] tracking-tight mb-4"
+            staggerMs={40}
           />
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -40,8 +40,8 @@ export const ServicesShowcase = () => {
           >
             Say goodbye to traditional agency bloat and vanity metrics. We combine modern tech stacks, strategic design, and automation to deliver scalable solutions tailored for modern businesses and creators. We don't just sell services; we engineer outcomes.
           </motion.p>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -73,11 +73,11 @@ export const ServicesShowcase = () => {
         {/* The LaunchLive Difference */}
         <div className="pt-20 border-t border-foreground/10">
           <div className="text-center mb-16">
-            <ScrambleHeading 
-              text="THE LAUNCHLIVE DIFFERENCE" 
-              as="span" 
-              className="text-xs md:text-sm font-bold tracking-[0.2em] text-accent uppercase" 
-              staggerMs={20} 
+            <ScrambleHeading
+              text="THE LAUNCHLIVE DIFFERENCE"
+              as="span"
+              className="text-xs md:text-sm font-bold tracking-[0.2em] text-accent uppercase"
+              staggerMs={20}
             />
             <h2 className="text-4xl md:text-6xl font-serif mt-4 text-foreground">Why we consistently outperform</h2>
             <p className="text-text-muted mt-6 max-w-2xl mx-auto text-lg">
@@ -86,35 +86,23 @@ export const ServicesShowcase = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
-            <div className="flex flex-col gap-4 relative">
-              <div className="absolute -top-10 -left-6 text-[120px] font-serif text-foreground/[0.03] font-bold z-0 pointer-events-none select-none">01</div>
+            <div className="flex flex-col gap-4 relative pt-6 border-t border-foreground/10">
               <div className="relative z-10">
-                <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent mb-4">
-                  <TrendingUp size={20} />
-                </div>
-                <h4 className="text-2xl font-serif mb-2">Outcome-Driven Execution</h4>
+                <h4 className="text-2xl font-serif mb-3">Outcome-Driven Execution</h4>
                 <p className="text-text-muted leading-relaxed">Most agencies sell billable hours; we sell measurable business outcomes. Your growth and ROI are the only metrics that matter, ensuring our incentives are always perfectly aligned with yours.</p>
               </div>
             </div>
 
-            <div className="flex flex-col gap-4 relative">
-              <div className="absolute -top-10 -left-6 text-[120px] font-serif text-foreground/[0.03] font-bold z-0 pointer-events-none select-none">02</div>
+            <div className="flex flex-col gap-4 relative pt-6 border-t border-foreground/10">
               <div className="relative z-10">
-                <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent mb-4">
-                  <Zap size={20} />
-                </div>
-                <h4 className="text-2xl font-serif mb-2">AI & Tech Integration</h4>
+                <h4 className="text-2xl font-serif mb-3">AI & Tech Integration</h4>
                 <p className="text-text-muted leading-relaxed">We don't just build static sites; we build intelligent systems. By integrating modern AI tools and automated workflows, we help your brand operate leaner and scale faster than the competition.</p>
               </div>
             </div>
 
-            <div className="flex flex-col gap-4 relative">
-              <div className="absolute -top-10 -left-6 text-[120px] font-serif text-foreground/[0.03] font-bold z-0 pointer-events-none select-none">03</div>
+            <div className="flex flex-col gap-4 relative pt-6 border-t border-foreground/10">
               <div className="relative z-10">
-                <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent mb-4">
-                  <CheckCircle2 size={20} />
-                </div>
-                <h4 className="text-2xl font-serif mb-2">Radical Transparency</h4>
+                <h4 className="text-2xl font-serif mb-3">Radical Transparency</h4>
                 <p className="text-text-muted leading-relaxed">No black-box processes or confusing technical jargon. You get clear roadmaps, direct communication channels, and full visibility into every strategy and system we deploy for you.</p>
               </div>
             </div>
