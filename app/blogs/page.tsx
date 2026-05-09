@@ -16,12 +16,12 @@ export default function BlogsPage() {
       <div className="min-h-screen bg-background text-foreground">
         <Navbar />
 
-        <main className="pt-24 pb-24 min-h-[60vh]">
+        <main className="pt-20 pb-20 min-h-[60vh]">
           <div className="max-w-[1280px] mx-auto px-6">
             {/* Optimized Header Section */}
-            <div className="mb-12">
-              <ScrambleHeading text="Blogs." as="h1" className="text-5xl md:text-7xl font-serif mb-3" />
-              <p className="text-xl md:text-2xl font-serif italic text-text-muted max-w-2xl mt-2">
+            <div className="mb-8">
+              <ScrambleHeading text="Blogs." as="h1" className="text-4xl md:text-6xl font-serif mb-2" />
+              <p className="text-lg md:text-xl font-serif italic text-text-muted max-w-2xl mt-1">
                 Insights, guides, and tools to accelerate your digital growth.
               </p>
             </div>
@@ -34,7 +34,7 @@ export default function BlogsPage() {
                     className="group flex flex-col h-full bg-surface border border-foreground/5 rounded-2xl overflow-hidden hover:border-accent transition-all duration-500 shadow-sm hover:shadow-2xl hover:shadow-accent/5 backdrop-blur-sm"
                   >
                     {/* Blog Card Image Unit */}
-                    <div className="relative w-full aspect-[16/10] overflow-hidden bg-foreground/5">
+                    <div className="relative w-full aspect-[16/9] overflow-hidden bg-foreground/5">
                       <Image 
                         src={post.image} 
                         alt={post.title}
@@ -46,19 +46,19 @@ export default function BlogsPage() {
                       <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     </div>
 
-                    <div className="p-7 flex flex-col flex-grow">
-                      <div className="flex items-center gap-2 mb-4">
+                    <div className="p-5 flex flex-col flex-grow">
+                      <div className="flex items-center gap-2 mb-3">
                         <span className="w-1.5 h-1.5 rounded-full bg-accent" />
                         <p className="text-accent tracking-widest uppercase text-[10px] font-black">{post.category}</p>
                       </div>
                       
-                      <h3 className="text-2xl font-serif group-hover:text-accent transition-colors mb-4 leading-tight">{post.title}</h3>
-                      <p className="text-text-muted leading-relaxed flex-grow text-[15px] line-clamp-3 mb-6">{post.description}</p>
+                      <h3 className="text-xl md:text-2xl font-serif group-hover:text-accent transition-colors mb-3 leading-tight line-clamp-2"> {post.title} </h3>
+                      <p className="text-text-muted leading-relaxed flex-grow text-[14px] line-clamp-2 mb-4">{post.description}</p>
                       
-                      <div className="mt-auto pt-6 border-t border-foreground/5 flex justify-between items-center text-[10px] font-bold text-text-muted uppercase tracking-[0.2em]">
+                      <div className="mt-auto pt-4 border-t border-foreground/5 flex justify-between items-center text-[10px] font-bold text-text-muted uppercase tracking-[0.2em]">
                          <span>{post.date}</span>
                          <span className="text-foreground transition-colors flex items-center gap-2 group-hover:text-accent">
-                           Read Full Story <span className="group-hover:translate-x-2 transition-transform duration-300">→</span>
+                           Learn More <span className="group-hover:translate-x-2 transition-transform duration-300">→</span>
                          </span>
                       </div>
                     </div>
@@ -68,7 +68,7 @@ export default function BlogsPage() {
           </div>
         </main>
 
-        <CTABanner />
+        <CTABanner compact />
         <Footer />
       </div>
     </ClientReveal>
