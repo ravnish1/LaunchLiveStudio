@@ -72,7 +72,6 @@ export const Navbar = () => {
               className="hidden md:flex px-6 py-2.5 bg-accent text-white text-sm font-bold rounded-full hover:scale-105 active:scale-95 transition-all shadow-lg shadow-accent/25 hover:shadow-accent/40 group items-center gap-2"
             >
               <span>Book a Call</span>
-              <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
             </Link>
 
             {/* Mobile Toggle */}
@@ -124,7 +123,7 @@ export const Navbar = () => {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="flex items-center justify-center w-full px-8 py-5 bg-accent text-white text-lg font-bold rounded-full shadow-2xl shadow-accent/30 active:scale-95 transition-all text-center"
               >
-                Book a Call &rarr;
+                Book a Call
               </Link>
             </motion.div>
           </motion.div>
