@@ -26,7 +26,7 @@ export default function Home() {
           <Features />
           <Stats />
           <Process />
-          <OurWork />
+          <OurWork standalone={false} />
           <Testimonials />
           <CTABanner />
         </main>

@@ -5,31 +5,20 @@ import { Navbar } from '@/components/redesign/Navbar'
 import { CTABanner } from '@/components/redesign/CTABanner'
 import { Footer } from '@/components/redesign/Footer'
 import { OurWork } from '@/components/redesign/OurWork'
-import { ScrambleHeading } from '@/components/redesign/ScrambleHeading'
-import dynamic from 'next/dynamic'
-
-const SmoothScroll = dynamic(
-  () => import('@/components/redesign/SmoothScroll').then(m => ({ default: m.SmoothScroll })),
-  { ssr: false }
-)
-const CustomCursor = dynamic(
-  () => import('@/components/redesign/CustomCursor').then(m => ({ default: m.CustomCursor })),
-  { ssr: false }
-)
+import ClientReveal from '@/components/redesign/ClientReveal'
 
 export default function WorkPage() {
   return (
-    <SmoothScroll>
-      <div className="relative min-h-screen bg-background text-foreground cursor-none">
-        <CustomCursor />
+    <ClientReveal>
+      <div className="min-h-screen bg-background text-foreground">
         <Navbar />
-        <main className="pt-0">
-          <OurWork titleContainerClassName="pt-8 md:pt-10" />
+        <main>
+          <OurWork />
         </main>
 
         <CTABanner />
         <Footer />
       </div>
-    </SmoothScroll>
+    </ClientReveal>
   )
 }
