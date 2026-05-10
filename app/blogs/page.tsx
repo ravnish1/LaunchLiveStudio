@@ -16,7 +16,7 @@ export default function BlogsPage() {
       <div className="min-h-screen bg-background text-foreground">
         <Navbar />
 
-        <main className="pt-20 pb-20 min-h-[60vh]">
+        <main className="pt-28 md:pt-24 pb-20 min-h-[60vh]">
           <div className="max-w-[1280px] mx-auto px-6">
             {/* Optimized Header Section */}
             <div className="mb-8">
