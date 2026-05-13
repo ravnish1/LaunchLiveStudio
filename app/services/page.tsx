@@ -11,7 +11,14 @@ export const metadata: Metadata = {
     title: "Expert Digital Services for Modern Brands",
     description: "Scalable tech stacks and strategic design tailored for founders who demand excellence. See what we can build for you.",
     url: "https://www.launchlive.studio/services",
-    images: [{ url: "https://launchlive.studio/og-services.png" }],
+    images: [
+      {
+        url: "/og-services.png",
+        width: 1200,
+        height: 630,
+        alt: "Our Digital Services",
+      },
+    ],
   },
 }
 
