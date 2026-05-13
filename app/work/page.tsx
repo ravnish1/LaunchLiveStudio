@@ -9,6 +9,7 @@ import ClientReveal from '@/components/redesign/ClientReveal'
 export const metadata: Metadata = {
   title: "Case Studies & Portfolio",
   description: "Explore our selected works and success stories. See how Launch Live Studio delivers high-performance e-commerce, SaaS, and AI solutions for startups.",
+  keywords: ["case studies", "custom shopify development", "saas dashboard design", "fintech ai solutions", "ecommerce performance", "bespoke digital products", "portfolio success stories"],
   alternates: {
     canonical: "/work",
   },

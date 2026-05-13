@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     template: "%s | Launch Live Studio",
   },
   description: "Launch Live Studio is a full-service digital agency building elite websites, AI systems, branding, and automation for startups and growing businesses.",
+  keywords: ["digital agency", "ai automation", "web development", "branding", "seo", "startup consultancy"],
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.png",

@@ -12,6 +12,7 @@ import ClientReveal from '@/components/redesign/ClientReveal'
 export const metadata: Metadata = {
   title: "Insights & Tech Growth Guides",
   description: "Expert insights on AI, Next.js, and branding. Discover how to accelerate your digital growth with our curated guides and professional tech tools.",
+  keywords: ["next.js development", "core web vitals optimization", "llm powered engines", "micro-interactions design", "server components optimization", "tech stack recommendations", "digital growth guides"],
   alternates: {
     canonical: "/blogs",
   },
