@@ -11,7 +11,14 @@ export const metadata: Metadata = {
     title: "Schedule Your Free Digital Strategy Session",
     description: "Let's build something exceptional together. Book a call with the Launch Live Studio team today.",
     url: "https://www.launchlive.studio/book-a-call",
-    images: [{ url: "https://launchlive.studio/og-contact.png" }],
+    images: [
+      {
+        url: "/og-contact.png",
+        width: 1200,
+        height: 630,
+        alt: "Book a consultation with Launch Live Studio",
+      },
+    ],
   },
 }
 

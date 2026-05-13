@@ -15,7 +15,14 @@ export const metadata: Metadata = {
     title: "Launch Live Studio Portfolio | Real Results for Real Brands",
     description: "Check out our latest projects: From streetwear e-commerce to AI agriculture intelligence platforms.",
     url: "https://www.launchlive.studio/work",
-    images: [{ url: "https://launchlive.studio/og-work.png" }],
+    images: [
+      {
+        url: "/og-work.png",
+        width: 1200,
+        height: 630,
+        alt: "Launch Live Studio Portfolio",
+      },
+    ],
   },
 }
 

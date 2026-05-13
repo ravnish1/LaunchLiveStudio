@@ -32,7 +32,14 @@ export const metadata: Metadata = {
     description: "Launch Live Studio is a full-service digital agency building websites, AI systems, branding, and automation for startups and growing businesses.",
     url: "https://www.launchlive.studio/",
     siteName: "Launch Live Studio",
-    images: [{ url: "https://launchlive.studio/og-image.png", width: 1200, height: 630 }],
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Launch Live Studio - Digital Agency",
+      },
+    ],
     locale: "en_IN",
     type: "website",
   },
@@ -42,7 +49,7 @@ export const metadata: Metadata = {
     description: "Launch Live Studio is a full-service digital agency building websites, AI systems, branding, and automation for startups and growing businesses.",
     site: "@launchlivestudio",
     creator: "@launchlivestudio",
-    images: ["https://launchlive.studio/og-image.png"],
+    images: ["/og-image.png"],
   },
 }
 

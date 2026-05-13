@@ -18,7 +18,14 @@ export const metadata: Metadata = {
     title: "Digital Growth & AI Strategy Guides",
     description: "Curated insights to help you master the modern tech landscape. Read our latest articles.",
     url: "https://www.launchlive.studio/blogs",
-    images: [{ url: "https://launchlive.studio/og-blogs.png" }],
+    images: [
+      {
+        url: "/og-blogs.png",
+        width: 1200,
+        height: 630,
+        alt: "Launch Live Studio Insights",
+      },
+    ],
   },
 }
 

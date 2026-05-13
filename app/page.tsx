@@ -12,14 +12,21 @@ export const metadata: Metadata = {
     description: "Discover how we combine strategic design with modern AI to build scalable systems for startups and creators.",
     url: "https://www.launchlive.studio/",
     siteName: "Launch Live Studio",
-    images: [{ url: "https://launchlive.studio/og-home.png", width: 1200, height: 630 }],
+    images: [
+      {
+        url: "/og-home.png",
+        width: 1200,
+        height: 630,
+        alt: "Launch Live Studio - Engineering the Future",
+      },
+    ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Launch Live Studio | Premium Digital Agency",
     description: "Elite websites, AI systems, and automation for modern businesses.",
-    images: ["https://launchlive.studio/og-home.png"],
+    images: ["/og-home.png"],
   },
 };
 
