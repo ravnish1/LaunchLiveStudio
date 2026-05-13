@@ -16,8 +16,11 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://launchlive.studio'),
-  title: "launchlive.studio",
-  description: "Launch Live Studio is a full-service digital agency building websites, AI systems, branding, and automation for startups and growing businesses.",
+  title: {
+    default: "Launch Live Studio | Premium Digital Agency",
+    template: "%s | Launch Live Studio",
+  },
+  description: "Launch Live Studio is a full-service digital agency building elite websites, AI systems, branding, and automation for startups and growing businesses.",
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.png",

@@ -1,6 +1,5 @@
-'use client'
-
 import React from 'react'
+import { Metadata } from 'next'
 import { Navbar } from '@/components/redesign/Navbar'
 import { CTABanner } from '@/components/redesign/CTABanner'
 import { Footer } from '@/components/redesign/Footer'
@@ -9,6 +8,11 @@ import { BLOG_POSTS } from '@/lib/blog-data'
 import Link from 'next/link'
 import Image from 'next/image'
 import ClientReveal from '@/components/redesign/ClientReveal'
+
+export const metadata: Metadata = {
+  title: "Insights & Growth Guides",
+  description: "Explore our collection of insights, guides, and tools designed to help startups and businesses accelerate their digital growth and master modern tech.",
+}
 
 export default function BlogsPage() {
   return (

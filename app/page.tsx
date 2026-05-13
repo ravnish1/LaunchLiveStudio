@@ -1,5 +1,13 @@
 import React from 'react'
+import { Metadata } from 'next'
 import dynamic from 'next/dynamic'
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "Launch Live Studio | Premium Digital Agency & Software House",
+  },
+  description: "Launch Live Studio is a full-service digital agency building elite websites, AI systems, branding, and automation for startups and growing businesses.",
+}
 
 // New Redesign Components
 import { Navbar } from '@/components/redesign/Navbar'
