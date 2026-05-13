@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     siteName: "Launch Live Studio",
     images: [
       {
-        url: "/og-image.png",
+        url: "/opengraph-image-with-text-with-color-schema.webp",
         width: 1200,
         height: 630,
         alt: "Launch Live Studio - Digital Agency",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     description: "Launch Live Studio is a full-service digital agency building websites, AI systems, branding, and automation for startups and growing businesses.",
     site: "@launchlivestudio",
     creator: "@launchlivestudio",
-    images: ["/og-image.png"],
+    images: ["/opengraph-image-with-text-with-color-schema.webp"],
   },
 }
 
