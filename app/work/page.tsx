@@ -7,11 +7,15 @@ import { OurWork } from '@/components/redesign/OurWork'
 import ClientReveal from '@/components/redesign/ClientReveal'
 
 export const metadata: Metadata = {
-  title: "Case Studies & Portfolio",
-  description: "Explore our selected works and success stories. See how Launch Live Studio delivers high-performance e-commerce, SaaS, and AI solutions for startups.",
-  keywords: ["case studies", "custom shopify development", "saas dashboard design", "fintech ai solutions", "ecommerce performance", "bespoke digital products", "portfolio success stories"],
-  alternates: {
-    canonical: "/work",
+  title: "Case Studies & Portfolio | Launch Live Studio",
+  description: "Explore our selected works. See how we delivered high-performance Shopify stores, AI-driven SaaS, and premium brand identities for leading startups.",
+  keywords: ["case studies", "custom shopify development", "saas dashboard design", "fintech ai solutions", "ecommerce case studies"],
+  alternates: { canonical: "https://www.launchlive.studio/work" },
+  openGraph: {
+    title: "Launch Live Studio Portfolio | Real Results for Real Brands",
+    description: "Check out our latest projects: From streetwear e-commerce to AI agriculture intelligence platforms.",
+    url: "https://www.launchlive.studio/work",
+    images: [{ url: "https://launchlive.studio/og-work.png" }],
   },
 }
 

@@ -3,11 +3,15 @@ import { Metadata } from 'next'
 import { BookACallClient } from './BookACallClient'
 
 export const metadata: Metadata = {
-  title: "Book a Consultation",
-  description: "Ready to launch your next big project? Schedule a free 30-minute strategy call with our experts and transform your digital presence today.",
-  keywords: ["90 day growth roadmap", "tech stack recommendations", "digital transformation consultancy", "free strategy call", "expert consultation"],
-  alternates: {
-    canonical: "/book-a-call",
+  title: "Book a Strategy Consultation | Launch Live Studio",
+  description: "Ready to launch your next big project? Schedule a free consultation with our experts to discuss your digital strategy, AI, or development needs.",
+  keywords: ["hire digital agency", "strategy consultation", "start digital project", "launch live studio contact"],
+  alternates: { canonical: "https://www.launchlive.studio/book-a-call" },
+  openGraph: {
+    title: "Schedule Your Free Digital Strategy Session",
+    description: "Let's build something exceptional together. Book a call with the Launch Live Studio team today.",
+    url: "https://www.launchlive.studio/book-a-call",
+    images: [{ url: "https://launchlive.studio/og-contact.png" }],
   },
 }
 

@@ -15,12 +15,12 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://launchlive.studio'),
+  metadataBase: new URL('https://www.launchlive.studio'),
   title: {
-    default: "Launch Live Studio | Premium Digital Agency",
+    default: "launchlive.studio",
     template: "%s | Launch Live Studio",
   },
-  description: "Launch Live Studio is a full-service digital agency building elite websites, AI systems, branding, and automation for startups and growing businesses.",
+  description: "Launch Live Studio is a full-service digital agency building websites, AI systems, branding, and automation for startups and growing businesses.",
   keywords: ["digital agency", "ai automation", "web development", "branding", "seo", "startup consultancy"],
   icons: {
     icon: "/favicon.ico",
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "launchlive.studio",
     description: "Launch Live Studio is a full-service digital agency building websites, AI systems, branding, and automation for startups and growing businesses.",
-    url: "https://launchlive.studio",
+    url: "https://www.launchlive.studio/",
     siteName: "Launch Live Studio",
-    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "https://launchlive.studio/og-image.png", width: 1200, height: 630 }],
     locale: "en_IN",
     type: "website",
   },
@@ -40,8 +40,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "launchlive.studio",
     description: "Launch Live Studio is a full-service digital agency building websites, AI systems, branding, and automation for startups and growing businesses.",
+    site: "@launchlivestudio",
     creator: "@launchlivestudio",
-    images: ["/og-image.png"],
+    images: ["https://launchlive.studio/og-image.png"],
   },
 }
 
