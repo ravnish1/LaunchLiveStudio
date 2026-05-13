@@ -10,11 +10,15 @@ import Image from 'next/image'
 import ClientReveal from '@/components/redesign/ClientReveal'
 
 export const metadata: Metadata = {
-  title: "Insights & Tech Growth Guides",
-  description: "Expert insights on AI, Next.js, and branding. Discover how to accelerate your digital growth with our curated guides and professional tech tools.",
-  keywords: ["next.js development", "core web vitals optimization", "llm powered engines", "micro-interactions design", "server components optimization", "tech stack recommendations", "digital growth guides"],
-  alternates: {
-    canonical: "/blogs",
+  title: "Insights & Tech Growth Guides | Launch Live Studio",
+  description: "Expert guides on AI automation, Next.js performance, and premium branding. Stay ahead of the curve with our latest digital strategies.",
+  keywords: ["ai insights", "next.js performance guides", "digital growth strategy", "branding trends 2026"],
+  alternates: { canonical: "https://www.launchlive.studio/blogs" },
+  openGraph: {
+    title: "Digital Growth & AI Strategy Guides",
+    description: "Curated insights to help you master the modern tech landscape. Read our latest articles.",
+    url: "https://www.launchlive.studio/blogs",
+    images: [{ url: "https://launchlive.studio/og-blogs.png" }],
   },
 }
 

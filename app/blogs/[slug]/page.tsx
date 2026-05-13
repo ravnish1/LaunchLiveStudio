@@ -18,16 +18,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: post.title,
+    title: `${post.title} | Launch Live Studio`,
     description: post.description,
     keywords: post.tags,
-    alternates: {
-      canonical: `/blogs/${slug}`,
-    },
+    alternates: { canonical: `https://www.launchlive.studio/blogs/${slug}` },
     openGraph: {
       title: post.title,
       description: post.description,
       images: [{ url: post.image }],
+      type: "article",
+      authors: ["Launch Live Studio"],
+      publishedTime: post.date,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
+      images: [post.image],
     },
   }
 }
