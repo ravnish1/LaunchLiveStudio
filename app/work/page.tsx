@@ -7,8 +7,12 @@ import { OurWork } from '@/components/redesign/OurWork'
 import ClientReveal from '@/components/redesign/ClientReveal'
 
 export const metadata: Metadata = {
-  title: "Our Portfolio",
-  description: "Browse our selected works and case studies. From high-performance web apps to immersive brand experiences, see how we deliver results for our clients.",
+  title: "Case Studies & Portfolio",
+  description: "Explore our selected works and success stories. See how Launch Live Studio delivers high-performance e-commerce, SaaS, and AI solutions for startups.",
+  keywords: ["case studies", "custom shopify development", "saas dashboard design", "fintech ai solutions", "ecommerce performance", "bespoke digital products", "portfolio success stories"],
+  alternates: {
+    canonical: "/work",
+  },
 }
 
 export default function WorkPage() {

@@ -4,9 +4,13 @@ import dynamic from 'next/dynamic'
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Launch Live Studio | Premium Digital Agency & Software House",
+    absolute: "Launch Live Studio | Premium Digital Agency & Software",
   },
-  description: "Launch Live Studio is a full-service digital agency building elite websites, AI systems, branding, and automation for startups and growing businesses.",
+  description: "Build elite websites, AI systems, and automation with Launch Live Studio. We empower startups with high-performance digital solutions. Start your journey today.",
+  keywords: ["digital agency", "ai automation", "high performance websites", "outcome driven agency", "strategic digital growth", "digital systems engineering", "startup automation"],
+  alternates: {
+    canonical: "/",
+  },
 }
 
 // New Redesign Components
