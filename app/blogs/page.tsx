@@ -10,8 +10,11 @@ import Image from 'next/image'
 import ClientReveal from '@/components/redesign/ClientReveal'
 
 export const metadata: Metadata = {
-  title: "Insights & Growth Guides",
-  description: "Explore our collection of insights, guides, and tools designed to help startups and businesses accelerate their digital growth and master modern tech.",
+  title: "Insights & Tech Growth Guides",
+  description: "Expert insights on AI, Next.js, and branding. Discover how to accelerate your digital growth with our curated guides and professional tech tools.",
+  alternates: {
+    canonical: "/blogs",
+  },
 }
 
 export default function BlogsPage() {

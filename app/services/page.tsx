@@ -3,8 +3,11 @@ import { Metadata } from 'next'
 import { ServicesClient } from './ServicesClient'
 
 export const metadata: Metadata = {
-  title: "Expert Digital Services",
-  description: "Explore our premium services including web development, AI integration, brand strategy, and automation solutions tailored for modern businesses.",
+  title: "Our Digital Services",
+  description: "From custom web development to AI integration, explore our range of premium services designed to scale your business and outpace the competition.",
+  alternates: {
+    canonical: "/services",
+  },
 }
 
 export default function ServicesPage() {
