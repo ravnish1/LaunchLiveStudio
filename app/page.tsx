@@ -4,17 +4,17 @@ import dynamic from "next/dynamic";
 
 export const metadata: Metadata = {
   title: "Launch Live Studio",
-  description: "We build digital systems that connect, convert and compound over time.",
+  description: "Websites, automation & systems for modern businesses.",
   keywords: ["digital agency", "ai automation", "high performance websites", "startup software", "outcome driven agency"],
   alternates: { canonical: "https://www.launchlive.studio/" },
   openGraph: {
     title: "Launch Live Studio",
-    description: "We build digital systems that connect, convert and compound over time.",
+    description: "Websites, automation & systems for modern businesses.",
     url: "https://www.launchlive.studio/",
     siteName: "Launch Live Studio",
     images: [
       {
-        url: "/opengraph-image-with-text-with-color-schema.webp",
+        url: "https://www.launchlive.studio/logo.png",
         width: 1200,
         height: 630,
         alt: "Launch Live Studio - Digital Agency",
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Launch Live Studio",
-    description: "We build digital systems that connect, convert and compound over time.",
-    images: ["/opengraph-image-with-text-with-color-schema.webp"],
+    description: "Websites, automation & systems for modern businesses.",
+    images: ["https://www.launchlive.studio/logo.png"],
   },
 };
 

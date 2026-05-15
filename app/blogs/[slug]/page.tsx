@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: post.description,
       images: [
         {
-          url: "/opengraph-image-with-text-with-color-schema.webp",
+          url: "https://www.launchlive.studio/logo.png",
           width: 1200,
           height: 630,
           alt: post.title,
@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title: post.title,
       description: post.description,
-      images: ["/opengraph-image-with-text-with-color-schema.webp"],
+      images: ["https://www.launchlive.studio/logo.png"],
     },
   }
 }

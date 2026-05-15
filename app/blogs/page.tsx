@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     url: "https://www.launchlive.studio/blogs",
     images: [
       {
-        url: "/opengraph-image-with-text-with-color-schema.webp",
+        url: "https://www.launchlive.studio/logo.png",
         width: 1200,
         height: 630,
         alt: "Launch Live Studio Insights",

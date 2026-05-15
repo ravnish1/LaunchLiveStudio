@@ -11,21 +11,21 @@ This document contains the highly optimized Next.js metadata objects for every p
 ```typescript
 export const metadata: Metadata = {
   title: "Launch Live Studio",
-  description: "We build digital systems that connect, convert and compound over time.",
+  description: "Websites, automation & systems for modern businesses.",
   keywords: ["digital agency", "ai automation", "high performance websites", "startup software", "outcome driven agency"],
   alternates: { canonical: "https://www.launchlive.studio/" },
   openGraph: {
     title: "Launch Live Studio",
-    description: "We build digital systems that connect, convert and compound over time.",
+    description: "Websites, automation & systems for modern businesses.",
     url: "https://www.launchlive.studio/",
     siteName: "Launch Live Studio",
-    images: [{ url: "https://launchlive.studio/opengraph-image-with-text-with-color-schema.webp", width: 1200, height: 630 }],
+    images: [{ url: "https://www.launchlive.studio/logo.png", width: 1200, height: 630 }],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Launch Live Studio",
-    description: "We build digital systems that connect, convert and compound over time.",
+    description: "Websites, automation & systems for modern businesses.",
     images: ["https://launchlive.studio/opengraph-image-with-text-with-color-schema.webp"],
   },
 };

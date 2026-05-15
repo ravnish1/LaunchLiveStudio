@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     default: "Launch Live Studio",
     template: "%s | Launch Live Studio",
   },
-  description: "We build digital systems that connect, convert and compound over time.",
+  description: "Websites, automation & systems for modern businesses.",
   keywords: ["digital agency", "ai automation", "web development", "branding", "seo", "startup consultancy"],
   icons: {
     icon: "/favicon.ico",
@@ -29,12 +29,12 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Launch Live Studio",
-    description: "We build digital systems that connect, convert and compound over time.",
+    description: "Websites, automation & systems for modern businesses.",
     url: "https://www.launchlive.studio/",
     siteName: "Launch Live Studio",
     images: [
       {
-        url: "/logo.png",
+        url: "https://www.launchlive.studio/logo.png",
         width: 1200,
         height: 630,
         alt: "Launch Live Studio - Digital Agency",
@@ -46,10 +46,10 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Launch Live Studio",
-    description: "We build digital systems that connect, convert and compound over time.",
+    description: "Websites, automation & systems for modern businesses.",
     site: "@launchlivestudio",
     creator: "@launchlivestudio",
-    images: ["/logo.png"],
+    images: ["https://www.launchlive.studio/logo.png"],
   },
 }
 
