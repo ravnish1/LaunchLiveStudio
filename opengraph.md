@@ -10,23 +10,23 @@ This document contains the highly optimized Next.js metadata objects for every p
 
 ```typescript
 export const metadata: Metadata = {
-  title: "launchlive.studio",
-  description: "We build high-value websites, AI systems, and automations that cut costs and compound growth for your business.",
+  title: "Launch Live Studio",
+  description: "We build digital systems that connect, convert and compound over time.",
   keywords: ["digital agency", "ai automation", "high performance websites", "startup software", "outcome driven agency"],
   alternates: { canonical: "https://www.launchlive.studio/" },
   openGraph: {
-    title: "launchlive.studio",
-    description: "We build high-value websites, AI systems, and automations that cut costs and compound growth for your business.",
+    title: "Launch Live Studio",
+    description: "We build digital systems that connect, convert and compound over time.",
     url: "https://www.launchlive.studio/",
     siteName: "Launch Live Studio",
-    images: [{ url: "https://launchlive.studio/logo.png", width: 1200, height: 630 }],
+    images: [{ url: "https://launchlive.studio/opengraph-image-with-text-with-color-schema.webp", width: 1200, height: 630 }],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "launchlive.studio",
-    description: "We build high-value websites, AI systems, and automations that cut costs and compound growth for your business.",
-    images: ["https://launchlive.studio/logo.png"],
+    title: "Launch Live Studio",
+    description: "We build digital systems that connect, convert and compound over time.",
+    images: ["https://launchlive.studio/opengraph-image-with-text-with-color-schema.webp"],
   },
 };
 ```
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     title: "Expert Digital Services for Modern Brands",
     description: "Scalable tech stacks and strategic design tailored for founders who demand excellence. See what we can build for you.",
     url: "https://www.launchlive.studio/services",
-    images: [{ url: "https://launchlive.studio/logo.png" }],
+    images: [{ url: "https://launchlive.studio/opengraph-image-with-text-with-color-schema.webp" }],
   },
 };
 ```
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     title: "Launch Live Studio Portfolio | Real Results for Real Brands",
     description: "Check out our latest projects: From streetwear e-commerce to AI agriculture intelligence platforms.",
     url: "https://www.launchlive.studio/work",
-    images: [{ url: "https://launchlive.studio/logo.png" }],
+    images: [{ url: "https://launchlive.studio/opengraph-image-with-text-with-color-schema.webp" }],
   },
 };
 ```
@@ -94,7 +94,7 @@ export const metadata: Metadata = {
     title: "Digital Growth & AI Strategy Guides",
     description: "Curated insights to help you master the modern tech landscape. Read our latest articles.",
     url: "https://www.launchlive.studio/blogs",
-    images: [{ url: "https://launchlive.studio/logo.png" }],
+    images: [{ url: "https://launchlive.studio/opengraph-image-with-text-with-color-schema.webp" }],
   },
 };
 ```
@@ -116,7 +116,7 @@ export const metadata: Metadata = {
     title: "Schedule Your Free Digital Strategy Session",
     description: "Let's build something exceptional together. Book a call with the Launch Live Studio team today.",
     url: "https://www.launchlive.studio/book-a-call",
-    images: [{ url: "https://launchlive.studio/logo.png" }],
+    images: [{ url: "https://launchlive.studio/opengraph-image-with-text-with-color-schema.webp" }],
   },
 };
 ```
@@ -138,7 +138,7 @@ export const metadata: Metadata = {
     title: "What Our Partners Say About Launch Live Studio",
     description: "Discover why founders trust us to build their most critical digital infrastructure.",
     url: "https://www.launchlive.studio/testimonials",
-    images: [{ url: "https://launchlive.studio/logo.png" }],
+    images: [{ url: "https://launchlive.studio/opengraph-image-with-text-with-color-schema.webp" }],
   },
 };
 ```

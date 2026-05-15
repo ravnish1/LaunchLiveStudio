@@ -17,10 +17,10 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.launchlive.studio'),
   title: {
-    default: "launchlive.studio",
+    default: "Launch Live Studio",
     template: "%s | Launch Live Studio",
   },
-  description: "More than a traditional agency. We build high-value websites, AI systems, and automations that cut costs and compound growth for your business.",
+  description: "We build digital systems that connect, convert and compound over time.",
   keywords: ["digital agency", "ai automation", "web development", "branding", "seo", "startup consultancy"],
   icons: {
     icon: "/favicon.ico",
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
     apple: "/logo.png",
   },
   openGraph: {
-    title: "launchlive.studio",
-    description: "More than a traditional agency. We build high-value websites, AI systems, and automations that cut costs and compound growth for your business.",
+    title: "Launch Live Studio",
+    description: "We build digital systems that connect, convert and compound over time.",
     url: "https://www.launchlive.studio/",
     siteName: "Launch Live Studio",
     images: [
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "launchlive.studio",
-    description: "More than a traditional agency. We build high-value websites, AI systems, and automations that cut costs and compound growth for your business.",
+    title: "Launch Live Studio",
+    description: "We build digital systems that connect, convert and compound over time.",
     site: "@launchlivestudio",
     creator: "@launchlivestudio",
     images: ["/logo.png"],
