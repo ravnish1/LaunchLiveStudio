@@ -3,30 +3,30 @@ import { Metadata } from "next";
 import dynamic from "next/dynamic";
 
 export const metadata: Metadata = {
-  title: "Launch Live Studio | Premium Digital Agency & Software House",
-  description: "Build elite websites, AI systems, and automated workflows. We empower startups and modern brands with high-performance digital solutions that drive revenue.",
+  title: "launchlive.studio",
+  description: "More than a traditional agency. We build high-value websites, AI systems, and automations that cut costs and compound growth for your business.",
   keywords: ["digital agency", "ai automation", "high performance websites", "startup software", "outcome driven agency"],
   alternates: { canonical: "https://www.launchlive.studio/" },
   openGraph: {
-    title: "Launch Live Studio | Engineering the Future of Digital",
-    description: "Discover how we combine strategic design with modern AI to build scalable systems for startups and creators.",
+    title: "launchlive.studio",
+    description: "More than a traditional agency. We build high-value websites, AI systems, and automations that cut costs and compound growth for your business.",
     url: "https://www.launchlive.studio/",
     siteName: "Launch Live Studio",
     images: [
       {
-        url: "/opengraph-image-with-text-with-color-schema.webp",
+        url: "/logo.png",
         width: 1200,
         height: 630,
-        alt: "Launch Live Studio - Engineering the Future",
+        alt: "Launch Live Studio - Digital Agency",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Launch Live Studio | Premium Digital Agency",
-    description: "Elite websites, AI systems, and automation for modern businesses.",
-    images: ["/opengraph-image-with-text-with-color-schema.webp"],
+    title: "launchlive.studio",
+    description: "More than a traditional agency. We build high-value websites, AI systems, and automations that cut costs and compound growth for your business.",
+    images: ["/logo.png"],
   },
 };
 

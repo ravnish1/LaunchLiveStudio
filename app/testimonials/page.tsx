@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     url: "https://www.launchlive.studio/testimonials",
     images: [
       {
-        url: "/opengraph-image-with-text-with-color-schema.webp",
+        url: "/logo.png",
         width: 1200,
         height: 630,
         alt: "What Our Partners Say About Us",

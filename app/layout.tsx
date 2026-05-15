@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     default: "launchlive.studio",
     template: "%s | Launch Live Studio",
   },
-  description: "Launch Live Studio is a full-service digital agency building websites, AI systems, branding, and automation for startups and growing businesses.",
+  description: "More than a traditional agency. We build high-value websites, AI systems, and automations that cut costs and compound growth for your business.",
   keywords: ["digital agency", "ai automation", "web development", "branding", "seo", "startup consultancy"],
   icons: {
     icon: "/favicon.ico",
@@ -29,12 +29,12 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "launchlive.studio",
-    description: "Launch Live Studio is a full-service digital agency building websites, AI systems, branding, and automation for startups and growing businesses.",
+    description: "More than a traditional agency. We build high-value websites, AI systems, and automations that cut costs and compound growth for your business.",
     url: "https://www.launchlive.studio/",
     siteName: "Launch Live Studio",
     images: [
       {
-        url: "/opengraph-image-with-text-with-color-schema.webp",
+        url: "/logo.png",
         width: 1200,
         height: 630,
         alt: "Launch Live Studio - Digital Agency",
@@ -46,10 +46,10 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "launchlive.studio",
-    description: "Launch Live Studio is a full-service digital agency building websites, AI systems, branding, and automation for startups and growing businesses.",
+    description: "More than a traditional agency. We build high-value websites, AI systems, and automations that cut costs and compound growth for your business.",
     site: "@launchlivestudio",
     creator: "@launchlivestudio",
-    images: ["/opengraph-image-with-text-with-color-schema.webp"],
+    images: ["/logo.png"],
   },
 }
 
