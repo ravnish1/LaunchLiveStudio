@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     url: "https://www.launchlive.studio/testimonials",
     images: [
       {
-        url: "https://www.launchlive.studio/logo.png",
+        url: "/og-preview.jpg",
         width: 1200,
         height: 630,
         alt: "What Our Partners Say About Us",

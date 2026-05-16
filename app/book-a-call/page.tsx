@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     url: "https://www.launchlive.studio/book-a-call",
     images: [
       {
-        url: "https://www.launchlive.studio/logo.png",
+        url: "/og-preview.jpg",
         width: 1200,
         height: 630,
         alt: "Book a consultation with Launch Live Studio",

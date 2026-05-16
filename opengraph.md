@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     description: "Websites, automation & systems for modern businesses.",
     url: "https://www.launchlive.studio/",
     siteName: "Launch Live Studio",
-    images: [{ url: "https://www.launchlive.studio/logo.png", width: 1200, height: 630 }],
+    images: [{ url: "/og-preview.jpg", width: 1200, height: 630 }],
     type: "website",
   },
   twitter: {

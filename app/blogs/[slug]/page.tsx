@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: post.description,
       images: [
         {
-          url: "https://www.launchlive.studio/logo.png",
+          url: "/og-preview.jpg",
           width: 1200,
           height: 630,
           alt: post.title,
@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title: post.title,
       description: post.description,
-      images: ["https://www.launchlive.studio/logo.png"],
+      images: ["/og-preview.jpg"],
     },
   }
 }

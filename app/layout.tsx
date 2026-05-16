@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     siteName: "Launch Live Studio",
     images: [
       {
-        url: "https://www.launchlive.studio/logo.png",
+        url: "/og-preview.jpg",
         width: 1200,
         height: 630,
         alt: "Launch Live Studio - Digital Agency",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     description: "Websites, automation & systems for modern businesses.",
     site: "@launchlivestudio",
     creator: "@launchlivestudio",
-    images: ["https://www.launchlive.studio/logo.png"],
+    images: ["/og-preview.jpg"],
   },
 }
 
