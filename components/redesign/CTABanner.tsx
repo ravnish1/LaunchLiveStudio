@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { ScrambleHeading } from './ScrambleHeading'
+
 import { useRouter } from 'next/navigation'
 
 export const CTABanner = ({ compact = false }: { compact?: boolean }) => {
@@ -19,10 +19,10 @@ export const CTABanner = ({ compact = false }: { compact?: boolean }) => {
 
             <div className={`relative z-10 ${compact ? 'space-y-6 md:space-y-8' : 'space-y-6 md:space-y-10'}`}>
               <div className="space-y-2 md:space-y-4">
-                <ScrambleHeading text="◎ READY TO LAUNCH?" as="span" className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-white/70 uppercase" staggerMs={30} scrambleFrames={4} />
+                <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-white/70 uppercase">◎ READY TO LAUNCH?</span>
                 <h2 className="flex flex-col gap-0.5 md:gap-2">
-                  <ScrambleHeading text="Let's build something" as="span" className={`font-serif text-white leading-tight md:leading-[0.9] tracking-tighter ${compact ? 'text-xl sm:text-3xl md:text-5xl lg:text-6xl' : 'text-xl sm:text-3xl md:text-5xl lg:text-6xl'}`} staggerMs={35} scrambleFrames={5} />
-                  <ScrambleHeading text="that turns heads." as="span" className={`font-serif text-white leading-tight md:leading-[0.9] tracking-tighter ${compact ? 'text-xl sm:text-3xl md:text-5xl lg:text-6xl' : 'text-xl sm:text-3xl md:text-5xl lg:text-6xl'}`} staggerMs={35} scrambleFrames={5} />
+                  <span className={`font-serif text-white leading-tight md:leading-[0.9] tracking-tighter ${compact ? 'text-xl sm:text-3xl md:text-5xl lg:text-6xl' : 'text-xl sm:text-3xl md:text-5xl lg:text-6xl'}`}>Let's build something</span>
+                  <span className={`font-serif text-white leading-tight md:leading-[0.9] tracking-tighter ${compact ? 'text-xl sm:text-3xl md:text-5xl lg:text-6xl' : 'text-xl sm:text-3xl md:text-5xl lg:text-6xl'}`}>that turns heads.</span>
                 </h2>
               </div>
               

@@ -11,16 +11,11 @@ const SmoothScroll = dynamic(
   () => import('@/components/redesign/SmoothScroll').then(m => ({ default: m.SmoothScroll })),
   { ssr: false }
 )
-const CustomCursor = dynamic(
-  () => import('@/components/redesign/CustomCursor').then(m => ({ default: m.CustomCursor })),
-  { ssr: false }
-)
 
 export function ServicesClient() {
   return (
     <SmoothScroll>
-      <div className="relative min-h-screen bg-background text-foreground cursor-none">
-        <CustomCursor />
+      <div className="relative min-h-screen bg-background text-foreground">
         <Navbar />
 
         <main>

@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 import { Navbar } from '@/components/redesign/Navbar'
 import { CTABanner } from '@/components/redesign/CTABanner'
 import { Footer } from '@/components/redesign/Footer'
-import { ScrambleHeading } from '@/components/redesign/ScrambleHeading'
+
 import { BLOG_POSTS } from '@/lib/blog-data'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -39,7 +39,7 @@ export default function BlogsPage() {
           <div className="max-w-[1280px] mx-auto px-6">
             {/* Optimized Header Section */}
             <div className="mb-8">
-              <ScrambleHeading text="Blogs." as="h1" className="text-4xl md:text-6xl font-serif mb-2" />
+              <h1 className="text-4xl md:text-6xl font-serif mb-2">Blogs.</h1>
               <p className="text-lg md:text-xl font-serif italic text-text-muted max-w-2xl mt-1">
                 Insights, guides, and tools to accelerate your digital growth.
               </p>
