@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { ScrambleHeading } from './ScrambleHeading'
+
 
 const steps = [
   { title: 'DISCOVER', desc: 'We get deep into your world — your goals, users, competitors, and constraints. No assumptions. Just clarity.' },
@@ -16,9 +16,9 @@ export const Process = () => {
     <section className="py-32 px-6">
       <div className="max-w-[1280px] mx-auto">
         <div className="mb-20">
-          <ScrambleHeading text="HOW WE WORK" as="span" className="text-sm font-medium tracking-widest text-accent uppercase" staggerMs={30} scrambleFrames={4} />
-          <ScrambleHeading text="From idea" as="h2" className="text-5xl md:text-8xl font-serif mt-4" staggerMs={50} />
-          <ScrambleHeading text="to live." as="h2" className="text-5xl md:text-8xl font-serif" staggerMs={50} />
+          <span className="text-sm font-medium tracking-widest text-accent uppercase">HOW WE WORK</span>
+          <h2 className="text-5xl md:text-8xl font-serif mt-4">From idea</h2>
+          <h2 className="text-5xl md:text-8xl font-serif">to live.</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 relative">
