@@ -10,18 +10,13 @@ const SmoothScroll = dynamic(
   () => import('@/components/redesign/SmoothScroll').then(m => ({ default: m.SmoothScroll })),
   { ssr: false }
 )
-const CustomCursor = dynamic(
-  () => import('@/components/redesign/CustomCursor').then(m => ({ default: m.CustomCursor })),
-  { ssr: false }
-)
 
 export function PrivacyClient() {
   const lastUpdated = "April 14, 2026"
 
   return (
     <SmoothScroll>
-      <div className="relative min-h-screen bg-background text-foreground cursor-none">
-        <CustomCursor />
+      <div className="relative min-h-screen bg-background text-foreground">
         <Navbar />
 
         <main className="pt-32 pb-24 px-6 md:px-8">

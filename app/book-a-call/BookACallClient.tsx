@@ -11,10 +11,6 @@ const SmoothScroll = dynamic(
   () => import('@/components/redesign/SmoothScroll').then(m => ({ default: m.SmoothScroll })),
   { ssr: false }
 )
-const CustomCursor = dynamic(
-  () => import('@/components/redesign/CustomCursor').then(m => ({ default: m.CustomCursor })),
-  { ssr: false }
-)
 
 export function BookACallClient() {
   const [formData, setFormData] = useState({ name: '', email: '', details: '' })
@@ -52,8 +48,7 @@ export function BookACallClient() {
 
   return (
     <SmoothScroll>
-      <div className="relative min-h-screen bg-background text-foreground cursor-none">
-        <CustomCursor />
+      <div className="relative min-h-screen bg-background text-foreground">
         <Navbar />
 
         <main className="pt-32 pb-32 min-h-[60vh]">
