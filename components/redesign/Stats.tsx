@@ -3,7 +3,7 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { motion, useInView, useSpring, useTransform } from 'framer-motion'
 
-import { ScrambleHeading } from './ScrambleHeading'
+
 
 const Counter = ({ value, suffix, label }: { value: number, suffix: string, label: string }) => {
   const ref = useRef(null)
@@ -40,10 +40,10 @@ export const Stats = () => {
     <section className="py-32 px-6 bg-surface border-y border-foreground/5 noise-bg">
       <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div>
-          <ScrambleHeading text="WE ARE" as="span" className="text-sm font-medium tracking-widest text-accent uppercase" staggerMs={30} scrambleFrames={4} />
+          <span className="text-sm font-medium tracking-widest text-accent uppercase">WE ARE</span>
           <div className="mt-4 mb-8 space-y-1">
-            <ScrambleHeading text="A lean team of developers," as="h2" className="text-[5.8vw] sm:text-4xl md:text-5xl lg:text-[3.5rem] font-serif leading-[1.1] tracking-tight whitespace-nowrap" staggerMs={50} />
-            <ScrambleHeading text="designers, and AI engineers." as="h2" className="text-[5.8vw] sm:text-4xl md:text-5xl lg:text-[3.5rem] font-serif underline decoration-accent underline-offset-8 decoration-1 leading-[1.1] tracking-tight whitespace-nowrap" staggerMs={50} />
+            <h2 className="text-[5.8vw] sm:text-4xl md:text-5xl lg:text-[3.5rem] font-serif leading-[1.1] tracking-tight whitespace-nowrap">A lean team of developers,</h2>
+            <h2 className="text-[5.8vw] sm:text-4xl md:text-5xl lg:text-[3.5rem] font-serif underline decoration-accent underline-offset-8 decoration-1 leading-[1.1] tracking-tight whitespace-nowrap">designers, and AI engineers.</h2>
           </div>
 
           <p className="text-xl text-text-muted leading-relaxed mb-6 max-w-lg">

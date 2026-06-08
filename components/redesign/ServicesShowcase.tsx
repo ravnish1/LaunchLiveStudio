@@ -3,7 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { features } from './Features'
-import { ScrambleHeading } from './ScrambleHeading'
+
 import { ArrowUpRight } from 'lucide-react'
 
 export const ServicesShowcase = () => {
@@ -12,25 +12,9 @@ export const ServicesShowcase = () => {
       <div className="max-w-[1200px] mx-auto">
         {/* Hero Section */}
         <div className="flex flex-col gap-3 md:gap-4 mb-10 md:mb-16">
-          <ScrambleHeading
-            text="SERVICES & EXPERTISE"
-            as="span"
-            className="text-xs md:text-sm font-bold tracking-[0.2em] text-accent uppercase"
-            staggerMs={20}
-            scrambleFrames={3}
-          />
-          <ScrambleHeading
-            text="We build digital systems"
-            as="h2"
-            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif leading-[1.1] tracking-tight"
-            staggerMs={40}
-          />
-          <ScrambleHeading
-            text="that drive actual revenue."
-            as="h2"
-            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif italic text-accent leading-[1.1] tracking-tight mb-2 md:mb-4"
-            staggerMs={40}
-          />
+          <span className="text-xs md:text-sm font-bold tracking-[0.2em] text-accent uppercase">SERVICES & EXPERTISE</span>
+          <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif leading-[1.1] tracking-tight">We build digital systems</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif italic text-accent leading-[1.1] tracking-tight mb-2 md:mb-4">that drive actual revenue.</h2>
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -74,12 +58,7 @@ export const ServicesShowcase = () => {
         {/* The LaunchLive Difference */}
         <div className="pt-12 md:pt-20 border-t border-foreground/10">
           <div className="text-center mb-10 md:mb-16">
-            <ScrambleHeading
-              text="THE LAUNCHLIVE DIFFERENCE"
-              as="span"
-              className="text-xs md:text-sm font-bold tracking-[0.2em] text-accent uppercase"
-              staggerMs={20}
-            />
+            <span className="text-xs md:text-sm font-bold tracking-[0.2em] text-accent uppercase">THE LAUNCHLIVE DIFFERENCE</span>
             <h2 className="text-3xl sm:text-4xl md:text-6xl font-serif mt-3 md:mt-4 text-foreground">Why we consistently outperform</h2>
             <p className="text-text-muted mt-4 md:mt-6 max-w-2xl mx-auto text-base md:text-lg px-2 md:px-0">
               We recognized the flaws in traditional agency models and built an alternative. Here is how we ensure our partners win in competitive markets.

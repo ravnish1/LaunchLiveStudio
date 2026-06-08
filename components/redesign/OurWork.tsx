@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { ScrambleHeading } from './ScrambleHeading'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { ExternalLink, ArrowUpRight } from 'lucide-react'
@@ -207,25 +207,9 @@ export const OurWork = ({ titleContainerClassName = '', standalone = true }: { t
         {/* ── Header ── */}
         <div className={`mb-10 md:mb-14 flex flex-col md:flex-row justify-between items-start md:items-end gap-5 ${titleContainerClassName}`}>
           <div>
-            <ScrambleHeading
-              text="SELECTED PROJECTS"
-              as="span"
-              className="text-xs md:text-sm font-bold tracking-[0.2em] text-accent uppercase"
-              staggerMs={20}
-              scrambleFrames={3}
-            />
-            <ScrambleHeading
-              text="Work that speaks"
-              as="h2"
-              className="text-3xl sm:text-4xl md:text-6xl font-serif mt-3 leading-[1.1] tracking-tight"
-              staggerMs={40}
-            />
-            <ScrambleHeading
-              text="for itself."
-              as="h2"
-              className="text-3xl sm:text-4xl md:text-6xl font-serif italic text-accent leading-[1.1] tracking-tight"
-              staggerMs={40}
-            />
+            <span className="text-xs md:text-sm font-bold tracking-[0.2em] text-accent uppercase">SELECTED PROJECTS</span>
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-serif mt-3 leading-[1.1] tracking-tight">Work that speaks</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-serif italic text-accent leading-[1.1] tracking-tight">for itself.</h2>
             <p className="mt-4 text-text-muted text-base md:text-lg max-w-lg leading-relaxed">
               Real results for real businesses. Every project is built to convert, perform, and scale.
             </p>

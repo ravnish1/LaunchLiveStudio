@@ -218,24 +218,6 @@ function ScrollAnimation() {
 
 ## Custom Hooks
 
-### useScrambleText
-
-Text scramble/reveal animation effect.
-
-```tsx
-import { useScrambleText } from "@/hooks/use-scramble-text"
-
-function HeroTitle() {
-  const displayText = useScrambleText({
-    text: "Launch Live Studio",
-    speed: 0.5,
-    seed: 42
-  })
-
-  return <h1>{displayText}</h1>
-}
-```
-
 ### useMobile
 
 Detect mobile viewport.
