@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { Navbar } from '@/components/redesign/Navbar'
 import { Footer } from '@/components/redesign/Footer'
-import { ScrambleHeading } from '@/components/redesign/ScrambleHeading'
+
 import dynamic from 'next/dynamic'
 import Cal, { getCalApi } from '@calcom/embed-react'
 
@@ -54,7 +54,7 @@ export function BookACallClient() {
         <main className="pt-32 pb-32 min-h-[60vh]">
           <div className="max-w-[1280px] mx-auto px-6">
             <div className="text-center mb-16">
-              <ScrambleHeading text="Book a Call." as="h1" className="text-5xl md:text-8xl font-serif mb-8" />
+              <h1 className="text-5xl md:text-8xl font-serif mb-8">Book a Call.</h1>
               <p className="text-2xl font-serif italic text-text-muted max-w-2xl mx-auto mt-8">
                 Ready to launch? Tell us about your project or grab a time on our calendar.
               </p>

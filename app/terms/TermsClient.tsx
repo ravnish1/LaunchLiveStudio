@@ -3,7 +3,7 @@
 import React from 'react'
 import { Navbar } from '@/components/redesign/Navbar'
 import { Footer } from '@/components/redesign/Footer'
-import { ScrambleHeading } from '@/components/redesign/ScrambleHeading'
+
 import dynamic from 'next/dynamic'
 
 const SmoothScroll = dynamic(
@@ -22,11 +22,7 @@ export function TermsClient() {
         <main className="pt-32 pb-24 px-6 md:px-8">
           <div className="max-w-[800px] mx-auto">
             <header className="mb-16">
-              <ScrambleHeading 
-                text="Terms of Service" 
-                as="h1" 
-                className="text-4xl md:text-6xl font-serif font-bold mb-4" 
-              />
+              <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4">Terms of Service</h1>
               <p className="text-text-muted italic">Last Updated: {lastUpdated}</p>
             </header>
 
