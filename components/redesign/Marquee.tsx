@@ -82,10 +82,9 @@ const MarqueeRow = ({ items, direction, speed = 20 }: MarqueeRowProps) => {
     </div>
   );
 };
-
 export const Marquee = () => {
   return (
-    <section className="py-16 md:py-20 border-y border-foreground/5 overflow-hidden bg-background relative">
+    <section className="py-16 md:py-20 overflow-hidden bg-background relative">
       {/* Side gradient mask fades for visually elegant edges */}
       <div className="absolute top-0 left-0 w-24 md:w-48 h-full bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
       <div className="absolute top-0 right-0 w-24 md:w-48 h-full bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
