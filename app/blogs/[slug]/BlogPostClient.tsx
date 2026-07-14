@@ -9,6 +9,9 @@ import { motion } from 'framer-motion'
 import { ArrowLeft, Clock, Tag, Calendar } from 'lucide-react'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+
 
 const SmoothScroll = dynamic(
   () => import('@/components/redesign/SmoothScroll').then(m => ({ default: m.SmoothScroll })),
@@ -106,11 +109,11 @@ export function BlogPostClient() {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="space-y-8"
               >
-                {post.content.map((p, i) => (
-                  <p key={i} className="text-lg md:text-xl text-foreground font-medium leading-[1.7] opacity-90">
-                    {p}
-                  </p>
-                ))}
+                <div className="prose prose-lg dark:prose-invert prose-headings:font-serif prose-p:leading-relaxed prose-a:text-accent prose-strong:text-accent max-w-none opacity-90 text-foreground">
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                    {post.content}
+                  </ReactMarkdown>
+                </div>
 
                 {/* Tags */}
                 <div className="pt-12 flex flex-wrap gap-3">
