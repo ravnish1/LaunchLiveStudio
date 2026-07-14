@@ -17,7 +17,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Digital Strategy',
     date: 'July 14, 2026',
     readTime: '15 min read',
-    image: '/blog/premium-branding.png',
+    image: '/blog/digital-growth-presence.png',
     tags: ['Digital Marketing', 'SEO', 'Business Growth', 'AI'],
     description: 'Learn how to improve your online presence, reach a broader audience, and drive sustainable business growth with modern SEO, UX design, and AI automation.',
     content: `## Introduction
