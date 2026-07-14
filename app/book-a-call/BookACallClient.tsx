@@ -110,9 +110,17 @@ export function BookACallClient() {
 
                   <button
                     disabled={status.type === 'loading'}
-                    className="w-full mt-2 py-4 bg-foreground text-background font-bold text-lg rounded-xl hover:bg-accent hover:text-white transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-md disabled:opacity-70 disabled:hover:scale-100"
+                    className="w-full mt-2 py-4 bg-foreground text-background font-bold text-lg rounded-xl hover:bg-accent hover:text-white transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-md disabled:opacity-90 disabled:hover:scale-100"
                   >
-                    {status.type === 'loading' ? 'Sending...' : 'Submit Inquiry'}
+                    {status.type === 'loading' ? (
+                      <div className="flex items-center justify-center gap-3">
+                        <svg className="animate-[spin_0.4s_linear_infinite] h-6 w-6 text-background" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="square">
+                          <circle cx="12" cy="12" r="10" className="opacity-10" />
+                          <path d="M12 2a10 10 0 0 1 10 10" />
+                        </svg>
+                        <span className="tracking-[0.2em] uppercase text-sm font-black">Transmitting</span>
+                      </div>
+                    ) : 'Submit Inquiry'}
                   </button>
                 </form>
               </div>
