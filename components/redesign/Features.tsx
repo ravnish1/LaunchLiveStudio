@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Zap, Target, Palette, Box, ArrowLeft, ArrowRight } from 'lucide-react'
-import { ScrambleHeading } from './ScrambleHeading'
+
 
 export const features = [
   {
@@ -62,13 +62,13 @@ export const Features = () => {
 
           {/* Left Column: Hero Text */}
           <div className="space-y-4 text-center md:text-left order-1">
-            <ScrambleHeading text="WHAT WE DO" as="span" className="text-sm font-medium tracking-widest text-accent uppercase" staggerMs={30} scrambleFrames={4} />
+            <span className="text-sm font-medium tracking-widest text-accent uppercase">WHAT WE DO</span>
             <div className="space-y-1 md:space-y-2">
-              <ScrambleHeading text="Design. Build." as="h2" className="text-[11vw] sm:text-6xl md:text-5xl lg:text-6xl xl:text-7xl font-serif leading-none" staggerMs={40} />
-              <ScrambleHeading text="Launch. Grow." as="h2" className="text-[11vw] sm:text-6xl md:text-5xl lg:text-6xl xl:text-7xl font-serif leading-none" staggerMs={40} />
+              <h2 className="text-[11vw] sm:text-6xl md:text-5xl lg:text-6xl xl:text-7xl font-serif leading-none">Design. Build.</h2>
+              <h2 className="text-[11vw] sm:text-6xl md:text-5xl lg:text-6xl xl:text-7xl font-serif leading-none">Launch. Grow.</h2>
               <div className="h-2 md:h-4"></div>
-              <ScrambleHeading text="Everything your brand needs to" as="h2" className="text-3xl sm:text-4xl md:text-3xl lg:text-4xl xl:text-[42px] font-serif leading-tight" staggerMs={40} />
-              <ScrambleHeading text="dominate online." as="h2" className="text-3xl sm:text-4xl md:text-3xl lg:text-4xl xl:text-[42px] font-serif leading-tight text-accent" staggerMs={40} />
+              <h2 className="text-3xl sm:text-4xl md:text-3xl lg:text-4xl xl:text-[42px] font-serif leading-tight">Everything your brand needs to</h2>
+              <h2 className="text-3xl sm:text-4xl md:text-3xl lg:text-4xl xl:text-[42px] font-serif leading-tight text-accent">dominate online.</h2>
             </div>
             <p className="max-w-2xl text-lg md:text-2xl font-serif italic text-text-muted mt-6 mx-auto md:mx-0">
               One focused team. From brand identity to digital presence - shipped fast, built right.

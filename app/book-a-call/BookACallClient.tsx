@@ -3,16 +3,12 @@
 import React, { useState, useEffect } from 'react'
 import { Navbar } from '@/components/redesign/Navbar'
 import { Footer } from '@/components/redesign/Footer'
-import { ScrambleHeading } from '@/components/redesign/ScrambleHeading'
+
 import dynamic from 'next/dynamic'
 import Cal, { getCalApi } from '@calcom/embed-react'
 
 const SmoothScroll = dynamic(
   () => import('@/components/redesign/SmoothScroll').then(m => ({ default: m.SmoothScroll })),
-  { ssr: false }
-)
-const CustomCursor = dynamic(
-  () => import('@/components/redesign/CustomCursor').then(m => ({ default: m.CustomCursor })),
   { ssr: false }
 )
 
@@ -52,14 +48,13 @@ export function BookACallClient() {
 
   return (
     <SmoothScroll>
-      <div className="relative min-h-screen bg-background text-foreground cursor-none">
-        <CustomCursor />
+      <div className="relative min-h-screen bg-background text-foreground">
         <Navbar />
 
         <main className="pt-32 pb-32 min-h-[60vh]">
           <div className="max-w-[1280px] mx-auto px-6">
             <div className="text-center mb-16">
-              <ScrambleHeading text="Book a Call." as="h1" className="text-5xl md:text-8xl font-serif mb-8" />
+              <h1 className="text-5xl md:text-8xl font-serif mb-8">Book a Call.</h1>
               <p className="text-2xl font-serif italic text-text-muted max-w-2xl mx-auto mt-8">
                 Ready to launch? Tell us about your project or grab a time on our calendar.
               </p>

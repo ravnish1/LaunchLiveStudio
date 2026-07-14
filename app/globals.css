@@ -43,21 +43,29 @@
 @layer base {
   * {
     @apply border-border-subtle;
-    cursor: none !important;
   }
 
   html {
     scroll-behavior: initial;
     /* Managed by Lenis */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 
   body {
     @apply bg-background text-foreground antialiased font-sans selection:bg-accent selection:text-background;
     overflow-x: hidden;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
     /* GPU Acceleration Hints */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+  }
+
+  /* Hide scrollbar globally for all WebKit browsers (Chrome, Safari, Edge, Opera) */
+  *::-webkit-scrollbar {
+    display: none !important;
   }
 
   section {

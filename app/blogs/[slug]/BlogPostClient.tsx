@@ -17,10 +17,6 @@ const SmoothScroll = dynamic(
   () => import('@/components/redesign/SmoothScroll').then(m => ({ default: m.SmoothScroll })),
   { ssr: false }
 )
-const CustomCursor = dynamic(
-  () => import('@/components/redesign/CustomCursor').then(m => ({ default: m.CustomCursor })),
-  { ssr: false }
-)
 
 export function BlogPostClient() {
   const { slug } = useParams()
@@ -40,8 +36,7 @@ export function BlogPostClient() {
 
   return (
     <SmoothScroll>
-      <div className="relative min-h-screen bg-background text-foreground cursor-none">
-        <CustomCursor />
+      <div className="relative min-h-screen bg-background text-foreground">
         <Navbar />
 
         <main className="pt-40 pb-32">

@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ScrambleText } from './ScrambleText'
+
 import { HeroVisual } from './HeroVisual'
 
 export const Hero = () => {
@@ -35,11 +35,11 @@ export const Hero = () => {
             className="w-full text-center md:text-left"
           >
             <h1 className="text-[12vw] md:text-[7vw] lg:text-[4.5vw] font-serif leading-[1.15] tracking-[-0.03em] overflow-visible">
-              <ScrambleText text="We Build What" as="span" trigger={true} staggerMs={60} scrambleFrames={6} frameDurationMs={50} />
+              We Build What
               <br />
-              <ScrambleText text="The Future" as="span" className="italic" trigger={true} staggerMs={60} scrambleFrames={6} frameDurationMs={50} />
+              <span className="italic">The Future</span>
               <br />
-              <ScrambleText text="Looks Like." as="span" trigger={true} staggerMs={60} scrambleFrames={6} frameDurationMs={50} />
+              Looks Like.
             </h1>
           </motion.div>
 
