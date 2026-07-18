@@ -1,26 +1,44 @@
-'use client'
+"use client";
 
-import React from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { Linkedin, Instagram, Mail, Calendar, MapPin, Layout, Layers, MessageSquare, BookOpen, Video, Monitor, Cpu, Palette, TrendingUp, Zap } from 'lucide-react'
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import {
+  Linkedin,
+  Instagram,
+  Mail,
+  Calendar,
+  MapPin,
+  Layout,
+  Layers,
+  MessageSquare,
+  BookOpen,
+  Video,
+  Monitor,
+  Cpu,
+  Palette,
+  TrendingUp,
+  Zap,
+  HelpCircle,
+} from "lucide-react";
 
 export const Footer = () => {
   const navigateItems = [
-    { name: 'Work', href: '/work', icon: Layout },
-    { name: 'Services', href: '/services', icon: Layers },
-    { name: 'Testimonials', href: '/testimonials', icon: MessageSquare },
-    { name: 'Blogs', href: '/blogs', icon: BookOpen },
-    { name: 'Book a Call', href: '/book-a-call', icon: Video },
-  ]
+    { name: "Work", href: "/work", icon: Layout },
+    { name: "Services", href: "/services", icon: Layers },
+    { name: "Testimonials", href: "/testimonials", icon: MessageSquare },
+    { name: "Blogs", href: "/blogs", icon: BookOpen },
+    { name: "FAQ", href: "/faq", icon: HelpCircle },
+    { name: "Book a Call", href: "/book-a-call", icon: Video },
+  ];
 
   const serviceItems = [
-    { name: 'Website Development', icon: Monitor },
-    { name: 'AI Systems', icon: Cpu },
-    { name: 'Branding', icon: Palette },
-    { name: 'SEO Optimization', icon: TrendingUp },
-    { name: 'Automations', icon: Zap },
-  ]
+    { name: "Website Development", icon: Monitor },
+    { name: "AI Systems", icon: Cpu },
+    { name: "Branding", icon: Palette },
+    { name: "SEO Optimization", icon: TrendingUp },
+    { name: "Automations", icon: Zap },
+  ];
 
   return (
     <footer className="pt-32 pb-10 px-6 bg-surface border-t border-foreground/5">
@@ -45,24 +63,54 @@ export const Footer = () => {
               We Build. We Brand. We Launch.
             </p>
             <div className="flex flex-wrap items-center gap-6 text-text-muted mt-2">
-              <a href="https://x.com/launchlivestdio" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-transform hover:-translate-y-1" aria-label="Twitter/X">
-                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
+              <a
+                href="https://x.com/launchlivestdio"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-accent transition-transform hover:-translate-y-1"
+                aria-label="Twitter/X"
+              >
+                <svg
+                  className="w-5 h-5"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
               </a>
-              <a href="https://www.linkedin.com/company/launch-live-studio/about/" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-transform hover:-translate-y-1" aria-label="LinkedIn">
+              <a
+                href="https://www.linkedin.com/company/launch-live-studio/about/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-accent transition-transform hover:-translate-y-1"
+                aria-label="LinkedIn"
+              >
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="https://www.instagram.com/launchlive.studio/" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-transform hover:-translate-y-1" aria-label="Instagram">
+              <a
+                href="https://www.instagram.com/launchlive.studio/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-accent transition-transform hover:-translate-y-1"
+                aria-label="Instagram"
+              >
                 <Instagram className="w-5 h-5" />
               </a>
             </div>
           </div>
 
           <div className="space-y-8">
-            <h4 className="text-sm font-bold tracking-widest uppercase text-accent">Navigate</h4>
+            <h4 className="text-sm font-bold tracking-widest uppercase text-accent">
+              Navigate
+            </h4>
             <ul className="space-y-4">
-              {navigateItems.map(item => (
+              {navigateItems.map((item) => (
                 <li key={item.name}>
-                  <Link href={item.href} className="flex items-center gap-3 text-text-muted hover:text-accent transition-all group">
+                  <Link
+                    href={item.href}
+                    className="flex items-center gap-3 text-text-muted hover:text-accent transition-all group"
+                  >
                     <div className="w-7 h-7 rounded-md bg-foreground/5 flex items-center justify-center group-hover:bg-accent/10 group-hover:text-accent transition-colors">
                       <item.icon size={14} />
                     </div>
@@ -77,11 +125,16 @@ export const Footer = () => {
           </div>
 
           <div className="space-y-8">
-            <h4 className="text-sm font-bold tracking-widest uppercase text-accent">Services</h4>
+            <h4 className="text-sm font-bold tracking-widest uppercase text-accent">
+              Services
+            </h4>
             <ul className="space-y-4">
-              {serviceItems.map(item => (
+              {serviceItems.map((item) => (
                 <li key={item.name}>
-                  <Link href="/services" className="flex items-center gap-3 text-text-muted hover:text-accent transition-all group">
+                  <Link
+                    href="/services"
+                    className="flex items-center gap-3 text-text-muted hover:text-accent transition-all group"
+                  >
                     <div className="w-7 h-7 rounded-md bg-foreground/5 flex items-center justify-center group-hover:bg-accent/10 group-hover:text-accent transition-colors">
                       <item.icon size={14} />
                     </div>
@@ -96,19 +149,31 @@ export const Footer = () => {
           </div>
 
           <div className="space-y-8">
-            <h4 className="text-sm font-bold tracking-widest uppercase text-accent">Contact</h4>
+            <h4 className="text-sm font-bold tracking-widest uppercase text-accent">
+              Contact
+            </h4>
             <ul className="space-y-6 text-text-muted">
               <li className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-lg bg-foreground/5 flex items-center justify-center text-accent/80 shrink-0">
                   <Mail size={16} />
                 </div>
-                <a href="mailto:hello@launchlive.studio" className="hover:text-accent transition-colors">hello@launchlive.studio</a>
+                <a
+                  href="mailto:hello@launchlive.studio"
+                  className="hover:text-accent transition-colors"
+                >
+                  hello@launchlive.studio
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-lg bg-foreground/5 flex items-center justify-center text-accent/80 shrink-0">
                   <Calendar size={16} />
                 </div>
-                <Link href="/book-a-call" className="hover:text-accent transition-colors underline underline-offset-4 decoration-accent/30 hover:decoration-accent">Schedule a call &rarr;</Link>
+                <Link
+                  href="/book-a-call"
+                  className="hover:text-accent transition-colors underline underline-offset-4 decoration-accent/30 hover:decoration-accent"
+                >
+                  Schedule a call &rarr;
+                </Link>
               </li>
               <li className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-lg bg-foreground/5 flex items-center justify-center text-accent/80 shrink-0">
@@ -125,11 +190,15 @@ export const Footer = () => {
             © 2026 LAUNCH LIVE STUDIO. ALL RIGHTS RESERVED.
           </p>
           <div className="flex gap-8 text-xs text-text-muted tracking-widest uppercase">
-            <Link href="/privacy" className="hover:text-accent">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-accent">Terms of Service</Link>
+            <Link href="/privacy" className="hover:text-accent">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="hover:text-accent">
+              Terms of Service
+            </Link>
           </div>
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};

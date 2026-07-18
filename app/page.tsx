@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Launch Live Studio",
   description: "Websites, automation & systems for modern businesses.",
   keywords: ["digital agency", "ai automation", "high performance websites", "startup software", "outcome driven agency"],
+  applicationName:"Launch Live Studio",
   alternates: { canonical: "https://www.launchlive.studio/" },
   openGraph: {
     title: "Launch Live Studio",
