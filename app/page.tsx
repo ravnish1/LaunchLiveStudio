@@ -5,8 +5,16 @@ import dynamic from "next/dynamic";
 export const metadata: Metadata = {
   title: "Launch Live Studio",
   description: "Websites, automation & systems for modern businesses.",
-  keywords: ["digital agency", "ai automation", "high performance websites", "startup software", "outcome driven agency"],
-  applicationName:"Launch Live Studio",
+  keywords: [
+    "digital agency",
+    "ai automation",
+    "high performance websites",
+    "startup software",
+    "outcome driven agency",
+  ],
+  metadataBase: new URL("https://www.launchlive.studio"),
+  applicationName: "Launch Live Studio",
+
   alternates: { canonical: "https://www.launchlive.studio/" },
   openGraph: {
     title: "Launch Live Studio",
@@ -29,6 +37,18 @@ export const metadata: Metadata = {
     description: "Websites, automation & systems for modern businesses.",
     images: ["/og-preview.jpg"],
   },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot:{
+      index:true,
+      follow:true,
+      "max-snippet":-1,
+      "max-image-preview":"large",
+      "max-video-preview":-1 
+    }
+  },
 };
 
 // New Redesign Components
@@ -49,17 +69,17 @@ const schema = {
   "@graph": [
     {
       "@type": "WebSite",
-      "name": "Launch Live Studio",
-      "url": "https://www.launchlive.studio/"
+      name: "Launch Live Studio",
+      url: "https://www.launchlive.studio/",
     },
     {
       "@type": "Organization",
-      "name": "Launch Live Studio",
-      "url": "https://www.launchlive.studio/",
-      "logo": "https://www.launchlive.studio/logo.png",
-      "description": "Websites, automation & systems for modern businesses."
-    }
-  ]
+      name: "Launch Live Studio",
+      url: "https://www.launchlive.studio/",
+      logo: "https://www.launchlive.studio/logo.png",
+      description: "Websites, automation & systems for modern businesses.",
+    },
+  ],
 };
 
 export default function Home() {
