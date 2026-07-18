@@ -1,0 +1,17 @@
+# *
+User-agent: *
+Allow: /
+
+# GPTBot
+User-agent: GPTBot
+Disallow: /
+
+# Google-Extended
+User-agent: Google-Extended
+Disallow: /
+
+# Host
+Host: https://www.launchlive.studio
+
+# Sitemaps
+Sitemap: https://www.launchlive.studio/sitemap.xml
