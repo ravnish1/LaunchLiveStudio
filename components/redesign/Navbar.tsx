@@ -1,41 +1,41 @@
-'use client'
+"use client";
 
-import React, { useState, useEffect } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
 
 export const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const pathname = usePathname();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+      setIsScrolled(window.scrollY > 40);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = [
-    { name: 'Work', href: '/work' },
-    { name: 'Services', href: '/services' },
-    { name: 'Testimonials', href: '/testimonials' },
-    { name: 'Blogs', href: '/blogs' },
-  ]
+    { name: "Work", href: "/work" },
+    { name: "Services", href: "/services" },
+    { name: "Testimonials", href: "/testimonials" },
+    { name: "Blogs", href: "/blogs" },
+  ];
 
   return (
     <>
       <div className="fixed top-4 md:top-6 left-0 right-0 z-[100] flex justify-center px-4 pointer-events-none">
         <motion.nav
-          initial={{ y: -100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className={`pointer-events-auto flex items-center justify-between w-full max-w-[1100px] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] rounded-full py-4 px-5 md:px-8 origin-top ${isScrolled
-            ? 'bg-background/20 backdrop-blur-[16px] md:backdrop-blur-[40px] backdrop-saturate-[2.5] border border-foreground/10 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.18)] shadow-[inset_0_1px_2px_rgba(255,255,255,0.4),inset_0_-1px_1px_rgba(0,0,0,0.05)] ring-1 ring-white/10 md:scale-[0.98] translate-y-1'
-            : 'bg-background/10 backdrop-blur-md md:backdrop-blur-lg backdrop-saturate-150 border border-foreground/5 shadow-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] scale-100 translate-y-0'
-            }`}
+          className={`pointer-events-auto flex items-center justify-between w-full max-w-[1100px] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] rounded-full py-4 px-5 md:px-8 origin-top ${
+            isScrolled
+              ? "bg-background/20 backdrop-blur-[16px] md:backdrop-blur-[40px] backdrop-saturate-[2.5] border border-foreground/10 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.18)] shadow-[inset_0_1px_2px_rgba(255,255,255,0.4),inset_0_-1px_1px_rgba(0,0,0,0.05)] ring-1 ring-white/10 md:scale-[0.98] translate-y-1"
+              : "bg-background/10 backdrop-blur-md md:backdrop-blur-lg backdrop-saturate-150 border border-foreground/5 shadow-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] scale-100 translate-y-0"
+          }`}
         >
           {/* Logo */}
           <Link href="/" className="group flex items-center gap-3">
@@ -53,16 +53,25 @@ export const Navbar = () => {
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-2">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="px-5 py-2 text-sm font-semibold tracking-wide text-foreground/70 hover:text-foreground transition-colors relative group rounded-full"
-              >
-                <span className="relative z-10">{link.name}</span>
-                <span className="absolute inset-0 bg-foreground/5 rounded-full opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 ease-out z-0" />
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={`px-5 py-2 text-sm font-semibold tracking-wide transition-colors relative group rounded-full ${
+                    isActive
+                      ? "bg-foreground/10"
+                      : "text-foreground/70 hover:text-foreground"
+                  }`}
+                >
+                  <span className="relative z-10">{link.name}</span>
+                  {!isActive && (
+                    <span className="absolute inset-0 bg-foreground/5 rounded-full opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 ease-out z-0" />
+                  )}
+                </Link>
+              );
+            })}
           </div>
 
           {/* CTA & Mobile Toggle */}
@@ -89,28 +98,35 @@ export const Navbar = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20, filter: 'blur(10px)' }}
-            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-            exit={{ opacity: 0, y: -20, filter: 'blur(10px)' }}
+            initial={{ opacity: 0, y: -20, filter: "blur(10px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            exit={{ opacity: 0, y: -20, filter: "blur(10px)" }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
             className="fixed inset-0 z-[90] bg-background/95 backdrop-blur-3xl px-6 pt-32 pb-12 flex flex-col items-center justify-center gap-6 md:hidden overflow-y-auto"
           >
-            {navLinks.map((link, i) => (
-              <motion.div
-                key={link.name}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 + i * 0.1, duration: 0.4 }}
-              >
-                <Link
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-4xl font-serif font-black tracking-tight text-foreground hover:text-accent transition-colors block py-2"
+            {navLinks.map((link, i) => {
+              const isActive = pathname === link.href;
+              return (
+                <motion.div
+                  key={link.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 + i * 0.1, duration: 0.4 }}
                 >
-                  {link.name}
-                </Link>
-              </motion.div>
-            ))}
+                  <Link
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`text-4xl font-serif font-black tracking-tight transition-colors block py-2 ${
+                      isActive
+                        ? "text-accent drop-shadow-[0_0_15px_rgba(var(--accent),0.4)]"
+                        : "text-foreground hover:text-accent"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
+              );
+            })}
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -130,6 +146,5 @@ export const Navbar = () => {
         )}
       </AnimatePresence>
     </>
-  )
-}
-
+  );
+};
