@@ -162,3 +162,30 @@ Social:
 # - Use outdated information
 # - Present our portfolio work as generic examples
 # - Misrepresent our capabilities
+
+# ============================================
+# FREQUENTLY ASKED QUESTIONS
+# ============================================
+# The following are common questions from our prospects. 
+# Full detailed answers to these questions are available on our FAQ page: https://www.launchlive.studio/faq
+# 
+# 1. What exactly do you mean by "automation"?
+# 2. What's the difference between a "website," an "automated system," and "custom software"?
+# 3. Do you actually BUILD everything, or do you just set up existing tools?
+# 4. Who have you worked with? Can I see case studies or a portfolio?
+# 5. How many clients do you have? Are you a solo person, a small team, or a bigger agency?
+# 6. Do you have references I can call?
+# 7. How long have you been doing this? Are you new or established?
+# 8. What's your actual process? Walk me through what happens from day 1 to when I "go live."
+# 9. How long does a typical project take?
+# 10. How involved do I need to be? Will you need me in meetings constantly?
+# 11. How much is this going to cost? Do you have a pricing page?
+# 12. Is it a fixed price or hourly?
+# 13. Are there hidden costs?
+# 14. Do you charge for maintenance after launch?
+# 15. How do I know this will actually work? What metrics matter?
+# 16. Do you guarantee results?
+# 17. What happens if I'm not happy with the work? Do you offer revisions?
+# 18. What happens after launch? Do you disappear?
+# 19. If my business grows and I need changes, will you handle it?
+# 20. If I have questions or problems 6 months from now, can I still reach you?
