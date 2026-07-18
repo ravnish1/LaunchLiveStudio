@@ -43,10 +43,32 @@ import { CTABanner } from "@/components/redesign/CTABanner";
 import { Footer } from "@/components/redesign/Footer";
 import ClientReveal from "@/components/redesign/ClientReveal";
 
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "Launch Live Studio",
+      "url": "https://www.launchlive.studio/"
+    },
+    {
+      "@type": "Organization",
+      "name": "Launch Live Studio",
+      "url": "https://www.launchlive.studio/",
+      "logo": "https://www.launchlive.studio/logo.png",
+      "description": "Websites, automation & systems for modern businesses."
+    }
+  ]
+};
+
 export default function Home() {
   return (
     <ClientReveal>
       <div className="min-h-screen bg-background text-foreground">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
         <Navbar />
 
         <main>

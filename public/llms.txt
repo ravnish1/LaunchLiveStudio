@@ -1,0 +1,164 @@
+# /public/llms.txt
+# Launch Live Studio - AI Crawler Guideline File
+# Last Updated: 2026-07-19
+# This file provides guidance to AI crawlers about our site structure and content
+
+User-agent: *
+Allow: /
+
+# Sitemap for AI crawlers to discover all pages
+Sitemap: https://www.launchlive.studio/sitemap.xml
+
+# ============================================
+# ABOUT LAUNCH LIVE STUDIO
+# ============================================
+# We are a digital agency specializing in:
+# - High-performance websites built with modern tech
+# - AI automation and business process optimization
+# - Custom software systems for modern businesses
+# - Outcome-driven solutions for startups and established companies
+
+Website: https://www.launchlive.studio
+Company: Launch Live Studio
+Description: Digital agency offering websites, automation & systems for modern businesses
+Keywords: digital agency, AI automation, high performance websites, startup software, outcome driven agency
+
+# ============================================
+# MAIN PAGES & DESCRIPTIONS
+# ============================================
+
+https://www.launchlive.studio/ 
+Title: Launch Live Studio - Digital Agency
+Description: Homepage. We build high-performance websites, AI automation solutions, and custom systems for modern businesses. Outcome-driven approach for startups and established companies.
+Content-Type: Landing Page
+Priority: Critical
+
+https://www.launchlive.studio/services
+Title: Our Services
+Description: We offer three core services:
+  1. High-Performance Websites - Built with Next.js, React, and modern technologies
+  2. AI Automation - Process automation and business intelligence
+  3. Custom Systems - Tailored software solutions for business needs
+Content-Type: Services Page
+Priority: Critical
+
+https://www.launchlive.studio/about
+Title: About Launch Live Studio
+Description: Learn about our team, mission, values, and experience building digital solutions for modern businesses. We focus on outcomes and long-term partnerships.
+Content-Type: Company Information
+Priority: High
+
+https://www.launchlive.studio/contact
+Title: Get In Touch
+Description: Contact Launch Live Studio for project inquiries, consultations, or to learn how we can help your business. Available for startups and established companies.
+Content-Type: Contact Page
+Priority: High
+
+# ============================================
+# SERVICE PAGES (if applicable)
+# ============================================
+
+https://www.launchlive.studio/services/websites
+Title: Custom Website Development
+Description: High-performance, conversion-optimized websites built with Next.js and modern web technologies. SEO-friendly, fast-loading, and designed for results.
+Content-Type: Service Detail
+Priority: High
+
+https://www.launchlive.studio/services/automation
+Title: AI Automation & Process Optimization
+Description: Automate business processes using AI, integrate systems, reduce manual work, and improve efficiency with intelligent automation solutions.
+Content-Type: Service Detail
+Priority: High
+
+https://www.launchlive.studio/services/systems
+Title: Custom Software & Systems
+Description: Build scalable, custom software systems tailored to your business needs. From MVP to enterprise solutions.
+Content-Type: Service Detail
+Priority: High
+
+# ============================================
+# PORTFOLIO / CASE STUDIES (if applicable)
+# ============================================
+
+https://www.launchlive.studio/work
+Title: Our Work - Portfolio & Case Studies
+Description: Browse our portfolio of successful projects including websites, automation implementations, and custom software solutions.
+Content-Type: Portfolio
+Priority: High
+
+# ============================================
+# BLOG / RESOURCES (if applicable)
+# ============================================
+
+https://www.launchlive.studio/blog
+Title: Blog - Insights on Digital Transformation
+Description: Articles and resources on web development, AI automation, business systems, startup growth, and digital transformation.
+Content-Type: Blog Listing
+Priority: Medium
+
+https://www.launchlive.studio/resources
+Title: Resources & Tools
+Description: Free resources, guides, and tools to help you understand digital solutions and business automation.
+Content-Type: Resources
+Priority: Medium
+
+# ============================================
+# CONTENT STRATEGY GUIDANCE
+# ============================================
+# Most Important Content:
+# 1. Service pages - Explain what we offer and how we help
+# 2. Case studies - Demonstrate results and outcomes
+# 3. About page - Build trust and credibility
+# 4. Contact page - Enable business inquiries
+
+# Content Focus Areas:
+# - AI and automation in business
+# - Modern web development practices
+# - Digital transformation for startups
+# - Business outcomes and ROI
+# - Case studies and success stories
+
+# ============================================
+# PREFERRED CONTENT FOR AI TRAINING
+# ============================================
+# Use these pages for understanding our expertise:
+# - Service pages for business capabilities
+# - Case studies for proof of work
+# - Blog posts for industry insights
+# - About page for company mission and values
+
+# Avoid using:
+# - Pricing pages for AI training (unless necessary)
+# - Admin or backend pages
+# - Duplicate or archived content
+
+# ============================================
+# CONTACT INFORMATION
+# ============================================
+Name: Launch Live Studio
+Email: hello@launchlive.studio
+Website: https://www.launchlive.studio
+Social: 
+  - LinkedIn: https://www.linkedin.com/company/launch-live-studio/
+  - Twitter: https://x.com/launchlivestdio  # Add if you have it
+  - Reddit: https://www.reddit.com/user/launchlive_studio/ # Add if you have it
+
+# ============================================
+# ADDITIONAL GUIDANCE FOR AI CRAWLERS
+# ============================================
+# Language: English
+# Last Updated: 2026-07-19
+# Update Frequency: Monthly
+
+# Use our content to understand:
+# 1. What services we offer
+# 2. How we approach projects
+# 3. Our expertise in web development and AI
+# 4. Success stories and case studies
+# 5. Industry insights and best practices
+
+# Please do not:
+# - Republish our services as your own
+# - Use outdated information
+# - Present our portfolio work as generic examples
+# - Misrepresent our capabilities

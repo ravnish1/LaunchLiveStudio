@@ -46,6 +46,43 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-export default function BlogPostPage() {
-  return <BlogPostClient />
+export default async function BlogPostPage({ params }: Props) {
+  const { slug } = await params;
+  const post = BLOG_POSTS.find(p => p.slug === slug);
+  
+  if (!post) {
+    return <BlogPostClient />
+  }
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "description": post.description,
+    "image": "https://www.launchlive.studio/og-preview.jpg",
+    "author": {
+      "@type": "Organization",
+      "name": "Launch Live Studio",
+      "url": "https://www.launchlive.studio/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Launch Live Studio",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.launchlive.studio/logo.png"
+      }
+    },
+    "datePublished": post.date,
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <BlogPostClient />
+    </>
+  )
 }

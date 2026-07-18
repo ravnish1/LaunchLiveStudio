@@ -22,6 +22,26 @@ export const metadata: Metadata = {
   },
 }
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Digital Agency Services",
+  "provider": {
+    "@type": "Organization",
+    "name": "Launch Live Studio",
+    "url": "https://www.launchlive.studio/"
+  },
+  "description": "Custom web development, LLM-powered AI systems, and marketing automation to scale your business."
+};
+
 export default function ServicesPage() {
-  return <ServicesClient />
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <ServicesClient />
+    </>
+  );
 }
