@@ -17,14 +17,17 @@ export const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
       lerp: 0.08, // Slightly softer lerp for smoother tracking
     })
 
+    let rafId: number;
+
     function raf(time: number) {
       lenis.raf(time)
-      requestAnimationFrame(raf)
+      rafId = requestAnimationFrame(raf)
     }
 
-    requestAnimationFrame(raf)
+    rafId = requestAnimationFrame(raf)
 
     return () => {
+      cancelAnimationFrame(rafId)
       lenis.destroy()
     }
   }, [])

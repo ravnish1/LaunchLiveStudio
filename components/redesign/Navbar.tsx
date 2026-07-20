@@ -61,7 +61,7 @@ export const Navbar = () => {
                   href={link.href}
                   className={`px-5 py-2 text-sm font-semibold tracking-wide transition-colors relative group rounded-full ${
                     isActive
-                      ? "bg-foreground/10"
+                      ? "bg-foreground/10 text-foreground"
                       : "text-foreground/70 hover:text-foreground"
                   }`}
                 >
