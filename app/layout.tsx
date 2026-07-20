@@ -1,28 +1,35 @@
-import type { Metadata, Viewport } from 'next'
-import { Inter, Playfair_Display } from 'next/font/google'
-import Script from 'next/script'
-import { Analytics } from '@vercel/analytics/next'
-import { SpeedInsights } from '@vercel/speed-insights/next'
-import './globals.css'
+import type { Metadata, Viewport } from "next";
+import { Inter, Playfair_Display } from "next/font/google";
+import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import "./globals.css";
 
 const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-sans',
-})
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 const playfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-serif',
-})
+  subsets: ["latin"],
+  variable: "--font-serif",
+});
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.launchlive.studio'),
+  metadataBase: new URL("https://www.launchlive.studio"),
   title: {
     default: "Launch Live Studio",
     template: "%s | Launch Live Studio",
   },
   description: "Websites, automation & systems for modern businesses.",
-  keywords: ["digital agency", "ai automation", "web development", "branding", "seo", "startup consultancy"],
+  keywords: [
+    "digital agency",
+    "ai automation",
+    "web development",
+    "branding",
+    "seo",
+    "startup consultancy",
+  ],
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.png",
@@ -52,27 +59,37 @@ export const metadata: Metadata = {
     creator: "@launchlivestudio",
     images: ["/og-preview.jpg"],
   },
-}
+};
 
 export const viewport: Viewport = {
-  width: 'device-width',
+  width: "device-width",
   initialScale: 1,
   maximumScale: 1,
-  themeColor: '#0a0a0a',
-}
+  themeColor: "#0a0a0a",
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${playfair.variable}`}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${inter.variable} ${playfair.variable}`}
+    >
+      <head>
+        <script
+          defer
+          src="https://linkstorm.io/linkstorm_site_linker.js?projectId=14051&websiteId=14052"
+        ></script>
+      </head>
       <body className="bg-background text-foreground antialiased selection:bg-accent selection:text-background overflow-x-hidden">
         {children}
         <Analytics />
         <SpeedInsights />
       </body>
     </html>
-  )
+  );
 }
