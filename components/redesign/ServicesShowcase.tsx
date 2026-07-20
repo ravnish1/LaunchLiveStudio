@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { features } from './Features'
 
@@ -38,7 +39,8 @@ export const ServicesShowcase = () => {
         {/* Core Services Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-16 md:mb-32">
           {features.map((feature, idx) => (
-            <div
+            <Link
+              href={feature.href}
               key={feature.title}
               className="p-5 md:p-8 rounded-2xl bg-foreground/[0.02] border border-foreground/5 hover:bg-foreground/[0.04] hover:border-accent/30 transition-all duration-300 group flex flex-col h-full"
             >
@@ -51,7 +53,7 @@ export const ServicesShowcase = () => {
               <div className="flex items-center gap-2 text-sm font-bold text-accent uppercase tracking-wider transition-all duration-300 mt-auto">
                 Discover More <ArrowUpRight size={16} />
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

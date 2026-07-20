@@ -54,7 +54,7 @@ export const Navbar = () => {
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-2">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href;
+              const isActive = pathname === link.href || pathname?.startsWith(`${link.href}/`);
               return (
                 <Link
                   key={link.name}
@@ -105,7 +105,7 @@ export const Navbar = () => {
             className="fixed inset-0 z-[90] bg-background/95 backdrop-blur-3xl px-6 pt-32 pb-12 flex flex-col items-center justify-center gap-6 md:hidden overflow-y-auto"
           >
             {navLinks.map((link, i) => {
-              const isActive = pathname === link.href;
+              const isActive = pathname === link.href || pathname?.startsWith(`${link.href}/`);
               return (
                 <motion.div
                   key={link.name}

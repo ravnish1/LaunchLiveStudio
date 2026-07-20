@@ -79,12 +79,6 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${inter.variable} ${playfair.variable}`}
     >
-      <head>
-        <script
-          defer
-          src="https://linkstorm.io/linkstorm_site_linker.js?projectId=14051&websiteId=14052"
-        ></script>
-      </head>
       <body className="bg-background text-foreground antialiased selection:bg-accent selection:text-background overflow-x-hidden">
         {children}
         <Analytics />

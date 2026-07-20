@@ -105,7 +105,17 @@ export function BlogPostClient() {
                 className="space-y-8"
               >
                 <div className="prose prose-lg dark:prose-invert prose-headings:font-serif prose-p:leading-relaxed prose-a:text-accent prose-strong:text-accent max-w-none opacity-90 text-foreground">
-                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                  <ReactMarkdown 
+                    remarkPlugins={[remarkGfm]}
+                    components={{
+                      a: ({ node, href, children, ...props }) => {
+                        if (href?.startsWith("/")) {
+                          return <Link href={href} {...props}>{children}</Link>;
+                        }
+                        return <a href={href} target="_blank" rel="noopener noreferrer" {...props}>{children}</a>;
+                      }
+                    }}
+                  >
                     {post.content}
                   </ReactMarkdown>
                 </div>

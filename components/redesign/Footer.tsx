@@ -33,11 +33,11 @@ export const Footer = () => {
   ];
 
   const serviceItems = [
-    { name: "Website Development", icon: Monitor },
-    { name: "AI Systems", icon: Cpu },
-    { name: "Branding", icon: Palette },
-    { name: "SEO Optimization", icon: TrendingUp },
-    { name: "Automations", icon: Zap },
+    { name: "Website Development", href: "/services/websites", icon: Monitor },
+    { name: "AI Systems", href: "/services/systems", icon: Cpu },
+    { name: "Branding", href: "/services/branding", icon: Palette },
+    { name: "SEO Optimization", href: "/services/seo", icon: TrendingUp },
+    { name: "Automations", href: "/services/automation", icon: Zap },
   ];
 
   return (
@@ -132,7 +132,7 @@ export const Footer = () => {
               {serviceItems.map((item) => (
                 <li key={item.name}>
                   <Link
-                    href="/services"
+                    href={item.href}
                     className="flex items-center gap-3 text-text-muted hover:text-accent transition-all group"
                   >
                     <div className="w-7 h-7 rounded-md bg-foreground/5 flex items-center justify-center group-hover:bg-accent/10 group-hover:text-accent transition-colors">

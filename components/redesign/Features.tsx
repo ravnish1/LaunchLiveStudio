@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Zap, Target, Palette, Box, ArrowLeft, ArrowRight } from 'lucide-react'
 
@@ -10,41 +11,49 @@ export const features = [
     title: 'Website Development',
     description: 'Custom-built, conversion-optimised websites that load fast, rank high, and look exceptional.',
     icon: Box,
+    href: '/services/websites',
   },
   {
     title: 'AI System Creation',
     description: 'Bespoke AI workflows, chatbots, and LLM-powered engines tailored to your business operations.',
     icon: Zap,
+    href: '/services/systems',
   },
   {
     title: 'Branding & Identity',
     description: 'Strategy-first branding — logo, guidelines, motion identity, and everything in between.',
     icon: Palette,
+    href: '/services/branding',
   },
   {
     title: 'SEO Optimization',
     description: 'Technical SEO, content strategy, and Core Web Vitals tuning that drives organic growth.',
     icon: Target,
+    href: '/services/seo',
   },
   {
     title: 'AI Tool Creation',
     description: 'Custom AI-powered tools: content generators, data analyzers, voice bots, and more.',
     icon: Zap,
+    href: '/services/ai-tools',
   },
   {
     title: 'Marketing Automation',
     description: 'Connect your CRM, email, ads, and analytics into one automated growth engine.',
     icon: Target,
+    href: '/services/automation',
   },
   {
     title: 'UI/UX Design',
     description: 'Research-driven, pixel-perfect design from wireframes to dev-ready Figma handoff.',
     icon: Palette,
+    href: '/services/design',
   },
   {
     title: 'Growth Consulting',
     description: 'A clear 90-day digital growth roadmap — market analysis, tech recommendations, execution plan.',
     icon: Box,
+    href: '/services/consulting',
   },
 ]
 
@@ -100,9 +109,9 @@ export const Features = () => {
                     <p className="text-text-muted text-sm leading-relaxed mb-6 line-clamp-3">
                       {feature.description}
                     </p>
-                    <button className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-text-muted hover:text-accent transition-all mt-auto self-start">
+                    <Link href={feature.href} className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-text-muted hover:text-accent transition-all mt-auto self-start">
                       Learn More <span className="text-accent underline underline-offset-4 decoration-accent/30 transition-all">→</span>
-                    </button>
+                    </Link>
                   </div>
                 ))}
               </div>
