@@ -56,7 +56,7 @@ export function BookACallClient() {
             <div className="text-center mb-16">
               <h1 className="text-5xl md:text-8xl font-serif mb-8">Book a Call.</h1>
               <p className="text-2xl font-serif italic text-text-muted max-w-2xl mx-auto mt-8">
-                Ready to launch? Tell us about your project or grab a time on our calendar.
+                Ready to launch? Tell us about your project or grab a time on our calendar. Whether you need a custom Shopify storefront, complex SaaS development, or a high-converting marketing site, our team is ready to help you map out a strategy that drives real revenue.
               </p>
             </div>
 

@@ -13,13 +13,13 @@ export interface BlogPost {
 export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "custom-software-vs-shopify-which-is-right-for-your-business",
-    title: "Custom Software vs Shopify: Which One Is Right for Your Business?",
+    title: "Custom Software vs Shopify: Which is Right for You?",
     category: "Web Development",
     date: "July 20, 2026",
     readTime: "8 min read",
     image: "/blog/custom-software-vs-shopify.webp",
     description:
-      "Learn the key differences between custom software, custom web applications, and Shopify websites. Discover which solution best fits your business goals, budget, and future growth.",
+      "Learn the differences between custom software and Shopify. Discover which solution best fits your business goals, budget, and long-term growth plans.",
 
     tags: [
       "Custom Software",

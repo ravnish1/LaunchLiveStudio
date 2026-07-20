@@ -208,10 +208,12 @@ export const OurWork = ({ titleContainerClassName = '', standalone = true }: { t
         <div className={`mb-10 md:mb-14 flex flex-col md:flex-row justify-between items-start md:items-end gap-5 ${titleContainerClassName}`}>
           <div>
             <span className="text-xs md:text-sm font-bold tracking-[0.2em] text-accent uppercase">SELECTED PROJECTS</span>
-            <h2 className="text-3xl sm:text-4xl md:text-6xl font-serif mt-3 leading-[1.1] tracking-tight">Work that speaks</h2>
-            <h2 className="text-3xl sm:text-4xl md:text-6xl font-serif italic text-accent leading-[1.1] tracking-tight">for itself.</h2>
+            <h1 className="flex flex-col mt-3">
+              <span className="text-3xl sm:text-4xl md:text-6xl font-serif leading-[1.1] tracking-tight">Work that speaks</span>
+              <span className="text-3xl sm:text-4xl md:text-6xl font-serif italic text-accent leading-[1.1] tracking-tight">for itself.</span>
+            </h1>
             <p className="mt-4 text-text-muted text-base md:text-lg max-w-lg leading-relaxed">
-              Real results for real businesses. Every project is built to convert, perform, and scale.
+              Real results for real businesses. We specialize in building custom software, high-performance web applications, and digital systems tailored to your unique workflows. Every project is engineered from the ground up to convert, perform, and scale, ensuring that your digital presence drives measurable revenue and long-term growth for your brand.
             </p>
           </div>
           <Link

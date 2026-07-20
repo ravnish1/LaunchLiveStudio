@@ -36,7 +36,7 @@ export const Testimonials = () => {
       <div className="max-w-[1280px] mx-auto text-center relative z-10">
         <div className="mb-12">
           <span className="text-sm font-medium tracking-widest text-accent uppercase block mb-4">WHAT CLIENTS SAY</span>
-          <h2 className="text-4xl md:text-5xl font-serif">Don't take our word for it.</h2>
+          <h1 className="text-4xl md:text-5xl font-serif">Don't take our word for it.</h1>
         </div>
         <Quote size={60} className="mx-auto mb-8 text-accent opacity-20" />
 

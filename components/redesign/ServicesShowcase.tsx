@@ -14,8 +14,10 @@ export const ServicesShowcase = () => {
         {/* Hero Section */}
         <div className="flex flex-col gap-3 md:gap-4 mb-10 md:mb-16">
           <span className="text-xs md:text-sm font-bold tracking-[0.2em] text-accent uppercase">SERVICES & EXPERTISE</span>
-          <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif leading-[1.1] tracking-tight">We build digital systems</h2>
-          <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif italic text-accent leading-[1.1] tracking-tight mb-2 md:mb-4">that drive actual revenue.</h2>
+          <h1 className="flex flex-col">
+            <span className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif leading-[1.1] tracking-tight">We build digital systems</span>
+            <span className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif italic text-accent leading-[1.1] tracking-tight mb-2 md:mb-4">that drive actual revenue.</span>
+          </h1>
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
