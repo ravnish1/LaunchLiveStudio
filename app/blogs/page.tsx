@@ -54,13 +54,14 @@ export default function BlogsPage() {
   };
 
   return (
-    <ClientReveal>
-      <div className="min-h-screen bg-background text-foreground">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
-        <Navbar />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <ClientReveal>
+        <div className="min-h-screen bg-background text-foreground">
+          <Navbar />
 
         <main className="pt-28 md:pt-24 pb-20 min-h-[60vh]">
           <div className="max-w-[1280px] mx-auto px-6">
@@ -128,5 +129,6 @@ export default function BlogsPage() {
         <Footer />
       </div>
     </ClientReveal>
+    </>
   );
 }

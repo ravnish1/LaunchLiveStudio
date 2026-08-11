@@ -20,6 +20,7 @@ import {
   TrendingUp,
   Zap,
   HelpCircle,
+  Phone,
 } from "lucide-react";
 
 export const Footer = () => {
@@ -180,6 +181,16 @@ export const Footer = () => {
                   <MapPin size={16} />
                 </div>
                 <span>Gurugram, India 🇮🇳</span>
+              </li>
+              <li className="flex items-start gap-3 pt-2">
+                <div className="w-8 h-8 rounded-lg bg-foreground/5 flex items-center justify-center text-accent/80 shrink-0">
+                  <Phone size={16} />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <a href="tel:+919992206990" className="hover:text-accent transition-colors">+91 9992206990</a>
+                  <a href="tel:+917303112516" className="hover:text-accent transition-colors">+91 73031 12516</a>
+                  <a href="tel:+918375999583" className="hover:text-accent transition-colors">+91 83759 99583</a>
+                </div>
               </li>
             </ul>
           </div>

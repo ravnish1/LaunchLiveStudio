@@ -85,10 +85,29 @@ const schema = {
         "https://twitter.com/launchlivestudio",
         "https://www.linkedin.com/company/launch-live-studio"
       ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "Customer Service",
-        "email": "hello@launchlive.studio"
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "Customer Service",
+          "email": "hello@launchlive.studio",
+          "telephone": "+91 9992206990"
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "Customer Service",
+          "telephone": "+91 73031 12516"
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "Customer Service",
+          "telephone": "+91 83759 99583"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Gurugram",
+        "addressRegion": "Haryana",
+        "addressCountry": "IN"
       }
     },
   ],
@@ -96,12 +115,13 @@ const schema = {
 
 export default function Home() {
   return (
-    <ClientReveal>
-      <div className="min-h-screen bg-background text-foreground">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <ClientReveal>
+        <div className="min-h-screen bg-background text-foreground">
         <Navbar />
 
         <main>
@@ -118,5 +138,6 @@ export default function Home() {
         <Footer />
       </div>
     </ClientReveal>
+    </>
   );
 }

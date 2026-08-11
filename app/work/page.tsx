@@ -45,21 +45,23 @@ export default function WorkPage() {
   };
 
   return (
-    <ClientReveal>
+    <>
       <Script
         id="schema-work"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-      <div className="min-h-screen bg-background text-foreground">
-        <Navbar />
-        <main>
-          <OurWork />
-        </main>
+      <ClientReveal>
+        <div className="min-h-screen bg-background text-foreground">
+          <Navbar />
+          <main>
+            <OurWork />
+          </main>
 
-        <CTABanner />
-        <Footer />
-      </div>
-    </ClientReveal>
+          <CTABanner />
+          <Footer />
+        </div>
+      </ClientReveal>
+    </>
   )
 }
