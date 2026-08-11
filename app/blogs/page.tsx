@@ -1,22 +1,29 @@
-import React from 'react'
-import { Metadata } from 'next'
-import { Navbar } from '@/components/redesign/Navbar'
-import { CTABanner } from '@/components/redesign/CTABanner'
-import { Footer } from '@/components/redesign/Footer'
+import React from "react";
+import { Metadata } from "next";
+import { Navbar } from "@/components/redesign/Navbar";
+import { CTABanner } from "@/components/redesign/CTABanner";
+import { Footer } from "@/components/redesign/Footer";
 
-import { BLOG_POSTS } from '@/lib/blog-data'
-import Link from 'next/link'
-import Image from 'next/image'
-import ClientReveal from '@/components/redesign/ClientReveal'
+import { BLOG_POSTS } from "@/lib/blog-data";
+import Link from "next/link";
+import Image from "next/image";
+import ClientReveal from "@/components/redesign/ClientReveal";
 
 export const metadata: Metadata = {
   title: "Insights & Tech Growth Guides | Launch Live Studio",
-  description: "Expert guides on AI automation, Next.js performance, and premium branding. Stay ahead of the curve with our latest digital strategies.",
-  keywords: ["ai insights", "next.js performance guides", "digital growth strategy", "branding trends 2026"],
+  description:
+    "Expert guides on AI automation, Next.js performance, and premium branding. Stay ahead of the curve with our latest digital strategies.",
+  keywords: [
+    "ai insights",
+    "next.js performance guides",
+    "digital growth strategy",
+    "branding trends 2026",
+  ],
   alternates: { canonical: "https://www.launchlive.studio/blogs" },
   openGraph: {
     title: "Digital Growth & AI Strategy Guides",
-    description: "Curated insights to help you master the modern tech landscape. Read our latest articles.",
+    description:
+      "Curated insights to help you master the modern tech landscape. Read our latest articles.",
     url: "https://www.launchlive.studio/blogs",
     images: [
       {
@@ -27,7 +34,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-}
+};
 
 export default function BlogsPage() {
   return (
@@ -68,16 +75,26 @@ export default function BlogsPage() {
                   <div className="p-5 flex flex-col flex-grow">
                     <div className="flex items-center gap-2 mb-3">
                       <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                      <p className="text-accent tracking-widest uppercase text-[10px] font-black">{post.category}</p>
+                      <p className="text-accent tracking-widest uppercase text-[10px] font-black">
+                        {post.category}
+                      </p>
                     </div>
 
-                    <h3 className="text-xl md:text-2xl font-serif group-hover:text-accent transition-colors mb-3 leading-tight line-clamp-2"> {post.title} </h3>
-                    <p className="text-text-muted leading-relaxed flex-grow text-[14px] line-clamp-2 mb-4">{post.description}</p>
+                    <h3 className="text-xl md:text-2xl font-serif group-hover:text-accent transition-colors mb-3 leading-tight line-clamp-2">
+                      {" "}
+                      {post.title}{" "}
+                    </h3>
+                    <p className="text-text-muted leading-relaxed flex-grow text-[14px] line-clamp-2 mb-4">
+                      {post.description}
+                    </p>
 
                     <div className="mt-auto pt-4 border-t border-foreground/5 flex justify-between items-center text-[10px] font-bold text-text-muted uppercase tracking-[0.2em]">
                       <span>{post.date}</span>
                       <span className="text-foreground transition-colors flex items-center gap-2 group-hover:text-accent">
-                        Read More <span className="group-hover:translate-x-2 transition-transform duration-300">→</span>
+                        Read More{" "}
+                        <span className="group-hover:translate-x-2 transition-transform duration-300">
+                          →
+                        </span>
                       </span>
                     </div>
                   </div>
@@ -91,5 +108,5 @@ export default function BlogsPage() {
         <Footer />
       </div>
     </ClientReveal>
-  )
+  );
 }
