@@ -186,10 +186,25 @@ export const Footer = () => {
                 <div className="w-8 h-8 rounded-lg bg-foreground/5 flex items-center justify-center text-accent/80 shrink-0">
                   <Phone size={16} />
                 </div>
-                <div className="flex flex-col gap-2">
-                  <a href="tel:+919992206990" className="hover:text-accent transition-colors">+91 9992206990</a>
-                  <a href="tel:+917303112516" className="hover:text-accent transition-colors">+91 73031 12516</a>
-                  <a href="tel:+918375999583" className="hover:text-accent transition-colors">+91 83759 99583</a>
+                <div className="">
+                  <a
+                    href="tel:+919992206990"
+                    className="hover:text-accent transition-colors"
+                  >
+                    +91 9992206990
+                  </a>
+                  <a
+                    href="tel:+917303112516"
+                    className="hover:text-accent transition-colors"
+                  >
+                    , 7303112516
+                  </a>
+                  <a
+                    href="tel:+918375999583"
+                    className="hover:text-accent transition-colors"
+                  >
+                    , 8375999583
+                  </a>
                 </div>
               </li>
             </ul>
