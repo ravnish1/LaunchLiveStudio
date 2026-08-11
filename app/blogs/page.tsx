@@ -37,9 +37,29 @@ export const metadata: Metadata = {
 };
 
 export default function BlogsPage() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Insights & Tech Growth Guides | Launch Live Studio",
+    "description": "Expert guides on AI automation, Next.js performance, and premium branding. Stay ahead of the curve with our latest digital strategies.",
+    "url": "https://www.launchlive.studio/blogs",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Launch Live Studio",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.launchlive.studio/logo.png"
+      }
+    }
+  };
+
   return (
     <ClientReveal>
       <div className="min-h-screen bg-background text-foreground">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
         <Navbar />
 
         <main className="pt-28 md:pt-24 pb-20 min-h-[60vh]">
