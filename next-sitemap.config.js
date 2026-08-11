@@ -12,10 +12,6 @@ module.exports = {
       {
         userAgent: 'GPTBot',
         disallow: ['/'], // You can adjust this based on your AI visibility strategy
-      },
-      {
-        userAgent: 'Google-Extended',
-        disallow: ['/'], // Disallow Gemini training, but keep Googlebot indexing
       }
     ],
   },

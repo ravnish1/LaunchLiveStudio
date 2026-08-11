@@ -6,6 +6,7 @@ import { faqData } from '@/lib/faq-data'
 export const metadata: Metadata = {
   title: 'FAQ | Launch Live Studio',
   description: 'Frequently asked questions about our services, process, pricing, and ongoing support. Get clarity on partnering with Launch Live Studio.',
+  alternates: { canonical: 'https://www.launchlive.studio/faq' },
 }
 
 export default function FaqPage() {

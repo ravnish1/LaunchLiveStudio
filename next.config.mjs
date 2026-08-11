@@ -4,17 +4,17 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-   async headers() {
+  async headers() {
     return [
       {
-        source: '/(.*)',
+        source: "/(.*)",
         headers: [
-          { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
-          { key: 'X-Content-Type-Options', value: 'nosniff' },
-          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
         ],
       },
-    ]
+    ];
   },
   images: {
     unoptimized: false,
@@ -23,7 +23,6 @@ const nextConfig = {
         protocol: "https",
         hostname: "images.unsplash.com",
       },
-   
     ],
   },
   async redirects() {
