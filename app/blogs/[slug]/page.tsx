@@ -57,9 +57,16 @@ export default async function BlogPostPage({ params }: Props) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://www.launchlive.studio/blogs/${slug}`
+    },
     "headline": post.title,
     "description": post.description,
-    "image": "https://www.launchlive.studio/og-preview.jpg",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://www.launchlive.studio/og-preview.jpg"
+    },
     "author": {
       "@type": "Organization",
       "name": "Launch Live Studio",
@@ -74,6 +81,7 @@ export default async function BlogPostPage({ params }: Props) {
       }
     },
     "datePublished": post.date,
+    "dateModified": post.date,
   };
 
   return (

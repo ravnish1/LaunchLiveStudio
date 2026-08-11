@@ -74,10 +74,22 @@ const schema = {
     },
     {
       "@type": "Organization",
-      name: "Launch Live Studio",
-      url: "https://www.launchlive.studio/",
-      logo: "https://www.launchlive.studio/logo.png",
-      description: "Websites, automation & systems for modern businesses.",
+      "name": "Launch Live Studio",
+      "url": "https://www.launchlive.studio/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.launchlive.studio/logo.png"
+      },
+      "description": "Websites, automation & systems for modern businesses.",
+      "sameAs": [
+        "https://twitter.com/launchlivestudio",
+        "https://www.linkedin.com/company/launch-live-studio"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Service",
+        "email": "hello@launchlive.studio"
+      }
     },
   ],
 };

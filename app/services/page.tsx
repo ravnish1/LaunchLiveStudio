@@ -22,17 +22,31 @@ export const metadata: Metadata = {
   },
 }
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Digital Agency Services",
-  "provider": {
-    "@type": "Organization",
-    "name": "Launch Live Studio",
-    "url": "https://www.launchlive.studio/"
-  },
-  "description": "Custom web development, LLM-powered AI systems, and marketing automation to scale your business."
-};
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Digital Agency Services",
+    "provider": {
+      "@type": "Organization",
+      "name": "Launch Live Studio",
+      "url": "https://www.launchlive.studio/"
+    },
+    "description": "Custom web development, LLM-powered AI systems, and marketing automation to scale your business.",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Agency Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Development" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI System Creation" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Branding & Identity" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO Optimization" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Tool Creation" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Marketing Automation" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "UI/UX Design" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Growth Consulting" } }
+      ]
+    }
+  };
 
 export default function ServicesPage() {
   return (

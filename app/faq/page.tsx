@@ -20,8 +20,7 @@ export default function FaqPage() {
         "name": item.question,
         "acceptedAnswer": {
           "@type": "Answer",
-          // Since some answers are JSX, we use a string fallback or plain string content.
-          "text": typeof item.answer === 'string' ? item.answer : "Please see our FAQ page for detailed information."
+          "text": item.plainTextAnswer
         }
       }))
     )

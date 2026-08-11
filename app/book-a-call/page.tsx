@@ -1,6 +1,7 @@
 import React from 'react'
 import { Metadata } from 'next'
 import { BookACallClient } from './BookACallClient'
+import Script from "next/script"
 
 export const metadata: Metadata = {
   title: "Book a Strategy Consultation | Launch Live Studio",
@@ -23,5 +24,30 @@ export const metadata: Metadata = {
 }
 
 export default function BookACallPage() {
-  return <BookACallClient />
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Book a Strategy Consultation",
+    "description": "Ready to launch your next big project? Schedule a free consultation with our experts to discuss your digital strategy, AI, or development needs.",
+    "url": "https://www.launchlive.studio/book-a-call",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Launch Live Studio",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.launchlive.studio/logo.png"
+      }
+    }
+  };
+
+  return (
+    <>
+      <Script
+        id="schema-contact"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <BookACallClient />
+    </>
+  )
 }

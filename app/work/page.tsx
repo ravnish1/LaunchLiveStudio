@@ -5,6 +5,7 @@ import { CTABanner } from '@/components/redesign/CTABanner'
 import { Footer } from '@/components/redesign/Footer'
 import { OurWork } from '@/components/redesign/OurWork'
 import ClientReveal from '@/components/redesign/ClientReveal'
+import Script from "next/script"
 
 export const metadata: Metadata = {
   title: "Case Studies & Portfolio | Launch Live Studio",
@@ -27,8 +28,29 @@ export const metadata: Metadata = {
 }
 
 export default function WorkPage() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Case Studies & Portfolio | Launch Live Studio",
+    "description": "Explore our selected works. See how we delivered high-performance Shopify stores, AI-driven SaaS, and premium brand identities for leading startups.",
+    "url": "https://www.launchlive.studio/work",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Launch Live Studio",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.launchlive.studio/logo.png"
+      }
+    }
+  };
+
   return (
     <ClientReveal>
+      <Script
+        id="schema-work"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
       <div className="min-h-screen bg-background text-foreground">
         <Navbar />
         <main>

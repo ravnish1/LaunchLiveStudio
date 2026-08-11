@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { servicesData } from '@/lib/services-data';
 import { ServiceDetailClient } from '@/app/services/[slug]/ServiceDetailClient';
+import Script from "next/script";
 
 interface Props {
   params: Promise<{
@@ -43,5 +44,31 @@ export default async function ServiceDetailPage({ params }: Props) {
     notFound();
   }
 
-  return <ServiceDetailClient service={service} />;
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": service.title,
+    "description": service.shortDescription,
+    "provider": {
+      "@type": "Organization",
+      "name": "Launch Live Studio",
+      "url": "https://www.launchlive.studio/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.launchlive.studio/logo.png"
+      }
+    },
+    "url": `https://www.launchlive.studio/services/${service.slug}`
+  };
+
+  return (
+    <>
+      <Script
+        id="schema-service"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <ServiceDetailClient service={service} />
+    </>
+  );
 }
