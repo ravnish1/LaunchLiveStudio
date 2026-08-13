@@ -13,7 +13,7 @@ export const featuredWork = [
     category: "AI / ML",
     tagline: "Enterprise-Grade capabilities",
     desc: "Built from the ground up for security, accuracy, and unprecedented speed. A completely managed RAG pipeline.The application likely serves organizations by digitizing manual due diligence workflows, allowing users to securely collect, track, and evaluate third-party risk data. Key features typically include automated questionnaire distribution, real-time progress dashboards, and centralized document storage for audit trails. By leveraging Vercel's edge network, the tool ensures fast, reliable access for global teams while maintaining high security standards through serverless architectures and role-based access controls.This platform helps businesses reduce compliance risks, accelerate procurement cycles, and maintain consistent security standards across their supply chain without the overhead of traditional on-premise solutions.",
-    image: "/blog/ll-rag-platform.png",
+    image: "/projects/ll-rag-platform.png",
     result: "Easing your finance",
     slug: "launch-live-rag-platform",
     liveUrl: "https://due-diligence-frontend.vercel.app/",
