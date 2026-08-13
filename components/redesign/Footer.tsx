@@ -178,7 +178,7 @@ export const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-lg bg-foreground/5 flex items-center justify-center text-accent/80 shrink-0">
-                  <MapPin size={16} />
+                  <MapPin size={16}/>
                 </div>
                 <span>Gurugram, India 🇮🇳</span>
               </li>
@@ -188,8 +188,8 @@ export const Footer = () => {
                 </div>
                 <div className="">
                   <a
-                    href="tel:+919992206990"
                     className="hover:text-accent transition-colors"
+                    href="tel:+919992206990"
                   >
                     +91 9992206990
                   </a>

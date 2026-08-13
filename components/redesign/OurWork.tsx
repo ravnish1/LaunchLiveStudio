@@ -1,60 +1,68 @@
-'use client'
+"use client";
 
-import React from 'react'
+import React from "react";
 
-import Link from 'next/link'
-import Image from 'next/image'
-import { ExternalLink, ArrowUpRight } from 'lucide-react'
+import Link from "next/link";
+import Image from "next/image";
+import { ExternalLink, ArrowUpRight } from "lucide-react";
 
 const featuredWork = [
   {
-    name: 'Raptile Studio',
-    category: 'Shopify / Streetwear',
-    tagline: 'Redefining the edge of urban fashion.',
-    desc: 'A high-performance, custom Shopify e-commerce experience for a premium streetwear brand, featuring liquid animations and lightning-fast checkout.',
-    image: '/projects/raptile-studio.png',
-    result: 'Delivered 1 Week Early',
-    slug: 'raptile-studio',
-    liveUrl: 'https://raptilestudio.in/',
-    hideCaseStudy: true
+    name: "Raptile Studio",
+    category: "Shopify / Streetwear",
+    tagline: "Redefining the edge of urban fashion.",
+    desc: "A high-performance, custom Shopify e-commerce experience for a premium streetwear brand, featuring liquid animations and lightning-fast checkout.",
+    image: "/projects/raptile-studio.png",
+    result: "Delivered 1 Week Early",
+    slug: "raptile-studio",
+    liveUrl: "https://raptilestudio.in/",
+    hideCaseStudy: false,
   },
   {
-    name: 'TerraFlow',
-    category: 'SaaS / AgriTech',
-    tagline: 'Where farmland meets real-time data.',
-    desc: 'A full-stack agriculture intelligence dashboard connecting farmers to live soil data, weather models, and AI crop predictions.',
-    image: 'https://images.unsplash.com/photo-1586771107445-d3ca888129ff?q=80&w=800&auto=format&fit=crop',
-    result: '3× Conversion Rate',
-    slug: 'terraflow'
+    name: "TerraFlow",
+    category: "SaaS / AgriTech",
+    tagline: "Where farmland meets real-time data.",
+    desc: "A full-stack agriculture intelligence dashboard connecting farmers to live soil data, weather models, and AI crop predictions.",
+    image:
+      "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?q=80&w=800&auto=format&fit=crop",
+    result: "3× Conversion Rate",
+    slug: "terraflow",
   },
   {
-    name: 'Vaultly',
-    category: 'FinTech / AI',
-    tagline: 'Smart savings, powered by AI.',
-    desc: 'An AI-first personal finance platform that learns spending habits and automates savings goals in real time.',
-    image: 'https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?w=400&h=500&fit=crop',
-    result: '0 → 10k Users in 6 Weeks',
-    slug: 'vaultly'
+    name: "Vaultly",
+    category: "FinTech / AI",
+    tagline: "Smart savings, powered by AI.",
+    desc: "An AI-first personal finance platform that learns spending habits and automates savings goals in real time.",
+    image:
+      "https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?w=400&h=500&fit=crop",
+    result: "0 → 10k Users in 6 Weeks",
+    slug: "vaultly",
   },
   {
-    name: 'Nova Roast',
-    category: 'DTC / Branding',
-    tagline: 'A brand that hits as hard as the espresso.',
-    desc: 'End-to-end brand identity and Shopify build for a specialty coffee brand launching into a saturated market.',
-    image: 'https://images.unsplash.com/photo-1541167760496-1628856ab772?w=400&h=500&fit=crop',
-    result: '$0 → $120k Revenue in 90 Days',
-    slug: 'nova-roast'
+    name: "Nova Roast",
+    category: "DTC / Branding",
+    tagline: "A brand that hits as hard as the espresso.",
+    desc: "End-to-end brand identity and Shopify build for a specialty coffee brand launching into a saturated market.",
+    image:
+      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=400&h=500&fit=crop",
+    result: "$0 → $120k Revenue in 90 Days",
+    slug: "nova-roast",
   },
-]
+];
 
 /* ─── Project Card ─── */
-const ProjectCard = ({ project }: { project: typeof featuredWork[0] }) => {
+const ProjectCard = ({ project }: { project: (typeof featuredWork)[0] }) => {
   return (
     <div className="flex flex-col h-full bg-surface border border-foreground/5 rounded-2xl overflow-hidden">
       {/* Image */}
       <div className="relative w-full aspect-[16/10] overflow-hidden bg-foreground/5">
         {project.liveUrl ? (
-          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="block w-full h-full">
+          <a
+            href={project.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full h-full"
+          >
             <Image
               src={project.image}
               alt={project.name}
@@ -83,17 +91,25 @@ const ProjectCard = ({ project }: { project: typeof featuredWork[0] }) => {
         {/* Category */}
         <div className="flex items-center gap-2 mb-3">
           <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-          <span className="text-accent tracking-widest uppercase text-[10px] font-black">{project.category}</span>
+          <span className="text-accent tracking-widest uppercase text-[10px] font-black">
+            {project.category}
+          </span>
         </div>
 
         {/* Title */}
-        <h3 className="text-2xl md:text-3xl font-serif text-foreground mb-2 leading-tight">{project.name}</h3>
+        <h3 className="text-2xl md:text-3xl font-serif text-foreground mb-2 leading-tight">
+          {project.name}
+        </h3>
 
         {/* Tagline */}
-        <p className="text-base md:text-lg font-semibold text-foreground/80 mb-3 leading-snug">{project.tagline}</p>
+        <p className="text-base md:text-lg font-semibold text-foreground/80 mb-3 leading-snug">
+          {project.tagline}
+        </p>
 
         {/* Description */}
-        <p className="text-sm text-text-muted leading-relaxed mb-5 flex-grow">{project.desc}</p>
+        <p className="text-sm text-text-muted leading-relaxed mb-5 flex-grow">
+          {project.desc}
+        </p>
 
         {/* Actions — always visible */}
         <div className="flex items-center gap-4 pt-4 border-t border-foreground/5">
@@ -118,17 +134,26 @@ const ProjectCard = ({ project }: { project: typeof featuredWork[0] }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 /* ─── Featured Project (first item, larger) ─── */
-const FeaturedProject = ({ project }: { project: typeof featuredWork[0] }) => {
+const FeaturedProject = ({
+  project,
+}: {
+  project: (typeof featuredWork)[0];
+}) => {
   return (
     <div className="flex flex-col md:flex-row bg-surface border border-foreground/5 rounded-2xl overflow-hidden">
       {/* Image — larger for featured */}
       <div className="relative w-full md:w-[55%] aspect-[16/10] md:aspect-auto md:min-h-[360px] overflow-hidden bg-foreground/5">
         {project.liveUrl ? (
-          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="block w-full h-full">
+          <a
+            href={project.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full h-full"
+          >
             <Image
               src={project.image}
               alt={project.name}
@@ -153,17 +178,25 @@ const FeaturedProject = ({ project }: { project: typeof featuredWork[0] }) => {
         {/* Category */}
         <div className="flex items-center gap-2 mb-4">
           <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-          <span className="text-accent tracking-widest uppercase text-[10px] font-black">{project.category}</span>
+          <span className="text-accent tracking-widest uppercase text-[10px] font-black">
+            {project.category}
+          </span>
         </div>
 
         {/* Title */}
-        <h3 className="text-3xl md:text-4xl lg:text-5xl font-serif text-foreground mb-3 leading-tight">{project.name}</h3>
+        <h3 className="text-3xl md:text-4xl lg:text-5xl font-serif text-foreground mb-3 leading-tight">
+          {project.name}
+        </h3>
 
         {/* Tagline */}
-        <p className="text-lg md:text-xl font-semibold text-foreground/80 mb-3 leading-snug">{project.tagline}</p>
+        <p className="text-lg md:text-xl font-semibold text-foreground/80 mb-3 leading-snug">
+          {project.tagline}
+        </p>
 
         {/* Description */}
-        <p className="text-sm md:text-base text-text-muted leading-relaxed mb-6">{project.desc}</p>
+        <p className="text-sm md:text-base text-text-muted leading-relaxed mb-6">
+          {project.desc}
+        </p>
 
         {/* Result Badge */}
         <div className="inline-flex items-center bg-accent/8 border border-accent/15 text-foreground text-sm font-bold px-4 py-2 rounded-full mb-6 self-start">
@@ -193,34 +226,53 @@ const FeaturedProject = ({ project }: { project: typeof featuredWork[0] }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-
-export const OurWork = ({ titleContainerClassName = '', standalone = true }: { titleContainerClassName?: string; standalone?: boolean }) => {
-  const [featured, ...rest] = featuredWork
+export const OurWork = ({
+  titleContainerClassName = "",
+  standalone = true,
+}: {
+  titleContainerClassName?: string;
+  standalone?: boolean;
+}) => {
+  const [featured, ...rest] = featuredWork;
 
   return (
-    <section className={`${standalone ? 'pt-28 md:pt-32' : 'pt-16 md:pt-20'} pb-16 md:pb-20 px-4 md:px-6`}>
+    <section
+      className={`${standalone ? "pt-28 md:pt-32" : "pt-16 md:pt-20"} pb-16 md:pb-20 px-4 md:px-6`}
+    >
       <div className="max-w-[1200px] mx-auto">
-
         {/* ── Header ── */}
-        <div className={`mb-10 md:mb-14 flex flex-col md:flex-row justify-between items-start md:items-end gap-5 ${titleContainerClassName}`}>
+        <div
+          className={`mb-10 md:mb-14 flex flex-col md:flex-row justify-between items-start md:items-end gap-5 ${titleContainerClassName}`}
+        >
           <div>
-            <span className="text-xs md:text-sm font-bold tracking-[0.2em] text-accent uppercase">SELECTED PROJECTS</span>
+            <span className="text-xs md:text-sm font-bold tracking-[0.2em] text-accent uppercase">
+              SELECTED PROJECTS
+            </span>
             <h1 className="flex flex-col mt-3">
-              <span className="text-3xl sm:text-4xl md:text-6xl font-serif leading-[1.1] tracking-tight">Work that speaks</span>
-              <span className="text-3xl sm:text-4xl md:text-6xl font-serif italic text-accent leading-[1.1] tracking-tight">for itself.</span>
+              <span className="text-3xl sm:text-4xl md:text-6xl font-serif leading-[1.1] tracking-tight">
+                Work that speaks
+              </span>
+              <span className="text-3xl sm:text-4xl md:text-6xl font-serif italic text-accent leading-[1.1] tracking-tight">
+                for itself.
+              </span>
             </h1>
             <p className="mt-4 text-text-muted text-base md:text-lg max-w-lg leading-relaxed">
-              Real results for real businesses. We specialize in building custom software, high-performance web applications, and digital systems tailored to your unique workflows. Every project is engineered from the ground up to convert, perform, and scale, ensuring that your digital presence drives measurable revenue and long-term growth for your brand.
+              Real results for real businesses. We specialize in building custom
+              software, high-performance web applications, and digital systems
+              tailored to your unique workflows. Every project is engineered
+              from the ground up to convert, perform, and scale, ensuring that
+              your digital presence drives measurable revenue and long-term
+              growth for your brand.
             </p>
           </div>
           <Link
-            href={standalone ? '/book-a-call' : '/work'}
+            href={standalone ? "/book-a-call" : "/work"}
             className="w-full md:w-auto px-6 py-3 bg-accent text-white font-bold rounded-full text-sm text-center whitespace-nowrap shadow-lg shadow-accent/20"
           >
-            {standalone ? 'Start Your Project →' : 'View All Work →'}
+            {standalone ? "Start Your Project →" : "View All Work →"}
           </Link>
         </div>
 
@@ -235,8 +287,7 @@ export const OurWork = ({ titleContainerClassName = '', standalone = true }: { t
             <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
-
       </div>
     </section>
-  )
-}
+  );
+};
