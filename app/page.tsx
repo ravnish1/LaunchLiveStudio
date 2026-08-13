@@ -41,13 +41,13 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
     nocache: false,
-    googleBot:{
-      index:true,
-      follow:true,
-      "max-snippet":-1,
-      "max-image-preview":"large",
-      "max-video-preview":-1 
-    }
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
   },
 };
 
@@ -63,6 +63,7 @@ import { Testimonials } from "@/components/redesign/Testimonials";
 import { CTABanner } from "@/components/redesign/CTABanner";
 import { Footer } from "@/components/redesign/Footer";
 import ClientReveal from "@/components/redesign/ClientReveal";
+import { FeaturedProduct } from "@/components/ui/featured-product";
 
 const schema = {
   "@context": "https://schema.org",
@@ -74,41 +75,41 @@ const schema = {
     },
     {
       "@type": "Organization",
-      "name": "Launch Live Studio",
-      "url": "https://www.launchlive.studio/",
-      "logo": {
+      name: "Launch Live Studio",
+      url: "https://www.launchlive.studio/",
+      logo: {
         "@type": "ImageObject",
-        "url": "https://www.launchlive.studio/logo.png"
+        url: "https://www.launchlive.studio/logo.png",
       },
-      "description": "Websites, automation & systems for modern businesses.",
-      "sameAs": [
+      description: "Websites, automation & systems for modern businesses.",
+      sameAs: [
         "https://twitter.com/launchlivestudio",
-        "https://www.linkedin.com/company/launch-live-studio"
+        "https://www.linkedin.com/company/launch-live-studio",
       ],
-      "contactPoint": [
+      contactPoint: [
         {
           "@type": "ContactPoint",
-          "contactType": "Customer Service",
-          "email": "hello@launchlive.studio",
-          "telephone": "+91 9992206990"
+          contactType: "Customer Service",
+          email: "hello@launchlive.studio",
+          telephone: "+91 9992206990",
         },
         {
           "@type": "ContactPoint",
-          "contactType": "Customer Service",
-          "telephone": "+91 73031 12516"
+          contactType: "Customer Service",
+          telephone: "+91 73031 12516",
         },
         {
           "@type": "ContactPoint",
-          "contactType": "Customer Service",
-          "telephone": "+91 83759 99583"
-        }
+          contactType: "Customer Service",
+          telephone: "+91 83759 99583",
+        },
       ],
-      "address": {
+      address: {
         "@type": "PostalAddress",
-        "addressLocality": "Gurugram",
-        "addressRegion": "Haryana",
-        "addressCountry": "IN"
-      }
+        addressLocality: "Gurugram",
+        addressRegion: "Haryana",
+        addressCountry: "IN",
+      },
     },
   ],
 };
@@ -122,22 +123,23 @@ export default function Home() {
       />
       <ClientReveal>
         <div className="min-h-screen bg-background text-foreground">
-        <Navbar />
+          <Navbar />
 
-        <main>
-          <Hero />
-          <Marquee />
-          <Features />
-          <Stats />
-          <Process />
-          <OurWork standalone={false} />
-          <Testimonials />
-          <CTABanner />
-        </main>
+          <main>
+            <Hero />
+            <Marquee />
+            <Features />
+            <Stats />
+            <Process />
+            <OurWork />
+            {/* <FeaturedProduct /> */}
+            <Testimonials />
+            <CTABanner />
+          </main>
 
-        <Footer />
-      </div>
-    </ClientReveal>
+          <Footer />
+        </div>
+      </ClientReveal>
     </>
   );
 }

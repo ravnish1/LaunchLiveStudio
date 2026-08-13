@@ -11,6 +11,9 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { Nav } from "react-day-picker";
+import { PageNotFoundError } from "next/dist/shared/lib/utils";
+import NotFound from "@/app/not-found";
 
 const SmoothScroll = dynamic(
   () =>
@@ -26,19 +29,7 @@ export function BlogPostClient() {
   const post = BLOG_POSTS.find((p) => p.slug === slug);
 
   if (!post) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-background text-foreground p-6 text-center">
-        <div>
-          <h1 className="text-4xl font-serif mb-4">Post not found.</h1>
-          <button
-            onClick={() => router.push("/blogs")}
-            className="text-accent hover:underline"
-          >
-            Back to Blogs
-          </button>
-        </div>
-      </div>
-    );
+    return <NotFound />;
   }
 
   return (

@@ -1,12 +1,46 @@
-"use client";
+// "use client";
 
 import React from "react";
 
 import Link from "next/link";
 import Image from "next/image";
 import { ExternalLink, ArrowUpRight } from "lucide-react";
+import { CaseStudy } from "../common/case-study";
 
-const featuredWork = [
+export const featuredWork = [
+  {
+    name: "LL RAG Platform: Built for Every Industry",
+    category: "AI / ML",
+    tagline: "Enterprise-Grade capabilities",
+    desc: "Built from the ground up for security, accuracy, and unprecedented speed. A completely managed RAG pipeline.The application likely serves organizations by digitizing manual due diligence workflows, allowing users to securely collect, track, and evaluate third-party risk data. Key features typically include automated questionnaire distribution, real-time progress dashboards, and centralized document storage for audit trails. By leveraging Vercel's edge network, the tool ensures fast, reliable access for global teams while maintaining high security standards through serverless architectures and role-based access controls.This platform helps businesses reduce compliance risks, accelerate procurement cycles, and maintain consistent security standards across their supply chain without the overhead of traditional on-premise solutions.",
+    image: "/blog/ll-rag-platform.png",
+    result: "Easing your finance",
+    slug: "launch-live-rag-platform",
+    liveUrl: "https://due-diligence-frontend.vercel.app/",
+    hideCaseStudy: true,
+  },
+  {
+    name: "Deepshield",
+    category: "B2B / Trust & Safety",
+    tagline: "Rental Fraud Control Center",
+    desc: "DeepShield is a robust B2B Trust and Safety frontend dashboard designed to monitor owner onboarding, property listings, and payout streams.",
+    image: "/projects/deepshield-risk-operation.png",
+    result: "70% less fraud",
+    slug: "deepshield-risk-control-center",
+    liveUrl: "https://deep-shield-zeta.vercel.app/risk",
+    hideCaseStudy: false,
+  },
+  {
+    name: "Montbold",
+    category: "DTC / E-commerce",
+    tagline: "Seamless design for the modern journey",
+    desc: "A premium, minimalist e-commerce and portfolio application built for high-end product showcasing and brand management.",
+    image: "/projects/montbold-premium-bag.png",
+    result: "$0 → $120k Revenue in 90 Days",
+    slug: "montbold-premium-bag",
+    liveUrl: "https://montbold-dev.vercel.app/",
+    hideCaseStudy: false,
+  },
   {
     name: "Raptile Studio",
     category: "Shopify / Streetwear",
@@ -18,36 +52,6 @@ const featuredWork = [
     liveUrl: "https://raptilestudio.in/",
     hideCaseStudy: false,
   },
-  {
-    name: "TerraFlow",
-    category: "SaaS / AgriTech",
-    tagline: "Where farmland meets real-time data.",
-    desc: "A full-stack agriculture intelligence dashboard connecting farmers to live soil data, weather models, and AI crop predictions.",
-    image:
-      "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?q=80&w=800&auto=format&fit=crop",
-    result: "3× Conversion Rate",
-    slug: "terraflow",
-  },
-  {
-    name: "Vaultly",
-    category: "FinTech / AI",
-    tagline: "Smart savings, powered by AI.",
-    desc: "An AI-first personal finance platform that learns spending habits and automates savings goals in real time.",
-    image:
-      "https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?w=400&h=500&fit=crop",
-    result: "0 → 10k Users in 6 Weeks",
-    slug: "vaultly",
-  },
-  {
-    name: "Nova Roast",
-    category: "DTC / Branding",
-    tagline: "A brand that hits as hard as the espresso.",
-    desc: "End-to-end brand identity and Shopify build for a specialty coffee brand launching into a saturated market.",
-    image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=400&h=500&fit=crop",
-    result: "$0 → $120k Revenue in 90 Days",
-    slug: "nova-roast",
-  },
 ];
 
 /* ─── Project Card ─── */
@@ -55,7 +59,7 @@ const ProjectCard = ({ project }: { project: (typeof featuredWork)[0] }) => {
   return (
     <div className="flex flex-col h-full bg-surface border border-foreground/5 rounded-2xl overflow-hidden">
       {/* Image */}
-      <div className="relative w-full aspect-[16/10] overflow-hidden bg-foreground/5">
+      <div className="relative  aspect-[16/9] overflow-hidden bg-foreground/5">
         {project.liveUrl ? (
           <a
             href={project.liveUrl}
@@ -77,7 +81,7 @@ const ProjectCard = ({ project }: { project: (typeof featuredWork)[0] }) => {
             alt={project.name}
             fill
             className="object-cover"
-            sizes="(max-width: 768px) 100vw, 50vw"
+            sizes="(max-width: 868px) 100vw, 50vw"
           />
         )}
         {/* Result Badge — always visible */}
@@ -113,14 +117,7 @@ const ProjectCard = ({ project }: { project: (typeof featuredWork)[0] }) => {
 
         {/* Actions — always visible */}
         <div className="flex items-center gap-4 pt-4 border-t border-foreground/5">
-          {!project.hideCaseStudy && (
-            <Link
-              href={`/work/${project.slug}`}
-              className="text-[11px] font-bold uppercase tracking-[0.15em] text-foreground flex items-center gap-1.5"
-            >
-              Case Study <ArrowUpRight size={13} className="text-accent" />
-            </Link>
-          )}
+          {project.hideCaseStudy && <CaseStudy project={project} />}
           {project.liveUrl && (
             <a
               href={project.liveUrl}
@@ -144,9 +141,9 @@ const FeaturedProject = ({
   project: (typeof featuredWork)[0];
 }) => {
   return (
-    <div className="flex flex-col md:flex-row bg-surface border border-foreground/5 rounded-2xl overflow-hidden">
+    <div className="flex flex-col bg-surface border border-foreground/5 rounded-2xl overflow-hidden">
       {/* Image — larger for featured */}
-      <div className="relative w-full md:w-[55%] aspect-[16/10] md:aspect-auto md:min-h-[360px] overflow-hidden bg-foreground/5">
+      <div className="relative w-full aspect-[16/8]  overflow-hidden bg-foreground/5">
         {project.liveUrl ? (
           <a
             href={project.liveUrl}
@@ -167,14 +164,13 @@ const FeaturedProject = ({
             src={project.image}
             alt={project.name}
             fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, 55vw"
+            className="w-full h-full"
           />
         )}
       </div>
 
       {/* Content */}
-      <div className="w-full md:w-[45%] p-6 md:p-8 lg:p-10 flex flex-col justify-center">
+      <div className="w-full p-6 md:p-8 lg:p-10 flex flex-col justify-center">
         {/* Category */}
         <div className="flex items-center gap-2 mb-4">
           <span className="w-1.5 h-1.5 rounded-full bg-accent" />
@@ -199,31 +195,25 @@ const FeaturedProject = ({
         </p>
 
         {/* Result Badge */}
-        <div className="inline-flex items-center bg-accent/8 border border-accent/15 text-foreground text-sm font-bold px-4 py-2 rounded-full mb-6 self-start">
-          <span className="text-accent mr-2">✦</span> {project.result}
+        <div className=" flex w-1/3 justify-between items-center">
+          <div className="inline-flex items-center bg-accent/8 border border-accent/15 text-foreground text-sm font-bold px-4 py-2 rounded-full  self-start">
+            <span className="text-accent mr-2">✦</span> {project.result}
+          </div>
+          <div className="flex items-center gap-5 rounded-full border-1 border-foreground/40 p-2">
+            {!project.hideCaseStudy && <CaseStudy project={project} />}
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-bold uppercase tracking-[0.15em] text-accent flex items-center gap-1.5"
+              >
+                Visit Site <ExternalLink size={14} />
+              </a>
+            )}
+          </div>
         </div>
-
         {/* Actions */}
-        <div className="flex items-center gap-5">
-          {!project.hideCaseStudy && (
-            <Link
-              href={`/work/${project.slug}`}
-              className="text-xs font-bold uppercase tracking-[0.15em] text-foreground flex items-center gap-1.5"
-            >
-              Case Study <ArrowUpRight size={14} className="text-accent" />
-            </Link>
-          )}
-          {project.liveUrl && (
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs font-bold uppercase tracking-[0.15em] text-accent flex items-center gap-1.5"
-            >
-              Visit Site <ExternalLink size={14} />
-            </a>
-          )}
-        </div>
       </div>
     </div>
   );
@@ -245,42 +235,32 @@ export const OurWork = ({
       <div className="max-w-[1200px] mx-auto">
         {/* ── Header ── */}
         <div
-          className={`mb-10 md:mb-14 flex flex-col md:flex-row justify-between items-start md:items-end gap-5 ${titleContainerClassName}`}
+          className={`mb-10 md:mb-14 flex flex-col justify-between items-start gap-5 ${titleContainerClassName}`}
         >
-          <div>
-            <span className="text-xs md:text-sm font-bold tracking-[0.2em] text-accent uppercase">
-              SELECTED PROJECTS
+          <span className="text-xs md:text-sm font-bold tracking-[0.2em] text-accent uppercase">
+            SELECTED PROJECTS
+          </span>
+          <h1 className="flex flex-col mt-3">
+            <span className="text-3xl sm:text-4xl md:text-6xl font-serif leading-[1.1] tracking-tight">
+              Work that speaks
             </span>
-            <h1 className="flex flex-col mt-3">
-              <span className="text-3xl sm:text-4xl md:text-6xl font-serif leading-[1.1] tracking-tight">
-                Work that speaks
-              </span>
-              <span className="text-3xl sm:text-4xl md:text-6xl font-serif italic text-accent leading-[1.1] tracking-tight">
-                for itself.
-              </span>
-            </h1>
-            <p className="mt-4 text-text-muted text-base md:text-lg max-w-lg leading-relaxed">
-              Real results for real businesses. We specialize in building custom
-              software, high-performance web applications, and digital systems
-              tailored to your unique workflows. Every project is engineered
-              from the ground up to convert, perform, and scale, ensuring that
-              your digital presence drives measurable revenue and long-term
-              growth for your brand.
-            </p>
-          </div>
-          <Link
-            href={standalone ? "/book-a-call" : "/work"}
-            className="w-full md:w-auto px-6 py-3 bg-accent text-white font-bold rounded-full text-sm text-center whitespace-nowrap shadow-lg shadow-accent/20"
-          >
-            {standalone ? "Start Your Project →" : "View All Work →"}
-          </Link>
+            <span className="text-3xl sm:text-4xl md:text-6xl font-serif italic text-accent leading-[1.1] tracking-tight">
+              for itself.
+            </span>
+          </h1>
+          <p className="mt-4 text-text-muted text-base md:text-lg max-w-lg leading-relaxed">
+            Real results for real businesses. We specialize in building custom
+            software, high-performance web applications, and digital systems
+            tailored to your unique workflows. Every project is engineered from
+            the ground up to convert, perform, and scale, ensuring that your
+            digital presence drives measurable revenue and long-term growth for
+            your brand.
+          </p>
         </div>
-
         {/* ── Featured Project ── */}
         <div className="mb-6 md:mb-8">
           <FeaturedProject project={featured} />
         </div>
-
         {/* ── Project Grid ── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
           {rest.map((project) => (
