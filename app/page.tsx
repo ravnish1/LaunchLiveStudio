@@ -58,12 +58,12 @@ import { Marquee } from "@/components/redesign/Marquee";
 import { Features } from "@/components/redesign/Features";
 import { Stats } from "@/components/redesign/Stats";
 import { Process } from "@/components/redesign/Process";
-import { OurWork } from "@/components/redesign/OurWork";
 import { Testimonials } from "@/components/redesign/Testimonials";
 import { CTABanner } from "@/components/redesign/CTABanner";
 import { Footer } from "@/components/redesign/Footer";
 import ClientReveal from "@/components/redesign/ClientReveal";
 import { FeaturedProduct } from "@/components/ui/featured-product";
+import { HomeBlogs } from "@/components/redesign/HomeBlogs";
 
 const schema = {
   "@context": "https://schema.org",
@@ -131,8 +131,8 @@ export default function Home() {
             <Features />
             <Stats />
             <Process />
-            <OurWork />
-            {/* <FeaturedProduct /> */}
+            <FeaturedProduct />
+            <HomeBlogs />
             <Testimonials />
             <CTABanner />
           </main>

@@ -17,6 +17,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
   }
 
+  const imageUrl = post.image.startsWith("http")
+    ? post.image
+    : `https://www.launchlive.studio${post.image}`;
+
   return {
     title: `${post.title} | Launch Live Studio`,
     description: post.description,
@@ -27,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: post.description,
       images: [
         {
-          url: "/og-preview.jpg",
+          url: imageUrl,
           width: 1200,
           height: 630,
           alt: post.title,
@@ -41,7 +45,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title: post.title,
       description: post.description,
-      images: ["/og-preview.jpg"],
+      images: [imageUrl],
     },
   }
 }
@@ -54,6 +58,10 @@ export default async function BlogPostPage({ params }: Props) {
     return <BlogPostClient />
   }
 
+  const imageUrl = post.image.startsWith("http")
+    ? post.image
+    : `https://www.launchlive.studio${post.image}`;
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -65,7 +73,7 @@ export default async function BlogPostPage({ params }: Props) {
     "description": post.description,
     "image": {
       "@type": "ImageObject",
-      "url": "https://www.launchlive.studio/og-preview.jpg"
+      "url": imageUrl
     },
     "author": {
       "@type": "Organization",
