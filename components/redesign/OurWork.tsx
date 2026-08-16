@@ -59,7 +59,7 @@ const ProjectCard = ({ project }: { project: (typeof featuredWork)[0] }) => {
   return (
     <div className="flex flex-col h-full bg-surface border border-foreground/5 rounded-2xl overflow-hidden">
       {/* Image */}
-      <div className="relative  aspect-[16/9] overflow-hidden bg-foreground/5">
+      <div className="relative  aspect-video overflow-hidden bg-foreground/5">
         {project.liveUrl ? (
           <a
             href={project.liveUrl}
@@ -91,7 +91,7 @@ const ProjectCard = ({ project }: { project: (typeof featuredWork)[0] }) => {
       </div>
 
       {/* Content */}
-      <div className="p-5 md:p-6 flex flex-col flex-grow">
+      <div className="p-5 md:p-6 flex flex-col grow">
         {/* Category */}
         <div className="flex items-center gap-2 mb-3">
           <span className="w-1.5 h-1.5 rounded-full bg-accent" />
@@ -111,7 +111,7 @@ const ProjectCard = ({ project }: { project: (typeof featuredWork)[0] }) => {
         </p>
 
         {/* Description */}
-        <p className="text-sm text-text-muted leading-relaxed mb-5 flex-grow">
+        <p className="text-sm text-text-muted leading-relaxed mb-5 grow">
           {project.desc}
         </p>
 
@@ -143,7 +143,7 @@ const FeaturedProject = ({
   return (
     <div className="flex flex-col bg-surface border border-foreground/5 rounded-2xl overflow-hidden">
       {/* Image — larger for featured */}
-      <div className="relative w-full aspect-[16/8]  overflow-hidden bg-foreground/5">
+      <div className="relative w-full aspect-16/8  overflow-hidden bg-foreground/5">
         {project.liveUrl ? (
           <a
             href={project.liveUrl}
@@ -199,7 +199,7 @@ const FeaturedProject = ({
           <div className="inline-flex items-center bg-accent/8 border border-accent/15 text-foreground text-sm font-bold px-4 py-2 rounded-full  self-start">
             <span className="text-accent mr-2">✦</span> {project.result}
           </div>
-          <div className="flex items-center gap-5 rounded-full border-1 border-foreground/40 p-2">
+          <div className="flex items-center gap-5 rounded-full border border-foreground/40 p-2">
             {!project.hideCaseStudy && <CaseStudy project={project} />}
             {project.liveUrl && (
               <a
@@ -232,7 +232,7 @@ export const OurWork = ({
     <section
       className={`${standalone ? "pt-28 md:pt-32" : "pt-16 md:pt-20"} pb-16 md:pb-20 px-4 md:px-6`}
     >
-      <div className="max-w-[1200px] mx-auto">
+      <div className="max-w-300 mx-auto">
         {/* ── Header ── */}
         <div
           className={`mb-10 md:mb-14 flex flex-col justify-between items-start gap-5 ${titleContainerClassName}`}

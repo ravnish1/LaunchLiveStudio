@@ -10,9 +10,9 @@ function FeaturedProduct() {
   return (
     <section className="py-14 px-4 md:px-6 bg-background relative overflow-hidden">
       {/* Decorative background blur */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 bg-accent/10 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="max-w-[1200px] mx-auto relative z-10">
+      <div className="max-w-300 mx-auto relative z-10">
         {/* Section Header */}
         <div className="mb-12 flex flex-col items-center text-center gap-4">
           <span className="text-sm font-bold tracking-[0.2em] text-accent uppercase bg-accent/10 px-4 py-1.5 rounded-full">
@@ -96,7 +96,7 @@ function FeaturedProduct() {
             )}
 
             {/* Soft gradient overlay for blending */}
-            <div className="absolute inset-0 bg-gradient-to-r from-surface via-transparent to-transparent opacity-0 lg:opacity-100 pointer-events-none" />
+            <div className="absolute inset-0 bg-linear-to-r from-surface via-transparent to-transparent opacity-0 lg:opacity-100 pointer-events-none" />
           </div>
         </div>
       </div>
