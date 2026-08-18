@@ -1,6 +1,8 @@
 import { MetadataRoute } from "next";
 import { BLOG_POSTS } from "@/lib/blog-data";
 
+export const revalidate = 86400; // Cache sitemap for 24 hours on Edge CDN
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.launchlive.studio";
 
