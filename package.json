@@ -1,8 +1,23 @@
 {
   "name": "launchlive-studio",
-  "description": "Launch Live Studio — Full-Service Digital Agency",
   "version": "0.1.0",
   "private": true,
+  "description": "Launch Live Studio — Full-Service Digital Agency",
+  "homepage": "https://github.com/ravnish1/LaunchLiveStudio#readme",
+  "bugs": {
+    "url": "https://github.com/ravnish1/LaunchLiveStudio/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ravnish1/LaunchLiveStudio.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "main": "next-sitemap.config.js",
+  "directories": {
+    "doc": "docs",
+    "lib": "lib"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

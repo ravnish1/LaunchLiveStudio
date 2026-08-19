@@ -6,7 +6,6 @@ Allow: /
 User-agent: GPTBot
 Disallow: /
 
-
 # Host
 Host: https://www.launchlive.studio
 
