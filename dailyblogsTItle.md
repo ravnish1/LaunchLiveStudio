@@ -28,7 +28,7 @@ All daily blog topics are balanced across the eight core services of [LaunchLive
 | Date | Pillar / Service | Post Title | Target Primary Keyword | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Aug 19, 2026** | **AI Systems** | [Enterprise RAG Architecture in 2026: How Custom AI Systems Eliminate Hallucinations & Secure Proprietary Data](file:///c:/Users/sachi/OneDrive/Desktop/Launch%20LIve%20Studios/LaunchLiveStudio/todaysBlog.md) | Enterprise RAG Architecture | **Published** |
-| **Aug 20, 2026** | **Websites** | Next.js 15 App Router in Production: Server Actions, Partial Prerendering & Sub-Second LCP | Next.js 15 Production Architecture | Scheduled |
+| **Aug 20, 2026** | **Websites** | [Next.js 15 App Router in Production: Server Actions, Partial Prerendering & Sub-Second LCP](file:///c:/Users/sachi/OneDrive/Desktop/Launch%20LIve%20Studios/LaunchLiveStudio/todaysBlog.md) | Next.js 15 Production Architecture | **Published** |
 | **Aug 21, 2026** | **SEO** | Generative Engine Optimization (GEO): How to Get Cited by ChatGPT, Perplexity & Google AI Overviews | Generative Engine Optimization 2026 | Scheduled |
 | **Aug 22, 2026** | **AI Tools** | Building Micro-SaaS AI Tools: How to Productize LLM APIs into $10k/mo Recurring Revenue Engines | Micro-SaaS AI Tool Development | Scheduled |
 | **Aug 23, 2026** | **Automation** | Multi-Channel CRM Automation: Connecting HubSpot, Webhooks, and AI Lead Scoring for 24/7 Conversions | B2B CRM Marketing Automation | Scheduled |
@@ -166,7 +166,7 @@ Below are in-depth outlines for upcoming daily publications, detailing the core 
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
-│ TOPIC CARD #2 (Aug 20, 2026)                                           │
+│ TOPIC CARD #2 (Aug 20, 2026) — PUBLISHED                               │
 ├────────────────────────────────────────────────────────────────────────┤
 │ Title: Next.js 15 App Router in Production: Server Actions, Partial    │
 │        Prerendering & Sub-Second LCP                                   │
