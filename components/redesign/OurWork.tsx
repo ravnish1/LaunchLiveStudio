@@ -27,7 +27,7 @@ export const featuredWork = [
     image: "/projects/deepshield-risk-operation.png",
     result: "70% less fraud",
     slug: "deepshield-risk-control-center",
-    liveUrl: "https://deep-shield-zeta.vercel.app/risk",
+    liveUrl: "https://deep-shield-zeta.vercel.app/",
     hideCaseStudy: false,
   },
   {
