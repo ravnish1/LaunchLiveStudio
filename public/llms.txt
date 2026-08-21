@@ -1,191 +1,56 @@
-# /public/llms.txt
-# Launch Live Studio - AI Crawler Guideline File
-# Last Updated: 2026-07-19
-# This file provides guidance to AI crawlers about our site structure and content
+# LaunchLive Studio
 
-User-agent: *
-Allow: /
+> LaunchLive Studio (https://www.launchlive.studio) is a full-service digital agency engineering high-performance websites, bespoke AI systems, autonomous workflows, and modern brand identities for scaling startups and enterprises.
 
-# Sitemap for AI crawlers to discover all pages
-Sitemap: https://www.launchlive.studio/sitemap.xml
+## Core Services
 
-# ============================================
-# ABOUT LAUNCH LIVE STUDIO
-# ============================================
-# We are a digital agency specializing in:
-# - High-performance websites built with modern tech
-# - AI automation and business process optimization
-# - Custom software systems for modern businesses
-# - Outcome-driven solutions for startups and established companies
+- [Website Development](https://www.launchlive.studio/services/websites): High-performance, sub-second Next.js web applications, headless Shopify stores, and web apps optimized for Core Web Vitals and conversions.
+- [AI System Creation](https://www.launchlive.studio/services/systems): Enterprise RAG pipelines, private vector search architectures (pgvector, Qdrant), multi-agent orchestration (LangGraph, CrewAI), and autonomous business workflows.
+- [SEO & Generative Engine Optimization (GEO)](https://www.launchlive.studio/services/seo): Advanced technical SEO, semantic JSON-LD entity graph engineering, and Answer Engine Optimization (AEO) to secure citations in ChatGPT, Perplexity, and Google AI Overviews.
+- [AI Tool Creation](https://www.launchlive.studio/services/ai-tools): Custom micro-SaaS software, real-time voice agents (WebSockets, TTS/STT), intelligent document OCR parsers, and fine-tuned SLM integrations.
+- [Marketing & CRM Automation](https://www.launchlive.studio/services/automation): Event-driven webhook pipelines, automated CRM lead routing (HubSpot, Salesforce), dynamic nurture sequences, and retention workflows.
+- [UI/UX Design](https://www.launchlive.studio/services/design): Conversion-focused interface design, comprehensive Figma design systems, WCAG 2.2 accessibility, and fluid micro-interactions.
+- [Branding & Identity](https://www.launchlive.studio/services/branding): Strategy-first visual identities, brand motion design tokens, typography psychology, and positioning strategies.
+- [Growth Consulting](https://www.launchlive.studio/services/consulting): 90-day digital growth roadmaps, tech stack architecture audits, SaaS unit economics optimization, and digital transformation advisory.
 
-Website: https://www.launchlive.studio
-Company: Launch Live Studio
-Description: Digital agency offering websites, automation & systems for modern businesses
-Keywords: digital agency, AI automation, high performance websites, startup software, outcome driven agency
+## Featured Work & Case Studies
 
-# ============================================
-# MAIN PAGES & DESCRIPTIONS
-# ============================================
+- [LaunchLive RAG Platform](https://www.launchlive.studio/work): Enterprise due-diligence and RAG platform with automated third-party risk analysis and audit workflows.
+- [DeepShield Risk Operation Center](https://www.launchlive.studio/work): B2B Trust & Safety command center monitoring owner onboarding and payout risk, reducing fraudulent activity by 70%.
+- [Montbold DTC E-Commerce](https://www.launchlive.studio/work): Minimalist luxury DTC e-commerce storefront generating $0 → $120k revenue in 90 days post-launch.
+- [Raptile Studio](https://www.launchlive.studio/work): High-performance custom Shopify streetwear storefront with liquid animations, delivered 1 week ahead of schedule.
 
-https://www.launchlive.studio/ 
-Title: Launch Live Studio - Digital Agency
-Description: Homepage. We build high-performance websites, AI automation solutions, and custom systems for modern businesses. Outcome-driven approach for startups and established companies.
-Content-Type: Landing Page
-Priority: Critical
+## In-Depth Guides & Technical Articles
 
-https://www.launchlive.studio/services
-Title: Our Services
-Description: We offer three core services:
-  1. High-Performance Websites - Built with Next.js, React, and modern technologies
-  2. AI Automation - Process automation and business intelligence
-  3. Custom Systems - Tailored software solutions for business needs
-Content-Type: Services Page
-Priority: Critical
+- [Generative Engine Optimization (GEO) Guide](https://www.launchlive.studio/blogs/generative-engine-optimization-geo-ai-search-guide): How to get cited by ChatGPT, Perplexity, and Google AI Overviews using semantic entity markup and RAG optimization.
+- [Next.js 15 App Router in Production](https://www.launchlive.studio/blogs/nextjs-15-app-router-server-actions-ppr-performance): Practical architecture guide covering Server Actions, Partial Prerendering (PPR), and sub-second LCP optimization.
+- [Enterprise RAG Architecture in 2026](https://www.launchlive.studio/blogs/enterprise-rag-architecture-eliminate-hallucinations-secure-data): Eliminating LLM hallucinations and securing proprietary data using hybrid search and deterministic guardrails.
+- [Custom Software vs Shopify Guide](https://www.launchlive.studio/blogs/custom-software-vs-shopify-which-is-right-for-your-business): Decision framework comparing monolithic e-commerce platforms with bespoke web architecture.
+- [Improving Online Presence for Broader Reach](https://www.launchlive.studio/blogs/improve-online-presence-reach-broader-audience): Comprehensive blueprint for building compounding topical authority and conversion funnels.
+- [Trezor Breach & Supply Chain Security](https://www.launchlive.studio/blogs/trezor-breach-third-party-supply-chain-security): Lessons in zero-trust architecture, third-party vendor management, and data minimization.
+- [Building Custom Ticket Booking Software](https://www.launchlive.studio/blogs/building-custom-ticket-booking-software): Engineering high-concurrency reservation engines and real-time inventory management.
+- [Adding Web3 to Your Business](https://www.launchlive.studio/blogs/adding-web3-to-your-business): Practical blockchain integrations, smart contracts, and decentralized identity for modern commerce.
+- [NVIDIA AI Factory & Compute](https://www.launchlive.studio/blogs/nvidia-ai-factory-compute-investable-asset-class): Analysis of modern GPU compute infrastructure and enterprise AI scaling.
+- [iOS Development in 2026](https://www.launchlive.studio/blogs/ios-development-in-2026-myths-reality-and-your-path): Native Swift, SwiftUI, and multi-platform mobile architecture.
 
-https://www.launchlive.studio/about
-Title: About Launch Live Studio
-Description: Learn about our team, mission, values, and experience building digital solutions for modern businesses. We focus on outcomes and long-term partnerships.
-Content-Type: Company Information
-Priority: High
+## Primary Navigation
 
-https://www.launchlive.studio/contact
-Title: Get In Touch
-Description: Contact Launch Live Studio for project inquiries, consultations, or to learn how we can help your business. Available for startups and established companies.
-Content-Type: Contact Page
-Priority: High
+- [Home](https://www.launchlive.studio/): Main digital agency landing page and capabilities overview.
+- [Services Hub](https://www.launchlive.studio/services): Full breakdown of our 8 digital service offerings.
+- [Case Studies & Portfolio](https://www.launchlive.studio/work): Real-world client case studies and verified performance metrics.
+- [Insights & Blog](https://www.launchlive.studio/blogs): Weekly technical guides, AI analysis, and architectural blueprints.
+- [Client Testimonials](https://www.launchlive.studio/testimonials): Verified founder feedback, satisfaction ratings, and video reviews.
+- [Frequently Asked Questions (FAQ)](https://www.launchlive.studio/faq): Direct answers regarding timelines, pricing models, tech stacks, and guarantees.
+- [Book a Strategy Call](https://www.launchlive.studio/book-a-call): Schedule a free 30-minute digital strategy consultation.
 
-# ============================================
-# SERVICE PAGES (if applicable)
-# ============================================
+## Contact & Entity Information
 
-https://www.launchlive.studio/services/websites
-Title: Custom Website Development
-Description: High-performance, conversion-optimized websites built with Next.js and modern web technologies. SEO-friendly, fast-loading, and designed for results.
-Content-Type: Service Detail
-Priority: High
-
-https://www.launchlive.studio/services/automation
-Title: AI Automation & Process Optimization
-Description: Automate business processes using AI, integrate systems, reduce manual work, and improve efficiency with intelligent automation solutions.
-Content-Type: Service Detail
-Priority: High
-
-https://www.launchlive.studio/services/systems
-Title: Custom Software & Systems
-Description: Build scalable, custom software systems tailored to your business needs. From MVP to enterprise solutions.
-Content-Type: Service Detail
-Priority: High
-
-# ============================================
-# PORTFOLIO / CASE STUDIES (if applicable)
-# ============================================
-
-https://www.launchlive.studio/work
-Title: Our Work - Portfolio & Case Studies
-Description: Browse our portfolio of successful projects including websites, automation implementations, and custom software solutions.
-Content-Type: Portfolio
-Priority: High
-
-# ============================================
-# BLOG / RESOURCES (if applicable)
-# ============================================
-
-https://www.launchlive.studio/blog
-Title: Blog - Insights on Digital Transformation
-Description: Articles and resources on web development, AI automation, business systems, startup growth, and digital transformation.
-Content-Type: Blog Listing
-Priority: Medium
-
-https://www.launchlive.studio/resources
-Title: Resources & Tools
-Description: Free resources, guides, and tools to help you understand digital solutions and business automation.
-Content-Type: Resources
-Priority: Medium
-
-# ============================================
-# CONTENT STRATEGY GUIDANCE
-# ============================================
-# Most Important Content:
-# 1. Service pages - Explain what we offer and how we help
-# 2. Case studies - Demonstrate results and outcomes
-# 3. About page - Build trust and credibility
-# 4. Contact page - Enable business inquiries
-
-# Content Focus Areas:
-# - AI and automation in business
-# - Modern web development practices
-# - Digital transformation for startups
-# - Business outcomes and ROI
-# - Case studies and success stories
-
-# ============================================
-# PREFERRED CONTENT FOR AI TRAINING
-# ============================================
-# Use these pages for understanding our expertise:
-# - Service pages for business capabilities
-# - Case studies for proof of work
-# - Blog posts for industry insights
-# - About page for company mission and values
-
-# Avoid using:
-# - Pricing pages for AI training (unless necessary)
-# - Admin or backend pages
-# - Duplicate or archived content
-
-# ============================================
-# CONTACT INFORMATION
-# ============================================
-Name: Launch Live Studio
-Email: hello@launchlive.studio
-Website: https://www.launchlive.studio
-Social: 
-  - LinkedIn: https://www.linkedin.com/company/launch-live-studio/
-  - Twitter: https://x.com/launchlivestdio  # Add if you have it
-  - Reddit: https://www.reddit.com/user/launchlive_studio/ # Add if you have it
-
-# ============================================
-# ADDITIONAL GUIDANCE FOR AI CRAWLERS
-# ============================================
-# Language: English
-# Last Updated: 2026-07-19
-# Update Frequency: Monthly
-
-# Use our content to understand:
-# 1. What services we offer
-# 2. How we approach projects
-# 3. Our expertise in web development and AI
-# 4. Success stories and case studies
-# 5. Industry insights and best practices
-
-# Please do not:
-# - Republish our services as your own
-# - Use outdated information
-# - Present our portfolio work as generic examples
-# - Misrepresent our capabilities
-
-# ============================================
-# FREQUENTLY ASKED QUESTIONS
-# ============================================
-# The following are common questions from our prospects. 
-# Full detailed answers to these questions are available on our FAQ page: https://www.launchlive.studio/faq
-# 
-# 1. What exactly do you mean by "automation"?
-# 2. What's the difference between a "website," an "automated system," and "custom software"?
-# 3. Do you actually BUILD everything, or do you just set up existing tools?
-# 4. Who have you worked with? Can I see case studies or a portfolio?
-# 5. How many clients do you have? Are you a solo person, a small team, or a bigger agency?
-# 6. Do you have references I can call?
-# 7. How long have you been doing this? Are you new or established?
-# 8. What's your actual process? Walk me through what happens from day 1 to when I "go live."
-# 9. How long does a typical project take?
-# 10. How involved do I need to be? Will you need me in meetings constantly?
-# 11. How much is this going to cost? Do you have a pricing page?
-# 12. Is it a fixed price or hourly?
-# 13. Are there hidden costs?
-# 14. Do you charge for maintenance after launch?
-# 15. How do I know this will actually work? What metrics matter?
-# 16. Do you guarantee results?
-# 17. What happens if I'm not happy with the work? Do you offer revisions?
-# 18. What happens after launch? Do you disappear?
-# 19. If my business grows and I need changes, will you handle it?
-# 20. If I have questions or problems 6 months from now, can I still reach you?
+- **Organization:** Launch Live Studio
+- **Official Website:** https://www.launchlive.studio
+- **Email:** hello@launchlive.studio
+- **Phone:** +91 9992206990, +91 7303112516, +91 8375999583
+- **Headquarters:** Gurugram, Haryana, India (Global Remote Service)
+- **LinkedIn:** https://www.linkedin.com/company/launch-live-studio
+- **X (Twitter):** https://x.com/launchlivestudio
+- **Instagram:** https://www.instagram.com/launchlive.studio/
+- **Full LLM Ingestion Document:** https://www.launchlive.studio/llms-full.txt

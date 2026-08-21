@@ -20,10 +20,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/book-a-call`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/services`,
       lastModified: new Date(),
       changeFrequency: "weekly",
-      priority: 0.8,
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/work`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.85,
     },
     {
       url: `${baseUrl}/services/websites`,
@@ -38,13 +50,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/services/branding`,
+      url: `${baseUrl}/services/seo`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/services/seo`,
+      url: `${baseUrl}/services/ai-tools`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
@@ -56,46 +68,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/services/ai-tools`,
+      url: `${baseUrl}/services/branding`,
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/services/consulting`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/services/design`,
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.7,
+      priority: 0.75,
     },
     {
-      url: `${baseUrl}/work`,
+      url: `${baseUrl}/services/consulting`,
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/book-a-call`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
+      priority: 0.75,
     },
     {
       url: `${baseUrl}/faq`,
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.6,
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/testimonials`,
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.6,
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/privacy`,
@@ -111,12 +111,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  const blogRoutes: MetadataRoute.Sitemap = BLOG_POSTS.map((post) => ({
-    url: `${baseUrl}/blogs/${post.slug}`,
-    lastModified: new Date(post.date).toString() !== "Invalid Date" ? new Date(post.date) : new Date(),
-    changeFrequency: "monthly" as const,
-    priority: 0.8,
-  }));
+  const blogRoutes: MetadataRoute.Sitemap = BLOG_POSTS.map((post) => {
+    const parsedDate = post.date && !isNaN(Date.parse(post.date))
+      ? new Date(post.date)
+      : new Date();
+
+    return {
+      url: `${baseUrl}/blogs/${post.slug}`,
+      lastModified: parsedDate,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    };
+  });
 
   return [...staticRoutes, ...blogRoutes];
 }
+
