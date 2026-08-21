@@ -102,8 +102,7 @@ export default function BlogsPage() {
                     </div>
 
                     <h3 className="text-xl md:text-2xl font-serif group-hover:text-accent transition-colors mb-3 leading-tight line-clamp-2">
-                      {" "}
-                      {post.title}{" "}
+                      {post.title}
                     </h3>
                     <p className="text-text-muted leading-relaxed flex-grow text-[14px] line-clamp-2 mb-4">
                       {post.description}

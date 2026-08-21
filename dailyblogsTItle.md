@@ -29,7 +29,7 @@ All daily blog topics are balanced across the eight core services of [LaunchLive
 | :--- | :--- | :--- | :--- | :--- |
 | **Aug 19, 2026** | **AI Systems** | [Enterprise RAG Architecture in 2026: How Custom AI Systems Eliminate Hallucinations & Secure Proprietary Data](file:///c:/Users/sachi/OneDrive/Desktop/Launch%20LIve%20Studios/LaunchLiveStudio/todaysBlog.md) | Enterprise RAG Architecture | **Published** |
 | **Aug 20, 2026** | **Websites** | [Next.js 15 App Router in Production: Server Actions, Partial Prerendering & Sub-Second LCP](file:///c:/Users/sachi/OneDrive/Desktop/Launch%20LIve%20Studios/LaunchLiveStudio/todaysBlog.md) | Next.js 15 Production Architecture | **Published** |
-| **Aug 21, 2026** | **SEO** | Generative Engine Optimization (GEO): How to Get Cited by ChatGPT, Perplexity & Google AI Overviews | Generative Engine Optimization 2026 | Scheduled |
+| **Aug 21, 2026** | **SEO** | [Generative Engine Optimization (GEO): How to Get Cited by ChatGPT, Perplexity & Google AI Overviews](file:///c:/Users/sachi/OneDrive/Desktop/Launch%20LIve%20Studios/LaunchLiveStudio/todaysBlog.md) | Generative Engine Optimization 2026 | **Published** |
 | **Aug 22, 2026** | **AI Tools** | Building Micro-SaaS AI Tools: How to Productize LLM APIs into $10k/mo Recurring Revenue Engines | Micro-SaaS AI Tool Development | Scheduled |
 | **Aug 23, 2026** | **Automation** | Multi-Channel CRM Automation: Connecting HubSpot, Webhooks, and AI Lead Scoring for 24/7 Conversions | B2B CRM Marketing Automation | Scheduled |
 | **Aug 24, 2026** | **Design** | The ROI of Figma Design Systems: Reducing Frontend Development Time by 50% While Boosting Conversions | Design Systems for Engineering Teams | Scheduled |
@@ -186,7 +186,7 @@ Below are in-depth outlines for upcoming daily publications, detailing the core 
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
-│ TOPIC CARD #3 (Aug 21, 2026)                                           │
+│ TOPIC CARD #3 (Aug 21, 2026) — PUBLISHED                               │
 ├────────────────────────────────────────────────────────────────────────┤
 │ Title: Generative Engine Optimization (GEO): How to Get Cited by       │
 │        ChatGPT, Perplexity & Google AI Overviews                       │

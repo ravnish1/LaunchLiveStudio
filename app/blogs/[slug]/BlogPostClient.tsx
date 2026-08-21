@@ -78,11 +78,11 @@ export function BlogPostClient() {
                   </div>
                 </div>
 
-                <h1 className="text-5xl md:text-7xl font-serif leading-[1.05] tracking-tight text-foreground">
+                <h1 className="text-5xl  font-serif leading-[1.05] tracking-tight text-foreground">
                   {post.title}
                 </h1>
 
-                <p className="text-xl md:text-2xl font-serif italic text-text-muted leading-relaxed">
+                <p className="text-xl font-serif italic text-text-muted leading-relaxed">
                   {post.description}
                 </p>
               </motion.div>
