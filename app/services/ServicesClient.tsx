@@ -5,12 +5,8 @@ import { Navbar } from '@/components/redesign/Navbar'
 import { CTABanner } from '@/components/redesign/CTABanner'
 import { Footer } from '@/components/redesign/Footer'
 import { ServicesShowcase } from '@/components/redesign/ServicesShowcase'
-import dynamic from 'next/dynamic'
+import { SmoothScroll } from '@/components/redesign/SmoothScroll'
 
-const SmoothScroll = dynamic(
-  () => import('@/components/redesign/SmoothScroll').then(m => ({ default: m.SmoothScroll })),
-  { ssr: false }
-)
 
 export function ServicesClient() {
   return (

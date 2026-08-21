@@ -65,7 +65,7 @@ export const Footer = () => {
             </p>
             <div className="flex flex-wrap items-center gap-6 text-text-muted mt-2">
               <a
-                href="https://x.com/launchlivestdio"
+                href="https://x.com/launchlivestudio"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-accent transition-transform hover:-translate-y-1"

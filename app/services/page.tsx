@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 import { ServicesClient } from './ServicesClient'
 
 export const metadata: Metadata = {
-  title: "Digital Agency Services | Web, AI & Automation",
+  title: "Digital Agency Services",
   description: "From custom web development to LLM-powered AI systems. Explore our range of premium services designed to scale your business and outpace competition.",
   keywords: ["website development", "ai system creation", "marketing automation", "ui/ux design", "technical seo", "growth consulting", "bespoke ai workflows", "ai chatbots for business", "crm automation services"],
   alternates: { canonical: "https://www.launchlive.studio/services" },

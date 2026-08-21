@@ -1,32 +1,26 @@
 "use client";
 
 import React from "react";
-import { useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
 import { Navbar } from "@/components/redesign/Navbar";
 import { Footer } from "@/components/redesign/Footer";
-import { BLOG_POSTS } from "@/lib/blog-data";
+import { BlogPost, BLOG_POSTS } from "@/lib/blog-data";
 import { motion } from "framer-motion";
 import { ArrowLeft, Clock, Tag, Calendar } from "lucide-react";
 import Link from "next/link";
-import dynamic from "next/dynamic";
+import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { Nav } from "react-day-picker";
-import { PageNotFoundError } from "next/dist/shared/lib/utils";
 import NotFound from "@/app/not-found";
+import { SmoothScroll } from "@/components/redesign/SmoothScroll";
 
-const SmoothScroll = dynamic(
-  () =>
-    import("@/components/redesign/SmoothScroll").then((m) => ({
-      default: m.SmoothScroll,
-    })),
-  { ssr: false },
-);
+interface BlogPostClientProps {
+  post?: BlogPost;
+}
 
-export function BlogPostClient() {
+export function BlogPostClient({ post: propPost }: BlogPostClientProps) {
   const { slug } = useParams();
-  const router = useRouter();
-  const post = BLOG_POSTS.find((p) => p.slug === slug);
+  const post = propPost || BLOG_POSTS.find((p) => p.slug === slug);
 
   if (!post) {
     return <NotFound />;
@@ -78,7 +72,7 @@ export function BlogPostClient() {
                   </div>
                 </div>
 
-                <h1 className="text-5xl  font-serif leading-[1.05] tracking-tight text-foreground">
+                <h1 className="text-4xl md:text-5xl font-serif leading-[1.1] tracking-tight text-foreground">
                   {post.title}
                 </h1>
 
@@ -94,10 +88,13 @@ export function BlogPostClient() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="w-full aspect-video bg-surface rounded-[2.5rem] overflow-hidden mb-16 border border-border-subtle group relative"
               >
-                <img
+                <Image
                   src={post.image}
                   alt={post.title}
-                  className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105"
+                  fill
+                  priority
+                  className="object-cover transition-transform duration-[2s] group-hover:scale-105"
+                  sizes="(max-width: 1200px) 100vw, 1200px"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent p-12 flex items-end"></div>
               </motion.div>

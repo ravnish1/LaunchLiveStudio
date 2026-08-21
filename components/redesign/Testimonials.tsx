@@ -100,7 +100,7 @@ const CATEGORIES = [
   "Web & Systems",
 ] as const;
 
-export const Testimonials = () => {
+export const Testimonials = ({ isPage = false }: { isPage?: boolean }) => {
   const [activeCategory, setActiveCategory] =
     useState<(typeof CATEGORIES)[number]>("All Work");
 
@@ -119,12 +119,21 @@ export const Testimonials = () => {
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-bold tracking-widest uppercase">
             <ShieldCheck size={14} /> Verified Founder Feedback
           </div>
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif tracking-tight">
-            Engineered for Impact. <br />
-            <span className="text-text-muted italic font-sans font-light">
-              Trusted by Founders.
-            </span>
-          </h2>
+          {isPage ? (
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif tracking-tight">
+              Engineered for Impact. <br />
+              <span className="text-text-muted italic font-sans font-light">
+                Trusted by Founders.
+              </span>
+            </h1>
+          ) : (
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif tracking-tight">
+              Engineered for Impact. <br />
+              <span className="text-text-muted italic font-sans font-light">
+                Trusted by Founders.
+              </span>
+            </h2>
+          )}
           <p className="text-text-muted text-base md:text-lg max-w-2xl mx-auto">
             Discover how modern enterprises partner with Launch Live Studio to
             ship mission-critical software, custom e-commerce, and automated AI

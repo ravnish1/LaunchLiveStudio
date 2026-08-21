@@ -4,13 +4,9 @@ import React, { useState, useEffect } from 'react'
 import { Navbar } from '@/components/redesign/Navbar'
 import { Footer } from '@/components/redesign/Footer'
 
-import dynamic from 'next/dynamic'
 import Cal, { getCalApi } from '@calcom/embed-react'
+import { SmoothScroll } from '@/components/redesign/SmoothScroll'
 
-const SmoothScroll = dynamic(
-  () => import('@/components/redesign/SmoothScroll').then(m => ({ default: m.SmoothScroll })),
-  { ssr: false }
-)
 
 export function BookACallClient() {
   const [formData, setFormData] = useState({ name: '', email: '', details: '' })

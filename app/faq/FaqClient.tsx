@@ -7,12 +7,8 @@ import { Navbar } from '@/components/redesign/Navbar'
 import { Footer } from '@/components/redesign/Footer'
 import { CTABanner } from '@/components/redesign/CTABanner'
 import { faqData } from '@/lib/faq-data'
-import dynamic from 'next/dynamic'
+import { SmoothScroll } from '@/components/redesign/SmoothScroll'
 
-const SmoothScroll = dynamic(
-  () => import('@/components/redesign/SmoothScroll').then(m => ({ default: m.SmoothScroll })),
-  { ssr: false }
-)
 
 const FaqItemComponent = ({ question, answer }: { question: string, answer: React.ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false)

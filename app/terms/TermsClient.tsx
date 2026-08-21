@@ -4,12 +4,8 @@ import React from 'react'
 import { Navbar } from '@/components/redesign/Navbar'
 import { Footer } from '@/components/redesign/Footer'
 
-import dynamic from 'next/dynamic'
+import { SmoothScroll } from '@/components/redesign/SmoothScroll'
 
-const SmoothScroll = dynamic(
-  () => import('@/components/redesign/SmoothScroll').then(m => ({ default: m.SmoothScroll })),
-  { ssr: false }
-)
 
 export function TermsClient() {
   const lastUpdated = "April 14, 2026"

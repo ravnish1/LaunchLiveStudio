@@ -17,14 +17,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { SmoothScroll } from "@/components/redesign/SmoothScroll";
 
-const SmoothScroll = dynamic(
-  () =>
-    import("@/components/redesign/SmoothScroll").then((m) => ({
-      default: m.SmoothScroll,
-    })),
-  { ssr: false },
-);
 
 export function ServiceDetailClient({ service }: { service: ServiceData }) {
   // Parse content to extract FAQ section for Accordion rendering
