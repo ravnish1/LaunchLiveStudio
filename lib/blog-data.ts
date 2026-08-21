@@ -1378,7 +1378,7 @@ Ready to explore Web3 for your enterprise? Explore our [Selected Work](/work) or
       "Zero-Trust",
     ],
     content: `
-> **TL;DR:** The recent Trezor data breach highlights that even secure core systems are vulnerable if third-party supply chain vendors fail. To protect digital assets, businesses must implement zero-trust architecture, vet third-party vendors rigorously, and enforce strict data minimization. [LaunchLive Studio](/security) bakes these enterprise-grade defenses directly into every digital product we build.
+> **TL;DR:** The recent Trezor data breach highlights that even secure core systems are vulnerable if third-party supply chain vendors fail. To protect digital assets, businesses must implement zero-trust architecture, vet third-party vendors rigorously, and enforce strict data minimization. [LaunchLive Studio](//trezor-breach-third-party-supply-chain-security) bakes these enterprise-grade defenses directly into every digital product we build.
 
 ## What Is Third-Party Supply Chain Security?
 
@@ -1418,7 +1418,7 @@ At LaunchLive Studio, we build digital products with a **Security-First Architec
 
 ## Common Mistakes in Enterprise Security
 
-Many organizations fail to realize that security does not stop at their firewall. Common mistakes include hoarding unnecessary user data, treating cybersecurity as an afterthought rather than integrating it into the development lifecycle, and failing to enforce [Multi-Factor Authentication (MFA)](/security-best-practices) across internal staff accounts. Waiting for a vulnerability notice to prioritize security is a recipe for disaster.
+Many organizations fail to realize that security does not stop at their firewall. Common mistakes include hoarding unnecessary user data, treating cybersecurity as an afterthought rather than integrating it into the development lifecycle, and failing to enforce [Multi-Factor Authentication (MFA)](/trezor-breach-third-party-supply-chain-security) across internal staff accounts. Waiting for a vulnerability notice to prioritize security is a recipe for disaster.
 
 ## FAQ
 
