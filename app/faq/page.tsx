@@ -2,11 +2,12 @@ import React from 'react'
 import { Metadata } from 'next'
 import { FaqClient } from './FaqClient'
 import { faqData } from '@/lib/faq-data'
+import { getAlternates } from '@/lib/seo'
 
 export const metadata: Metadata = {
-  title: 'FAQ | Launch Live Studio',
+  title: 'Frequently Asked Questions',
   description: 'Frequently asked questions about our services, process, pricing, and ongoing support. Get clarity on partnering with Launch Live Studio.',
-  alternates: { canonical: 'https://www.launchlive.studio/faq' },
+  alternates: getAlternates('/faq'),
 }
 
 export default function FaqPage() {

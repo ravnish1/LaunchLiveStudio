@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { servicesData } from '@/lib/services-data';
 import { ServiceDetailClient } from '@/app/services/[slug]/ServiceDetailClient';
 import Script from "next/script";
+import { getAlternates } from '@/lib/seo';
 
 interface Props {
   params: Promise<{
@@ -28,11 +29,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${service.title} | Launch Live Studio`,
+    title: service.title,
     description: service.shortDescription,
-    alternates: {
-      canonical: `https://www.launchlive.studio/services/${service.slug}`,
-    },
+    alternates: getAlternates(`/services/${service.slug}`),
   };
 }
 

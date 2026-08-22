@@ -8,9 +8,10 @@ import { BLOG_POSTS } from "@/lib/blog-data";
 import Link from "next/link";
 import Image from "next/image";
 import ClientReveal from "@/components/redesign/ClientReveal";
+import { getAlternates } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Insights & Tech Growth Guides | Launch Live Studio",
+  title: "Insights & Tech Growth Guides",
   description:
     "Expert guides on AI automation, Next.js performance, and premium branding. Stay ahead of the curve with our latest digital strategies.",
   keywords: [
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
     "digital growth strategy",
     "branding trends 2026",
   ],
-  alternates: { canonical: "https://www.launchlive.studio/blogs" },
+  alternates: getAlternates("/blogs"),
   openGraph: {
     title: "Digital Growth & AI Strategy Guides",
     description:

@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import { BLOG_POSTS } from '@/lib/blog-data'
 import { BlogPostClient } from './BlogPostClient'
 import Script from 'next/script'
+import { getAlternates } from '@/lib/seo'
 
 type Props = {
   params: Promise<{ slug: string }>
@@ -33,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: post.title,
     description: post.description,
     keywords: post.tags,
-    alternates: { canonical: `https://www.launchlive.studio/blogs/${slug}` },
+    alternates: getAlternates(`/blogs/${slug}`),
     openGraph: {
       title: post.title,
       description: post.description,

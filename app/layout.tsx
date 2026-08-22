@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { getAlternates } from "@/lib/seo";
 import "./globals.css";
 
 const inter = Inter({
@@ -17,6 +18,7 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.launchlive.studio"),
+  alternates: getAlternates(),
   title: {
     default: "Launch Live Studio",
     template: "%s | Launch Live Studio",

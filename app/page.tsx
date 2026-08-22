@@ -1,6 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
+import { getAlternates } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Launch Live Studio",
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.launchlive.studio"),
   applicationName: "Launch Live Studio",
 
-  alternates: { canonical: "https://www.launchlive.studio/" },
+  alternates: getAlternates("/"),
   openGraph: {
     title: "Launch Live Studio",
     description: "Websites, automation & systems for modern businesses.",

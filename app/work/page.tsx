@@ -6,12 +6,13 @@ import { Footer } from '@/components/redesign/Footer'
 import { OurWork } from '@/components/redesign/OurWork'
 import ClientReveal from '@/components/redesign/ClientReveal'
 import Script from "next/script"
+import { getAlternates } from '@/lib/seo'
 
 export const metadata: Metadata = {
-  title: "Case Studies & Portfolio | Launch Live Studio",
+  title: "Case Studies & Portfolio",
   description: "Explore our selected works. See how we delivered high-performance Shopify stores, AI-driven SaaS, and premium brand identities for leading startups.",
   keywords: ["case studies", "custom shopify development", "saas dashboard design", "fintech ai solutions", "ecommerce case studies"],
-  alternates: { canonical: "https://www.launchlive.studio/work" },
+  alternates: getAlternates("/work"),
   openGraph: {
     title: "Launch Live Studio Portfolio | Real Results for Real Brands",
     description: "Check out our latest projects: From streetwear e-commerce to AI agriculture intelligence platforms.",
