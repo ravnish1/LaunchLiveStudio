@@ -31,7 +31,7 @@ All daily blog topics are balanced across the eight core services of [LaunchLive
 | **Aug 20, 2026** | **Websites** | [Next.js 15 App Router in Production: Server Actions, Partial Prerendering & Sub-Second LCP](file:///c:/Users/sachi/OneDrive/Desktop/Launch%20LIve%20Studios/LaunchLiveStudio/todaysBlog.md) | Next.js 15 Production Architecture | **Published** |
 | **Aug 21, 2026** | **SEO** | [Generative Engine Optimization (GEO): How to Get Cited by ChatGPT, Perplexity & Google AI Overviews](file:///c:/Users/sachi/OneDrive/Desktop/Launch%20LIve%20Studios/LaunchLiveStudio/todaysBlog.md) | Generative Engine Optimization 2026 | **Published** |
 | **Aug 22, 2026** | **AI Tools** | [Building Micro-SaaS AI Tools: How to Productize LLM APIs into $10k/mo Recurring Revenue Engines](file:///c:/Users/sachi/OneDrive/Desktop/Launch%20LIve%20Studios/LaunchLiveStudio/todaysBlog.md) | Micro-SaaS AI Tool Development | **Published** |
-| **Aug 23, 2026** | **Automation** | Multi-Channel CRM Automation: Connecting HubSpot, Webhooks, and AI Lead Scoring for 24/7 Conversions | B2B CRM Marketing Automation | Scheduled |
+| **Aug 23, 2026** | **Automation** | [Multi-Channel CRM Automation: Connecting HubSpot, Webhooks, and AI Lead Scoring for 24/7 Conversions](file:///c:/Users/sachi/OneDrive/Desktop/Launch%20LIve%20Studios/LaunchLiveStudio/todaysBlog.md) | B2B CRM Marketing Automation | **Published** |
 | **Aug 24, 2026** | **Design** | The ROI of Figma Design Systems: Reducing Frontend Development Time by 50% While Boosting Conversions | Design Systems for Engineering Teams | Scheduled |
 | **Aug 25, 2026** | **Branding** | Strategy-First Branding: Why Brand Identity Dictates Your Customer Acquisition Cost (CAC) | Strategy First Brand Identity | Scheduled |
 | **Aug 26, 2026** | **Consulting** | The 90-Day Digital Growth Roadmap: How Enterprise Audits Identify Hidden Bottlenecks & Double Revenue | 90 Day Digital Growth Strategy | Scheduled |
@@ -224,7 +224,7 @@ Below are in-depth outlines for upcoming daily publications, detailing the core 
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
-│ TOPIC CARD #5 (Aug 23, 2026)                                           │
+│ TOPIC CARD #5 (Aug 23, 2026) — PUBLISHED                               │
 ├────────────────────────────────────────────────────────────────────────┤
 │ Title: Multi-Channel CRM Automation: Connecting HubSpot, Webhooks, and │
 │        AI Lead Scoring for 24/7 Conversions                            │
