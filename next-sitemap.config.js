@@ -7,13 +7,15 @@ module.exports = {
       {
         userAgent: '*',
         allow: '/',
+        disallow: ['/api/'],
       },
-      // Example of AI crawler management as per Technical SEO best practices
       {
-        userAgent: 'GPTBot',
-        disallow: ['/'], // You can adjust this based on your AI visibility strategy
-      }
+        userAgent: ['GPTBot', 'PerplexityBot', 'ClaudeBot', 'Google-Extended', 'Applebot-Extended', 'Amazonbot', 'Bytespider', 'CCBot'],
+        allow: '/',
+        disallow: ['/api/'],
+      },
     ],
   },
-  exclude: ['/server-sitemap.xml'], // exclude dynamic server sitemap if you add one later
+  exclude: ['/server-sitemap.xml', '/api/*'],
 }
+

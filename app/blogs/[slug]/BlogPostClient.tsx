@@ -26,41 +26,63 @@ export function BlogPostClient({ post: propPost }: BlogPostClientProps) {
     return <NotFound />;
   }
 
+  // Topic Cluster & Internal Link Mesh Algorithm
+  const otherPosts = BLOG_POSTS.filter((p) => p.slug !== post.slug);
+  const categoryMatches = otherPosts.filter((p) => p.category === post.category);
+  const tagMatches = otherPosts.filter(
+    (p) => p.category !== post.category && p.tags?.some((t) => post.tags?.includes(t))
+  );
+  const remainingPosts = otherPosts.filter(
+    (p) => p.category !== post.category && !p.tags?.some((t) => post.tags?.includes(t))
+  );
+  const relatedPosts = [...categoryMatches, ...tagMatches, ...remainingPosts].slice(0, 3);
+
   return (
     <SmoothScroll>
       <div className="relative min-h-screen bg-background text-foreground">
         <Navbar />
 
-        <main className="pt-40 pb-32">
+        <main className="pt-36 pb-32">
           <div className="max-w-[1280px] mx-auto px-6">
-            {/* Back Button */}
+            {/* Top Navigation & Breadcrumbs */}
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              className="mb-12"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className="flex flex-col flex-wrap items-start  justify-between gap-4 mb-6   pb-2 border-b border-border-subtle"
             >
               <Link
                 href="/blogs"
                 className="group inline-flex items-center gap-2 text-text-muted hover:text-accent transition-colors font-bold uppercase tracking-widest text-xs"
               >
                 <ArrowLeft
-                  size={16}
+                  size={14}
                   className="group-hover:-translate-x-1 transition-transform"
                 />{" "}
-                Browse All Posts
+                Back to All Insights
               </Link>
+              <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-semibold tracking-wider text-text-muted">
+                <Link href="/" className="hover:text-accent transition-colors">Home</Link>
+                <span>/</span>
+                <Link href="/blogs" className="hover:text-accent transition-colors">Blogs</Link>
+                <span>/</span>
+                <span className="text-accent font-bold">{post.category}</span>
+              </nav>
+
+            
             </motion.div>
+              
 
             <article className="max-w-4xl mx-auto">
+             
               {/* Header Info */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="space-y-6 mb-16"
+                className="space-y-6 mb-12"
               >
-                <div className="flex flex-wrap items-center gap-6 text-[11px] font-bold uppercase tracking-[0.2em] text-accent">
+                <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-[11px] font-bold uppercase tracking-[0.2em] text-accent">
                   <span className="bg-accent/10 py-1 px-3 rounded-full">
                     {post.category}
                   </span>
@@ -72,11 +94,11 @@ export function BlogPostClient({ post: propPost }: BlogPostClientProps) {
                   </div>
                 </div>
 
-                <h1 className="text-4xl md:text-5xl font-serif leading-[1.1] tracking-tight text-foreground">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif leading-[1.1] tracking-tight text-foreground">
                   {post.title}
                 </h1>
 
-                <p className="text-xl font-serif italic text-text-muted leading-relaxed">
+                <p className="text-lg sm:text-xl font-serif italic text-text-muted leading-relaxed">
                   {post.description}
                 </p>
               </motion.div>
@@ -86,7 +108,7 @@ export function BlogPostClient({ post: propPost }: BlogPostClientProps) {
                 initial={{ opacity: 0, scale: 0.98 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="w-full aspect-video bg-surface rounded-[2.5rem] overflow-hidden mb-16 border border-border-subtle group relative"
+                className="w-full aspect-video bg-surface rounded-3xl md:rounded-[2.5rem] overflow-hidden mb-16 border border-border-subtle group relative shadow-sm"
               >
                 <Image
                   src={post.image}
@@ -106,7 +128,7 @@ export function BlogPostClient({ post: propPost }: BlogPostClientProps) {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="space-y-8"
               >
-                <div className="prose prose-lg dark:prose-invert prose-headings:font-serif prose-p:leading-relaxed prose-a:text-accent prose-strong:text-accent max-w-none opacity-90 text-foreground">
+                <div className="prose prose-lg dark:prose-invert prose-headings:font-serif prose-p:leading-relaxed prose-a:text-accent hover:prose-a:underline prose-strong:text-foreground max-w-none opacity-95 text-foreground">
                   <ReactMarkdown
                     remarkPlugins={[remarkGfm]}
                     components={{
@@ -136,86 +158,101 @@ export function BlogPostClient({ post: propPost }: BlogPostClientProps) {
                 </div>
 
                 {/* Tags */}
-                <div className="pt-12 flex flex-wrap gap-3">
+                <div className="pt-10 flex flex-wrap gap-2.5">
                   {post.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="flex items-center gap-1.5 text-xs font-bold text-text-muted border border-border-subtle px-4 py-2 rounded-full hover:border-accent hover:text-accent transition-all cursor-default"
+                      className="flex items-center gap-1.5 text-xs font-bold text-text-muted border border-border-subtle px-3.5 py-1.5 rounded-full hover:border-accent hover:text-accent transition-all cursor-default"
                     >
-                      <Tag size={12} /> {tag}
+                      <Tag size={11} /> {tag}
                     </span>
                   ))}
                 </div>
               </motion.div>
 
               {/* Conversion Path Divider */}
-              <div className="my-24 h-px bg-gradient-to-r from-transparent via-border-subtle to-transparent" />
+              <div className="my-20 h-px bg-gradient-to-r from-transparent via-border-subtle to-transparent" />
 
               {/* THE ACTION SECTION (Conversion Path) */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-surface border border-accent/20 rounded-[2.5rem] p-10 md:p-16 text-center shadow-xl shadow-accent/5"
+                className="bg-surface border border-accent/20 rounded-3xl md:rounded-[2.5rem] p-8 md:p-14 text-center shadow-xl shadow-accent/5"
               >
-                <h2 className="text-3xl md:text-5xl font-serif mb-6 leading-tight">
+                <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif mb-6 leading-tight">
                   Enjoyed this insight <br /> on {post.category}?
                 </h2>
-                <p className="text-text-muted text-lg md:text-xl max-w-xl mx-auto mb-10 italic font-serif">
-                  "At Launch Live Studio, we help brands implement these exact
-                  strategies to achieve measurable digital growth."
+                <p className="text-text-muted text-base md:text-xl max-w-xl mx-auto mb-10 italic font-serif">
+                  "At Launch Live Studio, we help ambitious brands implement these exact
+                  systems to drive scalable revenue."
                 </p>
                 <Link
                   href="/book-a-call"
-                  className="inline-flex items-center gap-3 px-8 py-5 bg-accent text-white text-lg font-bold rounded-full hover:scale-105 active:scale-95 transition-all shadow-xl shadow-accent/25"
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-accent text-white text-base md:text-lg font-bold rounded-full hover:scale-105 active:scale-95 transition-all shadow-xl shadow-accent/25"
                 >
                   Let's Build Your System &rarr;
                 </Link>
-                <p className="mt-8 text-xs font-bold tracking-[0.2em] text-text-muted uppercase">
+                <p className="mt-6 text-[11px] font-bold tracking-[0.2em] text-text-muted uppercase">
                   FREE 30-MINUTE STRATEGY CONSULTATION
                 </p>
               </motion.div>
 
-              {/* OTHER BLOGS SECTION */}
-              <div className="mt-32">
-                <div className="flex justify-between items-end mb-12">
+              {/* DYNAMIC RELATED ARTICLES SECTION (Topic Cluster Mesh) */}
+              <div className="mt-28">
+                <div className="flex flex-col sm:flex-row justify-between sm:items-end gap-4 mb-10 pb-4 border-b border-border-subtle">
                   <div>
-                    <span className="text-xs font-bold tracking-[0.2em] text-accent uppercase block mb-3">
-                      CONTINUE READING
+                    <span className="text-xs font-bold tracking-[0.2em] text-accent uppercase block mb-2">
+                      TOPIC CLUSTER INSIGHTS
                     </span>
-                    <h3 className="text-4xl font-serif">More Insights.</h3>
+                    <h3 className="text-3xl md:text-4xl font-serif">Related Growth Guides.</h3>
                   </div>
                   <Link
                     href="/blogs"
-                    className="text-sm font-bold uppercase tracking-widest text-text-muted hover:text-accent transition-colors pb-1 border-b border-border-subtle hover:border-accent"
+                    className="text-xs font-bold uppercase tracking-widest text-text-muted hover:text-accent transition-colors pb-1 border-b border-border-subtle hover:border-accent w-fit"
                   >
-                    View all &rarr;
+                    View all 17 articles &rarr;
                   </Link>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {BLOG_POSTS.filter((p) => p.slug !== post.slug)
-                    .slice(0, 2)
-                    .map((otherPost) => (
-                      <Link
-                        key={otherPost.slug}
-                        href={`/blogs/${otherPost.slug}`}
-                        className="group p-8 bg-surface border border-border-subtle rounded-3xl hover:border-accent transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-accent/5"
-                      >
-                        <p className="text-accent tracking-widest uppercase text-[10px] mb-3 font-bold">
-                          {otherPost.category}
-                        </p>
-                        <h4 className="text-2xl font-serif group-hover:text-accent transition-colors mb-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {relatedPosts.map((otherPost) => (
+                    <Link
+                      key={otherPost.slug}
+                      href={`/blogs/${otherPost.slug}`}
+                      className="group flex flex-col bg-surface border border-border-subtle rounded-2xl overflow-hidden hover:border-accent transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-accent/5"
+                    >
+                      <div className="relative w-full aspect-video overflow-hidden bg-foreground/5">
+                        <Image
+                          src={otherPost.image}
+                          alt={otherPost.title}
+                          fill
+                          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        />
+                      </div>
+                      <div className="p-5 flex flex-col grow">
+                        <div className="flex items-center gap-2 mb-2.5">
+                          <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                          <p className="text-accent tracking-widest uppercase text-[10px] font-black">
+                            {otherPost.category}
+                          </p>
+                        </div>
+                        <h4 className="text-lg font-serif group-hover:text-accent transition-colors mb-2 leading-snug line-clamp-2">
                           {otherPost.title}
                         </h4>
-                        <div className="flex items-center justify-between text-xs font-bold text-text-muted uppercase tracking-widest mt-6">
+                        <p className="text-text-muted text-xs leading-relaxed line-clamp-2 mb-4 grow">
+                          {otherPost.description}
+                        </p>
+                        <div className="pt-3 border-t border-border-subtle flex justify-between items-center text-[10px] font-bold text-text-muted uppercase tracking-wider mt-auto">
                           <span>{otherPost.date}</span>
                           <span className="group-hover:text-accent transition-colors">
-                            Read &rarr;
+                            Read Guide &rarr;
                           </span>
                         </div>
-                      </Link>
-                    ))}
+                      </div>
+                    </Link>
+                  ))}
                 </div>
               </div>
             </article>

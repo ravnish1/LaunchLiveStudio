@@ -8,8 +8,10 @@ export const SITE_URL = "https://www.launchlive.studio";
  * @returns Metadata alternates object with canonical and localized languages + x-default
  */
 export function getAlternates(path: string = "") {
-  const cleanPath = path ? (path.startsWith("/") ? path : `/${path}`) : "";
-  const canonicalUrl = `${SITE_URL}${cleanPath}`;
+  const normalizedPath = (path === "/" || path === "") 
+    ? "" 
+    : (path.startsWith("/") ? path : `/${path}`);
+  const canonicalUrl = `${SITE_URL}${normalizedPath}`;
 
   return {
     canonical: canonicalUrl,
@@ -22,3 +24,4 @@ export function getAlternates(path: string = "") {
     },
   };
 }
+

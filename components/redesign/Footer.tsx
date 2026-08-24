@@ -36,10 +36,14 @@ export const Footer = () => {
   const serviceItems = [
     { name: "Website Development", href: "/services/websites", icon: Monitor },
     { name: "AI Systems", href: "/services/systems", icon: Cpu },
-    { name: "Branding", href: "/services/branding", icon: Palette },
-    { name: "SEO Optimization", href: "/services/seo", icon: TrendingUp },
-    { name: "Automations", href: "/services/automation", icon: Zap },
+    { name: "AI Tool Creation", href: "/services/ai-tools", icon: Zap },
+    { name: "Marketing Automation", href: "/services/automation", icon: Zap },
+    { name: "SEO & GEO Optimization", href: "/services/seo", icon: TrendingUp },
+    { name: "UI/UX Design", href: "/services/design", icon: Palette },
+    { name: "Branding & Identity", href: "/services/branding", icon: Palette },
+    { name: "Growth Consulting", href: "/services/consulting", icon: TrendingUp },
   ];
+
 
   return (
     <footer className="pt-32 pb-10 px-6 bg-surface border-t border-foreground/5">
@@ -129,7 +133,7 @@ export const Footer = () => {
             <h4 className="text-sm font-bold tracking-widest uppercase text-accent">
               Services
             </h4>
-            <ul className="space-y-4">
+            <ul className="space-y-3.5">
               {serviceItems.map((item) => (
                 <li key={item.name}>
                   <Link

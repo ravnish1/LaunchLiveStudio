@@ -45,25 +45,52 @@ export default async function ServiceDetailPage({ params }: Props) {
 
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": service.title,
-    "description": service.shortDescription,
-    "provider": {
-      "@type": "Organization",
-      "name": "Launch Live Studio",
-      "url": "https://www.launchlive.studio/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.launchlive.studio/logo.png"
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": service.title,
+        "description": service.shortDescription,
+        "provider": {
+          "@type": "Organization",
+          "name": "Launch Live Studio",
+          "url": "https://www.launchlive.studio/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.launchlive.studio/logo.png"
+          }
+        },
+        "url": `https://www.launchlive.studio/services/${service.slug}`
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.launchlive.studio/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://www.launchlive.studio/services"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": service.title,
+            "item": `https://www.launchlive.studio/services/${service.slug}`
+          }
+        ]
       }
-    },
-    "url": `https://www.launchlive.studio/services/${service.slug}`
+    ]
   };
 
   return (
     <>
       <Script
-        id="schema-service"
+        id={`schema-service-${slug}`}
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />

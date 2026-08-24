@@ -7,7 +7,7 @@ import { Navbar } from "@/components/redesign/Navbar";
 import { CTABanner } from "@/components/redesign/CTABanner";
 import { Footer } from "@/components/redesign/Footer";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
-import { ServiceData } from "@/lib/services-data";
+import { ServiceData, servicesData } from "@/lib/services-data";
 import dynamic from "next/dynamic";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -18,7 +18,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { SmoothScroll } from "@/components/redesign/SmoothScroll";
-
 
 export function ServiceDetailClient({ service }: { service: ServiceData }) {
   // Parse content to extract FAQ section for Accordion rendering
@@ -52,19 +51,33 @@ export function ServiceDetailClient({ service }: { service: ServiceData }) {
     }
   }
 
+  const complementaryServices = servicesData
+    .filter((s) => s.slug !== service.slug)
+    .slice(0, 3);
+
   return (
     <SmoothScroll>
       <div className="relative min-h-screen bg-background text-foreground">
         <Navbar />
 
-        <main className="pt-32 pb-20 px-6">
-          <div className="max-w-[800px] mx-auto">
-            <Link
-              href="/services"
-              className="inline-flex items-center gap-2 text-sm font-semibold tracking-wider uppercase text-black hover:text-accent transition-colors mb-12"
-            >
-              <ArrowLeft size={16} /> Back to Services
-            </Link>
+        <main className="pt-36 pb-24 px-6">
+          <div className="max-w-[860px] mx-auto">
+            {/* Top Navigation & Breadcrumbs */}
+            <div className="flex flex-wrap items-center justify-between gap-4 mb-10 pb-4 border-b border-foreground/10">
+              <Link
+                href="/services"
+                className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-text-muted hover:text-accent transition-colors"
+              >
+                <ArrowLeft size={14} /> Back to Services
+              </Link>
+              <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-semibold tracking-wider text-text-muted">
+                <Link href="/" className="hover:text-accent transition-colors">Home</Link>
+                <span>/</span>
+                <Link href="/services" className="hover:text-accent transition-colors">Services</Link>
+                <span>/</span>
+                <span className="text-accent font-bold">{service.title}</span>
+              </nav>
+            </div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -111,7 +124,7 @@ export function ServiceDetailClient({ service }: { service: ServiceData }) {
                             <AccordionItem
                               key={index}
                               value={`item-${index}`}
-                              className="border-b  border-black/20 py-2 "
+                              className="border-b border-black/20 py-2"
                             >
                               <AccordionTrigger className="text-left text-lg md:text-xl font-semibold text-black hover:text-accent hover:no-underline cursor-pointer">
                                 {faq.question}
@@ -190,6 +203,48 @@ export function ServiceDetailClient({ service }: { service: ServiceData }) {
                     </ul>
                   </>
                 )}
+              </div>
+
+              {/* Complementary Services Section (Cross-Linking) */}
+              <div className="mt-20 pt-16 border-t border-foreground/10 not-prose">
+                <div className="flex flex-col sm:flex-row justify-between sm:items-end gap-4 mb-8">
+                  <div>
+                    <span className="text-xs font-bold tracking-[0.2em] text-accent uppercase block mb-2">
+                      ECOSYSTEM CAPABILITIES
+                    </span>
+                    <h3 className="text-2xl sm:text-3xl font-serif text-foreground">
+                      Complementary Services
+                    </h3>
+                  </div>
+                  <Link
+                    href="/services"
+                    className="text-xs font-bold uppercase tracking-widest text-text-muted hover:text-accent transition-colors pb-1 border-b border-foreground/10 hover:border-accent w-fit"
+                  >
+                    View All Services &rarr;
+                  </Link>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                  {complementaryServices.map((comp) => (
+                    <Link
+                      key={comp.slug}
+                      href={`/services/${comp.slug}`}
+                      className="group p-6 rounded-2xl bg-surface border border-foreground/5 hover:border-accent hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
+                    >
+                      <div>
+                        <h4 className="text-lg font-serif mb-2 text-foreground group-hover:text-accent transition-colors">
+                          {comp.title}
+                        </h4>
+                        <p className="text-xs text-text-muted leading-relaxed line-clamp-3 mb-4">
+                          {comp.shortDescription}
+                        </p>
+                      </div>
+                      <div className="flex items-center gap-1.5 text-xs font-bold text-accent uppercase tracking-wider mt-auto">
+                        Explore Capability &rarr;
+                      </div>
+                    </Link>
+                  ))}
+                </div>
               </div>
             </motion.div>
           </div>
