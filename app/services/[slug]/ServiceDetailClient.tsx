@@ -63,7 +63,7 @@ export function ServiceDetailClient({ service }: { service: ServiceData }) {
         <main className="pt-36 pb-24 px-6">
           <div className="max-w-[860px] mx-auto">
             {/* Top Navigation & Breadcrumbs */}
-            <div className="flex flex-wrap items-center justify-between gap-4 mb-10 pb-4 border-b border-foreground/10">
+            <div className="flex flex-col  items-start justify-between gap-4 mb-10 pb-4 border-b border-foreground/10">
               <Link
                 href="/services"
                 className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-text-muted hover:text-accent transition-colors"

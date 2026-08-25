@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { useParams } from "next/navigation";
 import { Navbar } from "@/components/redesign/Navbar";
 import { Footer } from "@/components/redesign/Footer";
 import { BlogPost, BLOG_POSTS } from "@/lib/blog-data";
@@ -11,20 +10,13 @@ import Link from "next/link";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import NotFound from "@/app/not-found";
 import { SmoothScroll } from "@/components/redesign/SmoothScroll";
 
 interface BlogPostClientProps {
-  post?: BlogPost;
+  post: BlogPost;
 }
 
-export function BlogPostClient({ post: propPost }: BlogPostClientProps) {
-  const { slug } = useParams();
-  const post = propPost || BLOG_POSTS.find((p) => p.slug === slug);
-
-  if (!post) {
-    return <NotFound />;
-  }
+export function BlogPostClient({ post }: BlogPostClientProps) {
 
   // Topic Cluster & Internal Link Mesh Algorithm
   const otherPosts = BLOG_POSTS.filter((p) => p.slug !== post.slug);
