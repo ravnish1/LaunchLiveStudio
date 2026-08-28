@@ -36,7 +36,7 @@ All daily blog topics are balanced across the eight core services of [LaunchLive
 | **Aug 25, 2026** | **Branding** | [Strategy-First Branding: Why Brand Identity Dictates Your Customer Acquisition Cost (CAC)](todaysBlog.md) | Strategy First Brand Identity | **Published** |
 | **Aug 26, 2026** | **Consulting** | [The 90-Day Digital Growth Roadmap: How Enterprise Audits Identify Hidden Bottlenecks & Double Revenue](todaysBlog.md) | 90 Day Digital Growth Strategy | **Published** |
 | **Aug 27, 2026** | **AI Systems** | [Autonomous Multi-Agent AI Workflows: Orchestrating LangGraph, CrewAI & Tool-Calling in Enterprise Operations](todaysBlog.md) | Multi-Agent AI Workflows | **Published** |
-| **Aug 28, 2026** | **Websites** | Headless Commerce vs Monolithic Shopify: Engineering Ultra-Fast Custom Stores That Convert 35% Higher | Headless Shopify Next.js Architecture | Scheduled |
+| **Aug 28, 2026** | **Websites** | [Headless Commerce vs Monolithic Shopify: Engineering Ultra-Fast Custom Stores That Convert 35% Higher](todaysBlog.md) | Headless Shopify Next.js Architecture | **Published** |
 | **Aug 29, 2026** | **SEO** | Semantic Content Clusters & Topic Authority: Outranking Billion-Dollar Competitors on Google SERPs | Semantic SEO Content Clusters | Scheduled |
 | **Aug 30, 2026** | **AI Tools** | Real-Time Voice AI Agents for Customer Support: Low-Latency WebSockets, TTS Models & ROI Metrics | Voice AI Agents for Business | Scheduled |
 | **Aug 31, 2026** | **Automation** | Event-Driven Retention Pipelines: How Automated Cart & Subscription Win-Back Sequences Save Lost Revenue | Automated Retention Marketing Funnels | Scheduled |
@@ -295,6 +295,27 @@ Below are in-depth outlines for upcoming daily publications, detailing the core 
 │              plan auditing code, SEO, funnels, and automation removes  │
 │              bottlenecks and creates predictable revenue growth.       │
 │ Internal Links: /services/consulting, /services/systems, /book-a-call  │
+└────────────────────────────────────────────────────────────────────────┘
+```
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│ TOPIC CARD #9 (Aug 28, 2026) — PUBLISHED                               │
+├────────────────────────────────────────────────────────────────────────┤
+│ Title: Headless Commerce vs Monolithic Shopify: Engineering Ultra-Fast  │
+│        Custom Stores That Convert 35% Higher                           │
+│ Pillar: Website Development                                            │
+│ Target URL: /blogs/headless-commerce-vs-monolithic-shopify-nextjs-      │
+│             conversion-speed                                           │
+│ Primary Keyword: Headless Shopify Next.js Architecture                 │
+│ Secondary Keywords: Shopify Storefront API, Core Web Vitals, Sub-Second │
+│                     LCP, React Server Components, Sanity CMS, Edge CDN │
+│ Target Audience: E-commerce Founders, CTOs, DTC Operators, Growth VPs  │
+│ Core Thesis: Liquid theme bloat and app scripts cap conversion rates;   │
+│              decoupling Shopify with Next.js 15 App Router and edge    │
+│              caching slashes LCP to <450ms and boosts sales by 35%.    │
+│ Internal Links: /services/websites, /services/seo, /services/design,   │
+│                 /services/automation, /book-a-call                     │
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
