@@ -19,7 +19,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "August 28, 2026",
     readTime: "14 min read",
     image:
-      "https://images.unsplash.com/photo-1556742049-0a67e5572263?w=1200&h=630&fit=crop",
+      "https://images.unsplash.com/photo-1674027392851-7b34f21b07ee?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description:
       "A technical and business guide on Headless Commerce vs. Monolithic Shopify. Learn how decoupling Shopify's Storefront API with Next.js 15 App Router, React Server Components, edge caching, and Sanity CMS slashes LCP to sub-second speeds and boosts e-commerce conversions by 35%.",
     tags: [
@@ -507,7 +507,7 @@ Don't let legacy theme architecture and sluggish page loads cap your brand's gro
     date: "August 27, 2026",
     readTime: "14 min read",
     image:
-      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&h=630&fit=crop",
+      "https://images.unsplash.com/photo-1684369175809-f9642140a1bd?q=80&w=1242&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description:
       "An enterprise engineering blueprint on orchestrating autonomous multi-agent AI workflows. Compare LangGraph, CrewAI, and AutoGen, explore cyclical state graphs, deterministic tool calling, state persistence, and human-in-the-loop guardrails for mission-critical enterprise automation.",
     tags: [
@@ -3499,7 +3499,7 @@ Ready to engineer a high-performance web platform that scales effortlessly? Expl
     date: "August 19, 2026",
     readTime: "9 min read",
     image:
-      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&h=630&fit=crop",
+      "https://plus.unsplash.com/premium_photo-1687205277710-917f17455904?q=80&w=765&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description:
       "Discover how modern Enterprise Retrieval-Augmented Generation (RAG) systems combine hybrid search, vector embeddings, reranking, and private LLM guardrails to eliminate hallucinations and protect corporate data.",
     tags: [
