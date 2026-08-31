@@ -110,13 +110,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/privacy`,
       lastModified: legalUpdatedDate,
       changeFrequency: "yearly",
-      priority: 0.3,
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/terms`,
       lastModified: legalUpdatedDate,
       changeFrequency: "yearly",
-      priority: 0.3,
+      priority: 0.7,
     },
   ];
 
