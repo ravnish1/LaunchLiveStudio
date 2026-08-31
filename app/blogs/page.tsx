@@ -70,7 +70,11 @@ export default function BlogsPage() {
             <div className="mb-8">
               <h1 className="text-4xl md:text-6xl font-serif mb-2">Blogs.</h1>
               <p className="text-lg md:text-xl font-serif italic text-text-muted max-w-2xl mt-1">
-                Insights, guides, and tools to accelerate your digital growth.
+                Insights, guides, and tools to accelerate your digital growth. Have questions about our approach? Explore our{" "}
+                <Link href="/faq" className="text-accent underline underline-offset-4 hover:text-accent/80 transition-colors not-italic font-sans font-semibold text-base">
+                  FAQs
+                </Link>
+                .
               </p>
             </div>
 

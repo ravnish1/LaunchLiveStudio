@@ -5,7 +5,7 @@ import { Navbar } from "@/components/redesign/Navbar";
 import { Footer } from "@/components/redesign/Footer";
 import { BlogPost, BLOG_POSTS } from "@/lib/blog-data";
 import { motion } from "framer-motion";
-import { ArrowLeft, Clock, Tag, Calendar } from "lucide-react";
+import { ArrowLeft, Clock, Tag, Calendar, HelpCircle } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
@@ -41,7 +41,7 @@ export function BlogPostClient({ post }: BlogPostClientProps) {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="flex flex-col flex-wrap items-start  justify-between gap-4 mb-6   pb-2 border-b border-border-subtle"
+              className="flex flex-col flex-wrap items-start justify-between gap-4 mb-6 pb-2 border-b border-border-subtle"
             >
               <Link
                 href="/blogs"
@@ -53,15 +53,22 @@ export function BlogPostClient({ post }: BlogPostClientProps) {
                 />{" "}
                 Back to All Insights
               </Link>
-              <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-semibold tracking-wider text-text-muted">
-                <Link href="/" className="hover:text-accent transition-colors">Home</Link>
-                <span>/</span>
-                <Link href="/blogs" className="hover:text-accent transition-colors">Blogs</Link>
-                <span>/</span>
-                <span className="text-accent font-bold">{post.category}</span>
-              </nav>
-
-            
+              <div className="flex flex-wrap w-full justify-between items-center gap-3 sm:gap-4 text-xs font-semibold tracking-wider text-text-muted">
+                <nav aria-label="Breadcrumb" className="flex items-center gap-2">
+                  <Link href="/" className="hover:text-accent transition-colors">Home</Link>
+                  <span>/</span>
+                  <Link href="/blogs" className="hover:text-accent transition-colors">Blogs</Link>
+                  <span>/</span>
+                  <span className="text-accent font-bold">{post.category}</span>
+                </nav>
+                <Link
+                  href="/faq"
+                  className="inline-flex items-center gap-1.5 text-text-muted hover:text-accent transition-colors font-bold uppercase tracking-wider text-[11px]"
+                >
+                  <HelpCircle size={13} />
+                  <span>Frequently Asked Questions</span>
+                </Link>
+              </div>
             </motion.div>
               
 
@@ -160,6 +167,8 @@ export function BlogPostClient({ post }: BlogPostClientProps) {
                     </span>
                   ))}
                 </div>
+
+              
               </motion.div>
 
               {/* Conversion Path Divider */}
@@ -179,14 +188,23 @@ export function BlogPostClient({ post }: BlogPostClientProps) {
                   "At Launch Live Studio, we help ambitious brands implement these exact
                   systems to drive scalable revenue."
                 </p>
-                <Link
-                  href="/book-a-call"
-                  className="inline-flex items-center gap-3 px-8 py-4 bg-accent text-white text-base md:text-lg font-bold rounded-full hover:scale-105 active:scale-95 transition-all shadow-xl shadow-accent/25"
-                >
-                  Let's Build Your System &rarr;
-                </Link>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                  <Link
+                    href="/book-a-call"
+                    className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-accent text-white text-base md:text-lg font-bold rounded-full hover:scale-105 active:scale-95 transition-all shadow-xl shadow-accent/25 w-full sm:w-auto"
+                  >
+                    Let's Build Your System &rarr;
+                  </Link>
+                  <Link
+                    href="/faq"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-surface hover:bg-foreground/5 text-foreground border border-foreground/15 text-base md:text-lg font-bold rounded-full hover:border-accent hover:text-accent transition-all w-full sm:w-auto"
+                  >
+                    <HelpCircle size={18} />
+                    <span>Have Questions? Read FAQ</span>
+                  </Link>
+                </div>
                 <p className="mt-6 text-[11px] font-bold tracking-[0.2em] text-text-muted uppercase">
-                  FREE 30-MINUTE STRATEGY CONSULTATION
+                  FREE 30-MINUTE STRATEGY CONSULTATION • CLEAR ANSWERS ON OUR FAQ
                 </p>
               </motion.div>
 

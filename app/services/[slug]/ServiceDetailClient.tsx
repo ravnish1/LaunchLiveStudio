@@ -135,6 +135,32 @@ export function ServiceDetailClient({ service }: { service: ServiceData }) {
                             </AccordionItem>
                           ))}
                         </Accordion>
+
+                        {/* FAQ Doubts CTA */}
+                        <div className="mt-8 p-6 sm:p-8 rounded-2xl bg-surface/90 border border-foreground/10 flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left shadow-sm">
+                          <div className="space-y-1">
+                            <h3 className="text-xl font-serif font-bold text-foreground">
+                              Still having doubts? Feel free to contact us.
+                            </h3>
+                            <p className="text-sm text-text-muted">
+                              Have a specific requirement or want to discuss your project before getting started?
+                            </p>
+                          </div>
+                          <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
+                            <Link
+                              href="/faq"
+                              className="px-5 py-2.5 rounded-full border border-foreground/15 text-xs font-bold uppercase tracking-wider text-foreground hover:border-accent hover:text-accent transition-all"
+                            >
+                              View All FAQs
+                            </Link>
+                            <Link
+                              href="/book-a-call"
+                              className="px-6 py-2.5 rounded-full bg-accent text-white text-xs font-bold uppercase tracking-wider hover:bg-accent/90 transition-all shadow-md shadow-accent/20"
+                            >
+                              Book a Call &rarr;
+                            </Link>
+                          </div>
+                        </div>
                       </div>
                     )}
 

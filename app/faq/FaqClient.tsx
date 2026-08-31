@@ -1,8 +1,9 @@
 'use client'
 
 import React, { useState, useMemo } from 'react'
+import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Search, ChevronDown } from 'lucide-react'
+import { Search, ChevronDown, MessageSquare } from 'lucide-react'
 import { Navbar } from '@/components/redesign/Navbar'
 import { Footer } from '@/components/redesign/Footer'
 import { CTABanner } from '@/components/redesign/CTABanner'
@@ -93,7 +94,7 @@ export function FaqClient() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto"
             >
-              Everything you need to know about partnering with Launch Live Studio. Can't find the answer you're looking for? Reach out to us.
+              Everything you need to know about partnering with Launch Live Studio. Still having doubts? Feel free to contact us.
             </motion.p>
 
             {/* Search Bar */}
@@ -147,6 +148,39 @@ export function FaqClient() {
               </motion.div>
             )}
           </div>
+
+          {/* Still having doubts CTA card */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="mt-20 p-8 md:p-12 rounded-3xl bg-surface border border-foreground/10 text-center space-y-5 shadow-sm"
+          >
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest">
+              <MessageSquare size={14} />
+              <span>Direct Support</span>
+            </div>
+            <h3 className="text-2xl md:text-4xl font-serif font-bold text-foreground">
+              Still having doubts? Feel free to contact us.
+            </h3>
+            <p className="text-foreground/70 max-w-xl mx-auto text-base md:text-lg">
+              Have specific questions about your custom architecture, timelines, or pricing? We're here to provide total clarity.
+            </p>
+            <div className="pt-2 flex flex-wrap justify-center items-center gap-4">
+              <Link
+                href="/book-a-call"
+                className="px-8 py-3.5 bg-accent text-white text-sm font-bold uppercase tracking-wider rounded-full hover:scale-105 active:scale-95 transition-all shadow-lg shadow-accent/25"
+              >
+                Book a Free Discovery Call &rarr;
+              </Link>
+              <a
+                href="mailto:hello@launchlive.studio"
+                className="px-6 py-3.5 bg-foreground/5 hover:bg-foreground/10 text-foreground border border-foreground/10 text-sm font-bold uppercase tracking-wider rounded-full transition-all"
+              >
+                Email Our Team
+              </a>
+            </div>
+          </motion.div>
         </main>
 
         <CTABanner />
