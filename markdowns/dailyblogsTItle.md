@@ -39,7 +39,7 @@ All daily blog topics are balanced across the eight core services of [LaunchLive
 | **Aug 28, 2026** | **Websites** | [Headless Commerce vs Monolithic Shopify: Engineering Ultra-Fast Custom Stores That Convert 35% Higher](todaysBlog.md) | Headless Shopify Next.js Architecture | **Published** |
 | **Aug 29, 2026** | **SEO** | [Semantic Content Clusters & Topic Authority: Outranking Billion-Dollar Competitors on Google SERPs](todaysBlog.md) | Semantic SEO Content Clusters | **Published** |
 | **Aug 30, 2026** | **AI Tools** | [Real-Time Voice AI Agents for Customer Support: Low-Latency WebSockets, TTS Models & ROI Metrics](todaysBlog.md) | Voice AI Agents for Business | **Published** |
-| **Aug 31, 2026** | **Automation** | Event-Driven Retention Pipelines: How Automated Cart & Subscription Win-Back Sequences Save Lost Revenue | Automated Retention Marketing Funnels | Scheduled |
+| **Aug 31, 2026** | **Automation** | [Event-Driven Retention Pipelines: How Automated Cart & Subscription Win-Back Sequences Save Lost Revenue](todaysBlog.md) | Automated Retention Marketing Funnels | **Published** |
 
 ---
 
@@ -358,6 +358,28 @@ Below are in-depth outlines for upcoming daily publications, detailing the core 
 │              slashing wait times by 99% and cost-per-call to $0.42.    │
 │ Internal Links: /services/ai-tools, /services/systems,                 │
 │                 /services/automation, /services/websites, /book-a-call │
+└────────────────────────────────────────────────────────────────────────┘
+```
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│ TOPIC CARD #12 (Aug 31, 2026) — PUBLISHED                              │
+├────────────────────────────────────────────────────────────────────────┤
+│ Title: Event-Driven Retention Pipelines: How Automated Cart &          │
+│        Subscription Win-Back Sequences Save Lost Revenue               │
+│ Pillar: Marketing Automation                                           │
+│ Target URL: /blogs/event-driven-retention-pipelines-automated-cart-    │
+│             subscription-winback                                       │
+│ Primary Keyword: Automated Retention Marketing Funnels                 │
+│ Secondary Keywords: Cart Abandonment Automation, Subscription Win-Back,│
+│                     Event-Driven Pipelines, Smart Dunning, Upstash     │
+│                     QStash, Redis Idempotency, Involuntary Churn       │
+│ Target Audience: SaaS Founders, DTC E-Commerce Operators, RevOps Leads │
+│ Core Thesis: Cron jobs fail because buying intent dies; real-time      │
+│              webhook streams, distributed idempotency, and durable     │
+│              delay queues recover 28%+ carts & save $500k+ in lost ARR.│
+│ Internal Links: /services/automation, /services/systems,               │
+│                 /services/websites, /services/consulting, /book-a-call │
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
