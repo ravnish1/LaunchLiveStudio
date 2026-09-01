@@ -29,7 +29,7 @@ export const features = [
     title: 'Workflow Automation',
     description: 'Connect your CRM, email, ads, and analytics into one automated growth engine.',
     icon: Target,
-    href: '/services/workflow',
+    href: '/services/automation',
   },
   {
     title: 'UI/UX Design',

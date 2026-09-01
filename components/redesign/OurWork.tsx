@@ -65,7 +65,7 @@ const ProjectCard = ({ project }: { project: (typeof featuredWork)[0] }) => {
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="block w-full h-full"
+            className="relative block w-full h-full"
           >
             <Image
               src={project.image}

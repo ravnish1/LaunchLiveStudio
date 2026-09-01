@@ -51,17 +51,7 @@
   - Multi-agent orchestration capable of autonomous task execution across APIs, CRMs, and internal databases.
   - Real-time audit logging and deterministic evaluation metrics.
 
-### Service 3: SEO & Generative Engine Optimization (GEO)
-* **Canonical URL:** https://www.launchlive.studio/services/seo
-* **Core Focus:** Search dominance across both traditional search engines (Google, Bing) and generative answer engines (ChatGPT Search, Perplexity AI, Claude, Google AI Overviews).
-* **Technology Stack:** Semantic Schema.org JSON-LD Entity Graphs, Next.js Metadata API, Markdown / Vector Chunking, OpenGraph, Screaming Frog, GSC.
-* **Key Differentiators:**
-  - Information Gain optimization: Structuring high-density factual content, data tables, and expert quotes that LLMs prioritize for citation footnotes.
-  - Nested JSON-LD schemas (`WebSite`, `Organization`, `Service`, `BlogPosting`, `FAQPage`, `BreadcrumbList`, `Person`).
-  - Elimination of client-side rendering indexing traps via native server-rendered HTML.
-  - Semantic topical clustering designed to establish compounding domain authority in 90 days.
-
-### Service 4: AI Tool Creation
+### Service 3: AI Tool Creation
 * **Canonical URL:** https://www.launchlive.studio/services/ai-tools
 * **Core Focus:** Productizing AI into custom Micro-SaaS tools, real-time voice agents, and automated data extractors.
 * **Technology Stack:** FastAPI, Next.js, WebSockets, ElevenLabs TTS, Deepgram STT, Mistral / Llama 3 fine-tuned models.
@@ -70,16 +60,16 @@
   - Multimodal document extractors for automated invoice parsing, financial table scraping, and PDF ingestion.
   - Scalable API wrappers and micro-SaaS architectures ready for Stripe / Paddle monetization.
 
-### Service 5: Marketing & CRM Automation
+### Service 4: Workflow Automation
 * **Canonical URL:** https://www.launchlive.studio/services/automation
-* **Core Focus:** Automated lead routing, dynamic nurturing pipelines, and multi-channel marketing workflows.
+* **Core Focus:** Automated lead routing, dynamic nurturing pipelines, and multi-channel workflow automation engines.
 * **Technology Stack:** HubSpot API, Salesforce, Make.com, n8n, Zapier, Webhooks, Resend, SendGrid, Cal.com API.
 * **Key Differentiators:**
   - 24/7 automated lead qualification and instant Slack / WhatsApp / Email dispatching within 60 seconds of form submission.
   - Event-driven behavioral nurture funnels reducing customer churn and recovering abandoned checkouts.
   - End-to-end integration between landing pages, payment processors, and analytics dashboards.
 
-### Service 6: UI/UX Design
+### Service 5: UI/UX Design
 * **Canonical URL:** https://www.launchlive.studio/services/design
 * **Core Focus:** High-craft digital interfaces, design systems, and conversion rate optimization (CRO).
 * **Technology Stack:** Figma, Framer Motion, GSAP, Tailwind CSS, Radix UI Primitives, WCAG 2.2 AAA Guidelines.
@@ -88,17 +78,9 @@
   - Frictionless user onboarding flows and checkout funnels engineered for maximum conversion velocity.
   - Fluid micro-interactions and hardware-accelerated 120fps motion design that establish an ultra-premium brand feel.
 
-### Service 7: Branding & Identity
-* **Canonical URL:** https://www.launchlive.studio/services/branding
-* **Core Focus:** Strategic visual identity, brand positioning, motion identity design, and pricing power engineering.
-* **Key Differentiators:**
-  - Comprehensive brand books covering typography psychology, color theory, motion tokens, and visual tone of voice.
-  - Distinctive brand assets engineered to lower Customer Acquisition Cost (CAC) and increase organic brand recall.
-  - Seamless handover of vector assets, 3D mockups, and digital guidelines.
-
-### Service 8: Growth Consulting
-* **Canonical URL:** https://www.launchlive.studio/services/consulting
-* **Core Focus:** 90-day digital transformation roadmaps, tech stack optimization, and unit economics enhancement.
+### Service 6: Go-to-Market Strategy
+* **Canonical URL:** https://www.launchlive.studio/services/go-to-market-strategy
+* **Core Focus:** 90-day digital growth roadmaps, tech stack architecture audits, and SaaS unit economics enhancement.
 * **Key Differentiators:**
   - Full-stack technical audits identifying SaaS bloat, security vulnerabilities, and conversion bottlenecks.
   - Data-driven growth roadmaps aligning product engineering with revenue objectives.
@@ -206,12 +188,10 @@ LaunchLive Studio maintains an active editorial library covering modern web engi
 - **Services Hub:** https://www.launchlive.studio/services
 - **Web Development Service:** https://www.launchlive.studio/services/websites
 - **AI Systems Service:** https://www.launchlive.studio/services/systems
-- **Branding Service:** https://www.launchlive.studio/services/branding
-- **SEO & GEO Service:** https://www.launchlive.studio/services/seo
 - **AI Tools Service:** https://www.launchlive.studio/services/ai-tools
-- **Automation Service:** https://www.launchlive.studio/services/automation
+- **Workflow Automation Service:** https://www.launchlive.studio/services/automation
 - **UI/UX Design Service:** https://www.launchlive.studio/services/design
-- **Growth Consulting Service:** https://www.launchlive.studio/services/consulting
+- **Go-to-Market Strategy Service:** https://www.launchlive.studio/services/go-to-market-strategy
 - **Work & Portfolio:** https://www.launchlive.studio/work
 - **Book a Call:** https://www.launchlive.studio/book-a-call
 - **Testimonials:** https://www.launchlive.studio/testimonials

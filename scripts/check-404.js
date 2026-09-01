@@ -49,32 +49,40 @@ const brokenLinks = [];
 for (const file of allFiles) {
   const content = fs.readFileSync(file, 'utf8');
   const relPath = path.relative(path.join(__dirname, '..'), file);
+  const lines = content.split('\n');
 
-  let match;
-  while ((match = linkPattern.exec(content)) !== null) {
-    const raw = match[1];
-    // Ignore api routes, public static assets like /logo.png, /favicon.ico, etc.
-    if (raw.startsWith('/api') || raw.match(/\.(png|jpg|jpeg|svg|webp|ico|xml|txt|json)$/)) continue;
-    const route = raw.replace(/\/$/, '') || '/';
-    if (!validRoutes.has(route)) {
-      brokenLinks.push({ file: relPath, link: raw, cleanRoute: route });
+  lines.forEach((line, idx) => {
+    let match;
+    const linkRe = /href=[\"'](\/[^\"'#?]*)/g;
+    while ((match = linkRe.exec(line)) !== null) {
+      const raw = match[1];
+      if (raw.startsWith('/api') || raw.match(/\.(png|jpg|jpeg|svg|webp|ico|xml|txt|json)$/)) continue;
+      const route = raw.replace(/\/$/, '') || '/';
+      if (!validRoutes.has(route)) {
+        brokenLinks.push({ file: relPath, line: idx + 1, link: raw, cleanRoute: route, snippet: line.trim() });
+      }
     }
-  }
 
-  while ((match = mdLinkPattern.exec(content)) !== null) {
-    const raw = match[1];
-    if (raw.startsWith('/api') || raw.match(/\.(png|jpg|jpeg|svg|webp|ico|xml|txt|json)$/)) continue;
-    const route = raw.replace(/\/$/, '') || '/';
-    if (!validRoutes.has(route)) {
-      brokenLinks.push({ file: relPath, link: raw, cleanRoute: route });
+    const mdRe = /\[.*?\]\((\/[^\"'#?\s)]*)/g;
+    while ((match = mdRe.exec(line)) !== null) {
+      const raw = match[1];
+      if (raw.startsWith('/api') || raw.match(/\.(png|jpg|jpeg|svg|webp|ico|xml|txt|json)$/)) continue;
+      const route = raw.replace(/\/$/, '') || '/';
+      if (!validRoutes.has(route)) {
+        brokenLinks.push({ file: relPath, line: idx + 1, link: raw, cleanRoute: route, snippet: line.trim() });
+      }
     }
-  }
+  });
 }
 
 console.log('\n--- SCAN RESULTS ---');
 if (brokenLinks.length === 0) {
   console.log('No broken internal links found in static code scanning!');
 } else {
-  console.log(`Found ${brokenLinks.length} broken links:`);
-  brokenLinks.forEach(b => console.log(`- ${b.file}: "${b.link}" (resolved to: "${b.cleanRoute}")`));
+  console.log(`Found ${brokenLinks.length} broken links:\n`);
+  brokenLinks.forEach((b, i) => {
+    console.log(`[${i + 1}] ${b.file}:L${b.line} -> "${b.link}"`);
+    console.log(`    Snippet: ${b.snippet.slice(0, 120)}`);
+  });
 }
+

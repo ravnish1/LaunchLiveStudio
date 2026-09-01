@@ -6,12 +6,11 @@
 
 - [Website Development](https://www.launchlive.studio/services/websites): High-performance, sub-second Next.js web applications, headless Shopify stores, and web apps optimized for Core Web Vitals and conversions.
 - [AI System Creation](https://www.launchlive.studio/services/systems): Enterprise RAG pipelines, private vector search architectures (pgvector, Qdrant), multi-agent orchestration (LangGraph, CrewAI), and autonomous business workflows.
-- [SEO & Generative Engine Optimization (GEO)](https://www.launchlive.studio/services/seo): Advanced technical SEO, semantic JSON-LD entity graph engineering, and Answer Engine Optimization (AEO) to secure citations in ChatGPT, Perplexity, and Google AI Overviews.
 - [AI Tool Creation](https://www.launchlive.studio/services/ai-tools): Custom micro-SaaS software, real-time voice agents (WebSockets, TTS/STT), intelligent document OCR parsers, and fine-tuned SLM integrations.
-- [Marketing & CRM Automation](https://www.launchlive.studio/services/automation): Event-driven webhook pipelines, automated CRM lead routing (HubSpot, Salesforce), dynamic nurture sequences, and retention workflows.
+- [Workflow Automation](https://www.launchlive.studio/services/automation): Event-driven webhook pipelines, automated CRM lead routing (HubSpot, Salesforce), dynamic nurture sequences, and retention workflows.
 - [UI/UX Design](https://www.launchlive.studio/services/design): Conversion-focused interface design, comprehensive Figma design systems, WCAG 2.2 accessibility, and fluid micro-interactions.
-- [Branding & Identity](https://www.launchlive.studio/services/branding): Strategy-first visual identities, brand motion design tokens, typography psychology, and positioning strategies.
-- [Growth Consulting](https://www.launchlive.studio/services/consulting): 90-day digital growth roadmaps, tech stack architecture audits, SaaS unit economics optimization, and digital transformation advisory.
+- [Go-to-Market Strategy](https://www.launchlive.studio/services/go-to-market-strategy): 90-day digital growth roadmaps, tech stack architecture audits, SaaS unit economics optimization, and digital transformation advisory.
+
 
 ## Featured Work & Case Studies
 
