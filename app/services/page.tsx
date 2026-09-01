@@ -39,12 +39,10 @@ export const metadata: Metadata = {
       "itemListElement": [
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Development" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI System Creation" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Branding & Identity" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO Optimization" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Tool Creation" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Marketing Automation" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Workflow Automation" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "UI/UX Design" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Growth Consulting" } }
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Go-to-Market Strategy" } }
       ]
     }
   };

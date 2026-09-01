@@ -20,28 +20,16 @@ export const features = [
     href: '/services/systems',
   },
   {
-    title: 'Branding & Identity',
-    description: 'Strategy-first branding — logo, guidelines, motion identity, and everything in between.',
-    icon: Palette,
-    href: '/services/branding',
-  },
-  {
-    title: 'SEO Optimization',
-    description: 'Technical SEO, content strategy, and Core Web Vitals tuning that drives organic growth.',
-    icon: Target,
-    href: '/services/seo',
-  },
-  {
     title: 'AI Tool Creation',
     description: 'Custom AI-powered tools: content generators, data analyzers, voice bots, and more.',
     icon: Zap,
     href: '/services/ai-tools',
   },
   {
-    title: 'Marketing Automation',
+    title: 'Workflow Automation',
     description: 'Connect your CRM, email, ads, and analytics into one automated growth engine.',
     icon: Target,
-    href: '/services/automation',
+    href: '/services/workflow',
   },
   {
     title: 'UI/UX Design',
@@ -50,10 +38,10 @@ export const features = [
     href: '/services/design',
   },
   {
-    title: 'Growth Consulting',
+    title: 'Go-to-Market Strategy',
     description: 'A clear 90-day digital growth roadmap — market analysis, tech recommendations, execution plan.',
     icon: Box,
-    href: '/services/consulting',
+    href: '/services/strategy',
   },
 ]
 
