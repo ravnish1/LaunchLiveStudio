@@ -41,7 +41,7 @@ export const features = [
     title: 'Go-to-Market Strategy',
     description: 'A clear 90-day digital growth roadmap — market analysis, tech recommendations, execution plan.',
     icon: Box,
-    href: '/services/strategy',
+    href: '/services/go-to-market-strategy',
   },
 ]
 

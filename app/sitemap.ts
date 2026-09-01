@@ -59,12 +59,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/services/seo`,
-      lastModified: siteUpdatedDate,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
       url: `${baseUrl}/services/ai-tools`,
       lastModified: siteUpdatedDate,
       changeFrequency: "monthly",
@@ -77,19 +71,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/services/branding`,
-      lastModified: siteUpdatedDate,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
       url: `${baseUrl}/services/design`,
       lastModified: siteUpdatedDate,
       changeFrequency: "monthly",
       priority: 0.75,
     },
     {
-      url: `${baseUrl}/services/consulting`,
+      url: `${baseUrl}/services/go-to-market-strategy`,
       lastModified: siteUpdatedDate,
       changeFrequency: "monthly",
       priority: 0.75,

@@ -37,11 +37,9 @@ export const Footer = () => {
     { name: "Website Development", href: "/services/websites", icon: Monitor },
     { name: "AI Systems", href: "/services/systems", icon: Cpu },
     { name: "AI Tool Creation", href: "/services/ai-tools", icon: Zap },
-    { name: "Marketing Automation", href: "/services/automation", icon: Zap },
-    { name: "SEO & GEO Optimization", href: "/services/seo", icon: TrendingUp },
+    { name: "Workflow Automation", href: "/services/automation", icon: Zap },
     { name: "UI/UX Design", href: "/services/design", icon: Palette },
-    { name: "Branding & Identity", href: "/services/branding", icon: Palette },
-    { name: "Growth Consulting", href: "/services/consulting", icon: TrendingUp },
+    { name: "Go-to-Market Strategy", href: "/services/go-to-market-strategy", icon: TrendingUp },
   ];
 
 

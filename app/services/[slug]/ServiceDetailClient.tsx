@@ -85,7 +85,7 @@ export function ServiceDetailClient({ service }: { service: ServiceData }) {
               transition={{ duration: 0.6 }}
             >
               <span className="text-sm font-bold tracking-[0.2em] text-accent uppercase mb-4 block">
-                {service.slug.replace("-", " ")}
+                {service.slug.split("-").join(" ")}
               </span>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif leading-[1.1] tracking-tight mb-8">
                 {service.title}
