@@ -45,9 +45,9 @@ All daily blog topics are balanced across the **six core services** of [LaunchLi
 
 | Date | Pillar / Service | Post Title | Target Primary Keyword | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Sep 01, 2026** | **Design** | [Micro-Interactions & UI Motion: How Subtle Animations Double Session Duration and Trust](todaysBlog.md) | UI Micro-Interactions Web Design | **Published** |
-| **Sep 02, 2026** | **GTM Strategy** | B2B SaaS Pricing & Packaging Architecture: Designing Value Metrics That Triple Net Revenue Retention | B2B SaaS Pricing Architecture | **Scheduled** |
-| **Sep 03, 2026** | **Websites** | Mastering Core Web Vitals (INP, LCP, CLS) in Next.js 15: Zero-JavaScript Hydration & Edge Caching | Core Web Vitals Next.js 15 | **Scheduled** |
+| **Sep 01, 2026** | **Design** | [Micro-Interactions & UI Motion: How Subtle Animations Double Session Duration and Trust](/blogs/micro-interactions-ui-motion-session-duration-trust) | UI Micro-Interactions Web Design | **Published** |
+| **Sep 02, 2026** | **GTM Strategy** | [B2B SaaS Pricing & Packaging Architecture: Designing Value Metrics That Triple Net Revenue Retention](/blogs/b2b-saas-pricing-packaging-architecture-value-metrics-net-revenue-retention) | B2B SaaS Pricing Architecture | **Published** |
+| **Sep 03, 2026** | **Websites** | [Mastering Core Web Vitals (INP, LCP, CLS) in Next.js 15: Zero-JavaScript Hydration & Edge Caching](/blogs/mastering-core-web-vitals-nextjs-15-zero-js-hydration-edge-caching) | Core Web Vitals Next.js 15 | **Published** |
 | **Sep 04, 2026** | **AI Systems** | Vector Database Benchmarks 2026: pgvector vs Qdrant vs Pinecone Serverless for Million-Scale Hybrid Search | Vector Database Performance Comparison | **Scheduled** |
 | **Sep 05, 2026** | **AI Tools** | Multimodal Document Parsing: Extracting Complex Financial Invoices & Tables into Clean JSON with Vision LLMs | Multimodal AI Document Extraction | **Scheduled** |
 | **Sep 06, 2026** | **Automation** | Instant B2B Lead Routing & Qualification: Connecting Webhooks, Slack Alerts & Automated Calendar Dispatch | Automated B2B Lead Routing Workflow | **Scheduled** |
