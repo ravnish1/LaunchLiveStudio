@@ -4,7 +4,7 @@ import Image from "next/image";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { BLOG_POSTS } from "@/lib/blog-data";
 
-export const HomeBlogs = () => {
+export const HomeBlogs = () => {  
   const latestPosts = BLOG_POSTS.slice(0, 3);
 
   return (
