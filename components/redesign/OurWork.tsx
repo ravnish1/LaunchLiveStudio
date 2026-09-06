@@ -12,7 +12,7 @@ export const featuredWork = [
     name: "LL RAG Platform: Built for Every Industry",
     category: "AI / ML",
     tagline: "Enterprise-Grade capabilities",
-    desc: "Built from the ground up for security, accuracy, and unprecedented speed. A completely managed RAG pipeline.The application likely serves organizations by digitizing manual due diligence workflows, allowing users to securely collect, track, and evaluate third-party risk data. Key features typically include automated questionnaire distribution, real-time progress dashboards, and centralized document storage for audit trails. By leveraging Vercel's edge network, the tool ensures fast, reliable access for global teams while maintaining high security standards through serverless architectures and role-based access controls.This platform helps businesses reduce compliance risks, accelerate procurement cycles, and maintain consistent security standards across their supply chain without the overhead of traditional on-premise solutions.",
+    desc: "An enterprise-grade, fully managed RAG pipeline designed to automate due diligence workflows, third-party risk evaluations, and compliance tracking with real-time audit trails.",
     image: "/projects/launchliverag.png",
     result: "Easing your finance",
     slug: "launch-live-rag-platform",
