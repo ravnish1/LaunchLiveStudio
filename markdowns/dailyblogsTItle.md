@@ -48,7 +48,7 @@ All daily blog topics are balanced across the **six core services** of [LaunchLi
 | **Sep 01, 2026** | **Design** | [Micro-Interactions & UI Motion: How Subtle Animations Double Session Duration and Trust](/blogs/micro-interactions-ui-motion-session-duration-trust) | UI Micro-Interactions Web Design | **Published** |
 | **Sep 02, 2026** | **GTM Strategy** | [B2B SaaS Pricing & Packaging Architecture: Designing Value Metrics That Triple Net Revenue Retention](/blogs/b2b-saas-pricing-packaging-architecture-value-metrics-net-revenue-retention) | B2B SaaS Pricing Architecture | **Published** |
 | **Sep 03, 2026** | **Websites** | [Mastering Core Web Vitals (INP, LCP, CLS) in Next.js 15: Zero-JavaScript Hydration & Edge Caching](/blogs/mastering-core-web-vitals-nextjs-15-zero-js-hydration-edge-caching) | Core Web Vitals Next.js 15 | **Published** |
-| **Sep 04, 2026** | **AI Systems** | Vector Database Benchmarks 2026: pgvector vs Qdrant vs Pinecone Serverless for Million-Scale Hybrid Search | Vector Database Performance Comparison | **Scheduled** |
+| **Sep 04, 2026** | **AI Systems** | [Vector Database Benchmarks 2026: pgvector vs Qdrant vs Pinecone Serverless for Million-Scale Hybrid Search](/blogs/vector-database-benchmarks-pgvector-qdrant-pinecone) | Vector Database Performance Comparison | **Published** |
 | **Sep 05, 2026** | **AI Tools** | Multimodal Document Parsing: Extracting Complex Financial Invoices & Tables into Clean JSON with Vision LLMs | Multimodal AI Document Extraction | **Scheduled** |
 | **Sep 06, 2026** | **Automation** | Instant B2B Lead Routing & Qualification: Connecting Webhooks, Slack Alerts & Automated Calendar Dispatch | Automated B2B Lead Routing Workflow | **Scheduled** |
 | **Sep 07, 2026** | **Design** | Design System Tokens & Multi-Platform Sync: Bridging Figma Variables to Tailwind CSS & React Components | Figma Design Tokens Tailwind CSS | **Scheduled** |
@@ -251,7 +251,7 @@ Below are in-depth technical specification cards for September daily publication
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
-│ TOPIC CARD #16 (Sep 04, 2026) — SCHEDULED                              │
+│ TOPIC CARD #16 (Sep 04, 2026) — PUBLISHED                              │
 ├────────────────────────────────────────────────────────────────────────┤
 │ Title: Vector Database Benchmarks 2026: pgvector vs Qdrant vs          │
 │        Pinecone Serverless for Million-Scale Hybrid Search             │
