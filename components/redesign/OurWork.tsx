@@ -69,9 +69,20 @@ export const featuredWork = [
   tagline: "All You Need For Tensile — Creative & Professional",
   desc: "An industrial manufacturer website for Novo Curve Tensile Pvt. Ltd.",
   image: "/projects/novo-curve-tensiile.png",
-  result: "Website Development",
+  result: "$25k → $60k Revenue in 18 Days",
   slug: "novo-curve-tensile",
-  liveUrl: "https://novocurvetensile.com/",
+  liveUrl: "https://novo-cure.vercel.app/",
+  hideCaseStudy: false,
+},
+  {
+  name: "Bishambhu Tent and Decorations",
+  category: "Event and Tent Rentals",
+  tagline: "Premium Tents & Decorations for Every Celebration",
+  desc: "The decoration you want is here. From simple to luxurious.",
+  image: "/projects/bishambhu-tents.png",
+  result: "30% Increase in Online Booking Enquiries",
+  slug: "bishambhu-tent-and-decorations",
+  liveUrl: "https://bishambu.com/",
   hideCaseStudy: false,
 }
 ];

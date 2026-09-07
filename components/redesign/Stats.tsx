@@ -1,32 +1,8 @@
-'use client'
-
-import React, { useEffect, useState, useRef } from 'react'
-import { motion, useInView, useSpring, useTransform } from 'framer-motion'
-
-
-
-const Counter = ({ value, suffix, label }: { value: number, suffix: string, label: string }) => {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, amount: 0.5 })
-  const spring = useSpring(0, { stiffness: 100, damping: 30 })
-  const displayValue = useTransform(spring, (current) => Math.round(current))
-
-  const [current, setCurrent] = useState(0)
-
-  useEffect(() => {
-    if (inView) {
-      spring.set(value)
-    }
-  }, [inView, value, spring])
-
-  useEffect(() => {
-    return displayValue.on('change', (latest) => setCurrent(latest))
-  }, [displayValue])
-
+const Counter = ({ value, suffix = '', label }: { value: number | string, suffix?: string, label: string }) => {
   return (
-    <div ref={ref} className="text-center bg-background rounded-3xl p-4 lg:p-4 xl:p-6 border border-foreground/5 shadow-sm flex flex-col justify-center min-h-[130px]">
+    <div className="text-center bg-background rounded-3xl p-4 lg:p-4 xl:p-6 border border-foreground/5 shadow-sm flex flex-col justify-center min-h-[130px]">
       <div className="text-4xl md:text-5xl lg:text-4xl xl:text-5xl font-serif font-bold tracking-tighter mb-2 text-accent whitespace-nowrap">
-        {current}{suffix}
+        {value}{suffix}
       </div>
       <div className="text-xs xl:text-sm font-medium tracking-wide xl:tracking-widest uppercase text-text-muted line-clamp-2">
         {label}

@@ -41,7 +41,7 @@ const TESTIMONIALS: Testimonial[] = [
     metricLabel: "Ahead of Schedule",
     linkedinUrl: "https://www.linkedin.com/",
     avatarUrl:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face",
+      "https://media.gettyimages.com/id/1141737652/photo/portrait-of-a-confident-young-man.jpg?s=612x612&w=0&k=20&c=YQaYjmbPGpJ0DXxGSTLHFPWsBKjBsAmR_l-XHYt2vHU=",
     projectSlug: "raptile-studio",
     featured: true,
   },
@@ -57,7 +57,7 @@ const TESTIMONIALS: Testimonial[] = [
     metricLabel: "Revenue in 90 Days",
     linkedinUrl: "https://www.linkedin.com/",
     avatarUrl:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+      "https://static.vecteezy.com/system/resources/thumbnails/048/817/339/small_2x/confident-young-man-smiling-in-bright-urban-environment-on-a-sunny-afternoon-photo.jpeg",
     projectSlug: "montbold-premium-bag",
     featured: true,
   },
@@ -73,7 +73,7 @@ const TESTIMONIALS: Testimonial[] = [
     metricLabel: "Risk Prevention Rate",
     linkedinUrl: "https://www.linkedin.com/",
     avatarUrl:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
+      "https://static.vecteezy.com/system/resources/thumbnails/027/215/198/small_2x/smiling-young-indian-freelancer-posing-at-home-office-free-photo.jpg",
     projectSlug: "deepshield-risk-control-center",
   },
   {
@@ -88,7 +88,7 @@ const TESTIMONIALS: Testimonial[] = [
     metricLabel: "Automated Time Savings",
     linkedinUrl: "https://www.linkedin.com/",
     avatarUrl:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face",
+      "https://static.vecteezy.com/system/resources/thumbnails/051/469/258/small_2x/portrait-of-a-young-beautiful-girl-wearing-traditional-black-saree-posing-on-a-brown-background-photo.jpg",
     projectSlug: "launch-live-rag-platform",
   },
 ];
