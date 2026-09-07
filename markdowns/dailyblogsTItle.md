@@ -49,8 +49,8 @@ All daily blog topics are balanced across the **six core services** of [LaunchLi
 | **Sep 02, 2026** | **GTM Strategy** | [B2B SaaS Pricing & Packaging Architecture: Designing Value Metrics That Triple Net Revenue Retention](/blogs/b2b-saas-pricing-packaging-architecture-value-metrics-net-revenue-retention) | B2B SaaS Pricing Architecture | **Published** |
 | **Sep 03, 2026** | **Websites** | [Mastering Core Web Vitals (INP, LCP, CLS) in Next.js 15: Zero-JavaScript Hydration & Edge Caching](/blogs/mastering-core-web-vitals-nextjs-15-zero-js-hydration-edge-caching) | Core Web Vitals Next.js 15 | **Published** |
 | **Sep 04, 2026** | **AI Systems** | [Vector Database Benchmarks 2026: pgvector vs Qdrant vs Pinecone Serverless for Million-Scale Hybrid Search](/blogs/vector-database-benchmarks-pgvector-qdrant-pinecone) | Vector Database Performance Comparison | **Published** |
-| **Sep 05, 2026** | **AI Tools** | Multimodal Document Parsing: Extracting Complex Financial Invoices & Tables into Clean JSON with Vision LLMs | Multimodal AI Document Extraction | **Scheduled** |
-| **Sep 06, 2026** | **Automation** | Instant B2B Lead Routing & Qualification: Connecting Webhooks, Slack Alerts & Automated Calendar Dispatch | Automated B2B Lead Routing Workflow | **Scheduled** |
+| **Sep 05, 2026** | **AI Tools** | [Multimodal Document Parsing: Extracting Complex Financial Invoices & Tables into Clean JSON with Vision LLMs](/blogs/multimodal-document-parsing-financial-invoices-json) | Multimodal AI Document Extraction | **Published** |
+| **Sep 06, 2026** | **Automation** | [Instant B2B Lead Routing & Qualification: Connecting Webhooks, Slack Alerts & Automated Calendar Dispatch](/blogs/instant-b2b-lead-routing-slack-webhooks-calendar) | Automated B2B Lead Routing Workflow | **Published** |
 | **Sep 07, 2026** | **Design** | Design System Tokens & Multi-Platform Sync: Bridging Figma Variables to Tailwind CSS & React Components | Figma Design Tokens Tailwind CSS | **Scheduled** |
 | **Sep 08, 2026** | **GTM Strategy** | The 90-Day GTM Sprint Playbook: How Pre-Launch Demand Validation Prevents $200k Engineering Waste | 90 Day GTM Execution Playbook | **Scheduled** |
 | **Sep 09, 2026** | **Websites** | Edge Middleware & Dynamic Geo-Personalization in Next.js 15: Sub-10ms Routing at Global Scale | Edge Middleware Next.js Architecture | **Scheduled** |
@@ -286,7 +286,7 @@ Below are in-depth technical specification cards for September daily publication
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
-│ TOPIC CARD #17 (Sep 05, 2026) — SCHEDULED                              │
+│ TOPIC CARD #17 (Sep 05, 2026) — PUBLISHED                              │
 ├────────────────────────────────────────────────────────────────────────┤
 │ Title: Multimodal Document Parsing: Extracting Complex Financial       │
 │        Invoices & Tables into Clean JSON with Vision LLMs              │
@@ -322,7 +322,7 @@ Below are in-depth technical specification cards for September daily publication
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
-│ TOPIC CARD #18 (Sep 06, 2026) — SCHEDULED                              │
+│ TOPIC CARD #18 (Sep 06, 2026) — PUBLISHED                              │
 ├────────────────────────────────────────────────────────────────────────┤
 │ Title: Instant B2B Lead Routing & Qualification: Connecting Webhooks,  │
 │        Slack Alerts & Automated Calendar Dispatch                      │
