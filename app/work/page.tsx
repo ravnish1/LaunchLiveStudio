@@ -46,7 +46,7 @@ export default function WorkPage() {
   };
 
   return (
-    <>
+    <div className='relative'>
       <Script
         id="schema-work"
         type="application/ld+json"
@@ -55,6 +55,7 @@ export default function WorkPage() {
       <ClientReveal>
         <div className="min-h-screen bg-background text-foreground">
           <Navbar />
+
           <main>
             <OurWork />
           </main>
@@ -63,6 +64,6 @@ export default function WorkPage() {
           <Footer />
         </div>
       </ClientReveal>
-    </>
+    </div>
   )
 }

@@ -52,6 +52,28 @@ export const featuredWork = [
     liveUrl: "https://raptilestudio.in/",
     hideCaseStudy: false,
   },
+  {
+    name: "DKS Design",
+    category: "BIM Designing",
+    tagline: "Next-Gen 3D Solutions",
+    desc: "A modern architectural and interior design studio website, blending premium visuals with a seamless user experience.",
+    image: "/projects/dks-design.png",
+    result: "3D Visualization",
+    slug: "dks-design",
+    liveUrl: "https://dk-sdesign.vercel.app/index.html",
+    hideCaseStudy: false,
+  },
+  {
+  name: "Novo Curve Tensile",
+  category: "Tensile and Fabrications",
+  tagline: "All You Need For Tensile — Creative & Professional",
+  desc: "An industrial manufacturer website for Novo Curve Tensile Pvt. Ltd.",
+  image: "/projects/novo-curve-tensiile.png",
+  result: "Website Development",
+  slug: "novo-curve-tensile",
+  liveUrl: "https://novocurvetensile.com/",
+  hideCaseStudy: false,
+}
 ];
 
 /* ─── Project Card ─── */
@@ -235,8 +257,10 @@ export const OurWork = ({
       <div className="max-w-300 mx-auto">
         {/* ── Header ── */}
         <div
-          className={`mb-10 md:mb-14 flex flex-col justify-between items-start gap-5 ${titleContainerClassName}`}
+          className={`mb-4  flex justify-between items-start gap-5 ${titleContainerClassName}`}
         >
+          <div>
+
           <span className="text-xs md:text-sm font-bold tracking-[0.2em] text-accent uppercase">
             SELECTED PROJECTS
           </span>
@@ -256,6 +280,12 @@ export const OurWork = ({
             digital presence drives measurable revenue and long-term growth for
             your brand.
           </p>
+          </div>
+          <div>
+            <section className=''>
+              <Image src="/Projections-rafiki.svg" alt="work-illustration" width={500} height={500} />
+            </section>
+          </div>
         </div>
         {/* ── Featured Project ── */}
         <div className="mb-6 md:mb-8">
