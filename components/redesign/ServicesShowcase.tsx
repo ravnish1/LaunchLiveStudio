@@ -1,65 +1,93 @@
 'use client'
 
 import React from 'react'
-import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { features } from './Features'
-
-import { ArrowUpRight } from 'lucide-react'
+import { ServicesIllustration } from './ServicesIllustration'
+import { ServiceCards } from './ServiceCards'
 
 export const ServicesShowcase = () => {
   return (
     <section className="pt-28 pb-16 md:pt-32 md:pb-32 px-4 md:px-6 overflow-hidden">
       <div className="max-w-[1200px] mx-auto">
-        {/* Hero Section */}
-        <div className="flex flex-col gap-3 md:gap-4 mb-10 md:mb-16">
-          <span className="text-xs md:text-sm font-bold tracking-[0.2em] text-accent uppercase">SERVICES & EXPERTISE</span>
-          <h1 className="flex flex-col">
-            <span className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif leading-[1.1] tracking-tight">We build digital systems</span>
-            <span className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif italic text-accent leading-[1.1] tracking-tight mb-2 md:mb-4">that drive actual revenue.</span>
-          </h1>
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="max-w-3xl text-base md:text-xl text-text-muted mt-2 leading-relaxed"
-          >
-            Say goodbye to traditional agency bloat and vanity metrics. We combine modern tech stacks, strategic design, and automation to deliver scalable solutions tailored for modern businesses and creators. We don't just sell services; we engineer outcomes.
-          </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="h-px w-full bg-foreground/10 mt-10"
-          />
-        </div>
+        {/* ── Hero: Two-column layout ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-12 md:mb-20">
 
-
-        {/* Core Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-16 md:mb-32">
-          {features.map((feature, idx) => (
-            <Link
-              href={feature.href}
-              key={feature.title}
-              className="p-5 md:p-8 rounded-2xl bg-foreground/[0.02] border border-foreground/5 hover:bg-foreground/[0.04] hover:border-accent/30 transition-all duration-300 group flex flex-col h-full"
+          {/* Left: copy */}
+          <div className="flex flex-col gap-4 order-2 lg:order-1">
+            <motion.span
+              initial={{ opacity: 0, y: 8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-xs md:text-sm font-bold tracking-[0.2em] text-accent uppercase"
             >
-              <h3 className="text-xl md:text-2xl font-serif mb-2 md:mb-3 group-hover:text-accent transition-colors duration-300">
-                {feature.title}
-              </h3>
-              <p className="text-sm md:text-base text-text-muted leading-relaxed mb-4 md:mb-6 flex-grow">
-                {feature.description}
-              </p>
-              <div className="flex items-center gap-2 text-sm font-bold text-accent uppercase tracking-wider transition-all duration-300 mt-auto">
-                Discover More <ArrowUpRight size={16} />
-              </div>
-            </Link>
-          ))}
+              SERVICES & EXPERTISE
+            </motion.span>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="flex flex-col"
+            >
+              <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif leading-[1.1] tracking-tight">We build digital systems</span>
+              <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif italic text-accent leading-[1.1] tracking-tight">that drive actual revenue.</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-base md:text-lg text-text-muted mt-2 leading-relaxed max-w-xl"
+            >
+              Say goodbye to traditional agency bloat and vanity metrics. We combine modern tech stacks, strategic design, and automation to deliver scalable solutions tailored for modern businesses and creators. We don't just sell services; we engineer outcomes.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.35 }}
+              className="flex flex-wrap gap-2 mt-2"
+            >
+              {['Web Dev', 'AI Systems', 'AI Tools', 'Automation', 'UI/UX', 'GTM'].map((tag) => (
+                <span key={tag} className="text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded-full border border-foreground/10 text-text-muted">
+                  {tag}
+                </span>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Right: Illustration */}
+          <motion.div
+            initial={{ opacity: 0, x: 24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="order-1 lg:order-2 flex items-center justify-center"
+          >
+            <ServicesIllustration />
+          </motion.div>
         </div>
 
-        {/* The LaunchLive Difference */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="h-px w-full bg-foreground/10 mb-16 md:mb-20"
+        />
+
+        {/* ── Core Services Grid ── */}
+        <div className="mb-16 md:mb-32">
+          <ServiceCards features={features} />
+        </div>
+
+        {/* ── The LaunchLive Difference ── */}
         <div className="pt-12 md:pt-20 border-t border-foreground/10">
           <div className="text-center mb-10 md:mb-16">
             <span className="text-xs md:text-sm font-bold tracking-[0.2em] text-accent uppercase">THE LAUNCHLIVE DIFFERENCE</span>
