@@ -268,11 +268,11 @@ export const OurWork = ({
       <div className="max-w-300 mx-auto">
         {/* ── Header ── */}
         <div
-          className={`mb-4  flex justify-between items-start gap-5 ${titleContainerClassName}`}
+          className={`mb-4  flex justify-between items-center sm:flex-row flex-col items-start gap-5 ${titleContainerClassName}`}
         >
           <div>
 
-          <span className="text-xs md:text-sm font-bold tracking-[0.2em] text-accent uppercase">
+          <span className="text-xs md:text-sm font-bold tracking-[0.2em] whitespace-nowrap text-accent uppercase">
             SELECTED PROJECTS
           </span>
           <h1 className="flex flex-col mt-3">
@@ -283,7 +283,7 @@ export const OurWork = ({
               for itself.
             </span>
           </h1>
-          <p className="mt-4 text-text-muted text-base md:text-lg max-w-lg leading-relaxed">
+          <p className="mt-4 text-text-muted md:text-lg max-w-lg hidden lg:block leading-relaxed">
             Real results for real businesses. We specialize in building custom
             software, high-performance web applications, and digital systems
             tailored to your unique workflows. Every project is engineered from
@@ -294,7 +294,7 @@ export const OurWork = ({
           </div>
           <div>
             <section className=''>
-              <Image src="/Projections-rafiki.svg" alt="work-illustration" width={500} height={500} />
+              <Image src="/Projections-rafiki.svg" alt="work-illustration" width={500} height={500} className="" />
             </section>
           </div>
         </div>

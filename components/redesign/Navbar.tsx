@@ -29,7 +29,7 @@ export const Navbar = () => {
 
   return (
     <>
-      <div className="fixed top-4 md:top-6 left-0 right-0 z-[100] flex justify-center px-4 pointer-events-none">
+      <div className="fixed top-4 md:top-6 left-0 right-0 z-[100] flex justify-center sm:px-4 pointer-events-none">
         <motion.nav
           className={`pointer-events-auto flex items-center justify-between w-full max-w-[1100px] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] rounded-full py-4 px-5 md:px-8 origin-top ${
             isScrolled
@@ -38,7 +38,7 @@ export const Navbar = () => {
           }`}
         >
           {/* Logo */}
-          <Link href="/" className="group flex items-center gap-3">
+          <Link href="/" className="group flex items-center sm:gap-3">
             <Image
               src="/logo.png"
               alt="Launch Live Studio"
