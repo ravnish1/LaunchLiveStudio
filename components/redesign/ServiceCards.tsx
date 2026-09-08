@@ -90,21 +90,21 @@ function IllustrationAISystem() {
       <ellipse cx="100" cy="65" rx="68" ry="44" fill="rgba(91,95,207,0.07)" />
 
       {/* Dark card backing */}
-      <rect x="24" y="16" width="152" height="100" rx="14" fill={T.slate} />
+      <rect x="24" y="16" width="152" height="100" rx="14" fill={T.surface} />
       <rect x="24" y="16" width="152" height="100" rx="14" fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth="1" />
 
       {/* Top badge */}
-      <rect x="34" y="26" width="48" height="14" rx="7" fill={T.violet} fillOpacity="0.20" />
-      <rect x="40" y="30" width="36" height="4" rx="2" fill={T.violet} fillOpacity="0.70" />
+      <rect x="34" y="26" width="48" height="14" rx="7" fill={T.muted} fillOpacity="0.20" />
+      <rect x="40" y="30" width="36" height="4" rx="2" fill={T.muted} fillOpacity="0.70" />
 
       {/* Neural net — Input layer */}
       {[40, 56, 72, 88].map((y, i) => (
-        <circle key={i} cx="50" cy={y} r="6" fill={T.violet} fillOpacity={0.35 + i * 0.08} />
+        <circle key={i} cx="50" cy={y} r="6" fill={T.muted} fillOpacity={0.35 + i * 0.08} />
       ))}
 
       {/* Hidden layer 1 */}
       {[48, 64, 80].map((y, i) => (
-        <circle key={i} cx="90" cy={y} r="7" fill="none" stroke={T.violet} strokeWidth="1.2" strokeOpacity="0.55" />
+        <circle key={i} cx="90" cy={y} r="7" fill="none" stroke={T.muted} strokeWidth="1.2" strokeOpacity="0.55" />
       ))}
 
       {/* Hidden layer 2 */}
@@ -610,7 +610,6 @@ export function ServiceCards({ features }: { features: ServiceDef[] }) {
           description={feature.description}
           href={feature.href}
           index={idx}
-          accent={idx === 1 /* AI System Creation — dark accent */}
         />
       ))}
     </div>
