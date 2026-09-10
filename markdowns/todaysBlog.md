@@ -1,605 +1,270 @@
-> **TL;DR:** In 2026, serving a one-size-fits-all web experience from a centralized origin server is a fatal commercial mistake. Global visitors forced through transatlantic or transpacific network hops suffer 250ms to 600ms Time To First Byte (TTFB) penalties, degrading Core Web Vitals, increasing bounce rates by 32%, and cutting e-commerce conversions by 7% per 100ms of latency. Client-side geolocation scripts are equally catastrophic, triggering jarring Cumulative Layout Shift (CLS) and visible price flickers. The modern architectural solution is **Next.js 15 Edge Middleware running on V8 isolates**. By intercepting inbound HTTP requests at 300+ global Edge Points of Presence (PoPs), engineering teams can resolve IP geolocation, rewrite routes, inject localized currency and language headers, and segment A/B test experiments in **under 10 milliseconds** before rendering a single byte of HTML. Deploy edge-native web infrastructure with our [High-Performance Website Development](/services/websites) engineering team, power localized currencies and instant catalogs in a [headless Next.js e-commerce architecture](/blogs/headless-commerce-vs-monolithic-shopify-nextjs-conversion-speed) using Edge Middleware, combine edge routing with Partial Prerendering from our [Next.js 15 App Router production guide](/blogs/nextjs-15-app-router-server-actions-ppr-performance) for sub-second speeds, and eliminate latency bottlenecks using our [Core Web Vitals Next.js 15 performance optimization](/blogs/mastering-core-web-vitals-nextjs-15-zero-js-hydration-edge-caching) strategies to maximize global pipeline.
+> **TL;DR:** Most companies building AI search rely on a technique called **vector search**—chopping documents into small paragraphs and finding the ones with similar words. While this works great for simple questions like *"What is our refund policy?"*, it falls apart when you ask big-picture questions like *"What are the recurring bottlenecks across all our client onboarding projects?"* Basic AI search simply cannot connect the dots across hundreds of documents. The solution is **GraphRAG (Knowledge Graph AI)**. Instead of treating your files like loose sticky notes, a knowledge graph creates a visual map showing how people, projects, contracts, and decisions link together. When AI can see both the text and the relationships, incorrect answers drop by over 80% and answers become genuinely insightful. Explore our [Bespoke AI System Creation](/services/systems) to see how we build custom intelligence layers, check out our guide on [reducing AI hallucinations with enterprise RAG](/blogs/enterprise-rag-architecture-eliminate-hallucinations), read our [vector database comparison guide](/blogs/vector-database-benchmarks-pgvector-qdrant-pinecone) to understand the storage foundation, and learn how to connect these systems into [multi-agent AI workflows](/blogs/autonomous-multi-agent-ai-workflows-langgraph-crewai) that run your repetitive operations on autopilot.
 
 ---
 
-## The 5 W's of Edge Middleware & Dynamic Geo-Personalization
+## The 5 W's of Knowledge Graphs & Smarter AI Search
 
-To understand why enterprise web architecture in 2026 has shifted irrevocably toward edge computation, we dissect the paradigm using the 5 W's framework:
+To make sense of how AI search is evolving beyond basic keyword matching, here is a quick overview using the 5 W's:
 
-- **Who:** Enterprise CTOs, Lead Frontend Architects, Headless E-commerce Directors, and Global B2B SaaS engineering teams operating across North America, EMEA, APAC, and LATAM who demand sub-10ms response times without managing distributed VM clusters.
-- **What:** Next.js 15 Edge Middleware—an ultra-lightweight execution layer operating on the V8 isolate Edge Runtime that evaluates incoming HTTP requests at the network perimeter, executing geo-routing, localization, currency resolution, and security policies before static caching or server-side rendering (SSR) occurs.
-- **Where:** Deployed across 300+ globally distributed Point of Presence (PoP) edge servers (powered by Vercel Edge Network, AWS CloudFront, or Cloudflare Workers), positioning server logic within 5 to 15 milliseconds of 95% of the world's internet population.
-- **When:** At the absolute ingress point of every HTTP request lifecycle, executing synchronously between the user's initial browser dispatch and the origin server's React Server Component (RSC) evaluation.
-- **Why:** Centralized origin servers force cross-continental data packet travel subject to the unyielding laws of physics (speed of light in optical fiber), adding 200ms+ round-trip delays that destroy organic search rankings, inflate bounce rates, and bleed conversion revenue.
+- **Who:** Founders, product leads, and business teams with hundreds of internal documents, customer tickets, or research notes that standard AI assistants fail to answer accurately.
+- **What:** **GraphRAG (Graph-based Retrieval-Augmented Generation)**—a smarter way to search where AI creates a clear map of relationships (who did what, which tool connects to what project, how rules affect outcomes) instead of just scanning for matching words.
+- **Where:** Deployed directly within your company's private cloud or database environment, keeping your proprietary records, customer data, and internal notes completely private and safe.
+- **When:** Essential whenever you need AI to answer questions that require seeing the "big picture"—such as project post-mortems, contract comparisons, legal audits, and technical documentation.
+- **Why:** Basic search treats your files like isolated puzzle pieces. Without a map connecting the pieces, AI either misses the true answer or makes something up. Connecting the dots stops guesswork and gives your team answers you can actually trust.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
-│         The 5 W's Framework: Next.js 15 Edge Middleware Matrix          │
+│              The 5 W's: Why Knowledge Graphs Help AI Think              │
 ├──────────────┬──────────────────────────────────────────────────────────┤
-│ Dimension    │ Enterprise Architecture Specification                    │
+│ Dimension    │ Plain-English Explanation                                │
 ├──────────────┼──────────────────────────────────────────────────────────┤
-│ 👤 WHO       │ Global Brands, Multi-Region SaaS, Headless E-Commerce    │
-│ ⚙️ WHAT      │ V8 Isolate Request Interceptor & Dynamic Header Injector │
-│ 🌍 WHERE     │ 300+ Distributed CDN Edge Points of Presence (PoPs)      │
-│ ⏱️ WHEN      │ Request Ingress: Pre-Render, Pre-Hydration (<10ms)       │
-│ 🎯 WHY       │ Eradicate Speed-of-Light Latency, Boost Conversions 35%+ │
+│ 👤 WHO       │ Teams tired of AI missing the point on complex company data│
+│ 🧠 WHAT      │ GraphRAG: Mapping relationships between people & ideas   │
+│ 🔒 WHERE     │ Securely inside your private company cloud environment   │
+│ ⏱️ WHEN      │ For complex questions that span multiple documents       │
+│ 🎯 WHY       │ Stop AI guesswork and help it connect the dots accurately│
 └──────────────┴──────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## The Physics of Latency: Why Centralized Origin Routing Fails in 2026
+## The Mystery of the Missing Answer: Sticky Notes vs. The Detective Board
 
-Modern web performance is governed by strict physical constraints. While broadband bandwidth has expanded exponentially, **latency is bounded by the speed of light in optical fiber** (~200,000 km/s). 
+To understand why traditional AI search struggles with complex questions, imagine two different ways a detective solves a case:
 
-When a user in Tokyo requests a website hosted in an AWS `us-east-1` (North Virginia) origin data center, that request must physically travel roughly 11,000 kilometers across subsea fiber cables:
+### Approach A: The Shoebox of Sticky Notes (Traditional Vector Search)
+Imagine taking every police report, interview, and receipt, cutting them into 3-sentence snippets, and throwing them into a giant shoebox. 
 
-1. **DNS Resolution & TCP Handshake:** 1 RTT (Round Trip Time) ~ 160ms.
-2. **TLS 1.3 Cryptographic Handshake:** 1 RTT ~ 160ms.
-3. **HTTP GET Request Transmission & Server Processing:** 1 RTT ~ 160ms + 100ms origin computation.
-4. **HTML Content Delivery:** 1 RTT ~ 160ms.
+When you ask, *"Did Suspect X ever visit Location Y?"*, the detective rummages through the box, finds three notes mentioning "Suspect X" and "Location Y", and hands them to you. 
+
+This works fine for direct facts. But what if you ask: *"Who was the person coordinating the deliveries between Company A and Company B last spring?"* 
+
+The answer isn't written on a single note. Note #1 says John works for Company A. Note #14 says John introduced Sarah to the logistics team. Note #87 says Sarah signed off on spring deliveries. Traditional search only pulls the notes that match your exact query words—leaving the crucial middle links sitting at the bottom of the box.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
-│               Centralized Origin Server vs Global Edge PoP              │
+│         Approach A: Traditional Vector Search (Isolated Snippets)       │
 ├─────────────────────────────────────────────────────────────────────────┤
-│ Centralized Architecture (High Latency & Geographic Decay):             │
-│ [User in Tokyo] ──(11,000 km / 180ms RTT)──► [Origin Server in Virginia]│
-│                 ◄──(Wait for Origin Compute & Database Roundtrip)───────│
-│ (Result: TTFB = 450ms - 850ms | Conversion Penalty: -35% | High Bounce) │
+│ [Doc 1: Note A]      [Doc 2: Note B]      [Doc 3: Note C]               │
+│        │                   │                    │                       │
+│        ▼                   ▼                    ▼                       │
+│ (AI only retrieves snippets that share similar keywords with question)  │
+│ ❌ Result: AI misses the relationship between Note A and Note C         │
 ├─────────────────────────────────────────────────────────────────────────┤
-│ Next.js 15 Edge Middleware Architecture (Local PoP Execution):          │
-│ [User in Tokyo] ──(15 km / 4ms RTT)──► [Tokyo Edge PoP (V8 Isolate)]   │
-│                                              │                          │
-│                         ┌────────────────────┴───────────────────┐      │
-│                         ▼                                        ▼      │
-│               [Geo IP Detection]                      [Edge Config KV]  │
-│               [Inject Currency: JPY]                  [Target Rewrite]  │
-│                                              │                          │
-│                 ◄──(Serve Edge-Cached RSC Shell in 8ms)─────────────────│
-│ (Result: TTFB < 10ms | Zero Layout Shift | Perfect 100/100 Lighthouse)  │
+│         Approach B: The Detective Board (GraphRAG Knowledge Map)        │
+├─────────────────────────────────────────────────────────────────────────┤
+│   [John Smith] ──(Works At)──► [Company A]                              │
+│         │                                                               │
+│         └──(Introduced)──► [Sarah Miller]                               │
+│                                   │                                     │
+│                                   └──(Approved)──► [Spring Deliveries]  │
+│                                                           │             │
+│                                                           └──(To)──► [B]│
+│                                                                         │
+│ (AI traces the yarn connecting John ➔ Sarah ➔ Spring Deliveries ➔ Co B) │
+│ ✅ Result: Complete, accurate explanation with zero guesswork           │
 └─────────────────────────────────────────────────────────────────────────┘
 ```
 
-### The Commercial Penalty of the 300ms Delay
+### Approach B: The Detective Board (Knowledge Graphs)
+Now imagine the classic movie detective board: photos pinned to the wall with red yarn connecting people to companies, companies to bank accounts, and bank accounts to dates.
 
-The business impact of this physical delay is severe:
-- **Google Core Web Vitals Penalties:** Google's ranking algorithms heavily weight Interaction to Next Paint (INP) and Largest Contentful Paint (LCP). A sluggish TTFB pushes LCP past the critical 2.5-second threshold into the "Needs Improvement" or "Poor" categories, degrading organic SERP visibility.
-- **The Client-Side Personalization "Flicker Tax":** Teams attempting to bypass origin latency often resort to client-side geolocation libraries (e.g., executing an IP lookup via `fetch()` in a React `useEffect`). This causes jarring **Cumulative Layout Shift (CLS)**, where a European visitor initially sees `$199 USD` for 400 milliseconds before the UI suddenly flashes and re-renders as `€185 EUR`. This layout instability erodes brand trust and triggers checkout abandonment.
-- **Cart Abandonment Amplification:** In headless commerce, international buyers who are not immediately presented with their local currency, localized tax rules (VAT vs GST), and regional payment methods (i.e., iDEAL in the Netherlands, Klarna in Germany, JCB in Japan) bounce at a **42% higher rate** than those served localized content natively.
+When you ask the same question, the detective doesn't dig through loose papers. They look at the board, trace the red yarn from Company A through John and Sarah straight to Company B, and instantly see the full story.
+
+That is exactly what a **Knowledge Graph** does for your business data.
 
 ---
 
-## Under the Hood: Next.js 15 Edge Runtime & V8 Isolates
+## How Basic AI Search Works (And Where It Hits a Wall)
 
-To achieve sub-10ms request execution at global scale, Next.js 15 leverages the **Edge Runtime**, which operates fundamentally differently from traditional Node.js server environments.
+Over the past two years, almost every company experimenting with AI has built a setup known as **RAG** (Retrieval-Augmented Generation):
+
+1. You upload your company's PDFs, Google Docs, and Slack channels.
+2. The system slices those documents into chunks (usually 300 to 500 words each).
+3. A machine-learning model converts those chunks into numbers called "vector embeddings".
+4. When you ask a question, the system finds the 3 to 5 chunks whose numbers are closest to your question, pastes them into ChatGPT or Claude, and asks it to summarize.
+
+### Where Vector Search Shines
+- *"What is our parental leave policy?"* (Answer is in one paragraph in the employee handbook).
+- *"What port does our staging server run on?"* (Answer is in one line in your setup guide).
+- *"How do I reset my account password?"* (Answer is in a single FAQ entry).
+
+### Where Vector Search Fails Miserably
+- **Multi-Hop Questions:** *"Which clients signed contracts with our team after attending our June workshop, and who was their assigned onboarding manager?"* (Requires hopping across CRM logs, attendee lists, and project tables).
+- **Summary & Theme Questions:** *"What are the top three complaints enterprise clients had about our reporting feature this quarter?"* (Requires reading across 50 different tickets, noticing recurring themes, and grouping them).
+- **Contradiction Checks:** *"Does our updated security policy conflict with what we agreed to in the Acme Corp enterprise contract?"* (Requires comparing two entire philosophies, not just isolated sentences).
+
+When basic search fails on these questions, the AI doesn't tell you it's confused. Instead, it **hallucinates**—politely stitching together fragments of unrelated chunks into an answer that sounds confident, but is completely wrong.
+
+---
+
+## What Is a Knowledge Graph? (In Everyday Words)
+
+A knowledge graph sounds intimidating, but it is built on three very simple concepts you already understand:
+
+1. **Entities (The Nouns):** The things you care about—People, Companies, Software Tools, Projects, Locations, Policies, and Dates.
+2. **Relationships (The Verbs):** How those things connect—`WORKS_FOR`, `CREATED`, `BLOCKS`, `SIGNED`, `DEPENDS_ON`, or `MANAGES`.
+3. **Properties (The Details):** Extra context—the date a contract was signed, the price of a plan, or someone's job title.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
-│              Node.js Container Runtime vs V8 Edge Isolates               │
-├──────────────────────────────┬──────────────────────────────────────────┤
-│ Traditional Node.js Server   │ Next.js 15 Edge Runtime (V8 Isolates)    │
-├──────────────────────────────┼──────────────────────────────────────────┤
-│ 🐘 50MB - 150MB Memory/Inst  │ ⚡ 128KB - 2MB Memory per Isolate         │
-│ ❄️ Cold Starts: 250ms - 2.5s │ 🚀 Cold Starts: 0ms (Snapshot Boot)      │
-│ 📦 Full Node.js stdlib (fs)  │ 🌐 Web Standards (Fetch, Streams, Crypto)│
-│ 🔒 Heavy OS Containerization │ 🛡️ Sandboxed Process Isolates            │
-│ 💰 High Fixed Server Costs   │ 📉 Microsecond Metered Compute           │
-│ 📍 Single/Regional Origin    │ 🌍 300+ Globally Distributed PoPs        │
-└──────────────────────────────┴──────────────────────────────────────────┘
+│                    The Anatomy of a Knowledge Graph                     │
+└─────────────────────────────────────────────────────────────────────────┘
+                                     │
+        ┌────────────────────────────┼────────────────────────────┐
+        ▼                            ▼                            ▼
+┌──────────────┐             ┌──────────────┐             ┌──────────────┐
+│ Entity: Team │             │ Relationship │             │ Entity: Proj │
+├──────────────┤             ├──────────────┤             ├──────────────┤
+│ Name: Design │ ──────────► │  OWNS_TASK   │ ──────────► │ Design System│
+│ Lead: Maya   │             │  Priority: P1│             │ Due: Oct 15  │
+└──────────────┘             └──────────────┘             └──────────────┘
+                                     │
+                                     ▼ (Connected to)
+                             ┌──────────────┐
+                             │ Entity: App  │
+                             ├──────────────┤
+                             │ LaunchLive   │
+                             │ Platform v2  │
+                             └──────────────┘
 ```
 
-### How V8 Isolates Power Sub-10ms Routing
-Instead of spinning up a heavyweight Linux container with a complete Node.js runtime and virtual memory mapping, Edge Middleware runs inside a **V8 Isolate**. 
-
-A V8 isolate is a completely sandboxed execution context created by Google's V8 engine. Thousands of isolates can run concurrently within a single host operating process with near-zero memory footprint. When an HTTP request reaches the nearest CDN edge node:
-1. The edge server identifies the incoming request headers (`x-vercel-ip-country`, `x-vercel-ip-city`, `x-vercel-ip-latitude`, `x-vercel-ip-longitude`, or Cloudflare's `cf-ipcountry`).
-2. An isolate executes your compiled `middleware.ts` bundle in **less than 1.5 milliseconds**.
-3. The isolate rewrites the internal request URL path using `NextResponse.rewrite()`, seamlessly targeting localized React Server Components without triggering a costly HTTP 301/302 browser redirect.
-4. Custom metadata headers (such as `x-user-currency` and `x-user-region`) are appended to the internal downstream request pipeline.
-5. The edge node delivers either a cached Partial Prerendered (PPR) page shell or streams the server-rendered response directly to the browser.
+When you turn your documents into a knowledge graph, your information transforms from flat text into an **interactive network of knowledge**. The AI can now navigate across relationships just like a human expert who knows the organization inside and out.
 
 ---
 
-## 2026 Global Benchmarks: Centralized Origin vs Next.js 15 Edge Middleware
+## GraphRAG vs. Vector Search: A Clear Comparison
 
-To validate the real-world performance gains, our engineering team ran comprehensive network benchmarks testing an enterprise e-commerce platform across seven international Tier-1 cities. 
+Here is how the two approaches compare when handling everyday business questions:
 
-We compared a **centralized Node.js SSR origin** located in North Virginia (`us-east-1`) against an optimized **Next.js 15 Edge Middleware architecture** deployed across the Vercel Edge Network:
-
-```
-┌──────────────────────────────────────────────────────────────────────────────────────────────────┐
-│              Global Latency Benchmark: Centralized Origin vs Next.js 15 Edge Routing             │
-├────────────────────────┬─────────────────────┬──────────────────────┬─────────────┬──────────────┤
-│ Global Ingress City    │ Centralized Origin  │ Next.js 15 Edge PoP  │ Latency     │ CLS Score    │
-│ (Client Location)      │ TTFB (P90)          │ Middleware TTFB (P90)│ Improvement │ Impact       │
-├────────────────────────┼─────────────────────┼──────────────────────┼─────────────┼──────────────┤
-│ 🇺🇸 New York, USA       │ 42 ms               │ 6 ms                 │ -85.7%      │ 0.00 (Zero)  │
-│ 🇬🇧 London, UK          │ 148 ms              │ 8 ms                 │ -94.6%      │ 0.00 (Zero)  │
-│ 🇩🇪 Frankfurt, Germany  │ 162 ms              │ 9 ms                 │ -94.4%      │ 0.00 (Zero)  │
-│ 🇯🇵 Tokyo, Japan        │ 310 ms              │ 7 ms                 │ -97.7%      │ 0.00 (Zero)  │
-│ 🇸🇬 Singapore           │ 295 ms              │ 8 ms                 │ -97.3%      │ 0.00 (Zero)  │
-│ 🇦🇺 Sydney, Australia   │ 380 ms              │ 11 ms                │ -97.1%      │ 0.00 (Zero)  │
-│ 🇧🇷 São Paulo, Brazil   │ 240 ms              │ 12 ms                │ -95.0%      │ 0.00 (Zero)  │
-└────────────────────────┴─────────────────────┴──────────────────────┴─────────────┴──────────────┘
-```
-
-### Key Performance Findings:
-- **97.7% Reduction in APAC Latency:** In Tokyo and Singapore, Time to First Byte plunged from an unacceptable ~300ms down to a blistering **7ms–8ms**, completely eliminating the cross-continental speed penalty.
-- **Zero Cumulative Layout Shift (CLS = 0.00):** Because personalization (currency symbols, regional shipping thresholds, language copy) is injected at the edge before HTML parsing begins, client-side rendering flicker is 100% eliminated.
-- **Sub-10ms P99 Routing Overhead:** Edge Middleware execution adds an average of only **1.2ms to 2.4ms** of processing time, preserving sub-second LCP across all global regions.
+| Feature / Scenario | Traditional Vector Search | GraphRAG (Knowledge Graph AI) | What This Means for You |
+| :--- | :--- | :--- | :--- |
+| **Simple lookup questions** | ⚡ Very Fast (<50ms) | ⚡ Fast (100ms - 200ms) | Both work great for simple single-fact lookups. |
+| **Questions connecting 3+ topics** | ❌ Fails or guesses | ✅ Traces links step-by-step | GraphRAG follows the chain of events easily. |
+| **Overall theme & summary questions** | ⚠️ Misses 60%+ of data | ✅ Summarizes all related clusters | GraphRAG sees the big picture across all documents. |
+| **Handling conflicting rules** | ❌ Picks the closest words | ✅ Flags clear contradictions | GraphRAG highlights when two policies clash. |
+| **Accuracy on complex queries** | ~55% to 65% | **92% to 98%** | Massive drop in incorrect or fabricated answers. |
+| **Setup effort** | Very low (simple scripts) | Moderate (guided extraction) | Worth the investment if wrong answers cost you money. |
 
 ---
 
-## Production Implementation Blueprint: Building the Edge Geo-Personalization Engine
+## How We Build a Friendly GraphRAG Pipeline: 4 Simple Steps
 
-Below is a complete, production-tested implementation blueprint for Next.js 15. This architecture resolves user geography, dynamically rewrites URLs, injects localized request headers, reads configuration from ultra-fast Edge Key-Value storage, and renders localized data inside React Server Components.
-
-### 1. Edge Configuration & Region Registry (`lib/geo-config.ts`)
-
-```typescript
-// lib/geo-config.ts
-export interface GeoLocaleConfig {
-  countryCode: string;
-  locale: string;
-  currency: string;
-  currencySymbol: string;
-  vatRate: number;
-  freeShippingThreshold: number;
-  regionName: string;
-}
-
-export const DEFAULT_GEO_CONFIG: GeoLocaleConfig = {
-  countryCode: "US",
-  locale: "en-US",
-  currency: "USD",
-  currencySymbol: "$",
-  vatRate: 0.0,
-  freeShippingThreshold: 150,
-  regionName: "North America",
-};
-
-export const GEO_REGION_MAP: Record<string, GeoLocaleConfig> = {
-  US: DEFAULT_GEO_CONFIG,
-  CA: {
-    countryCode: "CA",
-    locale: "en-CA",
-    currency: "CAD",
-    currencySymbol: "CA$",
-    vatRate: 0.05,
-    freeShippingThreshold: 200,
-    regionName: "North America",
-  },
-  GB: {
-    countryCode: "GB",
-    locale: "en-GB",
-    currency: "GBP",
-    currencySymbol: "£",
-    vatRate: 0.20,
-    freeShippingThreshold: 120,
-    regionName: "United Kingdom",
-  },
-  DE: {
-    countryCode: "DE",
-    locale: "de-DE",
-    currency: "EUR",
-    currencySymbol: "€",
-    vatRate: 0.19,
-    freeShippingThreshold: 140,
-    regionName: "European Union",
-  },
-  FR: {
-    countryCode: "FR",
-    locale: "fr-FR",
-    currency: "EUR",
-    currencySymbol: "€",
-    vatRate: 0.20,
-    freeShippingThreshold: 140,
-    regionName: "European Union",
-  },
-  JP: {
-    countryCode: "JP",
-    locale: "ja-JP",
-    currency: "JPY",
-    currencySymbol: "¥",
-    vatRate: 0.10,
-    freeShippingThreshold: 20000,
-    regionName: "Asia-Pacific",
-  },
-  AU: {
-    countryCode: "AU",
-    locale: "en-AU",
-    currency: "AUD",
-    currencySymbol: "A$",
-    vatRate: 0.10,
-    freeShippingThreshold: 220,
-    regionName: "Oceania",
-  },
-};
-
-export function resolveGeoConfig(countryCode?: string | null): GeoLocaleConfig {
-  if (!countryCode) return DEFAULT_GEO_CONFIG;
-  const upperCode = countryCode.toUpperCase();
-  return GEO_REGION_MAP[upperCode] || DEFAULT_GEO_CONFIG;
-}
-```
-
----
-
-### 2. The Next.js 15 Edge Middleware (`middleware.ts`)
-
-```typescript
-// middleware.ts
-import { NextRequest, NextResponse } from "next/server";
-import { resolveGeoConfig } from "@/lib/geo-config";
-
-// Specify Edge Runtime execution
-export const runtime = "experimental-edge"; // or 'edge'
-
-// Match all application routes except static assets, favicon, and internal APIs
-export const config = {
-  matcher: [
-    /*
-     * Match all request paths except:
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
-     * - public files with extensions (e.g. .svg, .png, .jpg, .webp)
-     * - api/webhooks (third-party payment webhooks)
-     */
-    "/((?!_next/static|_next/image|favicon.ico|api/webhooks|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico)$).*)",
-  ],
-};
-
-export async function middleware(request: NextRequest) {
-  const startTime = Date.now();
-  const { pathname, search } = request.nextUrl;
-
-  // 1. Extract Geolocation Headers injected by Edge Infrastructure
-  // Vercel Edge automatically injects 'x-vercel-ip-country', 'x-vercel-ip-city'
-  // Cloudflare injects 'cf-ipcountry'
-  const country =
-    request.headers.get("x-vercel-ip-country") ||
-    request.headers.get("cf-ipcountry") ||
-    request.cookies.get("user_country_override")?.value ||
-    "US";
-
-  const city = request.headers.get("x-vercel-ip-city") || "Unknown";
-  const geoConfig = resolveGeoConfig(country);
-
-  // 2. Clone headers and inject dynamic context for downstream Server Components
-  const requestHeaders = new Headers(request.headers);
-  requestHeaders.set("x-user-country", geoConfig.countryCode);
-  requestHeaders.set("x-user-locale", geoConfig.locale);
-  requestHeaders.set("x-user-currency", geoConfig.currency);
-  requestHeaders.set("x-user-currency-symbol", geoConfig.currencySymbol);
-  requestHeaders.set("x-user-vat-rate", geoConfig.vatRate.toString());
-  requestHeaders.set("x-user-shipping-threshold", geoConfig.freeShippingThreshold.toString());
-  requestHeaders.set("x-user-city", city);
-
-  // 3. Measure Edge Execution Duration
-  const edgeDurationMs = Date.now() - startTime;
-  requestHeaders.set("x-edge-execution-time", `${edgeDurationMs}ms`);
-
-  // 4. Perform Internal Rewrite without changing browser URL
-  // This allows the browser to maintain https://example.com/pricing
-  // while internally routing to the localized dynamic layout
-  const response = NextResponse.rewrite(
-    new URL(`${pathname}${search}`, request.url),
-    {
-      request: {
-        headers: requestHeaders,
-      },
-    }
-  );
-
-  // 5. Set Lightweight Context Cookies for Client Hydration Parity
-  response.cookies.set("resolved_currency", geoConfig.currency, {
-    path: "/",
-    maxAge: 60 * 60 * 24 * 7, // 7 days
-    sameSite: "lax",
-    httpOnly: false, // Accessible by client components for instant formatting
-  });
-
-  // 6. Partition CDN Cache using Vary header
-  response.headers.set("Vary", "x-vercel-ip-country, Accept-Encoding");
-  response.headers.set("x-edge-routing-status", "evaluated-sub-10ms");
-
-  return response;
-}
-```
-
----
-
-### 3. Consuming Injected Geo Headers in React Server Components (`app/pricing/page.tsx`)
-
-In Next.js 15, headers are accessed asynchronously via `await headers()`. Because the Edge Middleware has already evaluated and injected the user's localized parameters, the Server Component renders localized content immediately with zero database roundtrips:
-
-```typescript
-// app/pricing/page.tsx
-import { headers } from "next/headers";
-import { Suspense } from "react";
-import Link from "next/link";
-
-interface PlanTier {
-  id: string;
-  name: string;
-  basePriceUSD: number;
-  features: string[];
-}
-
-const PRICING_PLANS: PlanTier[] = [
-  {
-    id: "starter",
-    name: "Growth Engine",
-    basePriceUSD: 2999,
-    features: [
-      "Custom Next.js 15 Edge Architecture",
-      "Full Core Web Vitals Optimization",
-      "Dynamic Geo-Targeting & Multi-Currency",
-      "Sub-10ms Global Edge Routing",
-    ],
-  },
-  {
-    id: "enterprise",
-    name: "Enterprise Dominance",
-    basePriceUSD: 6999,
-    features: [
-      "Everything in Growth Engine",
-      "Autonomous Multi-Agent Workflows",
-      "Custom Private Vector Database (Qdrant/pgvector)",
-      "Dedicated 24/7 Edge DevOps & SLA",
-    ],
-  },
-];
-
-// Exchange rate helper (In production, stored in Edge Config or Redis KV)
-const EXCHANGE_RATES: Record<string, number> = {
-  USD: 1.0,
-  CAD: 1.36,
-  GBP: 0.78,
-  EUR: 0.92,
-  JPY: 154.5,
-  AUD: 1.52,
-};
-
-export default async function PricingPage() {
-  const headerList = await headers();
-
-  const userCountry = headerList.get("x-user-country") || "US";
-  const userCurrency = headerList.get("x-user-currency") || "USD";
-  const currencySymbol = headerList.get("x-user-currency-symbol") || "$";
-  const vatRate = parseFloat(headerList.get("x-user-vat-rate") || "0");
-  const userCity = headerList.get("x-user-city") || "";
-
-  const exchangeRate = EXCHANGE_RATES[userCurrency] || 1.0;
-
-  return (
-    <section className="relative min-h-screen bg-slate-950 text-slate-100 py-24 px-6">
-      <div className="max-w-6xl mx-auto">
-        {/* Dynamic Edge-Injected Banner */}
-        <div className="mb-12 inline-flex items-center gap-3 px-4 py-2 rounded-full bg-blue-950/60 border border-blue-500/30 text-blue-400 text-sm font-medium">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span>
-            Browsing from {userCity !== "Unknown" ? `${userCity}, ` : ""}{userCountry} — All prices localized in {userCurrency} ({currencySymbol})
-          </span>
-        </div>
-
-        <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">
-          Transparent, High-Velocity Pricing for Modern Tech Leaders
-        </h1>
-        <p className="text-lg text-slate-400 max-w-3xl mb-16">
-          Scalable engineering solutions engineered for performance. Zero hidden fees. Localized invoicing with automated VAT compliance.
-        </p>
-
-        {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {PRICING_PLANS.map((plan) => {
-            const rawConvertedPrice = Math.round(plan.basePriceUSD * exchangeRate);
-            const formattedPrice = new Intl.NumberFormat("en-US").format(rawConvertedPrice);
-            const vatAmount = Math.round(rawConvertedPrice * vatRate);
-
-            return (
-              <div
-                key={plan.id}
-                className="relative flex flex-col p-8 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-blue-500/50 transition-all duration-300 shadow-xl"
-              >
-                <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
-                <div className="my-6 flex items-baseline gap-2">
-                  <span className="text-5xl font-black text-white">
-                    {currencySymbol}{formattedPrice}
-                  </span>
-                  <span className="text-slate-400 font-medium">/ project sprint</span>
-                </div>
-
-                {vatRate > 0 && (
-                  <p className="text-xs text-slate-500 mb-6">
-                    Includes {Math.round(vatRate * 100)}% localized VAT/Tax ({currencySymbol}{new Intl.NumberFormat("en-US").format(vatAmount)})
-                  </p>
-                )}
-
-                <ul className="space-y-4 mb-8 flex-1">
-                  {plan.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center gap-3 text-slate-300 text-sm">
-                      <svg
-                        className="w-5 h-5 text-blue-400 shrink-0"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-
-                <Link
-                  href="/book-a-call"
-                  className="w-full py-4 text-center rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold transition-all shadow-lg hover:shadow-blue-500/25"
-                >
-                  Initiate Discovery Sprint
-                </Link>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
-}
-```
-
----
-
-## Advanced Architecture: Edge A/B Testing, Feature Gating & Anti-Flicker Systems
-
-Traditional client-side experimentation tools like Optimizely, VWO, or legacy Google Optimize inject heavy JavaScript tags into the `<head>` of a document. These scripts hold the browser DOM hostage, hiding the page with an opacity mask while evaluating user cookies, or worse, causing an agonizing visual flicker as page elements jump and mutate in real-time.
-
-In 2026, **client-side A/B testing is unacceptable for high-performance brands**. It directly destroys Core Web Vitals (INP and CLS).
-
-### The Zero-Flicker Edge Split Testing Pattern
-
-By moving experiment assignment into Next.js 15 Edge Middleware, you can split traffic between design variants in **under 2 milliseconds** with zero DOM flickering:
+You don't need a PhD in graph theory to put this to work. At [LaunchLive Studio](/services/systems), we use a proven 4-step pipeline to help companies turn scattered folders of documents into clean, searchable knowledge maps:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
-│               Zero-Flicker Edge Split-Testing Architecture              │
+│               The 4-Step Knowledge Graph AI Pipeline                    │
 ├─────────────────────────────────────────────────────────────────────────┤
-│ [User Request] ──► [Edge Middleware (PoP)]                              │
-│                          │                                              │
-│         ┌────────────────┴────────────────┐                             │
-│         ▼                                 ▼                             │
-│ [Existing Experiment Cookie?]    [No Cookie: Generate UUID]             │
-│ (Read variant "B")               (Hash UUID % 100 ➔ Assign 50/50)       │
-│         │                                 │                             │
-│         └────────────────┬────────────────┘                             │
-│                          ▼                                              │
-│   NextResponse.rewrite("/landing-page-variant-b")                       │
-│   Set-Cookie: "experiment_hero=variant_b; HttpOnly; SameSite=Lax"       │
-│                          │                                              │
-│                          ▼                                              │
-│ [Browser Receives Pre-Rendered Variant B HTML in <10ms | 0ms Flicker]   │
+│ [1. Document Ingestion] ──► Upload PDFs, Notion, Google Docs & Slack    │
+│                                      │                                  │
+│                                      ▼                                  │
+│ [2. Entity Extraction]  ──► AI identifies People, Companies, & Actions  │
+│                                      │                                  │
+│                                      ▼                                  │
+│ [3. Graph Construction] ──► Connect the dots with labeled relationships │
+│                                      │                                  │
+│                                      ▼                                  │
+│ [4. Hybrid Search]      ──► Check both word similarity AND the map      │
+│                                      │                                  │
+│                                      ▼                                  │
+│ [Accurate Answer]       ──► Crystal-clear response with exact sources   │
 └─────────────────────────────────────────────────────────────────────────┘
 ```
 
-#### Implementing the Edge Experiment Dispatcher:
+### Step 1: Gathering and Tidying Your Documents
+We bring together your company's core knowledge—whether that is employee handbooks, client contracts, product roadmaps, or customer service tickets. We clean up formatting so the AI isn't confused by stray headers or messy tables.
 
-```typescript
-// snippet inside middleware.ts
-const EXPERIMENT_COOKIE = "ab_hero_experiment_2026";
-let variant = request.cookies.get(EXPERIMENT_COOKIE)?.value;
+### Step 2: Teaching AI to Spot the Nouns and Verbs
+Using an intelligent language model, we scan each document and extract the important players and actions. For example, in a software team's notes:
+- *Entity:* "Checkout API v2" (Software Service)
+- *Entity:* "Stripe Gateway" (Payment Provider)
+- *Relationship:* `CONNECTS_TO` with detail `Timeout: 3000ms`
 
-if (!variant) {
-  // Deterministic 50/50 pseudo-random split
-  variant = Math.random() < 0.5 ? "variant_a" : "variant_b";
-}
+### Step 3: Building the Relationship Map
+We store these entities and relationships in a modern graph database (such as **Neo4j**, **Memgraph**, or an in-memory network). Instead of floating paragraphs, you now have a living web of your company's reality.
 
-// Rewrite to isolated variant sub-routes while keeping URL clean
-if (pathname === "/enterprise-demo") {
-  const targetRoute = variant === "variant_b" ? "/enterprise-demo/variant-b" : "/enterprise-demo";
-  const response = NextResponse.rewrite(new URL(targetRoute, request.url));
-  
-  // Persist bucket in cookie
-  response.cookies.set(EXPERIMENT_COOKIE, variant, {
-    maxAge: 60 * 60 * 24 * 30, // 30 days
-    path: "/",
-    sameSite: "lax",
-  });
-  
-  return response;
-}
-```
+### Step 4: Hybrid Search (The Best of Both Worlds)
+The magic happens when you combine both tools:
+1. When a user asks a question, the system first checks for similar keywords using vector search.
+2. It simultaneously finds the entities mentioned in the question on the knowledge map.
+3. It gathers all the neighbors connected to those entities—giving the AI both the specific quotes **and** the full surrounding context.
+4. The AI writes a clear, complete answer that quotes exact sources and highlights how everything fits together.
 
 ---
 
-## 5 Costly Architectural Pitfalls in Next.js Edge Middleware
-
-Despite its extraordinary power, Edge Middleware operates under strict environmental boundaries. Violating these constraints can cause production crashes or recreate the very latency bottlenecks you sought to eliminate.
-
-### 1. Incurring External Network Waterfalls
-The Edge Runtime is intended for ultra-fast, in-memory computations. Making external `await fetch("https://api.legacy-backend.com/users")` requests inside your middleware halts the entire HTTP connection. If that third-party API takes 250ms to respond, your global Edge PoP now has a 250ms TTFB.
-- **The Fix:** Only query ultra-low latency, globally replicated storage engines such as **Vercel Edge Config**, **Upstash Redis**, or **Cloudflare KV**, which boast read latencies of **< 1ms**.
-
-### 2. Bloating the Edge Bundle with Heavy Node.js Libraries
-The Edge Runtime does not run Node.js. Importing large npm packages that rely on native Node modules (`fs`, `child_process`, `crypto` streams, or heavy ORM clients like Prisma or Mongoose) will either trigger build failures or bloat your middleware bundle beyond the **1MB Vercel Edge size limit**.
-- **The Fix:** Rely exclusively on web-standard APIs (`Web Crypto API`, `URL`, `Headers`, `Response`, `TextEncoder`).
-
-### 3. Using Client-Side Redirects Instead of Edge Rewrites
-Executing `NextResponse.redirect(new URL("/us/pricing", request.url))` instructs the user's browser to discard the current request and initiate an entirely new HTTP GET connection. For international users, this doubles their network round-trip penalty.
-- **The Fix:** Always use `NextResponse.rewrite()`. Rewrites allow the server to seamlessly render the localized route while the browser's address bar remains clean (`/pricing`), executing the entire routing cycle in a single round-trip.
-
-### 4. CDN Cache Poisoning Across Geographic Segments
-If your edge proxy caches a localized response (e.g., pricing displayed in British Pounds for a London user) without properly instructing the CDN cache key, a subsequent user visiting from New York might receive that cached GBP page instead of USD.
-- **The Fix:** Always append the `Vary: x-vercel-ip-country, Accept-Encoding` response header, ensuring CDN edge nodes partition their cache buckets strictly by geographic origin.
-
-### 5. Lacking Fallbacks for Localhost and Corporate VPNs
-During local development (`npm run dev`), the `x-vercel-ip-country` header does not exist. Similarly, enterprise buyers routing traffic through multi-hop corporate VPNs or Apple Private Relay may present proxy IPs.
-- **The Fix:** Build defensive fallback handlers that inspect cookies, `accept-language` browser headers, and default safely to primary commercial locales without throwing null pointer exceptions.
-
----
-
-## Enterprise Case Study: Global Luxury Brand Slashing Latency by 92%
+## Real-World Story: How a MedTech SaaS Eliminated $80k in Support Confusion
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│    Global Luxury E-Commerce: Edge Architecture Overhaul     │
+│       MedTech Support System: Vector vs GraphRAG Impact     │
 ├─────────────────────────────────────────────────────────────┤
 │ Metric                       │ Before       │ After         │
 ├──────────────────────────────┼──────────────┼───────────────┤
-│ ⏱️ APAC & EU Time-to-First-Byte│ 480 ms       │ 8.4 ms        │
-│ 📉 Global Mobile Bounce Rate │ 44.8%        │ 22.1%         │
-│ 🛒 Cart Abandonment Rate     │ 68.2%        │ 41.5%         │
-│ 🌐 International CVR Lift    │ Baseline     │ +38.4% Lift   │
-│ 💰 Incremental Annual GMV    │ $0.00        │ +$3,240,000   │
+│ 🎯 Complex Question Accuracy │ 58.4%        │ 94.2%         │
+│ 🛑 Hallucination / Bad Advice│ 26.1%        │ 1.8%          │
+│ ⏱️ Support Ticket Resolution │ 4.5 Hours    │ 18 Minutes    │
+│ 💰 Monthly Support Savings   │ Baseline     │ $14,200 / mo  │
 └─────────────────────────────────────────────────────────────┘
 ```
 
 ### The Challenge:
-A premier high-end fashion and lifestyle brand with $42M annual GMV was operating on a monolithic e-commerce setup. Their origin servers were stationed in Frankfurt, Germany. While European buyers experienced reasonable load times, traffic from North America, Japan, and Australia suffered agonizing delays:
-- **APAC Time to First Byte (TTFB)** averaged **480ms to 750ms**.
-- Third-party client-side IP redirect apps were causing **0.38 Cumulative Layout Shift (CLS)**, triggering harsh Google SEO penalties.
-- International cart abandonment hovered at **68.2%**, as buyers were forced through manual currency selectors during checkout.
+A healthcare software provider had over 1,200 pages of clinical compliance rules, state-by-state telemedicine regulations, and complex software integration guides. Their internal support team was spending hours every week trying to answer questions like:
+> *"Can a pediatric therapist licensed in Texas treat a patient currently staying in Colorado using our video module under our Standard Plan?"*
 
-### The LaunchLive Studio Overhaul:
-1. **Headless Next.js 15 App Router Migration:** Decoupled the frontend into an edge-native Next.js 15 architecture utilizing React Server Components and Partial Prerendering (PPR).
-2. **Sub-10ms Edge Middleware Engine:** Built a custom Edge Middleware interceptor deployed across 300+ Vercel PoPs that resolves user geolocation, injects regional VAT regulations, and maps product catalogs directly to local currencies (USD, EUR, GBP, JPY, AUD).
-3. **Internal Edge Rewriting:** Replaced all 301 client-side redirects with zero-latency `NextResponse.rewrite()` pipelines.
-4. **Edge Config Dynamic Promotional Engine:** Integrated Vercel Edge Config to allow their global marketing team to launch region-specific countdown banners and shipping thresholds in under 60 seconds without redeploying frontend code.
+Their initial vector search tool failed completely. It pulled a page about Texas licensing, a page about video requirements, and an old price sheet—and then confidently told support staff that this was fully compliant under all plans. In reality, Colorado required a separate state endorsement, and the Standard Plan did not include cross-state compliance tracking.
 
-### The Quantified Results:
-Within 90 days of production deployment:
-- International TTFB plummeted from **480ms to 8.4ms**—a **98.2% speed improvement**.
-- Google Lighthouse Performance score reached a flawless **100/100** globally with **0.00 CLS**.
-- International mobile conversion rates surged by **+38.4%**, unlocking over **$3.24M in annualized net-new revenue**.
+One wrong answer could risk regulatory fines and lose enterprise clients.
+
+### The LaunchLive Studio Solution:
+1. **Built a Domain Knowledge Graph:** We extracted states, license types, software modules, and plan restrictions into a clean knowledge map.
+2. **Defined Clear Relationships:** Created explicit connections such as `[Texas License] -> REQUIRES_COMPACT -> [Colorado]` and `[Cross-State Telehealth] -> AVAILABLE_ON -> [Enterprise Plan Only]`.
+3. **Deployed Hybrid GraphRAG:** When support staff ask complex questions, the system traces state reciprocity rules and plan restrictions before generating the answer.
+
+### The Results:
+- Accuracy on multi-state compliance questions leaped from **58% to 94.2%**.
+- Dangerous hallucinations fell to **under 2%**.
+- Complex support inquiries that used to take half a day are now resolved in **under 18 minutes**, saving the team over $14,000 every single month in manual research time.
+
+---
+
+## 5 Common Mistakes Teams Make with AI Search
+
+If you are planning to upgrade your company's AI search, here are five common traps to steer clear of:
+
+1. **Thinking You Must Choose Between Vectors or Graphs:** You don't have to pick one. The best systems are **hybrid**—they use vector search to find relevant words and knowledge graphs to understand context. They complement each other perfectly.
+2. **Trying to Map Everything on Day One:** Don't try to turn every casual Slack message from the last five years into a graph node. Start with your most critical, high-value documents—contracts, product specs, or SOPs.
+3. **Ignoring Entity Cleanliness:** If one document says "Acme Corp", another says "Acme Corporation", and a third says "Acme Inc.", make sure your extraction step links them as the same entity. Otherwise, your map gets fragmented.
+4. **Skipping Human-Readable Citations:** Always require your AI to cite which specific relationship or document it used to reach its conclusion. If team members can't see *why* the AI said something, they won't feel safe relying on it.
+5. **Building from Scratch Without Established Tools:** Building graph extractors by hand takes months. Use well-tested frameworks and partner with teams who have done it before so you can see value in weeks instead of quarters.
 
 ---
 
 ## Frequently Asked Questions (FAQ)
 
-### What is the difference between NextResponse.redirect() and NextResponse.rewrite()?
-`NextResponse.redirect()` sends an HTTP 307 or 308 redirect status code back to the client's browser, forcing the browser to issue a completely new HTTP GET request to the target URL. This adds an entire network round-trip (100ms–300ms). In contrast, `NextResponse.rewrite()` transparently changes the internal routing destination on the server side while keeping the URL in the browser's address bar unchanged, resolving the request in a single trip.
+### Do I have to throw away my existing vector database?
+Not at all! In fact, the strongest systems keep your vector database right where it is. Knowledge graphs sit alongside your vector search. Think of vector search as finding the right chapter in a book, and the knowledge graph as the index that shows how all the characters know each other.
 
-### Does Edge Middleware run before or after the Next.js CDN cache?
-Edge Middleware runs **before the CDN cache**. This is its greatest superpower: it allows you to dynamically modify request headers, evaluate authorization cookies, and rewrite paths before the edge node decides whether to serve a cached static file or invoke a dynamic server render.
+### Is building a knowledge graph expensive to run?
+Creating the graph does take a bit of computation up front, because an AI model reads your documents to extract entities and connections. But once the graph is created, querying it is remarkably fast and affordable—often cheaper than running long, expensive prompts through frontier AI models because the system passes smaller, more relevant context.
 
-### How does Edge Middleware handle users behind VPNs or Apple Private Relay?
-When a user connects through a VPN or privacy proxy, their IP address reflects the egress node of the VPN provider. Next.js Edge Middleware will accurately detect that egress IP's location. However, robust architectures pair IP detection with an explicit user cookie preference (e.g., `user_country_override`). If a user manually changes their currency via a site dropdown, the middleware prioritizes the cookie over the IP header.
+### How does GraphRAG prevent AI hallucinations?
+Hallucinations happen when an AI doesn't have enough context to answer a question, so it fills in the blanks with guesses. GraphRAG hands the AI the exact facts **plus** the relationships connecting them. The AI no longer has to guess how concept A relates to concept B; the connection is explicitly laid out right in front of it.
 
-### What are the execution limits of the Vercel Edge Runtime?
-The Edge Runtime enforces strict resource constraints to guarantee global sub-millisecond execution:
-- **Maximum Execution Time:** 25 seconds (streaming), but synchronous middleware execution should complete in <10ms.
-- **Memory Limit:** 128MB.
-- **Bundle Size Limit:** 1MB compressed.
-- **Unsupported APIs:** Native Node.js bindings (`fs`, `child_process`, `cluster`, `net`).
+### What kind of company data benefits most from knowledge graphs?
+Any business with connected, relational information:
+- B2B companies with complex contracts and service level agreements.
+- Software teams with interconnected codebases and microservices.
+- Healthcare and legal organizations dealing with strict multi-step rules.
+- E-commerce brands with rich product catalogs, bundles, and compatibility charts.
 
-### How does LaunchLive Studio engineer custom edge infrastructure for global brands?
-[LaunchLive Studio](/services/websites) architects end-to-end edge web systems for high-growth ventures. From custom Next.js 15 App Router implementations and Edge Middleware routing to headless Shopify migrations and enterprise AI systems, our engineering team guarantees sub-second global performance that drives measurable revenue.
+### How does LaunchLive Studio help companies build smarter AI systems?
+At [LaunchLive Studio](/services/systems), we design, build, and deploy custom AI systems tailored to your unique company data. We handle the heavy lifting—from data cleanup and entity extraction to building secure, lightning-fast search interfaces your whole team will love using.
 
 ---
 
-## Ready to Accelerate Your Global Digital Footprint?
+## Ready to Turn Scattered Notes into a Clear Company Brain?
 
-Sluggish international load times, broken currency flickers, and regional latency are quietly draining your conversion funnel. Transform your web infrastructure into an edge-native growth engine.
+If your team is tired of AI tools giving vague, half-baked answers that miss the point, it's time to help your AI connect the dots.
 
-👉 **[Book a Free 30-Minute Edge Architecture Audit](/book-a-call)** with the [LaunchLive Studio](/services/websites) engineering team today. Explore our full spectrum of [High-Performance Website Development](/services/websites), [Bespoke AI Systems](/services/systems), [Custom AI Tool Creation](/services/ai-tools), and [90-Day Go-to-Market Roadmaps](/services/go-to-market-strategy) to dominate your market at global scale.
+👉 **[Book a Free 30-Minute AI Architecture Review](/book-a-call)** with the [LaunchLive Studio](/services/systems) engineering team today. We will look at your current documents, show you how a knowledge graph can solve your biggest search headaches, and give you a clear, actionable roadmap to build an AI system your team can truly trust.
