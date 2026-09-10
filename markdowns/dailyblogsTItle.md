@@ -53,7 +53,7 @@ All daily blog topics are balanced across the **six core services** of [LaunchLi
 | **Sep 06, 2026** | **Automation** | [Instant B2B Lead Routing & Qualification: Connecting Webhooks, Slack Alerts & Automated Calendar Dispatch](/blogs/instant-b2b-lead-routing-slack-webhooks-calendar) | Automated B2B Lead Routing Workflow | **Published** |
 | **Sep 07, 2026** | **Design** | [Design System Tokens & Multi-Platform Sync: Bridging Figma Variables to Tailwind CSS & React Components](/blogs/design-system-tokens-figma-variables-tailwind-react) | Figma Design Tokens Tailwind CSS | **Published** |
 | **Sep 08, 2026** | **GTM Strategy** | [The 90-Day GTM Sprint Playbook: How Pre-Launch Demand Validation Prevents $200k Engineering Waste](/blogs/90-day-gtm-sprint-playbook-demand-validation) | 90 Day GTM Execution Playbook | **Published** |
-| **Sep 09, 2026** | **Websites** | Edge Middleware & Dynamic Geo-Personalization in Next.js 15: Sub-10ms Routing at Global Scale | Edge Middleware Next.js Architecture | **Scheduled** |
+| **Sep 09, 2026** | **Websites** | [Edge Middleware & Dynamic Geo-Personalization in Next.js 15: Sub-10ms Routing at Global Scale](/blogs/edge-middleware-geo-personalization-nextjs-15) | Edge Middleware Next.js Architecture | **Published** |
 | **Sep 10, 2026** | **AI Systems** | GraphRAG vs Vector RAG: Why Knowledge Graphs Outperform Naive Semantic Search in Complex Enterprise Domains | GraphRAG vs Vector RAG Enterprise | **Scheduled** |
 | **Sep 11, 2026** | **AI Tools** | LLM Guardrails & Enterprise Security: Preventing Prompt Injection, Data Leaks & Hallucinations in Production | LLM Security Guardrails Enterprise | **Scheduled** |
 | **Sep 12, 2026** | **Automation** | Dynamic Behavioral Email Automation: Leveraging First-Party Product Signals for 45%+ Open & Engagement Rates | Behavioral Email Automation Triggers | **Scheduled** |
@@ -427,7 +427,7 @@ Below are in-depth technical specification cards for September daily publication
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
-│ TOPIC CARD #21 (Sep 09, 2026) — SCHEDULED                              │
+│ TOPIC CARD #21 (Sep 09, 2026) — PUBLISHED                              │
 ├────────────────────────────────────────────────────────────────────────┤
 │ Title: Edge Middleware & Dynamic Geo-Personalization in Next.js 15:    │
 │        Sub-10ms Routing at Global Scale                                │
