@@ -55,8 +55,8 @@ All daily blog topics are balanced across the **six core services** of [LaunchLi
 | **Sep 08, 2026** | **GTM Strategy** | [The 90-Day GTM Sprint Playbook: How Pre-Launch Demand Validation Prevents $200k Engineering Waste](/blogs/90-day-gtm-sprint-playbook-demand-validation) | 90 Day GTM Execution Playbook | **Published** |
 | **Sep 09, 2026** | **Websites** | [Edge Middleware & Dynamic Geo-Personalization in Next.js 15: Sub-10ms Routing at Global Scale](/blogs/edge-middleware-geo-personalization-nextjs-15) | Edge Middleware Next.js Architecture | **Published** |
 | **Sep 10, 2026** | **AI Systems** | [Helping AI Connect the Dots: Why Knowledge Graphs Beat Basic Search for Complex Data](/blogs/graphrag-vs-vector-rag-knowledge-graphs-enterprise) | Knowledge Graphs vs Vector Search | **Published** |
-| **Sep 11, 2026** | **AI Tools** | Keeping Your AI Tools Safe and Accurate: A Friendly Guide to Preventing Mistakes and Data Leaks | AI Safety and Security Guide | **Scheduled** |
-| **Sep 12, 2026** | **Automation** | Smart Email Automation: How Timing Messages to User Actions Can Double Your Replies | Behavioral Email Automation | **Scheduled** |
+| **Sep 11, 2026** | **AI Tools** | [Keeping Your AI Tools Safe and Accurate: A Friendly Guide to Preventing Mistakes and Data Leaks](/blogs/llm-guardrails-enterprise-security-prompt-injection) | AI Safety and Security Guide | **Published** |
+| **Sep 12, 2026** | **Automation** | [Smart Email Automation: How Timing Messages to User Actions Can Double Your Replies](/blogs/dynamic-behavioral-email-automation-product-signals) | Behavioral Email Automation | **Published** |
 | **Sep 13, 2026** | **Design** | Landing Pages That Actually Convert: The Simple Psychology Behind High-Performing Websites | High Converting Landing Page Tips | **Scheduled** |
 | **Sep 14, 2026** | **GTM Strategy** | Startup Math Made Simple: How to Know If Your Business Is Ready to Scale Ad Spend | Startup Unit Economics Guide | **Scheduled** |
 | **Sep 15, 2026** | **Websites** | Growing Your Organic Traffic: How to Build Helpful, High-Ranking Pages at Scale | Scale Organic Website Pages | **Scheduled** |
@@ -369,7 +369,7 @@ Below are clear specification cards for September daily publications. Each card 
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
-│ TOPIC CARD #23 (Sep 11, 2026) — SCHEDULED                              │
+│ TOPIC CARD #23 (Sep 11, 2026) — PUBLISHED                              │
 ├────────────────────────────────────────────────────────────────────────┤
 │ Title: Keeping Your AI Tools Safe and Accurate: A Friendly Guide to    │
 │        Preventing Mistakes and Data Leaks                              │
@@ -392,7 +392,7 @@ Below are clear specification cards for September daily publications. Each card 
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
-│ TOPIC CARD #24 (Sep 12, 2026) — SCHEDULED                              │
+│ TOPIC CARD #24 (Sep 12, 2026) — PUBLISHED                              │
 ├────────────────────────────────────────────────────────────────────────┤
 │ Title: Smart Email Automation: How Timing Messages to User Actions     │
 │        Can Double Your Replies                                         │

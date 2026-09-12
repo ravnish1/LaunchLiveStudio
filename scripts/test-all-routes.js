@@ -18,22 +18,21 @@ const urls = [
   ...blogSlugs.map(s => '/blogs/' + s),
   '/services/websites',
   '/services/systems',
-  '/services/branding',
-  '/services/seo',
   '/services/ai-tools',
   '/services/automation',
   '/services/design',
-  '/services/consulting',
+  '/services/go-to-market-strategy',
   '/invalid-url-should-be-404'
 ];
 
-console.log(`Testing ${urls.length} routes on localhost:3000...\n`);
+const PORT = process.env.PORT || 3001;
+console.log(`Testing ${urls.length} routes on localhost:${PORT}...\n`);
 
 async function run() {
   const results = [];
   for (const url of urls) {
     const res = await new Promise((resolve) => {
-      http.get('http://localhost:3000' + url, response => {
+      http.get(`http://localhost:${PORT}` + url, response => {
         resolve({ url, status: response.statusCode });
       }).on('error', err => {
         resolve({ url, status: 'ERROR: ' + err.message });
