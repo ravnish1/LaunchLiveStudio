@@ -57,9 +57,9 @@ All daily blog topics are balanced across the **six core services** of [LaunchLi
 | **Sep 10, 2026** | **AI Systems** | [Helping AI Connect the Dots: Why Knowledge Graphs Beat Basic Search for Complex Data](/blogs/graphrag-vs-vector-rag-knowledge-graphs-enterprise) | Knowledge Graphs vs Vector Search | **Published** |
 | **Sep 11, 2026** | **AI Tools** | [Keeping Your AI Tools Safe and Accurate: A Friendly Guide to Preventing Mistakes and Data Leaks](/blogs/llm-guardrails-enterprise-security-prompt-injection) | AI Safety and Security Guide | **Published** |
 | **Sep 12, 2026** | **Automation** | [Smart Email Automation: How Timing Messages to User Actions Can Double Your Replies](/blogs/dynamic-behavioral-email-automation-product-signals) | Behavioral Email Automation | **Published** |
-| **Sep 13, 2026** | **Design** | Landing Pages That Actually Convert: The Simple Psychology Behind High-Performing Websites | High Converting Landing Page Tips | **Scheduled** |
-| **Sep 14, 2026** | **GTM Strategy** | Startup Math Made Simple: How to Know If Your Business Is Ready to Scale Ad Spend | Startup Unit Economics Guide | **Scheduled** |
-| **Sep 15, 2026** | **Websites** | Growing Your Organic Traffic: How to Build Helpful, High-Ranking Pages at Scale | Scale Organic Website Pages | **Scheduled** |
+| **Sep 13, 2026** | **Design** | [Landing Pages That Actually Convert: The Simple Psychology Behind High-Performing Websites](/blogs/landing-pages-that-actually-convert-simple-psychology) | High Converting Landing Page Tips | **Published** |
+| **Sep 14, 2026** | **GTM Strategy** | [Startup Math Made Simple: How to Know If Your Business Is Ready to Scale Ad Spend](/blogs/startup-math-made-simple-unit-economics-scale-ad-spend) | Startup Unit Economics Guide | **Published** |
+| **Sep 15, 2026** | **Websites** | [Growing Your Organic Traffic: How to Build Helpful, High-Ranking Pages at Scale](/blogs/growing-organic-traffic-build-helpful-high-ranking-pages-scale) | Scale Organic Website Pages | **Published** |
 | **Sep 16, 2026** | **AI Systems** | Small AI Models vs Big AI Models: How to Pick the Right Tool, Cut Costs, and Protect Privacy | Choosing the Right AI Model | **Scheduled** |
 | **Sep 17, 2026** | **AI Tools** | Upgrading Outdated Software with AI: How Modern Teams Automate Boring Code Updates Safely | Updating Legacy Code with AI | **Scheduled** |
 | **Sep 18, 2026** | **Automation** | Welcoming New Customers Automatically: How to Deliver Value in 10 Minutes Instead of 2 Weeks | Automated Customer Onboarding | **Scheduled** |
@@ -413,6 +413,76 @@ Below are clear specification cards for September daily publications. Each card 
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│ TOPIC CARD #25 (Sep 13, 2026) — PUBLISHED                              │
+├────────────────────────────────────────────────────────────────────────┤
+│ Title: Landing Pages That Actually Convert: The Simple Psychology      │
+│        Behind High-Performing Websites                                 │
+│ Pillar: UI/UX Design                                                   │
+│ Target URL: /blogs/landing-pages-that-actually-convert-simple-        │
+│             psychology                                                 │
+│ Primary Keyword: High Converting Landing Page Tips                     │
+│ Target Audience: Founders, Product Designers, Marketing Teams          │
+│ Core Concept: High-converting landing pages succeed by respecting human│
+│               psychology. Simple headlines, 1 primary action, and      │
+│               reassurance anchors triple conversion rates without ads. │
+│                                                                        │
+│ ─── INTERNAL LINKING BLUEPRINT ─────────────────────────────────────── │
+│ • Service Link: /services/design ("UI/UX design and landing pages")    │
+│ • Related Article: /blogs/micro-interactions-ui-motion-session-        │
+│   duration-trust ("delightful micro-interactions and UI motion")       │
+│ • Conversion Link: /book-a-call ("schedule a landing page audit")      │
+└────────────────────────────────────────────────────────────────────────┘
+```
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│ TOPIC CARD #26 (Sep 14, 2026) — PUBLISHED                              │
+├────────────────────────────────────────────────────────────────────────┤
+│ Title: Startup Math Made Simple: How to Know If Your Business Is       │
+│        Ready to Scale Ad Spend                                         │
+│ Pillar: Go-to-Market Strategy                                          │
+│ Target URL: /blogs/startup-math-made-simple-unit-economics-scale-     │
+│             ad-spend                                                   │
+│ Primary Keyword: Startup Unit Economics Guide                          │
+│ Target Audience: Founders, CEOs, Growth Marketers, Operators           │
+│ Core Concept: Spending money on paid ads before your unit economics    │
+│               are healthy accelerates cash burn. When LTV is 3x CAC    │
+│               and payback is <12 months, ads scale sustainably.        │
+│                                                                        │
+│ ─── INTERNAL LINKING BLUEPRINT ─────────────────────────────────────── │
+│ • Service Link: /services/go-to-market-strategy ("GTM Strategy")       │
+│ • Related Article: /blogs/b2b-saas-pricing-packaging-architecture-     │
+│   value-metrics-net-revenue-retention ("B2B SaaS pricing")             │
+│ • Conversion Link: /book-a-call ("review growth unit economics")       │
+└────────────────────────────────────────────────────────────────────────┘
+```
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│ TOPIC CARD #27 (Sep 15, 2026) — PUBLISHED                              │
+├────────────────────────────────────────────────────────────────────────┤
+│ Title: Growing Your Organic Traffic: How to Build Helpful,             │
+│        High-Ranking Pages at Scale                                     │
+│ Pillar: Website Development                                            │
+│ Target URL: /blogs/growing-organic-traffic-build-helpful-high-ranking- │
+│             pages-scale                                                │
+│ Primary Keyword: Scale Organic Website Pages                           │
+│ Target Audience: Growth Engineers, Technical SEOs, Founders            │
+│ Core Concept: Manual weekly blogging is too slow. Combining Next.js 15 │
+│               templates, semantic clusters, and GEO formats lets you   │
+│               publish high-ranking, helpful pages at scale.            │
+│                                                                        │
+│ ─── INTERNAL LINKING BLUEPRINT ─────────────────────────────────────── │
+│ • Service Link: /services/websites ("custom Next.js web development")  │
+│ • Related Article: /blogs/generative-engine-optimization-geo-ai-search-│
+│   guide ("Generative Engine Optimization (GEO)")                       │
+│ • Conversion Link: /book-a-call ("scale your organic website engine")  │
+└────────────────────────────────────────────────────────────────────────┘
+```
+
+
 ---
 
 ## Writing Guidelines: The Human-First & Soft-Vocabulary Standard
@@ -463,4 +533,4 @@ Every post should naturally guide curious readers to:
 - **Application Blog Database:** `lib/blog-data.ts`
 - **Sitemap Generator:** `app/sitemap.ts` (automatically indexes all active posts)
 
-*Last Updated: September 10, 2026*
+*Last Updated: September 15, 2026*
