@@ -65,7 +65,7 @@ All daily blog topics are balanced across the **six core services** of [LaunchLi
 | **Sep 18, 2026** | **Automation** | Welcoming New Customers Automatically: How to Deliver Value in 10 Minutes Instead of 2 Weeks | Automated Customer Onboarding | **Scheduled** |
 | **Sep 19, 2026** | **Design** | Websites for Everyone: Simple Ways to Make Your Site Accessible, Readable, and Beautiful | Web Accessibility Made Easy | **Scheduled** |
 | **Sep 20, 2026** | **GTM Strategy** | Self-Serve vs Direct Sales: How to Mix Free Signups with Sales Calls to Win More Clients | Product-Led vs Sales-Led Growth | **Scheduled** |
-| **Sep 21, 2026** | **Websites** | Building Simpler Web Forms: How Next.js 15 Makes Data Updates Quick and Painless | Next.js 15 Web Forms Guide | **Scheduled** |
+| **Sep 21, 2026** | **Websites** | [Building Simpler Web Forms: How Next.js 15 Makes Data Updates Quick and Painless](/blogs/building-simpler-web-forms-nextjs-15-quick-painless) | Next.js 15 Web Forms Guide | **Published** |
 | **Sep 22, 2026** | **AI Systems** | Helping AI Understand Long Documents: Easy Ways to Prevent Confusing and Wrong Answers | Improving AI Document Search | **Scheduled** |
 | **Sep 23, 2026** | **AI Tools** | Pay-As-You-Go Billing for AI Apps: How to Set Up Simple Usage-Based Pricing with Stripe | Usage-Based Stripe Billing | **Scheduled** |
 | **Sep 24, 2026** | **Automation** | Zapier vs Make vs Custom Code: Which Automation Tool Fits Your Business Best? | Zapier vs Make vs Custom Code | **Scheduled** |
@@ -526,6 +526,29 @@ Below are clear specification cards for September daily publications. Each card 
 │ • Related Article: /blogs/small-ai-models-vs-big-ai-models-cut-costs-  │
 │   protect-privacy ("Small AI Models vs Big AI Models")                 │
 │ • Conversion Link: /book-a-call ("schedule a code modernization audit")│
+└────────────────────────────────────────────────────────────────────────┘
+```
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│ TOPIC CARD #30 (Sep 21, 2026) — PUBLISHED                              │
+├────────────────────────────────────────────────────────────────────────┤
+│ Title: Building Simpler Web Forms: How Next.js 15 Makes Data Updates   │
+│        Quick and Painless                                              │
+│ Pillar: Website Development                                            │
+│ Target URL: /blogs/building-simpler-web-forms-nextjs-15-quick-painless │
+│ Primary Keyword: Next.js 15 Web Forms Guide                            │
+│ Target Audience: Web Developers, Full-Stack Engineers, Founders        │
+│ Core Concept: Managing complex form state, custom API route plumbing,  │
+│               and loading spinners is obsolete. Next.js 15 Server      │
+│               Actions, useActionState, useOptimistic, and Zod make     │
+│               data updates fast, resilient, and virtually bug-free.    │
+│                                                                        │
+│ ─── INTERNAL LINKING BLUEPRINT ─────────────────────────────────────── │
+│ • Service Link: /services/websites ("custom Next.js web development")  │
+│ • Related Article: /blogs/mastering-core-web-vitals-nextjs-15-zero-js- │
+│   hydration-edge-caching ("Mastering Core Web Vitals in Next.js 15")   │
+│ • Conversion Link: /book-a-call ("book a web architecture session")    │
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
