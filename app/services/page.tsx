@@ -4,12 +4,12 @@ import { ServicesClient } from './ServicesClient'
 import { getAlternates } from '@/lib/seo'
 
 export const metadata: Metadata = {
-  title: "Digital Agency Services",
+  title: "Digital & AI Development Services",
   description: "From custom web development to LLM-powered AI systems. Explore our range of premium services designed to scale your business and outpace competition.",
   keywords: ["website development", "ai system creation", "marketing automation", "ui/ux design", "technical seo", "growth consulting", "bespoke ai workflows", "ai chatbots for business", "crm automation services"],
   alternates: getAlternates("/services"),
   openGraph: {
-    title: "Expert Digital Services for Modern Brands",
+    title: "Digital & AI Development Services | Launch Live Studio",
     description: "Scalable tech stacks and strategic design tailored for founders who demand excellence. See what we can build for you.",
     url: "https://www.launchlive.studio/services",
     images: [

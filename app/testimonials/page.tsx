@@ -4,7 +4,7 @@ import { TestimonialsClient } from './TestimonialsClient'
 import { getAlternates } from '@/lib/seo'
 
 export const metadata: Metadata = {
-  title: "Client Success Stories | Trust & Testimonials",
+  title: "Client Reviews & Success Stories",
   description: "Read how founders and teams have transformed their businesses with Launch Live Studio. Honest feedback on our web and AI services.",
   keywords: ["agency testimonials", "client reviews", "launch live studio feedback"],
   alternates: getAlternates("/testimonials"),

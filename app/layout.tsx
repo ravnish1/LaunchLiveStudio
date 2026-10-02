@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.launchlive.studio"),
   alternates: getAlternates(),
   title: {
-    default: "Launch Live Studio",
-    template: "%s | Launch Live Studio | AI automations company | Web Development Agency | LLS",
+    default: "Launch Live Studio — Digital Agency & AI Systems Development",
+    template: "%s | Launch Live Studio | AI Automations Company | Web Development Agency | LLS",
   },
   description: "Websites, automation & systems for modern businesses.",
   keywords: [
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     apple: "/logo.png",
   },
   openGraph: {
-    title: "Launch Live Studio",
+    title: "Launch Live Studio — Digital Agency & AI Systems Development",
     description: "Websites, automation & systems for modern businesses.",
     url: "https://www.launchlive.studio/",
     siteName: "Launch Live Studio",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Launch Live Studio - Digital Agency | LLS",
+    title: "LaunchLive Studio — Digital Agency & AI Systems Development",
     description: "Websites, automation & systems for modern businesses.",
     site: "@launchlivestudio",
     creator: "@launchlivestudio",

@@ -10,7 +10,7 @@ export interface ServiceData {
 export const servicesData: ServiceData[] = [
   {
     slug: "websites",
-    title: "Website Development",
+    title: "Custom Next.js Web Development Services",
     shortDescription:
       "Custom-built, conversion-optimised websites that load fast, rank high, and look exceptional.",
     fullDescription:
@@ -94,7 +94,7 @@ Your website is the digital storefront of your business. In an era where consume
   },
   {
     slug: "systems",
-    title: "AI System Creation",
+    title: "Enterprise AI Systems & Custom RAG",
     shortDescription:
       "Bespoke AI workflows, chatbots, and LLM-powered engines tailored to your business operations.",
     fullDescription:
@@ -178,7 +178,7 @@ The businesses that dominate the next decade will be those that successfully lev
   },
   {
     slug: "branding",
-    title: "Branding & Identity",
+    title: "Strategy-First Brand Identity & Motion Design",
     shortDescription:
       "Strategy-first branding — logo, guidelines, motion identity, and everything in between.",
     fullDescription:
@@ -262,7 +262,7 @@ Your brand is your most valuable intellectual property. It is the silent ambassa
   },
   {
     slug: "ai-tools",
-    title: "AI Tool Creation",
+    title: "Custom AI Tool & Micro-SaaS Development",
     shortDescription:
       "Custom AI-powered tools: content generators, data analyzers, voice bots, and more.",
     fullDescription:
@@ -346,7 +346,7 @@ Productizing artificial intelligence is the fastest way to leapfrog your competi
   },
   {
     slug: "automation",
-    title: "Workflow Automation",
+    title: "B2B Workflow Automation & CRM Integration",
     shortDescription:
       "Connect your CRM, internal tools, databases, and communication channels into one automated operations engine.",
     fullDescription:
@@ -434,7 +434,7 @@ Operational friction is the silent killer of growing companies. Launch Live Stud
   },
   {
     slug: "design",
-    title: "UI/UX Design",
+    title: "UI/UX Product Design & Design Systems",
     shortDescription:
       "Research-driven, pixel-perfect design from wireframes to dev-ready Figma handoff.",
     fullDescription:
@@ -521,7 +521,7 @@ Great design is invisible—the user simply accomplishes their goal without frus
   },
   {
     slug: "go-to-market-strategy",
-    title: "Go-to-Market Strategy",
+    title: "B2B SaaS Go-to-Market & Launch Strategy",
     shortDescription:
       "Accelerate product launches, capture market share, and scale revenue with a battle-tested 90-day GTM framework.",
     fullDescription:

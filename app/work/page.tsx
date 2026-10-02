@@ -9,7 +9,7 @@ import Script from "next/script"
 import { getAlternates } from '@/lib/seo'
 
 export const metadata: Metadata = {
-  title: "Case Studies & Portfolio",
+  title: "Client Case Studies & Work Portfolio",
   description: "Explore our selected works. See how we delivered high-performance Shopify stores, AI-driven SaaS, and premium brand identities for leading startups.",
   keywords: ["case studies", "custom shopify development", "saas dashboard design", "fintech ai solutions", "ecommerce case studies"],
   alternates: getAlternates("/work"),

@@ -5,7 +5,7 @@ import Script from "next/script"
 import { getAlternates } from '@/lib/seo'
 
 export const metadata: Metadata = {
-  title: "Book a Strategy Consultation",
+  title: "Book a Free 30-Min Strategy Call",
   description: "Ready to launch your next big project? Schedule a free consultation with our experts to discuss your digital strategy, AI, or development needs.",
   keywords: ["hire digital agency", "strategy consultation", "start digital project", "launch live studio contact"],
   alternates: getAlternates("/book-a-call"),

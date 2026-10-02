@@ -4,7 +4,9 @@ import dynamic from "next/dynamic";
 import { getAlternates } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Launch Live Studio",
+  title: {
+    absolute: "LaunchLive Studio — Digital Agency & AI Systems Development",
+  },
   description: "Websites, automation & systems for modern businesses.",
   keywords: [
     "digital agency",
@@ -18,7 +20,7 @@ export const metadata: Metadata = {
 
   alternates: getAlternates("/"),
   openGraph: {
-    title: "Launch Live Studio",
+    title: "Launch Live Studio — Digital Agency & AI Systems Development",
     description: "Websites, automation & systems for modern businesses.",
     url: "https://www.launchlive.studio/",
     siteName: "Launch Live Studio",
@@ -34,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Launch Live Studio",
+    title: "LaunchLive Studio — Digital Agency & AI Systems Development",
     description: "Websites, automation & systems for modern businesses.",
     images: ["/og-preview.jpg"],
   },

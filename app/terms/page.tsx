@@ -4,7 +4,7 @@ import { TermsClient } from './TermsClient'
 import { getAlternates } from '@/lib/seo'
 
 export const metadata: Metadata = {
-  title: "Terms of Service",
+  title: "Terms of Service & Client Agreement",
   description: "Review the terms and conditions for using Launch Live Studio's services and website. Understanding our professional agreement.",
   alternates: getAlternates("/terms"),
 }

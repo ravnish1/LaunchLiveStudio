@@ -4,7 +4,7 @@ import { PrivacyClient } from './PrivacyClient'
 import { getAlternates } from '@/lib/seo'
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
+  title: "Privacy Policy & Data Protection",
   description: "Learn how Launch Live Studio collects, uses, and protects your personal data. We are committed to your privacy and data security.",
   alternates: getAlternates("/privacy"),
 }

@@ -32,12 +32,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     : `https://www.launchlive.studio${post.image}`
 
   return {
-    title: `${post.title} | Launch Live Studio | AI Workflows Agency | Ai Automations Company |Web Development Agency| LLS`,
+    title: post.title,
     description: post.description,
     keywords: post.tags,
     alternates: getAlternates(`/blogs/${slug}`),
     openGraph: {
-      title: `${post.title} | Launch Live Studio | AI Workflows Agency | Ai Automations Company |Web Development Agency| LLS`,
+      title: `${post.title} | Launch Live Studio`,
       description: post.description,
       url: `https://www.launchlive.studio/blogs/${slug}`,
       images: [
@@ -54,7 +54,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: 'summary_large_image',
-      title: post.title,
+      title: `${post.title} | Launch Live Studio`,
       description: post.description,
       images: [imageUrl],
     },

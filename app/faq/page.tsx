@@ -5,7 +5,7 @@ import { faqData } from '@/lib/faq-data'
 import { getAlternates } from '@/lib/seo'
 
 export const metadata: Metadata = {
-  title: 'Frequently Asked Questions',
+  title: "Frequently Asked Questions & Pricing",
   description: 'Frequently asked questions about our services, process, pricing, and ongoing support. Get clarity on partnering with Launch Live Studio.',
   alternates: getAlternates('/faq'),
 }

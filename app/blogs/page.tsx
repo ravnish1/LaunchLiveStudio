@@ -11,7 +11,7 @@ import ClientReveal from "@/components/redesign/ClientReveal";
 import { getAlternates } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Insights & Tech Growth Guides",
+  title: "Web, AI & Automation Engineering Insights",
   description:
     "Expert guides on AI automation, Next.js performance, and premium branding. Stay ahead of the curve with our latest digital strategies.",
   keywords: [
