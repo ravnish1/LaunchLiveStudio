@@ -32,12 +32,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     : `https://www.launchlive.studio${post.image}`
 
   return {
-    title: post.title,
+    title: `${post.title} | Launch Live Studio | AI Workflows Agency | Ai Automations Company |Web Development Agency| LLS`,
     description: post.description,
     keywords: post.tags,
     alternates: getAlternates(`/blogs/${slug}`),
     openGraph: {
-      title: post.title,
+      title: `${post.title} | Launch Live Studio | AI Workflows Agency | Ai Automations Company |Web Development Agency| LLS`,
       description: post.description,
       url: `https://www.launchlive.studio/blogs/${slug}`,
       images: [

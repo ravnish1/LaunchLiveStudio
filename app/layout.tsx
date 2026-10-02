@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   alternates: getAlternates(),
   title: {
     default: "Launch Live Studio",
-    template: "%s | Launch Live Studio | AI automation company | Web Development Agency | LLS",
+    template: "%s | Launch Live Studio | AI automations company | Web Development Agency | LLS",
   },
   description: "Websites, automation & systems for modern businesses.",
   keywords: [
