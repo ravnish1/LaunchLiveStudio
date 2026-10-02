@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   alternates: getAlternates(),
   title: {
     default: "Launch Live Studio",
-    template: "%s | Launch Live Studio",
+    template: "%s | Launch Live Studio | AI automation company | Web Development Agency | LLS",
   },
   description: "Websites, automation & systems for modern businesses.",
   keywords: [
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
         url: "/og-preview.jpg",
         width: 1200,
         height: 630,
-        alt: "Launch Live Studio - Digital Agency",
+        alt: "Launch Live Studio - Digital Agency | LLS",
       },
     ],
     locale: "en_IN",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Launch Live Studio",
+    title: "Launch Live Studio - Digital Agency | LLS",
     description: "Websites, automation & systems for modern businesses.",
     site: "@launchlivestudio",
     creator: "@launchlivestudio",

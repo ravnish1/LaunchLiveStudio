@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: service.title,
+    title: `${service.title} | Launch Live Studio | Web Development Agency | AI Workflows Agency `,
     description: service.shortDescription,
     alternates: getAlternates(`/services/${service.slug}`),
   };
