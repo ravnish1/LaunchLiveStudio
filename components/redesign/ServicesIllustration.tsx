@@ -3,6 +3,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 /* ─────────────────────────────────────────────────────────────────────────────
    LaunchLive Studio — Services Illustration  v2.1
@@ -49,14 +50,13 @@ const ORBIT_R = 180
 // Six service nodes: evenly spaced by 60° around the central logo
 // 330° (top-left), 30° (top-right), 90° (mid-right), 150° (bottom-right), 210° (bottom-left), 270° (mid-left)
 const NODES = [
-  { id: 'web',       angle: 330, r: ORBIT_R, label: 'Website Dev'   },
-  { id: 'ai-system', angle:  30, r: ORBIT_R, label: 'AI Systems'    },
-  { id: 'ai-tool',   angle:  90, r: ORBIT_R, label: 'AI Tools'      },
-  { id: 'auto',      angle: 150, r: ORBIT_R, label: 'Automation'    },
-  { id: 'design',    angle: 210, r: ORBIT_R, label: 'UI/UX Design'  },
-  { id: 'gtm',       angle: 270, r: ORBIT_R, label: 'GTM Strategy'  },
+  { id: 'web',       angle: 330, r: ORBIT_R, label: 'Website Dev', serviceLink:'/services/websites'   },
+  { id: 'ai-system', angle:  30, r: ORBIT_R, label: 'AI Systems', serviceLink:'/services/systems'    },
+  { id: 'ai-tool',   angle:  90, r: ORBIT_R, label: 'AI Tools', serviceLink:'/services/ai-tools'      },
+  { id: 'auto',      angle: 150, r: ORBIT_R, label: 'Automation', serviceLink:'/services/automation'    },
+  { id: 'design',    angle: 210, r: ORBIT_R, label: 'UI/UX Design', serviceLink:'/services/design'  },
+  { id: 'gtm',       angle: 270, r: ORBIT_R, label: 'GTM Strategy', serviceLink:'/services/go-to-market-strategy'  },
 ]
-
 function nodePos(angle: number, r: number) {
   const rad = (angle - 90) * (Math.PI / 180)
   return { x: CX + r * Math.cos(rad), y: CY + r * Math.sin(rad) }
@@ -439,6 +439,7 @@ export function ServicesIllustration() {
                 whileHover={{ scale: 1.12, zIndex: 30 }}
               >
                 {/* 56x56 px card, mathematically centered at p.x, p.y */}
+                <Link href={node.serviceLink} >
                 <div
                   className="w-14 h-14 rounded-2xl flex items-center justify-center relative overflow-hidden cursor-pointer"
                   style={{
@@ -456,6 +457,7 @@ export function ServicesIllustration() {
                 </div>
 
                 {/* Label pill - positioned below the card without shifting the icon card center */}
+
                 <div className="absolute top-[calc(100%+6px)] left-1/2 -translate-x-1/2 whitespace-nowrap">
                   <span
                     className="inline-block text-[9px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-full"
@@ -469,6 +471,7 @@ export function ServicesIllustration() {
                     {node.label}
                   </span>
                 </div>
+                </Link>
               </motion.div>
             </div>
           )
